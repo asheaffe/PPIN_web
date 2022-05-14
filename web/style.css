@@ -1,0 +1,79 @@
+body {
+  font-family: helvetica, arial, sans-serif;
+  font-size: 14px;
+}
+
+#left_column{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 250px;
+}
+
+#cy {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 250px;
+  height: 100%;
+}
+
+h1 {
+  opacity: 0.5;
+  font-size: 1em;
+}
+
+#missing_interolog_content {
+    position: fixed;
+    top: 25px;
+    left: 260px;
+    max-height: calc(100vh - 50px);
+    max-width: calc(100vw - 285px);
+    background: white;
+    margin: 0px;
+    border: 3px solid black;
+    overflow: auto;
+    z-index: 50;
+    display: none;
+}
+
+.missing_interologs_table {
+    border-collapse: collapse;
+    margin: 5px;
+}
+
+.missing_interologs_table td, th{
+    padding-left: 5px;
+    padding-right: 5px;
+    border: 1px solid black;
+}
+
+#left_column {
+  height: 100%;
+  border-right: 1px solid black;
+}
+
+.legend_box {
+  width: 20px;
+  height: 20px;
+  margin: 2px;
+  display: inline-block;
+  border: 1px solid rgba(0, 0, 0, .2);
+  background-color: red
+}
+
+.legend_row {
+  display: flex;
+  align-items: center;
+}
+
+.legend_circle {
+  height: 20px;
+  width: 20px;
+  margin: 2px;
+  vertical-align: baseline;
+  background-color: #fff;
+  border-radius: 50%;
+  display: inline-block;
+  border: 2px solid rgba(255, 0, 0, 2);
+}

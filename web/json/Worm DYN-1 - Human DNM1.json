@@ -1,0 +1,3772 @@
+[
+  {
+  "data": {
+    "name": "Interologs",
+    "weight": 75,
+    "id": "Interologs"
+  },
+  "removed": false,
+  "selectable": true,
+  "classes": "container",
+  "grabbable": true,
+  "position": {
+    "x": 0,
+    "y": 0
+  },
+  "locked": false,
+  "selected": false,
+  "group": "nodes"
+},
+  {
+  "data": {
+    "weight": 75,
+    "source": "F09E10.8a",
+    "target": "ENSP00000413625"
+  },
+  "removed": false,
+  "selectable": true,
+  "classes": "orthology",
+  "grabbable": true,
+  "locked": false,
+  "selected": false,
+  "group": "edges"
+},
+  {
+  "data": {
+    "weight": 75,
+    "source": "ZK470.5a",
+    "target": "ENSP00000288986"
+  },
+  "removed": false,
+  "selectable": true,
+  "classes": "orthology",
+  "grabbable": true,
+  "locked": false,
+  "selected": false,
+  "group": "edges"
+},
+  {
+  "data": {
+    "weight": 75,
+    "source": "ZK470.5a",
+    "target": "ENSP00000233154"
+  },
+  "removed": false,
+  "selectable": true,
+  "classes": "orthology",
+  "grabbable": true,
+  "locked": false,
+  "selected": false,
+  "group": "edges"
+},
+  {
+  "data": {
+    "weight": 75,
+    "source": "Y92H12A.1b",
+    "target": "ENSP00000362659"
+  },
+  "removed": false,
+  "selectable": true,
+  "classes": "orthology",
+  "grabbable": true,
+  "locked": false,
+  "selected": false,
+  "group": "edges"
+},
+  {
+  "data": {
+    "weight": 75,
+    "source": "F45E1.7b",
+    "target": "ENSP00000244458"
+  },
+  "removed": false,
+  "selectable": true,
+  "classes": "orthology",
+  "grabbable": true,
+  "locked": false,
+  "selected": false,
+  "group": "edges"
+},
+  {
+  "data": {
+    "weight": 75,
+    "source": "T04D1.3d",
+    "target": "ENSP00000269886"
+  },
+  "removed": false,
+  "selectable": true,
+  "classes": "orthology",
+  "grabbable": true,
+  "locked": false,
+  "selected": false,
+  "group": "edges"
+},
+  {
+  "data": {
+    "weight": 75,
+    "source": "K12C11.2",
+    "target": "ENSP00000387204"
+  },
+  "removed": false,
+  "selectable": true,
+  "classes": "orthology",
+  "grabbable": true,
+  "locked": false,
+  "selected": false,
+  "group": "edges"
+},
+  {
+  "data": {
+    "weight": 75,
+    "source": "Y37A1B.2b",
+    "target": "ENSP00000311427"
+  },
+  "removed": false,
+  "selectable": true,
+  "classes": "orthology",
+  "grabbable": true,
+  "locked": false,
+  "selected": false,
+  "group": "edges"
+},
+  {
+  "data": {
+    "weight": 75,
+    "source": "Y37A1B.2b",
+    "target": "ENSP00000376024"
+  },
+  "removed": false,
+  "selectable": true,
+  "classes": "orthology",
+  "grabbable": true,
+  "locked": false,
+  "selected": false,
+  "group": "edges"
+},
+  {
+  "data": {
+    "weight": 75,
+    "source": "F45E1.7b",
+    "target": "ENSP00000263246"
+  },
+  "removed": false,
+  "selectable": true,
+  "classes": "orthology",
+  "grabbable": true,
+  "locked": false,
+  "selected": false,
+  "group": "edges"
+},
+  {
+  "data": {
+    "weight": 75,
+    "source": "Y37A1B.17a",
+    "target": "ENSP00000315659"
+  },
+  "removed": false,
+  "selectable": true,
+  "classes": "orthology",
+  "grabbable": true,
+  "locked": false,
+  "selected": false,
+  "group": "edges"
+},
+  {
+  "data": {
+    "weight": 75,
+    "source": "F45E1.7b",
+    "target": "ENSP00000298838"
+  },
+  "removed": false,
+  "selectable": true,
+  "classes": "orthology",
+  "grabbable": true,
+  "locked": false,
+  "selected": false,
+  "group": "edges"
+},
+  {
+  "data": {
+    "weight": 75,
+    "source": "Y116A8C.36d.1",
+    "target": "ENSP00000370719"
+  },
+  "removed": false,
+  "selectable": true,
+  "classes": "orthology",
+  "grabbable": true,
+  "locked": false,
+  "selected": false,
+  "group": "edges"
+},
+  {
+  "data": {
+    "weight": 75,
+    "source": "C14F5.5",
+    "target": "ENSP00000339007"
+  },
+  "removed": false,
+  "selectable": true,
+  "classes": "orthology",
+  "grabbable": true,
+  "locked": false,
+  "selected": false,
+  "group": "edges"
+},
+  {
+  "data": {
+    "weight": 75,
+    "source": "T04D1.3d",
+    "target": "ENSP00000369981"
+  },
+  "removed": false,
+  "selectable": true,
+  "classes": "orthology",
+  "grabbable": true,
+  "locked": false,
+  "selected": false,
+  "group": "edges"
+},
+  {
+  "data": {
+    "parent": "C02C6.1b",
+    "name": "N",
+    "weight": 75,
+    "id": "n-term-1"
+  },
+  "removed": false,
+  "selectable": true,
+  "classes": "species1 terminus",
+  "grabbable": true,
+  "position": {
+    "x": -150,
+    "y": -25
+  },
+  "locked": false,
+  "selected": false,
+  "group": "nodes"
+},
+  {
+  "data": {
+    "parent": "C02C6.1b",
+    "name": "C",
+    "weight": 75,
+    "id": "c-term-1"
+  },
+  "removed": false,
+  "selectable": true,
+  "classes": "species1 terminus",
+  "grabbable": true,
+  "position": {
+    "x": -150,
+    "y": -35
+  },
+  "locked": false,
+  "selected": false,
+  "group": "nodes"
+},
+  {
+  "data": {
+    "parent": "ENSP00000362014",
+    "name": "N",
+    "weight": 75,
+    "id": "n-term-2"
+  },
+  "removed": false,
+  "selectable": true,
+  "classes": "species2 terminus",
+  "grabbable": true,
+  "position": {
+    "x": 150,
+    "y": 50
+  },
+  "locked": false,
+  "selected": false,
+  "group": "nodes"
+},
+  {
+  "data": {
+    "parent": "ENSP00000362014",
+    "name": "C",
+    "weight": 75,
+    "id": "c-term-2"
+  },
+  "removed": false,
+  "selectable": true,
+  "classes": "species2 terminus",
+  "grabbable": true,
+  "position": {
+    "x": 150,
+    "y": -50
+  },
+  "locked": false,
+  "selected": false,
+  "group": "nodes"
+},
+  {
+  "data": {
+    "name": "Unmatched 1",
+    "weight": 75,
+    "id": "Unmatched 1"
+  },
+  "removed": false,
+  "selectable": true,
+  "classes": "container",
+  "grabbable": true,
+  "position": {
+    "x": 0,
+    "y": 0
+  },
+  "locked": false,
+  "selected": false,
+  "group": "nodes"
+},
+  {
+  "data": {
+    "name": "Unmatchable 1",
+    "weight": 75,
+    "id": "Unmatchable 1"
+  },
+  "removed": false,
+  "selectable": true,
+  "classes": "container",
+  "grabbable": true,
+  "position": {
+    "x": 0,
+    "y": 0
+  },
+  "locked": false,
+  "selected": false,
+  "group": "nodes"
+},
+  {
+  "data": {
+    "name": "Unmatched 2",
+    "weight": 75,
+    "id": "Unmatched 2"
+  },
+  "removed": false,
+  "selectable": true,
+  "classes": "container",
+  "grabbable": true,
+  "position": {
+    "x": 0,
+    "y": 0
+  },
+  "locked": false,
+  "selected": false,
+  "group": "nodes"
+},
+  {
+  "data": {
+    "name": "Unmatchable 2",
+    "weight": 75,
+    "id": "Unmatchable 2"
+  },
+  "removed": false,
+  "selectable": true,
+  "classes": "container",
+  "grabbable": true,
+  "position": {
+    "x": 0,
+    "y": 0
+  },
+  "locked": false,
+  "selected": false,
+  "group": "nodes"
+},
+  {
+  "data": {
+    "parent": "Interologs",
+    "num_neighbours": 25,
+    "partners": ["ENSP00000339007"],
+    "name": "SEM-5",
+    "length": 228,
+    "weight": 75,
+    "neighbours": "ALX-1, ATN-1, B0286.3, C11E4.6, DYN-1, ECH-6, EVA-1, F54D5.15, F54D5.5, FRM-1...",
+    "id": "C14F5.5"
+  },
+  "removed": false,
+  "selectable": true,
+  "classes": "interolog matched protein protein-target species1 validated",
+  "grabbable": true,
+  "position": {
+    "x": -25,
+    "y": -330
+  },
+  "locked": false,
+  "selected": false,
+  "group": "nodes"
+},
+  {
+  "data": {
+    "parent": "Unmatchable 2",
+    "num_neighbours": 101,
+    "name": "NUFIP1",
+    "length": 495,
+    "weight": 75,
+    "neighbours": "ADD2, AMPH, ATP2B2, ATP4A, ATP6V0A1, ATP6V1C1, BIN1, BRCA1, CADM2, CALB2...",
+    "id": "ENSP00000368459"
+  },
+  "removed": false,
+  "selectable": true,
+  "classes": "protein protein-target species2 unmatchable validated",
+  "grabbable": true,
+  "position": {
+    "x": 340,
+    "y": 110
+  },
+  "locked": false,
+  "selected": false,
+  "group": "nodes"
+},
+  {
+  "data": {
+    "parent": "Unmatched 2",
+    "num_neighbours": 33,
+    "name": "FCHO2",
+    "length": 810,
+    "weight": 75,
+    "neighbours": "ACTB, ACTN4, AP2A1, AP2M1, AP2S1, CAPZA2, CLTB, CLTC, DAB2, DBN1...",
+    "id": "ENSP00000393776"
+  },
+  "removed": false,
+  "selectable": true,
+  "classes": "protein protein-target species2 unmatched validated",
+  "grabbable": true,
+  "position": {
+    "x": 280,
+    "y": -170
+  },
+  "locked": false,
+  "selected": false,
+  "group": "nodes"
+},
+  {
+  "data": {
+    "parent": "Unmatched 1",
+    "num_neighbours": 4,
+    "name": "HID-1",
+    "length": 729,
+    "weight": 75,
+    "neighbours": "DYN-1, F28D1.2, MIG-39, WWP-1",
+    "id": "K02E10.2a"
+  },
+  "removed": false,
+  "selectable": true,
+  "classes": "protein protein-target species1 unmatched validated",
+  "grabbable": true,
+  "position": {
+    "x": -250,
+    "y": -110
+  },
+  "locked": false,
+  "selected": false,
+  "group": "nodes"
+},
+  {
+  "data": {
+    "parent": "Unmatched 2",
+    "num_neighbours": 1857,
+    "name": "NTRK1",
+    "length": 796,
+    "weight": 75,
+    "neighbours": "AAAS, AAK1, AARS, AARS2, AASDHPPT, ABCB1, ABCB7, ABCC1, ABCD1, ABCD2...",
+    "id": "ENSP00000431418"
+  },
+  "removed": false,
+  "selectable": true,
+  "classes": "protein protein-target species2 unmatched validated",
+  "grabbable": true,
+  "position": {
+    "x": 370,
+    "y": -140
+  },
+  "locked": false,
+  "selected": false,
+  "group": "nodes"
+},
+  {
+  "data": {
+    "parent": "Interologs",
+    "num_neighbours": 127,
+    "partners": ["T04D1.3d"],
+    "name": "SH3GL2",
+    "length": 352,
+    "weight": 75,
+    "neighbours": "ACTG1, ADAM15, ADAM19, ADAM9, ADRA2A, ADRA2B, ADRB1, ADRB3, AMPH, AP1B1...",
+    "id": "ENSP00000369981"
+  },
+  "removed": false,
+  "selectable": true,
+  "classes": "interolog matched protein protein-target species2 validated",
+  "grabbable": true,
+  "position": {
+    "x": 25,
+    "y": -360
+  },
+  "locked": false,
+  "selected": false,
+  "group": "nodes"
+},
+  {
+  "data": {
+    "parent": "Unmatched 2",
+    "num_neighbours": 19,
+    "name": "CDKAL1",
+    "length": 579,
+    "weight": 75,
+    "neighbours": "BPIFB1, CIAO1, DNM1, EVC2, FAF2, FAM96B, LCK, LMNA, MMS19, NEK8...",
+    "id": "ENSP00000274695"
+  },
+  "removed": false,
+  "selectable": true,
+  "classes": "protein protein-target species2 unmatched validated",
+  "grabbable": true,
+  "position": {
+    "x": 280,
+    "y": -200
+  },
+  "locked": false,
+  "selected": false,
+  "group": "nodes"
+},
+  {
+  "data": {
+    "parent": "Unmatched 2",
+    "num_neighbours": 54,
+    "name": "BIN1",
+    "length": 593,
+    "weight": 75,
+    "neighbours": "ACTA1, AMPH, AP2A1, AP2A2, APP, APPL1, BIN1, BIN2, CACNA1C, CALM1...",
+    "id": "ENSP00000316779"
+  },
+  "removed": false,
+  "selectable": true,
+  "classes": "protein protein-target species2 unmatched validated",
+  "grabbable": true,
+  "position": {
+    "x": 430,
+    "y": -230
+  },
+  "locked": false,
+  "selected": false,
+  "group": "nodes"
+},
+  {
+  "data": {
+    "parent": "Unmatchable 2",
+    "num_neighbours": 29,
+    "name": "CABIN1",
+    "length": 2220,
+    "weight": 75,
+    "neighbours": "AMPH, AP1B1, ASF1A, ASF1B, BCL6, BORCS8-MEF2B, CAMK4, CDX1, DNM1, EAF1...",
+    "id": "ENSP00000263119"
+  },
+  "removed": false,
+  "selectable": true,
+  "classes": "protein protein-target species2 unmatchable validated",
+  "grabbable": true,
+  "position": {
+    "x": 310,
+    "y": 50
+  },
+  "locked": false,
+  "selected": false,
+  "group": "nodes"
+},
+  {
+  "data": {
+    "parent": "Unmatched 2",
+    "num_neighbours": 140,
+    "name": "TIMM50",
+    "length": 456,
+    "weight": 75,
+    "neighbours": "ABI1, ABI2, ADRB2, AKTIP, AMFR, ARAF, ARL2, BMI1, BMPR1A, BPIFB1...",
+    "id": "ENSP00000318115"
+  },
+  "removed": false,
+  "selectable": true,
+  "classes": "protein protein-target species2 unmatched validated",
+  "grabbable": true,
+  "position": {
+    "x": 370,
+    "y": -110
+  },
+  "locked": false,
+  "selected": false,
+  "group": "nodes"
+},
+  {
+  "data": {
+    "parent": "Unmatchable 2",
+    "num_neighbours": 60,
+    "name": "NOS3",
+    "length": 1203,
+    "weight": 75,
+    "neighbours": "A2M, ACTB, ACTN2, ACTN4, ADRB3, AKT1, APOE, APP, ATP2B1, ATP2B2...",
+    "id": "ENSP00000297494"
+  },
+  "removed": false,
+  "selectable": true,
+  "classes": "protein protein-target species2 unmatchable validated",
+  "grabbable": true,
+  "position": {
+    "x": 310,
+    "y": 110
+  },
+  "locked": false,
+  "selected": false,
+  "group": "nodes"
+},
+  {
+  "data": {
+    "parent": "Unmatched 2",
+    "num_neighbours": 106,
+    "name": "MED31",
+    "length": 131,
+    "weight": 75,
+    "neighbours": "AES, AGR2, ANXA7, AP4M1, ASCC2, BIRC5, CACNB4, CCNC, CCT7, CDK19...",
+    "id": "ENSP00000225728"
+  },
+  "removed": false,
+  "selectable": true,
+  "classes": "protein protein-target species2 unmatched validated",
+  "grabbable": true,
+  "position": {
+    "x": 400,
+    "y": -170
+  },
+  "locked": false,
+  "selected": false,
+  "group": "nodes"
+},
+  {
+  "data": {
+    "parent": "Interologs",
+    "num_neighbours": 49,
+    "partners": ["F09E10.8a"],
+    "name": "FNBP1",
+    "length": 617,
+    "weight": 75,
+    "neighbours": "ABL1, AKAP9, ANKFY1, AP2A2, ARHGAP17, ATG3, ATG4B, ATG7, CALM1, DAAM1...",
+    "id": "ENSP00000413625"
+  },
+  "removed": false,
+  "selectable": true,
+  "classes": "interolog matched protein protein-target species2 validated",
+  "grabbable": true,
+  "position": {
+    "x": 25,
+    "y": -90
+  },
+  "locked": false,
+  "selected": false,
+  "group": "nodes"
+},
+  {
+  "data": {
+    "parent": "Interologs",
+    "num_neighbours": 65,
+    "partners": ["ENSP00000370719"],
+    "name": "ITSN-1",
+    "length": 1087,
+    "weight": 75,
+    "neighbours": "ALX-1, APA-2, APB-1, B0286.3, C06A6.2, C08F8.2, C11E4.6, C12D8.1, CED-6, CHC-1...",
+    "id": "Y116A8C.36d.1"
+  },
+  "removed": false,
+  "selectable": true,
+  "classes": "interolog matched protein protein-target species1 validated",
+  "grabbable": true,
+  "position": {
+    "x": -25,
+    "y": -30
+  },
+  "locked": false,
+  "selected": false,
+  "group": "nodes"
+},
+  {
+  "data": {
+    "parent": "Unmatched 2",
+    "num_neighbours": 53,
+    "name": "AMPH",
+    "length": 695,
+    "weight": 75,
+    "neighbours": "AMPH, AP1B1, AP1G1, AP2A1, AP2A2, AP2B1, AP2M1, AP2S1, ARL16, BIN1...",
+    "id": "ENSP00000348602"
+  },
+  "removed": false,
+  "selectable": true,
+  "classes": "protein protein-target species2 unmatched validated",
+  "grabbable": true,
+  "position": {
+    "x": 310,
+    "y": -230
+  },
+  "locked": false,
+  "selected": false,
+  "group": "nodes"
+},
+  {
+  "data": {
+    "parent": "Unmatched 1",
+    "num_neighbours": 30,
+    "name": "VAV-1",
+    "length": 1007,
+    "weight": 75,
+    "neighbours": "AJM-1, ASP-3, CED-6, COL-117, DYN-1, EEF-1A.1, EGG-1, F09F7.5, HIP-1, IFFB-1...",
+    "id": "C35B8.2b"
+  },
+  "removed": false,
+  "selectable": true,
+  "classes": "protein protein-target species1 unmatched validated",
+  "grabbable": true,
+  "position": {
+    "x": -310,
+    "y": -50
+  },
+  "locked": false,
+  "selected": false,
+  "group": "nodes"
+},
+  {
+  "data": {
+    "parent": "Unmatched 2",
+    "num_neighbours": 69,
+    "name": "TBC1D15",
+    "length": 691,
+    "weight": 75,
+    "neighbours": "ALDH3A2, ANKFY1, ATF6B, ATG3, ATG4B, ATG7, CALCOCO1, CAMLG, CCDC121, CCDC8...",
+    "id": "ENSP00000448182"
+  },
+  "removed": false,
+  "selectable": true,
+  "classes": "protein protein-target species2 unmatched validated",
+  "grabbable": true,
+  "position": {
+    "x": 340,
+    "y": -110
+  },
+  "locked": false,
+  "selected": false,
+  "group": "nodes"
+},
+  {
+  "data": {
+    "parent": "Unmatched 1",
+    "num_neighbours": 16,
+    "name": "SMA-1",
+    "length": 4166,
+    "weight": 75,
+    "neighbours": "ALP-1, C09G1.4, C49H3.6, DYN-1, EPS-8, K02C4.5, LEC-1, PAT-12, PQN-11, R02F2.5...",
+    "id": "R31.1a"
+  },
+  "removed": false,
+  "selectable": true,
+  "classes": "protein protein-target species1 unmatched validated",
+  "grabbable": true,
+  "position": {
+    "x": -280,
+    "y": -80
+  },
+  "locked": false,
+  "selected": false,
+  "group": "nodes"
+},
+  {
+  "data": {
+    "parent": "Unmatched 2",
+    "num_neighbours": 356,
+    "name": "ABL1",
+    "length": 1149,
+    "weight": 75,
+    "neighbours": "ABI1, ABI2, ABL1, ABL2, ABR, ACAP1, ACTA1, ADAM15, AHSG, AIRE...",
+    "id": "ENSP00000361423"
+  },
+  "removed": false,
+  "selectable": true,
+  "classes": "protein protein-target species2 unmatched validated",
+  "grabbable": true,
+  "position": {
+    "x": 250,
+    "y": -230
+  },
+  "locked": false,
+  "selected": false,
+  "group": "nodes"
+},
+  {
+  "data": {
+    "parent": "Unmatched 2",
+    "num_neighbours": 94,
+    "name": "CTTN",
+    "length": 634,
+    "weight": 75,
+    "neighbours": "ABL2, ACD, ACTB, ACTR2, ACTR3, ANKZF1, ARHGAP17, ARPC2, ARPC3, ARPC4...",
+    "id": "ENSP00000365745"
+  },
+  "removed": false,
+  "selectable": true,
+  "classes": "protein protein-target species2 unmatched validated",
+  "grabbable": true,
+  "position": {
+    "x": 340,
+    "y": -200
+  },
+  "locked": false,
+  "selected": false,
+  "group": "nodes"
+},
+  {
+  "data": {
+    "parent": "Unmatched 2",
+    "num_neighbours": 504,
+    "name": "EGR1",
+    "length": 543,
+    "weight": 75,
+    "neighbours": "ABCA1, ABCC12, ABHD2, ABL1, ABLIM2, ACAD9, ADAR, ADK, AFF1, AGL...",
+    "id": "ENSP00000239938"
+  },
+  "removed": false,
+  "selectable": true,
+  "classes": "protein protein-target species2 unmatched validated",
+  "grabbable": true,
+  "position": {
+    "x": 430,
+    "y": -200
+  },
+  "locked": false,
+  "selected": false,
+  "group": "nodes"
+},
+  {
+  "data": {
+    "parent": "Unmatchable 2",
+    "num_neighbours": 74,
+    "name": "DNAAF2",
+    "length": 837,
+    "weight": 75,
+    "neighbours": "AIP, ALOXE3, ALS2, AMPH, APP, ARL8B, ATP2B2, ATP4A, ATP6V1C1, CACNA2D1...",
+    "id": "ENSP00000298292"
+  },
+  "removed": false,
+  "selectable": true,
+  "classes": "protein protein-target species2 unmatchable validated",
+  "grabbable": true,
+  "position": {
+    "x": 280,
+    "y": 80
+  },
+  "locked": false,
+  "selected": false,
+  "group": "nodes"
+},
+  {
+  "data": {
+    "parent": "Unmatched 2",
+    "num_neighbours": 127,
+    "name": "CDK5",
+    "length": 292,
+    "weight": 75,
+    "neighbours": "AATK, ABL1, ACTN1, ALAS1, AMPH, APP, AURKC, BAG6, C2CD5, CABLES1...",
+    "id": "ENSP00000419782"
+  },
+  "removed": false,
+  "selectable": true,
+  "classes": "protein protein-target species2 unmatched validated",
+  "grabbable": true,
+  "position": {
+    "x": 250,
+    "y": -200
+  },
+  "locked": false,
+  "selected": false,
+  "group": "nodes"
+},
+  {
+  "data": {
+    "parent": "Interologs",
+    "num_neighbours": 193,
+    "partners": ["ZK470.5a"],
+    "name": "NCK2",
+    "length": 380,
+    "weight": 75,
+    "neighbours": "ABI1, ABI2, ABI3, ABL2, AFDN, ANKRD55, ARAP1, ARHGAP32, ARHGEF6, ASAP1...",
+    "id": "ENSP00000233154"
+  },
+  "removed": false,
+  "selectable": true,
+  "classes": "interolog matched protein protein-target species2 validated",
+  "grabbable": true,
+  "position": {
+    "x": 25,
+    "y": -270
+  },
+  "locked": false,
+  "selected": false,
+  "group": "nodes"
+},
+  {
+  "data": {
+    "parent": "Unmatchable 2",
+    "num_neighbours": 97,
+    "name": "CEP126",
+    "length": 1117,
+    "weight": 75,
+    "neighbours": "AIMP2, AKTIP, ARIH2, ATP6V1F, ATRX, BARD1, BMI1, BRD1, BRD7, C11ORF58...",
+    "id": "ENSP00000263468"
+  },
+  "removed": false,
+  "selectable": true,
+  "classes": "protein protein-target species2 unmatchable validated",
+  "grabbable": true,
+  "position": {
+    "x": 340,
+    "y": 50
+  },
+  "locked": false,
+  "selected": false,
+  "group": "nodes"
+},
+  {
+  "data": {
+    "parent": "Unmatched 2",
+    "num_neighbours": 283,
+    "name": "ARRB1",
+    "length": 418,
+    "weight": 75,
+    "neighbours": "AC011498.1, AC024270.1, ACIN1, ACTA1, ADH6, ADRA1A, ADRB1, AGTR1, AKT1, ALDH4A1...",
+    "id": "ENSP00000409581"
+  },
+  "removed": false,
+  "selectable": true,
+  "classes": "protein protein-target species2 unmatched validated",
+  "grabbable": true,
+  "position": {
+    "x": 400,
+    "y": -230
+  },
+  "locked": false,
+  "selected": false,
+  "group": "nodes"
+},
+  {
+  "data": {
+    "parent": "Interologs",
+    "num_neighbours": 7,
+    "partners": [
+      "ENSP00000376024",
+      "ENSP00000311427"
+    ],
+    "name": "LST-4",
+    "length": 592,
+    "weight": 75,
+    "neighbours": "ABL-1, DYN-1, FIGL-1, LST-4, SRC-1, UNC-26, WSP-1",
+    "id": "Y37A1B.2b"
+  },
+  "removed": false,
+  "selectable": true,
+  "classes": "interolog matched protein protein-target species1 validated",
+  "grabbable": true,
+  "position": {
+    "x": -25,
+    "y": -450
+  },
+  "locked": false,
+  "selected": false,
+  "group": "nodes"
+},
+  {
+  "data": {
+    "parent": "Unmatched 1",
+    "num_neighbours": 42,
+    "name": "SRC-2",
+    "length": 507,
+    "weight": 75,
+    "neighbours": "AJM-1, ALP-1, C05D10.4, C09G1.4, C11E4.6, C49H3.6, CFIM-2, CRML-1, CYLD-1, DYN-1...",
+    "id": "F49B2.5"
+  },
+  "removed": false,
+  "selectable": true,
+  "classes": "protein protein-target species1 unmatched validated",
+  "grabbable": true,
+  "position": {
+    "x": -250,
+    "y": -80
+  },
+  "locked": false,
+  "selected": false,
+  "group": "nodes"
+},
+  {
+  "data": {
+    "parent": "Unmatchable 2",
+    "num_neighbours": 20,
+    "name": "ASB13",
+    "length": 278,
+    "weight": 75,
+    "neighbours": "CCT8, CUL5, DNM1, DUSP23, ELOB, ELOC, HIF1AN, KRTAP11-1, KRTAP15-1, MARK3...",
+    "id": "ENSP00000350331"
+  },
+  "removed": false,
+  "selectable": true,
+  "classes": "protein protein-target species2 unmatchable validated",
+  "grabbable": true,
+  "position": {
+    "x": 280,
+    "y": 50
+  },
+  "locked": false,
+  "selected": false,
+  "group": "nodes"
+},
+  {
+  "data": {
+    "parent": "Interologs",
+    "num_neighbours": 63,
+    "partners": ["T04D1.3d"],
+    "name": "SH3GL1",
+    "length": 368,
+    "weight": 75,
+    "neighbours": "ADRA2A, ADRA2B, ADRB1, ADRB3, AMPH, ARHGAP1, ARHGAP8, AURKA, AXIN1, AZU1...",
+    "id": "ENSP00000269886"
+  },
+  "removed": false,
+  "selectable": true,
+  "classes": "interolog matched protein protein-target species2 validated",
+  "grabbable": true,
+  "position": {
+    "x": 25,
+    "y": -390
+  },
+  "locked": false,
+  "selected": false,
+  "group": "nodes"
+},
+  {
+  "data": {
+    "parent": "Unmatched 1",
+    "num_neighbours": 43,
+    "name": "WWP-1",
+    "length": 794,
+    "weight": 75,
+    "neighbours": "ARRD-7, C08G5.7, C09G1.4, CIT-1.2, CYB-1, D2013.6, DH11.5, DYN-1, EPS-8, F08G2.4...",
+    "id": "Y65B4BR.4a"
+  },
+  "removed": false,
+  "selectable": true,
+  "classes": "protein protein-target species1 unmatched validated",
+  "grabbable": true,
+  "position": {
+    "x": -280,
+    "y": -50
+  },
+  "locked": false,
+  "selected": false,
+  "group": "nodes"
+},
+  {
+  "data": {
+    "parent": "Interologs",
+    "num_neighbours": 59,
+    "partners": ["Y37A1B.2b"],
+    "name": "SNX9",
+    "length": 595,
+    "weight": 75,
+    "neighbours": "ADAM15, ADAM9, ALDOA, AP1B1, AP2A1, AP2A2, AP2B1, AP2M1, ASAP1, ATRAID...",
+    "id": "ENSP00000376024"
+  },
+  "removed": false,
+  "selectable": true,
+  "classes": "interolog matched protein protein-target species2 validated",
+  "grabbable": true,
+  "position": {
+    "x": 25,
+    "y": -450
+  },
+  "locked": false,
+  "selected": false,
+  "group": "nodes"
+},
+  {
+  "data": {
+    "parent": "Interologs",
+    "num_neighbours": 281,
+    "partners": ["ZK470.5a"],
+    "name": "NCK1",
+    "length": 377,
+    "weight": 75,
+    "neighbours": "ABCG5, ABI1, ABL1, ABL2, ABLIM1, ABLIM2, ABLIM3, ACAP1, ACTB, ACTG1...",
+    "id": "ENSP00000288986"
+  },
+  "removed": false,
+  "selectable": true,
+  "classes": "interolog matched protein protein-target species2 validated",
+  "grabbable": true,
+  "position": {
+    "x": 25,
+    "y": -240
+  },
+  "locked": false,
+  "selected": false,
+  "group": "nodes"
+},
+  {
+  "data": {
+    "parent": "Unmatched 2",
+    "num_neighbours": 2240,
+    "name": "APP",
+    "length": 770,
+    "weight": 75,
+    "neighbours": "A2M, AAK1, AAMDC, AARS2, ABCB7, ABCF1, ABHD10, ABL1, ABLIM1, ABR...",
+    "id": "ENSP00000284981"
+  },
+  "removed": false,
+  "selectable": true,
+  "classes": "protein protein-target species2 unmatched validated",
+  "grabbable": true,
+  "position": {
+    "x": 370,
+    "y": -230
+  },
+  "locked": false,
+  "selected": false,
+  "group": "nodes"
+},
+  {
+  "data": {
+    "parent": "Unmatchable 2",
+    "num_neighbours": 79,
+    "name": "SCN2B",
+    "length": 215,
+    "weight": 75,
+    "neighbours": "ATM, ATR, BZW2, C4A, CAND2, CDS1, CNOT1, COG1, COG2, COG3...",
+    "id": "ENSP00000278947"
+  },
+  "removed": false,
+  "selectable": true,
+  "classes": "protein protein-target species2 unmatchable validated",
+  "grabbable": true,
+  "position": {
+    "x": 250,
+    "y": 140
+  },
+  "locked": false,
+  "selected": false,
+  "group": "nodes"
+},
+  {
+  "data": {
+    "parent": "Unmatchable 2",
+    "num_neighbours": 144,
+    "name": "HAX1",
+    "length": 287,
+    "weight": 75,
+    "neighbours": "ABCB11, ABCC4, ABCE1, AKAP10, AMFR, AMPH, APOD, ATP4A, ATP5B, BDKRB2...",
+    "id": "ENSP00000435088"
+  },
+  "removed": false,
+  "selectable": true,
+  "classes": "protein protein-target species2 unmatchable validated",
+  "grabbable": true,
+  "position": {
+    "x": 310,
+    "y": 80
+  },
+  "locked": false,
+  "selected": false,
+  "group": "nodes"
+},
+  {
+  "data": {
+    "parent": "Unmatched 2",
+    "num_neighbours": 485,
+    "name": "UBE2I",
+    "length": 184,
+    "weight": 75,
+    "neighbours": "AAAS, ADAR, ADD3, AGTRAP, ANXA1, APEX1, APP, AR, ARL13B, ASF1B...",
+    "id": "ENSP00000384361"
+  },
+  "removed": false,
+  "selectable": true,
+  "classes": "protein protein-target species2 unmatched validated",
+  "grabbable": true,
+  "position": {
+    "x": 250,
+    "y": -80
+  },
+  "locked": false,
+  "selected": false,
+  "group": "nodes"
+},
+  {
+  "data": {
+    "parent": "Unmatched 2",
+    "num_neighbours": 25,
+    "name": "MAP3K10",
+    "length": 954,
+    "weight": 75,
+    "neighbours": "ABL2, CDC42, CLTC, COPS2, DLG4, DNM1, GARS, HGS, HPCA, HTT...",
+    "id": "ENSP00000253055"
+  },
+  "removed": false,
+  "selectable": true,
+  "classes": "protein protein-target species2 unmatched validated",
+  "grabbable": true,
+  "position": {
+    "x": 370,
+    "y": -170
+  },
+  "locked": false,
+  "selected": false,
+  "group": "nodes"
+},
+  {
+  "data": {
+    "parent": "Unmatched 2",
+    "num_neighbours": 79,
+    "name": "UBASH3A",
+    "length": 661,
+    "weight": 75,
+    "neighbours": "ABCE1, AIFM1, ALK, ARRDC3, BCAR3, C9ORF24, CBL, CBLB, CBS, CRK...",
+    "id": "ENSP00000317327"
+  },
+  "removed": false,
+  "selectable": true,
+  "classes": "protein protein-target species2 unmatched validated",
+  "grabbable": true,
+  "position": {
+    "x": 430,
+    "y": -110
+  },
+  "locked": false,
+  "selected": false,
+  "group": "nodes"
+},
+  {
+  "data": {
+    "num_neighbours": 67,
+    "name": "DNM1",
+    "length": 864,
+    "weight": 75,
+    "neighbours": "ABL1, ADAM2, AMPH, AP2A1, APP, ARRB1, ASAP1, ASB13, BIN1, CABIN1...",
+    "id": "ENSP00000362014"
+  },
+  "removed": false,
+  "selectable": true,
+  "classes": "queryProtein species2",
+  "grabbable": true,
+  "position": {
+    "x": 0,
+    "y": 0
+  },
+  "locked": false,
+  "selected": false,
+  "group": "nodes"
+},
+  {
+  "data": {
+    "parent": "Unmatched 2",
+    "num_neighbours": 17,
+    "name": "PIN4",
+    "length": 156,
+    "weight": 75,
+    "neighbours": "ASCC2, CEP72, CHST15, DNM1, EGFR, EPB41, ERH, EZH2, FAM9B, FATE1...",
+    "id": "ENSP00000362773"
+  },
+  "removed": false,
+  "selectable": true,
+  "classes": "protein protein-target species2 unmatched validated",
+  "grabbable": true,
+  "position": {
+    "x": 430,
+    "y": -140
+  },
+  "locked": false,
+  "selected": false,
+  "group": "nodes"
+},
+  {
+  "data": {
+    "parent": "Interologs",
+    "num_neighbours": 137,
+    "partners": ["Y116A8C.36d.1"],
+    "name": "ITSN1",
+    "length": 1721,
+    "weight": 75,
+    "neighbours": "AGFG1, AGFG2, ALOX5, AMOTL1, AMPH, AP2B1, AP2M1, AP2S1, ARF6, ARFIP2...",
+    "id": "ENSP00000370719"
+  },
+  "removed": false,
+  "selectable": true,
+  "classes": "interolog matched protein protein-target species2 validated",
+  "grabbable": true,
+  "position": {
+    "x": 25,
+    "y": -30
+  },
+  "locked": false,
+  "selected": false,
+  "group": "nodes"
+},
+  {
+  "data": {
+    "parent": "Unmatchable 1",
+    "num_neighbours": 19,
+    "name": "GEI-18",
+    "length": 304,
+    "weight": 75,
+    "neighbours": "C09G1.4, C49H3.6, CEH-17, DYN-1, EGL-9, EHS-1, F34D10.4, FIGL-1, LIN-10, M57.1...",
+    "id": "Y37A1B.15"
+  },
+  "removed": false,
+  "selectable": true,
+  "classes": "protein protein-target species1 unmatchable validated",
+  "grabbable": true,
+  "position": {
+    "x": -280,
+    "y": 50
+  },
+  "locked": false,
+  "selected": false,
+  "group": "nodes"
+},
+  {
+  "data": {
+    "parent": "Unmatchable 2",
+    "num_neighbours": 26,
+    "name": "LYPD6",
+    "length": 171,
+    "weight": 75,
+    "neighbours": "CELSR1, CELSR2, CKAP4, DNM1, DNM2, ELOVL4, FZD2, LCLAT1, LMBR1, LMF1...",
+    "id": "ENSP00000334463"
+  },
+  "removed": false,
+  "selectable": true,
+  "classes": "protein protein-target species2 unmatchable validated",
+  "grabbable": true,
+  "position": {
+    "x": 280,
+    "y": 110
+  },
+  "locked": false,
+  "selected": false,
+  "group": "nodes"
+},
+  {
+  "data": {
+    "parent": "Interologs",
+    "num_neighbours": 45,
+    "partners": [
+      "ENSP00000269886",
+      "ENSP00000369981"
+    ],
+    "name": "UNC-57",
+    "length": 381,
+    "weight": 75,
+    "neighbours": "ABHD-14, ACT-4, AJM-1, ALX-1, ANI-2, ATHP-1, BAR-1, BCL-11, C39D10.7, CAS-1...",
+    "id": "T04D1.3d"
+  },
+  "removed": false,
+  "selectable": true,
+  "classes": "interolog matched protein protein-target species1 validated",
+  "grabbable": true,
+  "position": {
+    "x": -25,
+    "y": -390
+  },
+  "locked": false,
+  "selected": false,
+  "group": "nodes"
+},
+  {
+  "data": {
+    "parent": "Interologs",
+    "num_neighbours": 31,
+    "partners": [
+      "ENSP00000233154",
+      "ENSP00000288986"
+    ],
+    "name": "NCK-1",
+    "length": 395,
+    "weight": 75,
+    "neighbours": "ALX-1, ANI-3, B0303.7, BCL-11, C09G1.4, C34C12.4, CDH-4, CPNA-1, CSN-5, DYN-1...",
+    "id": "ZK470.5a"
+  },
+  "removed": false,
+  "selectable": true,
+  "classes": "interolog matched protein protein-target species1 validated",
+  "grabbable": true,
+  "position": {
+    "x": -25,
+    "y": -270
+  },
+  "locked": false,
+  "selected": false,
+  "group": "nodes"
+},
+  {
+  "data": {
+    "parent": "Unmatched 2",
+    "num_neighbours": 97,
+    "name": "MOB4",
+    "length": 225,
+    "weight": 75,
+    "neighbours": "ALDH18A1, ARHGEF15, ARRB2, B9D2, BARD1, BICD2, BRK1, CAB39, CACYBP, CALM1...",
+    "id": "ENSP00000315702"
+  },
+  "removed": false,
+  "selectable": true,
+  "classes": "protein protein-target species2 unmatched validated",
+  "grabbable": true,
+  "position": {
+    "x": 430,
+    "y": -170
+  },
+  "locked": false,
+  "selected": false,
+  "group": "nodes"
+},
+  {
+  "data": {
+    "parent": "Unmatched 1",
+    "num_neighbours": 24,
+    "name": "B0303.7",
+    "length": 493,
+    "weight": 75,
+    "neighbours": "ABI-1, ADM-2, ALX-1, B0286.3, C09G1.4, CED-6, DHS-25, DLAT-1, DYB-1, DYN-1...",
+    "id": "B0303.7a"
+  },
+  "removed": false,
+  "selectable": true,
+  "classes": "protein protein-target species1 unmatched validated",
+  "grabbable": true,
+  "position": {
+    "x": -310,
+    "y": -110
+  },
+  "locked": false,
+  "selected": false,
+  "group": "nodes"
+},
+  {
+  "data": {
+    "parent": "Unmatched 2",
+    "num_neighbours": 42,
+    "name": "SLC39A9",
+    "length": 307,
+    "weight": 75,
+    "neighbours": "ABCB8, APOOL, B4GALT5, BDH1, CANT1, CD44, CDC23, CREB3L1, CREB3L3, DNAJC13...",
+    "id": "ENSP00000336887"
+  },
+  "removed": false,
+  "selectable": true,
+  "classes": "protein protein-target species2 unmatched validated",
+  "grabbable": true,
+  "position": {
+    "x": 310,
+    "y": -110
+  },
+  "locked": false,
+  "selected": false,
+  "group": "nodes"
+},
+  {
+  "data": {
+    "parent": "Unmatched 2",
+    "num_neighbours": 257,
+    "name": "SH3KBP1",
+    "length": 665,
+    "weight": 75,
+    "neighbours": "ABL1, ACTC1, ACTN4, ANAPC4, ANAPC5, ANAPC7, ANLN, AP2A1, AP2A2, AP2B1...",
+    "id": "ENSP00000380921"
+  },
+  "removed": false,
+  "selectable": true,
+  "classes": "protein protein-target species2 unmatched validated",
+  "grabbable": true,
+  "position": {
+    "x": 280,
+    "y": -110
+  },
+  "locked": false,
+  "selected": false,
+  "group": "nodes"
+},
+  {
+  "data": {
+    "parent": "Unmatched 2",
+    "num_neighbours": 201,
+    "name": "DNM2",
+    "length": 870,
+    "weight": 75,
+    "neighbours": "ABCG1, ABL1, AHI1, AMPH, AP1B1, AP1G1, AP1M1, AP1M2, AP1S1, AP1S2...",
+    "id": "ENSP00000347890"
+  },
+  "removed": false,
+  "selectable": true,
+  "classes": "protein protein-target species2 unmatched validated",
+  "grabbable": true,
+  "position": {
+    "x": 370,
+    "y": -200
+  },
+  "locked": false,
+  "selected": false,
+  "group": "nodes"
+},
+  {
+  "data": {
+    "num_neighbours": 21,
+    "name": "DYN-1",
+    "length": 838,
+    "weight": 75,
+    "neighbours": "B0303.7, C49G7.1, CTN-1, DYN-1, GEI-18, HID-1, ITSN-1, LST-4, NCK-1, PRX-13...",
+    "id": "C02C6.1b"
+  },
+  "removed": false,
+  "selectable": true,
+  "classes": "queryProtein species1",
+  "grabbable": true,
+  "position": {
+    "x": 0,
+    "y": 0
+  },
+  "locked": false,
+  "selected": false,
+  "group": "nodes"
+},
+  {
+  "data": {
+    "parent": "Interologs",
+    "num_neighbours": 47,
+    "partners": ["F45E1.7b"],
+    "name": "PACSIN1",
+    "length": 444,
+    "weight": 75,
+    "neighbours": "AMPH, ANKRD24, APBB1IP, ARHGAP17, ASAP1, CARS, COBL, COBLL1, CST1, CYFIP2...",
+    "id": "ENSP00000244458"
+  },
+  "removed": false,
+  "selectable": true,
+  "classes": "interolog matched protein protein-target species2 validated",
+  "grabbable": true,
+  "position": {
+    "x": 25,
+    "y": -120
+  },
+  "locked": false,
+  "selected": false,
+  "group": "nodes"
+},
+  {
+  "data": {
+    "parent": "Unmatchable 2",
+    "num_neighbours": 227,
+    "name": "IQCB1",
+    "length": 598,
+    "weight": 75,
+    "neighbours": "ACTB, ADAM32, AHI1, ALB, ANGPT2, ANKAR, ANXA2, ASPH, ATP1A1, ATP5A1...",
+    "id": "ENSP00000311505"
+  },
+  "removed": false,
+  "selectable": true,
+  "classes": "protein protein-target species2 unmatchable validated",
+  "grabbable": true,
+  "position": {
+    "x": 250,
+    "y": 110
+  },
+  "locked": false,
+  "selected": false,
+  "group": "nodes"
+},
+  {
+  "data": {
+    "parent": "Interologs",
+    "num_neighbours": 24,
+    "partners": ["Y37A1B.2b"],
+    "name": "SNX33",
+    "length": 574,
+    "weight": 75,
+    "neighbours": "ACTB, ADAM15, CD44, DNM1, DNM2, DPPA4, FASLG, GLI1, GPR156, HNRNPK...",
+    "id": "ENSP00000311427"
+  },
+  "removed": false,
+  "selectable": true,
+  "classes": "interolog matched protein protein-target species2 validated",
+  "grabbable": true,
+  "position": {
+    "x": 25,
+    "y": -180
+  },
+  "locked": false,
+  "selected": false,
+  "group": "nodes"
+},
+  {
+  "data": {
+    "parent": "Unmatched 2",
+    "num_neighbours": 185,
+    "name": "EPS15",
+    "length": 896,
+    "weight": 75,
+    "neighbours": "ABL1, ACTB, AGFG1, AGFG2, ANLN, AP1B1, AP1G1, AP2A1, AP2A2, AP2B1...",
+    "id": "ENSP00000360798"
+  },
+  "removed": false,
+  "selectable": true,
+  "classes": "protein protein-target species2 unmatched validated",
+  "grabbable": true,
+  "position": {
+    "x": 250,
+    "y": -170
+  },
+  "locked": false,
+  "selected": false,
+  "group": "nodes"
+},
+  {
+  "data": {
+    "parent": "Interologs",
+    "num_neighbours": 37,
+    "partners": ["ENSP00000387204"],
+    "name": "SMO-1",
+    "length": 91,
+    "weight": 75,
+    "neighbours": "ADD-2, ATN-1, BRD-1, C14E2.1, C18B2.5, D2085.3, DLC-1, DYN-1, EGL-9, EME-1...",
+    "id": "K12C11.2"
+  },
+  "removed": false,
+  "selectable": true,
+  "classes": "interolog matched protein protein-target species1 validated",
+  "grabbable": true,
+  "position": {
+    "x": -25,
+    "y": -420
+  },
+  "locked": false,
+  "selected": false,
+  "group": "nodes"
+},
+  {
+  "data": {
+    "parent": "Interologs",
+    "num_neighbours": 430,
+    "partners": ["Y92H12A.1b"],
+    "name": "SRC",
+    "length": 542,
+    "weight": 75,
+    "neighbours": "ABCE1, ABI1, ABL1, ABL2, ABLIM1, ABLIM2, ABLIM3, ACAP1, ACBD7, ACTA1...",
+    "id": "ENSP00000362659"
+  },
+  "removed": false,
+  "selectable": true,
+  "classes": "interolog matched protein protein-target species2 validated",
+  "grabbable": true,
+  "position": {
+    "x": 25,
+    "y": -60
+  },
+  "locked": false,
+  "selected": false,
+  "group": "nodes"
+},
+  {
+  "data": {
+    "parent": "Unmatched 2",
+    "num_neighbours": 37,
+    "name": "MYO1E",
+    "length": 1108,
+    "weight": 75,
+    "neighbours": "ACTB, ANLN, ARL14EP, CALML3, CAPZA2, CBL, CUL1, DBN1, DNM1, DNM2...",
+    "id": "ENSP00000288235"
+  },
+  "removed": false,
+  "selectable": true,
+  "classes": "protein protein-target species2 unmatched validated",
+  "grabbable": true,
+  "position": {
+    "x": 250,
+    "y": -140
+  },
+  "locked": false,
+  "selected": false,
+  "group": "nodes"
+},
+  {
+  "data": {
+    "parent": "Unmatchable 1",
+    "num_neighbours": 7,
+    "name": "C49G7.1",
+    "length": 611,
+    "weight": 75,
+    "neighbours": "C05C8.7, DYN-1, F33E11.3, F54B11.5, MUP-2, UNC-23, Y57G11C.9",
+    "id": "C49G7.1"
+  },
+  "removed": false,
+  "selectable": true,
+  "classes": "protein protein-target species1 unmatchable validated",
+  "grabbable": true,
+  "position": {
+    "x": -310,
+    "y": 50
+  },
+  "locked": false,
+  "selected": false,
+  "group": "nodes"
+},
+  {
+  "data": {
+    "parent": "Unmatched 1",
+    "num_neighbours": 31,
+    "name": "PRX-13",
+    "length": 330,
+    "weight": 75,
+    "neighbours": "ABI-1, ALX-1, ATHP-1, BTBD-10, C09G1.4, C49H3.6, DYN-1, EHS-1, EPS-8, F43B10.1...",
+    "id": "F32A5.6"
+  },
+  "removed": false,
+  "selectable": true,
+  "classes": "protein protein-target species1 unmatched validated",
+  "grabbable": true,
+  "position": {
+    "x": -310,
+    "y": -80
+  },
+  "locked": false,
+  "selected": false,
+  "group": "nodes"
+},
+  {
+  "data": {
+    "parent": "Unmatched 2",
+    "num_neighbours": 129,
+    "name": "DYRK1A",
+    "length": 763,
+    "weight": 75,
+    "neighbours": "ABCD3, AMPH, APP, ARHGEF7, ATXN2L, BARD1, BTRC, BUB3, C10ORF71, C1ORF116...",
+    "id": "ENSP00000381932"
+  },
+  "removed": false,
+  "selectable": true,
+  "classes": "protein protein-target species2 unmatched validated",
+  "grabbable": true,
+  "position": {
+    "x": 400,
+    "y": -200
+  },
+  "locked": false,
+  "selected": false,
+  "group": "nodes"
+},
+  {
+  "data": {
+    "parent": "Unmatched 2",
+    "num_neighbours": 17,
+    "name": "ADAM2",
+    "length": 735,
+    "weight": 75,
+    "neighbours": "ADAM20, ADAM21, ADAM30, ADAMTS2, ASPHD2, B4GALT1, C6ORF120, CLGN, CRYAB, DNM1...",
+    "id": "ENSP00000265708"
+  },
+  "removed": false,
+  "selectable": true,
+  "classes": "protein protein-target species2 unmatched validated",
+  "grabbable": true,
+  "position": {
+    "x": 280,
+    "y": -230
+  },
+  "locked": false,
+  "selected": false,
+  "group": "nodes"
+},
+  {
+  "data": {
+    "parent": "Interologs",
+    "num_neighbours": 216,
+    "partners": ["K12C11.2"],
+    "name": "SUMO1",
+    "length": 146,
+    "weight": 75,
+    "neighbours": "AHRR, AR, ATF2, ATXN1, ATXN3, ATXN7, BCL11A, BICD2, BIRC3, BLM...",
+    "id": "ENSP00000387204"
+  },
+  "removed": false,
+  "selectable": true,
+  "classes": "interolog matched protein protein-target species2 validated",
+  "grabbable": true,
+  "position": {
+    "x": 25,
+    "y": -420
+  },
+  "locked": false,
+  "selected": false,
+  "group": "nodes"
+},
+  {
+  "data": {
+    "parent": "Unmatchable 2",
+    "num_neighbours": 57,
+    "name": "ASAP1",
+    "length": 1129,
+    "weight": 75,
+    "neighbours": "ABL1, ANAPC7, APC, ARAP3, ARF1, ARF6, ASAP2, ASAP3, C14ORF166, CBL...",
+    "id": "ENSP00000429900"
+  },
+  "removed": false,
+  "selectable": true,
+  "classes": "protein protein-target species2 unmatchable validated",
+  "grabbable": true,
+  "position": {
+    "x": 250,
+    "y": 50
+  },
+  "locked": false,
+  "selected": false,
+  "group": "nodes"
+},
+  {
+  "data": {
+    "parent": "Unmatched 2",
+    "num_neighbours": 4,
+    "name": "LDLRAD3",
+    "length": 345,
+    "weight": 75,
+    "neighbours": "ATP1A3, DNM1, ITCH, NEDD4",
+    "id": "ENSP00000318607"
+  },
+  "removed": false,
+  "selectable": true,
+  "classes": "protein protein-target species2 unmatched validated",
+  "grabbable": true,
+  "position": {
+    "x": 310,
+    "y": -170
+  },
+  "locked": false,
+  "selected": false,
+  "group": "nodes"
+},
+  {
+  "data": {
+    "parent": "Unmatched 2",
+    "num_neighbours": 157,
+    "name": "CLINT1",
+    "length": 643,
+    "weight": 75,
+    "neighbours": "ACTB, AFP, ALDOA, ANLN, AP1B1, AP1G1, AP1S2, AP2A1, AP2A2, AP2B1...",
+    "id": "ENSP00000429824"
+  },
+  "removed": false,
+  "selectable": true,
+  "classes": "protein protein-target species2 unmatched validated",
+  "grabbable": true,
+  "position": {
+    "x": 310,
+    "y": -200
+  },
+  "locked": false,
+  "selected": false,
+  "group": "nodes"
+},
+  {
+  "data": {
+    "parent": "Unmatched 2",
+    "num_neighbours": 202,
+    "name": "AP2A1",
+    "length": 977,
+    "weight": 75,
+    "neighbours": "AAK1, ABCB11, ABL1, ACTB, AHNAK, AMPH, ANLN, AP2B1, AP2M1, AP2S1...",
+    "id": "ENSP00000351926"
+  },
+  "removed": false,
+  "selectable": true,
+  "classes": "protein protein-target species2 unmatched validated",
+  "grabbable": true,
+  "position": {
+    "x": 340,
+    "y": -230
+  },
+  "locked": false,
+  "selected": false,
+  "group": "nodes"
+},
+  {
+  "data": {
+    "parent": "Interologs",
+    "num_neighbours": 75,
+    "partners": ["ENSP00000362659"],
+    "name": "SRC-1",
+    "length": 537,
+    "weight": 75,
+    "neighbours": "ALH-9, ALP-1, ATHP-1, B0286.3, B0336.7, BCL-11, C05D10.4, C09G1.4, C49H3.6, CAS-1...",
+    "id": "Y92H12A.1b"
+  },
+  "removed": false,
+  "selectable": true,
+  "classes": "interolog matched protein protein-target species1 validated",
+  "grabbable": true,
+  "position": {
+    "x": -25,
+    "y": -60
+  },
+  "locked": false,
+  "selected": false,
+  "group": "nodes"
+},
+  {
+  "data": {
+    "parent": "Unmatched 1",
+    "num_neighbours": 4,
+    "name": "CTN-1",
+    "length": 820,
+    "weight": 75,
+    "neighbours": "DYB-1, DYN-1, Y71G12B.27, ZK131.11",
+    "id": "Y23H5A.5a"
+  },
+  "removed": false,
+  "selectable": true,
+  "classes": "protein protein-target species1 unmatched validated",
+  "grabbable": true,
+  "position": {
+    "x": -280,
+    "y": -110
+  },
+  "locked": false,
+  "selected": false,
+  "group": "nodes"
+},
+  {
+  "data": {
+    "parent": "Interologs",
+    "num_neighbours": 26,
+    "partners": ["Y37A1B.17a"],
+    "name": "DNMBP",
+    "length": 1577,
+    "weight": 75,
+    "neighbours": "ACTA1, ARHGAP17, BIN3, BUB1B, CD2AP, CNN1, CYFIP2, DBN1, DNM1, DNMBP...",
+    "id": "ENSP00000315659"
+  },
+  "removed": false,
+  "selectable": true,
+  "classes": "interolog matched protein protein-target species2 validated",
+  "grabbable": true,
+  "position": {
+    "x": 25,
+    "y": -300
+  },
+  "locked": false,
+  "selected": false,
+  "group": "nodes"
+},
+  {
+  "data": {
+    "parent": "Interologs",
+    "num_neighbours": 23,
+    "partners": [
+      "ENSP00000263246",
+      "ENSP00000298838",
+      "ENSP00000244458"
+    ],
+    "name": "SDPN-1",
+    "length": 495,
+    "weight": 75,
+    "neighbours": "B0507.3, C49H3.6, DYN-1, EGL-44, F09F7.5, FBL-1, FIGL-1, FLH-2, LST-1, MDT-8...",
+    "id": "F45E1.7b"
+  },
+  "removed": false,
+  "selectable": true,
+  "classes": "interolog matched protein protein-target species1 validated",
+  "grabbable": true,
+  "position": {
+    "x": -25,
+    "y": -210
+  },
+  "locked": false,
+  "selected": false,
+  "group": "nodes"
+},
+  {
+  "data": {
+    "parent": "Interologs",
+    "num_neighbours": 834,
+    "partners": ["C14F5.5"],
+    "name": "GRB2",
+    "length": 217,
+    "weight": 75,
+    "neighbours": "A2M, ABI1, ABI3, ABI3BP, ABL1, ABL2, AC024270.1, ACAP1, ACKR3, ACTB...",
+    "id": "ENSP00000339007"
+  },
+  "removed": false,
+  "selectable": true,
+  "classes": "interolog matched protein protein-target species2 validated",
+  "grabbable": true,
+  "position": {
+    "x": 25,
+    "y": -330
+  },
+  "locked": false,
+  "selected": false,
+  "group": "nodes"
+},
+  {
+  "data": {
+    "parent": "Unmatchable 2",
+    "num_neighbours": 120,
+    "name": "SH3PXD2A",
+    "length": 1133,
+    "weight": 75,
+    "neighbours": "ADAM15, AFDN, AGAP1, AGL, AMOT, ANKRD34A, BAIAP2L1, CAMSAP2, CBY1, CDC25B...",
+    "id": "ENSP00000358789"
+  },
+  "removed": false,
+  "selectable": true,
+  "classes": "protein protein-target species2 unmatchable validated",
+  "grabbable": true,
+  "position": {
+    "x": 310,
+    "y": 140
+  },
+  "locked": false,
+  "selected": false,
+  "group": "nodes"
+},
+  {
+  "data": {
+    "parent": "Unmatched 2",
+    "num_neighbours": 100,
+    "name": "NME1",
+    "length": 177,
+    "weight": 75,
+    "neighbours": "AHNAK, AP2A1, AP2M1, ARL2, ASB18, AURKA, BMI1, C1QBP, CCND3, CDKN2A...",
+    "id": "ENSP00000013034"
+  },
+  "removed": false,
+  "selectable": true,
+  "classes": "protein protein-target species2 unmatched validated",
+  "grabbable": true,
+  "position": {
+    "x": 280,
+    "y": -140
+  },
+  "locked": false,
+  "selected": false,
+  "group": "nodes"
+},
+  {
+  "data": {
+    "parent": "Interologs",
+    "num_neighbours": 108,
+    "partners": ["F45E1.7b"],
+    "name": "PACSIN3",
+    "length": 424,
+    "weight": 75,
+    "neighbours": "ABCG2, ADAM15, ADAM9, ALDH18A1, ALPP, ANLN, APBB1IP, ASAP1, ATP6AP2, BMPR1A...",
+    "id": "ENSP00000298838"
+  },
+  "removed": false,
+  "selectable": true,
+  "classes": "interolog matched protein protein-target species2 validated",
+  "grabbable": true,
+  "position": {
+    "x": 25,
+    "y": -150
+  },
+  "locked": false,
+  "selected": false,
+  "group": "nodes"
+},
+  {
+  "data": {
+    "parent": "Unmatched 2",
+    "num_neighbours": 3,
+    "name": "NME2",
+    "length": 152,
+    "weight": 75,
+    "neighbours": "DNM1, RORA, RORB",
+    "id": "ENSP00000376886"
+  },
+  "removed": false,
+  "selectable": true,
+  "classes": "protein protein-target species2 unmatched validated",
+  "grabbable": true,
+  "position": {
+    "x": 310,
+    "y": -140
+  },
+  "locked": false,
+  "selected": false,
+  "group": "nodes"
+},
+  {
+  "data": {
+    "parent": "Unmatched 2",
+    "num_neighbours": 23,
+    "name": "TMEM9B",
+    "length": 198,
+    "weight": 75,
+    "neighbours": "ABCA3, ABCB9, ARFGEF2, BIRC2, C1ORF43, CLCN3, CLCN5, CLEC2D, DCAKD, DDX24...",
+    "id": "ENSP00000433361"
+  },
+  "removed": false,
+  "selectable": true,
+  "classes": "protein protein-target species2 unmatched validated",
+  "grabbable": true,
+  "position": {
+    "x": 400,
+    "y": -110
+  },
+  "locked": false,
+  "selected": false,
+  "group": "nodes"
+},
+  {
+  "data": {
+    "parent": "Unmatchable 2",
+    "num_neighbours": 326,
+    "name": "HTT",
+    "length": 3142,
+    "weight": 75,
+    "neighbours": "ACADL, ADD3, AGO2, AKT1, ALDOC, AMFR, AMPD1, AP2A2, APBB2, API5...",
+    "id": "ENSP00000347184"
+  },
+  "removed": false,
+  "selectable": true,
+  "classes": "protein protein-target species2 unmatchable validated",
+  "grabbable": true,
+  "position": {
+    "x": 340,
+    "y": 80
+  },
+  "locked": false,
+  "selected": false,
+  "group": "nodes"
+},
+  {
+  "data": {
+    "parent": "Unmatched 2",
+    "num_neighbours": 308,
+    "name": "LRRK2",
+    "length": 2527,
+    "weight": 75,
+    "neighbours": "ABL1, ABL2, AC136612.1, ACTA2, ACTB, ACTBL2, ACTG2, ACTR2, ACTR3, AGO1...",
+    "id": "ENSP00000298910"
+  },
+  "removed": false,
+  "selectable": true,
+  "classes": "protein protein-target species2 unmatched validated",
+  "grabbable": true,
+  "position": {
+    "x": 340,
+    "y": -170
+  },
+  "locked": false,
+  "selected": false,
+  "group": "nodes"
+},
+  {
+  "data": {
+    "parent": "Interologs",
+    "num_neighbours": 56,
+    "partners": ["ENSP00000315659"],
+    "name": "Y37A1B.17",
+    "length": 1523,
+    "weight": 75,
+    "neighbours": "B0286.3, C05D10.4, C09G1.4, C49H3.6, CFIM-2, CNP-2, CSN-5, DCP-66, DYLT-1, DYN-1...",
+    "id": "Y37A1B.17a"
+  },
+  "removed": false,
+  "selectable": true,
+  "classes": "interolog matched protein protein-target species1 validated",
+  "grabbable": true,
+  "position": {
+    "x": -25,
+    "y": -300
+  },
+  "locked": false,
+  "selected": false,
+  "group": "nodes"
+},
+  {
+  "data": {
+    "parent": "Interologs",
+    "num_neighbours": 36,
+    "partners": ["F45E1.7b"],
+    "name": "PACSIN2",
+    "length": 486,
+    "weight": 75,
+    "neighbours": "APBB1IP, ASAP1, CARS, CDH1, COBL, COBLL1, CYFIP2, DNM1, DNM2, ERP44...",
+    "id": "ENSP00000263246"
+  },
+  "removed": false,
+  "selectable": true,
+  "classes": "interolog matched protein protein-target species2 validated",
+  "grabbable": true,
+  "position": {
+    "x": 25,
+    "y": -210
+  },
+  "locked": false,
+  "selected": false,
+  "group": "nodes"
+},
+  {
+  "data": {
+    "parent": "Unmatched 2",
+    "num_neighbours": 71,
+    "name": "PTK2B",
+    "length": 1009,
+    "weight": 75,
+    "neighbours": "ALG2, ASAP2, BCAR1, CBL, CBLB, CD47, DLG3, DLG4, DNM1, EFS...",
+    "id": "ENSP00000332816"
+  },
+  "removed": false,
+  "selectable": true,
+  "classes": "protein protein-target species2 unmatched validated",
+  "grabbable": true,
+  "position": {
+    "x": 250,
+    "y": -110
+  },
+  "locked": false,
+  "selected": false,
+  "group": "nodes"
+},
+  {
+  "data": {
+    "parent": "Unmatched 2",
+    "num_neighbours": 116,
+    "name": "PIAS1",
+    "length": 653,
+    "weight": 75,
+    "neighbours": "AKT1, ANKRA2, AR, ATXN1, ATXN7, BARD1, BRCA1, CARM1, CASP8AP2, CBS...",
+    "id": "ENSP00000438574"
+  },
+  "removed": false,
+  "selectable": true,
+  "classes": "protein protein-target species2 unmatched validated",
+  "grabbable": true,
+  "position": {
+    "x": 400,
+    "y": -140
+  },
+  "locked": false,
+  "selected": false,
+  "group": "nodes"
+},
+  {
+  "data": {
+    "parent": "Interologs",
+    "num_neighbours": 27,
+    "partners": ["ENSP00000413625"],
+    "name": "TOCA-1",
+    "length": 592,
+    "weight": 75,
+    "neighbours": "AJM-1, ALP-1, C36B1.9, C49H3.6, DYN-1, F22E12.1, F56D3.1, F59E12.9, FBXA-156, FBXA-157...",
+    "id": "F09E10.8a"
+  },
+  "removed": false,
+  "selectable": true,
+  "classes": "interolog matched protein protein-target species1 validated",
+  "grabbable": true,
+  "position": {
+    "x": -25,
+    "y": -90
+  },
+  "locked": false,
+  "selected": false,
+  "group": "nodes"
+},
+  {
+  "data": {
+    "parent": "Unmatchable 2",
+    "num_neighbours": 65,
+    "name": "DGUOK",
+    "length": 277,
+    "weight": 75,
+    "neighbours": "AMPH, APP, ARL8B, ATP2B2, ATP2B3, ATP4A, ATP6V1C1, BIN1, CALB2, CAMK2A...",
+    "id": "ENSP00000264093"
+  },
+  "removed": false,
+  "selectable": true,
+  "classes": "protein protein-target species2 unmatchable validated",
+  "grabbable": true,
+  "position": {
+    "x": 250,
+    "y": 80
+  },
+  "locked": false,
+  "selected": false,
+  "group": "nodes"
+},
+  {
+  "data": {
+    "parent": "Unmatchable 2",
+    "num_neighbours": 71,
+    "name": "SH3BP4",
+    "length": 963,
+    "weight": 75,
+    "neighbours": "AGAP1, AKT1, ANKRD34A, ATP6AP2, C2ORF73, CBY1, CCT3, CDC25B, CDK16, CEP152...",
+    "id": "ENSP00000340237"
+  },
+  "removed": false,
+  "selectable": true,
+  "classes": "protein protein-target species2 unmatchable validated",
+  "grabbable": true,
+  "position": {
+    "x": 280,
+    "y": 140
+  },
+  "locked": false,
+  "selected": false,
+  "group": "nodes"
+},
+  {
+  "data": {
+    "parent": "Unmatched 2",
+    "num_neighbours": 15,
+    "name": "NOSTRIN",
+    "length": 563,
+    "weight": 75,
+    "neighbours": "APC, CAV1, CDC42, DNM1, DNM2, FGFR1, KDM1A, MAGEA6, NOS3, NOSTRIN...",
+    "id": "ENSP00000394051"
+  },
+  "removed": false,
+  "selectable": true,
+  "classes": "protein protein-target species2 unmatched validated",
+  "grabbable": true,
+  "position": {
+    "x": 340,
+    "y": -140
+  },
+  "locked": false,
+  "selected": false,
+  "group": "nodes"
+},
+  {
+  "data": {
+    "weight": 75,
+    "source": "ENSP00000362014",
+    "target": "ENSP00000269886"
+  },
+  "removed": false,
+  "selectable": true,
+  "grabbable": true,
+  "locked": false,
+  "selected": false,
+  "group": "edges"
+},
+  {
+  "data": {
+    "weight": 75,
+    "source": "ENSP00000362014",
+    "target": "ENSP00000380921"
+  },
+  "removed": false,
+  "selectable": true,
+  "grabbable": true,
+  "locked": false,
+  "selected": false,
+  "group": "edges"
+},
+  {
+  "data": {
+    "weight": 75,
+    "source": "ENSP00000362014",
+    "target": "ENSP00000394051"
+  },
+  "removed": false,
+  "selectable": true,
+  "grabbable": true,
+  "locked": false,
+  "selected": false,
+  "group": "edges"
+},
+  {
+  "data": {
+    "weight": 75,
+    "source": "ENSP00000362014",
+    "target": "ENSP00000347184"
+  },
+  "removed": false,
+  "selectable": true,
+  "grabbable": true,
+  "locked": false,
+  "selected": false,
+  "group": "edges"
+},
+  {
+  "data": {
+    "weight": 75,
+    "source": "ENSP00000362014",
+    "target": "ENSP00000376024"
+  },
+  "removed": false,
+  "selectable": true,
+  "grabbable": true,
+  "locked": false,
+  "selected": false,
+  "group": "edges"
+},
+  {
+  "data": {
+    "weight": 75,
+    "source": "ENSP00000362014",
+    "target": "ENSP00000381932"
+  },
+  "removed": false,
+  "selectable": true,
+  "grabbable": true,
+  "locked": false,
+  "selected": false,
+  "group": "edges"
+},
+  {
+  "data": {
+    "weight": 75,
+    "source": "C02C6.1b",
+    "target": "Y37A1B.15"
+  },
+  "removed": false,
+  "selectable": true,
+  "grabbable": true,
+  "locked": false,
+  "selected": false,
+  "group": "edges"
+},
+  {
+  "data": {
+    "weight": 75,
+    "source": "ENSP00000362014",
+    "target": "ENSP00000362659"
+  },
+  "removed": false,
+  "selectable": true,
+  "grabbable": true,
+  "locked": false,
+  "selected": false,
+  "group": "edges"
+},
+  {
+  "data": {
+    "weight": 75,
+    "source": "ENSP00000362014",
+    "target": "ENSP00000360798"
+  },
+  "removed": false,
+  "selectable": true,
+  "grabbable": true,
+  "locked": false,
+  "selected": false,
+  "group": "edges"
+},
+  {
+  "data": {
+    "weight": 75,
+    "source": "C02C6.1b",
+    "target": "Y65B4BR.4a"
+  },
+  "removed": false,
+  "selectable": true,
+  "grabbable": true,
+  "locked": false,
+  "selected": false,
+  "group": "edges"
+},
+  {
+  "data": {
+    "weight": 75,
+    "source": "ENSP00000362014",
+    "target": "ENSP00000351926"
+  },
+  "removed": false,
+  "selectable": true,
+  "grabbable": true,
+  "locked": false,
+  "selected": false,
+  "group": "edges"
+},
+  {
+  "data": {
+    "weight": 75,
+    "source": "C02C6.1b",
+    "target": "ZK470.5a"
+  },
+  "removed": false,
+  "selectable": true,
+  "grabbable": true,
+  "locked": false,
+  "selected": false,
+  "group": "edges"
+},
+  {
+  "data": {
+    "weight": 75,
+    "source": "ENSP00000362014",
+    "target": "ENSP00000311427"
+  },
+  "removed": false,
+  "selectable": true,
+  "grabbable": true,
+  "locked": false,
+  "selected": false,
+  "group": "edges"
+},
+  {
+  "data": {
+    "weight": 75,
+    "source": "ENSP00000362014",
+    "target": "ENSP00000370719"
+  },
+  "removed": false,
+  "selectable": true,
+  "grabbable": true,
+  "locked": false,
+  "selected": false,
+  "group": "edges"
+},
+  {
+  "data": {
+    "weight": 75,
+    "source": "ENSP00000362014",
+    "target": "ENSP00000311505"
+  },
+  "removed": false,
+  "selectable": true,
+  "grabbable": true,
+  "locked": false,
+  "selected": false,
+  "group": "edges"
+},
+  {
+  "data": {
+    "weight": 75,
+    "source": "ENSP00000362014",
+    "target": "ENSP00000435088"
+  },
+  "removed": false,
+  "selectable": true,
+  "grabbable": true,
+  "locked": false,
+  "selected": false,
+  "group": "edges"
+},
+  {
+  "data": {
+    "weight": 75,
+    "source": "C02C6.1b",
+    "target": "Y37A1B.17a"
+  },
+  "removed": false,
+  "selectable": true,
+  "grabbable": true,
+  "locked": false,
+  "selected": false,
+  "group": "edges"
+},
+  {
+  "data": {
+    "weight": 75,
+    "source": "ENSP00000362014",
+    "target": "ENSP00000362773"
+  },
+  "removed": false,
+  "selectable": true,
+  "grabbable": true,
+  "locked": false,
+  "selected": false,
+  "group": "edges"
+},
+  {
+  "data": {
+    "weight": 75,
+    "source": "C02C6.1b",
+    "target": "T04D1.3d"
+  },
+  "removed": false,
+  "selectable": true,
+  "grabbable": true,
+  "locked": false,
+  "selected": false,
+  "group": "edges"
+},
+  {
+  "data": {
+    "weight": 75,
+    "source": "ENSP00000362014",
+    "target": "ENSP00000298292"
+  },
+  "removed": false,
+  "selectable": true,
+  "grabbable": true,
+  "locked": false,
+  "selected": false,
+  "group": "edges"
+},
+  {
+  "data": {
+    "weight": 75,
+    "source": "C02C6.1b",
+    "target": "B0303.7a"
+  },
+  "removed": false,
+  "selectable": true,
+  "grabbable": true,
+  "locked": false,
+  "selected": false,
+  "group": "edges"
+},
+  {
+  "data": {
+    "weight": 75,
+    "source": "C02C6.1b",
+    "target": "F49B2.5"
+  },
+  "removed": false,
+  "selectable": true,
+  "grabbable": true,
+  "locked": false,
+  "selected": false,
+  "group": "edges"
+},
+  {
+  "data": {
+    "weight": 75,
+    "source": "ENSP00000362014",
+    "target": "ENSP00000339007"
+  },
+  "removed": false,
+  "selectable": true,
+  "grabbable": true,
+  "locked": false,
+  "selected": false,
+  "group": "edges"
+},
+  {
+  "data": {
+    "weight": 75,
+    "source": "ENSP00000362014",
+    "target": "ENSP00000013034"
+  },
+  "removed": false,
+  "selectable": true,
+  "grabbable": true,
+  "locked": false,
+  "selected": false,
+  "group": "edges"
+},
+  {
+  "data": {
+    "weight": 75,
+    "source": "ENSP00000362014",
+    "target": "ENSP00000244458"
+  },
+  "removed": false,
+  "selectable": true,
+  "grabbable": true,
+  "locked": false,
+  "selected": false,
+  "group": "edges"
+},
+  {
+  "data": {
+    "weight": 75,
+    "source": "C02C6.1b",
+    "target": "Y23H5A.5a"
+  },
+  "removed": false,
+  "selectable": true,
+  "grabbable": true,
+  "locked": false,
+  "selected": false,
+  "group": "edges"
+},
+  {
+  "data": {
+    "weight": 75,
+    "source": "ENSP00000362014",
+    "target": "ENSP00000347890"
+  },
+  "removed": false,
+  "selectable": true,
+  "grabbable": true,
+  "locked": false,
+  "selected": false,
+  "group": "edges"
+},
+  {
+  "data": {
+    "weight": 75,
+    "source": "C02C6.1b",
+    "target": "Y116A8C.36d.1"
+  },
+  "removed": false,
+  "selectable": true,
+  "grabbable": true,
+  "locked": false,
+  "selected": false,
+  "group": "edges"
+},
+  {
+  "data": {
+    "weight": 75,
+    "source": "C02C6.1b",
+    "target": "F45E1.7b"
+  },
+  "removed": false,
+  "selectable": true,
+  "grabbable": true,
+  "locked": false,
+  "selected": false,
+  "group": "edges"
+},
+  {
+  "data": {
+    "weight": 75,
+    "source": "ENSP00000362014",
+    "target": "ENSP00000288235"
+  },
+  "removed": false,
+  "selectable": true,
+  "grabbable": true,
+  "locked": false,
+  "selected": false,
+  "group": "edges"
+},
+  {
+  "data": {
+    "weight": 75,
+    "source": "C02C6.1b",
+    "target": "K12C11.2"
+  },
+  "removed": false,
+  "selectable": true,
+  "grabbable": true,
+  "locked": false,
+  "selected": false,
+  "group": "edges"
+},
+  {
+  "data": {
+    "weight": 75,
+    "source": "ENSP00000362014",
+    "target": "ENSP00000369981"
+  },
+  "removed": false,
+  "selectable": true,
+  "grabbable": true,
+  "locked": false,
+  "selected": false,
+  "group": "edges"
+},
+  {
+  "data": {
+    "weight": 75,
+    "source": "ENSP00000362014",
+    "target": "ENSP00000278947"
+  },
+  "removed": false,
+  "selectable": true,
+  "grabbable": true,
+  "locked": false,
+  "selected": false,
+  "group": "edges"
+},
+  {
+  "data": {
+    "weight": 75,
+    "source": "ENSP00000362014",
+    "target": "ENSP00000239938"
+  },
+  "removed": false,
+  "selectable": true,
+  "grabbable": true,
+  "locked": false,
+  "selected": false,
+  "group": "edges"
+},
+  {
+  "data": {
+    "weight": 75,
+    "source": "ENSP00000362014",
+    "target": "ENSP00000384361"
+  },
+  "removed": false,
+  "selectable": true,
+  "grabbable": true,
+  "locked": false,
+  "selected": false,
+  "group": "edges"
+},
+  {
+  "data": {
+    "weight": 75,
+    "source": "ENSP00000362014",
+    "target": "ENSP00000318115"
+  },
+  "removed": false,
+  "selectable": true,
+  "grabbable": true,
+  "locked": false,
+  "selected": false,
+  "group": "edges"
+},
+  {
+  "data": {
+    "weight": 75,
+    "source": "ENSP00000362014",
+    "target": "ENSP00000316779"
+  },
+  "removed": false,
+  "selectable": true,
+  "grabbable": true,
+  "locked": false,
+  "selected": false,
+  "group": "edges"
+},
+  {
+  "data": {
+    "weight": 75,
+    "source": "C02C6.1b",
+    "target": "Y92H12A.1b"
+  },
+  "removed": false,
+  "selectable": true,
+  "grabbable": true,
+  "locked": false,
+  "selected": false,
+  "group": "edges"
+},
+  {
+  "data": {
+    "weight": 75,
+    "source": "ENSP00000362014",
+    "target": "ENSP00000284981"
+  },
+  "removed": false,
+  "selectable": true,
+  "grabbable": true,
+  "locked": false,
+  "selected": false,
+  "group": "edges"
+},
+  {
+  "data": {
+    "weight": 75,
+    "source": "ENSP00000362014",
+    "target": "ENSP00000336887"
+  },
+  "removed": false,
+  "selectable": true,
+  "grabbable": true,
+  "locked": false,
+  "selected": false,
+  "group": "edges"
+},
+  {
+  "data": {
+    "weight": 75,
+    "source": "ENSP00000362014",
+    "target": "ENSP00000288986"
+  },
+  "removed": false,
+  "selectable": true,
+  "grabbable": true,
+  "locked": false,
+  "selected": false,
+  "group": "edges"
+},
+  {
+  "data": {
+    "weight": 75,
+    "source": "ENSP00000362014",
+    "target": "ENSP00000297494"
+  },
+  "removed": false,
+  "selectable": true,
+  "grabbable": true,
+  "locked": false,
+  "selected": false,
+  "group": "edges"
+},
+  {
+  "data": {
+    "weight": 75,
+    "source": "ENSP00000362014",
+    "target": "ENSP00000334463"
+  },
+  "removed": false,
+  "selectable": true,
+  "grabbable": true,
+  "locked": false,
+  "selected": false,
+  "group": "edges"
+},
+  {
+  "data": {
+    "weight": 75,
+    "source": "ENSP00000362014",
+    "target": "ENSP00000409581"
+  },
+  "removed": false,
+  "selectable": true,
+  "grabbable": true,
+  "locked": false,
+  "selected": false,
+  "group": "edges"
+},
+  {
+  "data": {
+    "weight": 75,
+    "source": "ENSP00000362014",
+    "target": "ENSP00000263468"
+  },
+  "removed": false,
+  "selectable": true,
+  "grabbable": true,
+  "locked": false,
+  "selected": false,
+  "group": "edges"
+},
+  {
+  "data": {
+    "weight": 75,
+    "source": "C02C6.1b",
+    "target": "K02E10.2a"
+  },
+  "removed": false,
+  "selectable": true,
+  "grabbable": true,
+  "locked": false,
+  "selected": false,
+  "group": "edges"
+},
+  {
+  "data": {
+    "weight": 75,
+    "source": "ENSP00000362014",
+    "target": "ENSP00000350331"
+  },
+  "removed": false,
+  "selectable": true,
+  "grabbable": true,
+  "locked": false,
+  "selected": false,
+  "group": "edges"
+},
+  {
+  "data": {
+    "weight": 75,
+    "source": "ENSP00000362014",
+    "target": "ENSP00000225728"
+  },
+  "removed": false,
+  "selectable": true,
+  "grabbable": true,
+  "locked": false,
+  "selected": false,
+  "group": "edges"
+},
+  {
+  "data": {
+    "weight": 75,
+    "source": "C02C6.1b",
+    "target": "R31.1a"
+  },
+  "removed": false,
+  "selectable": true,
+  "grabbable": true,
+  "locked": false,
+  "selected": false,
+  "group": "edges"
+},
+  {
+  "data": {
+    "weight": 75,
+    "source": "C02C6.1b",
+    "target": "F09E10.8a"
+  },
+  "removed": false,
+  "selectable": true,
+  "grabbable": true,
+  "locked": false,
+  "selected": false,
+  "group": "edges"
+},
+  {
+  "data": {
+    "weight": 75,
+    "source": "ENSP00000362014",
+    "target": "ENSP00000274695"
+  },
+  "removed": false,
+  "selectable": true,
+  "grabbable": true,
+  "locked": false,
+  "selected": false,
+  "group": "edges"
+},
+  {
+  "data": {
+    "weight": 75,
+    "source": "n-term-2",
+    "target": "c-term-2"
+  },
+  "removed": false,
+  "selectable": true,
+  "classes": "protein_sequence",
+  "grabbable": true,
+  "locked": false,
+  "selected": false,
+  "group": "edges"
+},
+  {
+  "data": {
+    "weight": 75,
+    "source": "ENSP00000362014",
+    "target": "ENSP00000233154"
+  },
+  "removed": false,
+  "selectable": true,
+  "grabbable": true,
+  "locked": false,
+  "selected": false,
+  "group": "edges"
+},
+  {
+  "data": {
+    "weight": 75,
+    "source": "ENSP00000362014",
+    "target": "ENSP00000361423"
+  },
+  "removed": false,
+  "selectable": true,
+  "grabbable": true,
+  "locked": false,
+  "selected": false,
+  "group": "edges"
+},
+  {
+  "data": {
+    "weight": 75,
+    "source": "ENSP00000362014",
+    "target": "ENSP00000438574"
+  },
+  "removed": false,
+  "selectable": true,
+  "grabbable": true,
+  "locked": false,
+  "selected": false,
+  "group": "edges"
+},
+  {
+  "data": {
+    "weight": 75,
+    "source": "ENSP00000362014",
+    "target": "ENSP00000264093"
+  },
+  "removed": false,
+  "selectable": true,
+  "grabbable": true,
+  "locked": false,
+  "selected": false,
+  "group": "edges"
+},
+  {
+  "data": {
+    "weight": 75,
+    "source": "ENSP00000362014",
+    "target": "ENSP00000433361"
+  },
+  "removed": false,
+  "selectable": true,
+  "grabbable": true,
+  "locked": false,
+  "selected": false,
+  "group": "edges"
+},
+  {
+  "data": {
+    "weight": 75,
+    "source": "C02C6.1b",
+    "target": "C14F5.5"
+  },
+  "removed": false,
+  "selectable": true,
+  "grabbable": true,
+  "locked": false,
+  "selected": false,
+  "group": "edges"
+},
+  {
+  "data": {
+    "weight": 75,
+    "source": "ENSP00000362014",
+    "target": "ENSP00000365745"
+  },
+  "removed": false,
+  "selectable": true,
+  "grabbable": true,
+  "locked": false,
+  "selected": false,
+  "group": "edges"
+},
+  {
+  "data": {
+    "weight": 75,
+    "source": "ENSP00000362014",
+    "target": "ENSP00000368459"
+  },
+  "removed": false,
+  "selectable": true,
+  "grabbable": true,
+  "locked": false,
+  "selected": false,
+  "group": "edges"
+},
+  {
+  "data": {
+    "weight": 75,
+    "source": "ENSP00000362014",
+    "target": "ENSP00000429824"
+  },
+  "removed": false,
+  "selectable": true,
+  "grabbable": true,
+  "locked": false,
+  "selected": false,
+  "group": "edges"
+},
+  {
+  "data": {
+    "weight": 75,
+    "source": "ENSP00000362014",
+    "target": "ENSP00000419782"
+  },
+  "removed": false,
+  "selectable": true,
+  "grabbable": true,
+  "locked": false,
+  "selected": false,
+  "group": "edges"
+},
+  {
+  "data": {
+    "weight": 75,
+    "source": "ENSP00000362014",
+    "target": "ENSP00000429900"
+  },
+  "removed": false,
+  "selectable": true,
+  "grabbable": true,
+  "locked": false,
+  "selected": false,
+  "group": "edges"
+},
+  {
+  "data": {
+    "weight": 75,
+    "source": "ENSP00000362014",
+    "target": "ENSP00000448182"
+  },
+  "removed": false,
+  "selectable": true,
+  "grabbable": true,
+  "locked": false,
+  "selected": false,
+  "group": "edges"
+},
+  {
+  "data": {
+    "weight": 75,
+    "source": "ENSP00000362014",
+    "target": "ENSP00000358789"
+  },
+  "removed": false,
+  "selectable": true,
+  "grabbable": true,
+  "locked": false,
+  "selected": false,
+  "group": "edges"
+},
+  {
+  "data": {
+    "weight": 75,
+    "source": "ENSP00000362014",
+    "target": "ENSP00000393776"
+  },
+  "removed": false,
+  "selectable": true,
+  "grabbable": true,
+  "locked": false,
+  "selected": false,
+  "group": "edges"
+},
+  {
+  "data": {
+    "weight": 75,
+    "source": "ENSP00000362014",
+    "target": "ENSP00000263119"
+  },
+  "removed": false,
+  "selectable": true,
+  "grabbable": true,
+  "locked": false,
+  "selected": false,
+  "group": "edges"
+},
+  {
+  "data": {
+    "weight": 75,
+    "source": "ENSP00000362014",
+    "target": "ENSP00000413625"
+  },
+  "removed": false,
+  "selectable": true,
+  "grabbable": true,
+  "locked": false,
+  "selected": false,
+  "group": "edges"
+},
+  {
+  "data": {
+    "weight": 75,
+    "source": "ENSP00000362014",
+    "target": "ENSP00000431418"
+  },
+  "removed": false,
+  "selectable": true,
+  "grabbable": true,
+  "locked": false,
+  "selected": false,
+  "group": "edges"
+},
+  {
+  "data": {
+    "weight": 75,
+    "source": "ENSP00000362014",
+    "target": "ENSP00000298910"
+  },
+  "removed": false,
+  "selectable": true,
+  "grabbable": true,
+  "locked": false,
+  "selected": false,
+  "group": "edges"
+},
+  {
+  "data": {
+    "weight": 75,
+    "source": "C02C6.1b",
+    "target": "C35B8.2b"
+  },
+  "removed": false,
+  "selectable": true,
+  "grabbable": true,
+  "locked": false,
+  "selected": false,
+  "group": "edges"
+},
+  {
+  "data": {
+    "weight": 75,
+    "source": "ENSP00000362014",
+    "target": "ENSP00000348602"
+  },
+  "removed": false,
+  "selectable": true,
+  "grabbable": true,
+  "locked": false,
+  "selected": false,
+  "group": "edges"
+},
+  {
+  "data": {
+    "weight": 75,
+    "source": "n-term-1",
+    "target": "c-term-1"
+  },
+  "removed": false,
+  "selectable": true,
+  "classes": "protein_sequence",
+  "grabbable": true,
+  "locked": false,
+  "selected": false,
+  "group": "edges"
+},
+  {
+  "data": {
+    "weight": 75,
+    "source": "ENSP00000362014",
+    "target": "ENSP00000315659"
+  },
+  "removed": false,
+  "selectable": true,
+  "grabbable": true,
+  "locked": false,
+  "selected": false,
+  "group": "edges"
+},
+  {
+  "data": {
+    "weight": 75,
+    "source": "C02C6.1b",
+    "target": "C49G7.1"
+  },
+  "removed": false,
+  "selectable": true,
+  "grabbable": true,
+  "locked": false,
+  "selected": false,
+  "group": "edges"
+},
+  {
+  "data": {
+    "weight": 75,
+    "source": "ENSP00000362014",
+    "target": "ENSP00000318607"
+  },
+  "removed": false,
+  "selectable": true,
+  "grabbable": true,
+  "locked": false,
+  "selected": false,
+  "group": "edges"
+},
+  {
+  "data": {
+    "weight": 75,
+    "source": "C02C6.1b",
+    "target": "F32A5.6"
+  },
+  "removed": false,
+  "selectable": true,
+  "grabbable": true,
+  "locked": false,
+  "selected": false,
+  "group": "edges"
+},
+  {
+  "data": {
+    "weight": 75,
+    "source": "ENSP00000362014",
+    "target": "ENSP00000332816"
+  },
+  "removed": false,
+  "selectable": true,
+  "grabbable": true,
+  "locked": false,
+  "selected": false,
+  "group": "edges"
+},
+  {
+  "data": {
+    "weight": 75,
+    "source": "ENSP00000362014",
+    "target": "ENSP00000298838"
+  },
+  "removed": false,
+  "selectable": true,
+  "grabbable": true,
+  "locked": false,
+  "selected": false,
+  "group": "edges"
+},
+  {
+  "data": {
+    "weight": 75,
+    "source": "ENSP00000362014",
+    "target": "ENSP00000387204"
+  },
+  "removed": false,
+  "selectable": true,
+  "grabbable": true,
+  "locked": false,
+  "selected": false,
+  "group": "edges"
+},
+  {
+  "data": {
+    "weight": 75,
+    "source": "ENSP00000362014",
+    "target": "ENSP00000253055"
+  },
+  "removed": false,
+  "selectable": true,
+  "grabbable": true,
+  "locked": false,
+  "selected": false,
+  "group": "edges"
+},
+  {
+  "data": {
+    "weight": 75,
+    "source": "ENSP00000362014",
+    "target": "ENSP00000315702"
+  },
+  "removed": false,
+  "selectable": true,
+  "grabbable": true,
+  "locked": false,
+  "selected": false,
+  "group": "edges"
+},
+  {
+  "data": {
+    "weight": 75,
+    "source": "C02C6.1b",
+    "target": "Y37A1B.2b"
+  },
+  "removed": false,
+  "selectable": true,
+  "grabbable": true,
+  "locked": false,
+  "selected": false,
+  "group": "edges"
+},
+  {
+  "data": {
+    "weight": 75,
+    "source": "ENSP00000362014",
+    "target": "ENSP00000340237"
+  },
+  "removed": false,
+  "selectable": true,
+  "grabbable": true,
+  "locked": false,
+  "selected": false,
+  "group": "edges"
+},
+  {
+  "data": {
+    "weight": 75,
+    "source": "ENSP00000362014",
+    "target": "ENSP00000317327"
+  },
+  "removed": false,
+  "selectable": true,
+  "grabbable": true,
+  "locked": false,
+  "selected": false,
+  "group": "edges"
+},
+  {
+  "data": {
+    "weight": 75,
+    "source": "ENSP00000362014",
+    "target": "ENSP00000265708"
+  },
+  "removed": false,
+  "selectable": true,
+  "grabbable": true,
+  "locked": false,
+  "selected": false,
+  "group": "edges"
+},
+  {
+  "data": {
+    "weight": 75,
+    "source": "ENSP00000362014",
+    "target": "ENSP00000263246"
+  },
+  "removed": false,
+  "selectable": true,
+  "grabbable": true,
+  "locked": false,
+  "selected": false,
+  "group": "edges"
+},
+  {
+  "data": {
+    "weight": 75,
+    "source": "ENSP00000362014",
+    "target": "ENSP00000376886"
+  },
+  "removed": false,
+  "selectable": true,
+  "grabbable": true,
+  "locked": false,
+  "selected": false,
+  "group": "edges"
+},
+  {
+  "data": {
+    "name": "pp_missing_interologs1",
+    "weight": 0,
+    "html": "<table class='missing_interologs_table'><tr><th colspan='3' id='missing_interologs_header_1'>Predicted C.elegans DYN-1 interactions<\/th><\/tr><tr><th># Missed Interologs<\/th><th>Predicted Interactor<\/th><th>Indicating DNM1 Interactors<\/tr><tr><td>2<\/td><td><a href='http://www.ensembl.org/id/F58G6.1.1' target='_blank'>AMPH-1<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000348602' target='_blank'>AMPH<\/a>, <a href='http://www.ensembl.org/id/ENSP00000316779' target='_blank'>BIN1<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/F25H2.5.1' target='_blank'>NDK-1<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000013034' target='_blank'>NME1<\/a>, <a href='http://www.ensembl.org/id/ENSP00000376886' target='_blank'>NME2<\/a><\/td><\/tr><tr><td>1<\/td><td><a href='http://www.ensembl.org/id/M79.1a' target='_blank'>ABL-1<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000361423' target='_blank'>ABL1<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/T20B5.1.1' target='_blank'>APA-2<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000351926' target='_blank'>AP2A1<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/C42D8.8a' target='_blank'>APL-1<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000284981' target='_blank'>APP<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/F53H8.2' target='_blank'>ARR-1<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000409581' target='_blank'>ARRB1<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/C30A5.3' target='_blank'>C30A5.3<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000315702' target='_blank'>MOB4<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/C36E8.4' target='_blank'>C36E8.4<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000394051' target='_blank'>NOSTRIN<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/C52E4.7' target='_blank'>C52E4.7<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000317327' target='_blank'>UBASH3A<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/T27E9.3' target='_blank'>CDK-5<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000419782' target='_blank'>CDK5<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/K08E3.4' target='_blank'>DBN-1<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000365745' target='_blank'>CTTN<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/C02C6.1b' target='_blank'>DYN-1<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000347890' target='_blank'>DNM2<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/C27C12.2' target='_blank'>EGRH-1<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000239938' target='_blank'>EGR1<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/Y55F3AM.7b' target='_blank'>EGRH-2<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000239938' target='_blank'>EGR1<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/Y94H6A.11a' target='_blank'>EGRH-3<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000239938' target='_blank'>EGR1<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/ZK1248.3a' target='_blank'>EHS-1<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000360798' target='_blank'>EPS15<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/F09C12.8' target='_blank'>F09C12.8<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000317327' target='_blank'>UBASH3A<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/F53B6.7' target='_blank'>F53B6.7<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000317327' target='_blank'>UBASH3A<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/F55A11.11' target='_blank'>F55A11.11<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000317327' target='_blank'>UBASH3A<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/F56D12.6a' target='_blank'>FCHO-1<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000393776' target='_blank'>FCHO2<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/W10D5.3c.1' target='_blank'>GEI-17<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000438574' target='_blank'>PIAS1<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/F29D10.4' target='_blank'>HUM-1<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000288235' target='_blank'>MYO1E<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/C30F8.4a' target='_blank'>KIN-32<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000332816' target='_blank'>PTK2B<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/T27C10.6' target='_blank'>LRK-1<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000298910' target='_blank'>LRRK2<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/M03E7.4' target='_blank'>M03E7.4<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000318607' target='_blank'>LDLRAD3<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/T04C10.1' target='_blank'>MBK-1<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000381932' target='_blank'>DYRK1A<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/F32H2.2b' target='_blank'>MDT-31<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000225728' target='_blank'>MED31<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/K11D12.10c' target='_blank'>MLK-1<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000253055' target='_blank'>MAP3K10<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/Y48C3A.16' target='_blank'>PINN-4<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000362773' target='_blank'>PIN4<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/R12C12.6a' target='_blank'>R12C12.6<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000433361' target='_blank'>TMEM9B<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/C34E11.1' target='_blank'>RSD-3<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000429824' target='_blank'>CLINT1<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/T21C9.12' target='_blank'>SCPL-4<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000318115' target='_blank'>TIMM50<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/T01D3.5' target='_blank'>T01D3.5<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000336887' target='_blank'>SLC39A9<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/T07F12.1' target='_blank'>T07F12.1<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000317327' target='_blank'>UBASH3A<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/Y48E1C.3' target='_blank'>TBC-15<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000448182' target='_blank'>TBC1D15<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/K08E3.3b' target='_blank'>TOCA-2<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000413625' target='_blank'>FNBP1<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/D1073.1b' target='_blank'>TRK-1<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000431418' target='_blank'>NTRK1<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/F29B9.6' target='_blank'>UBC-9<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000384361' target='_blank'>UBE2I<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/Y37D8A.13' target='_blank'>UNC-71<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000265708' target='_blank'>ADAM2<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/Y44E3A.4' target='_blank'>Y44E3A.4<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000380921' target='_blank'>SH3KBP1<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/Y92H12BL.1a' target='_blank'>Y92H12BL.1<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000274695' target='_blank'>CDKAL1<\/a><\/td><\/tr><\/table>",
+    "id": "pp_missing_interologs1"
+  },
+  "removed": false,
+  "selectable": false,
+  "classes": "hidden",
+  "grabbable": false,
+  "position": {
+    "x": 0,
+    "y": 0
+  },
+  "locked": true,
+  "selected": false,
+  "group": "nodes"
+},
+  {
+  "data": {
+    "name": "pp_missing_interologs2",
+    "weight": 0,
+    "html": "<table class='missing_interologs_table'><tr><th colspan='3' id='missing_interologs_header_2'>Predicted H.sapiens DNM1 interactions<\/th><\/tr><tr><th># Missed Interologs<\/th><th>Predicted Interactor<\/th><th>Indicating DYN-1 Interactors<\/tr><tr><td>1<\/td><td><a href='http://www.ensembl.org/id/ENSP00000328083' target='_blank'>ARHGEF37<\/a><\/td><td><a href='http://www.ensembl.org/id/Y37A1B.17a' target='_blank'>Y37A1B.17<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/ENSP00000416125' target='_blank'>ARHGEF38<\/a><\/td><td><a href='http://www.ensembl.org/id/Y37A1B.17a' target='_blank'>Y37A1B.17<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/ENSP00000259089' target='_blank'>BLK<\/a><\/td><td><a href='http://www.ensembl.org/id/Y92H12A.1b' target='_blank'>SRC-1<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/ENSP00000320434' target='_blank'>CTNNAL1<\/a><\/td><td><a href='http://www.ensembl.org/id/Y23H5A.5a' target='_blank'>CTN-1<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/ENSP00000363115' target='_blank'>FGR<\/a><\/td><td><a href='http://www.ensembl.org/id/Y92H12A.1b' target='_blank'>SRC-1<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/ENSP00000473921' target='_blank'>FNBP1L<\/a><\/td><td><a href='http://www.ensembl.org/id/F09E10.8a' target='_blank'>TOCA-1<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/ENSP00000476145' target='_blank'>FRK<\/a><\/td><td><a href='http://www.ensembl.org/id/F49B2.5' target='_blank'>SRC-2<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/ENSP00000346671' target='_blank'>FYN<\/a><\/td><td><a href='http://www.ensembl.org/id/Y92H12A.1b' target='_blank'>SRC-1<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/ENSP00000284154' target='_blank'>GRAP<\/a><\/td><td><a href='http://www.ensembl.org/id/C14F5.5' target='_blank'>SEM-5<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/ENSP00000365012' target='_blank'>HCK<\/a><\/td><td><a href='http://www.ensembl.org/id/Y92H12A.1b' target='_blank'>SRC-1<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/ENSP00000413520' target='_blank'>HID1<\/a><\/td><td><a href='http://www.ensembl.org/id/K02E10.2a' target='_blank'>HID-1<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/ENSP00000262650' target='_blank'>ITCH<\/a><\/td><td><a href='http://www.ensembl.org/id/Y65B4BR.4a' target='_blank'>WWP-1<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/ENSP00000347244' target='_blank'>ITSN2<\/a><\/td><td><a href='http://www.ensembl.org/id/Y116A8C.36d.1' target='_blank'>ITSN-1<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/ENSP00000328213' target='_blank'>LCK<\/a><\/td><td><a href='http://www.ensembl.org/id/Y92H12A.1b' target='_blank'>SRC-1<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/ENSP00000428924' target='_blank'>LYN<\/a><\/td><td><a href='http://www.ensembl.org/id/Y92H12A.1b' target='_blank'>SRC-1<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/ENSP00000295030' target='_blank'>PEX13<\/a><\/td><td><a href='http://www.ensembl.org/id/F32A5.6' target='_blank'>PRX-13<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/ENSP00000302913' target='_blank'>SH3D19<\/a><\/td><td><a href='http://www.ensembl.org/id/B0303.7a' target='_blank'>B0303.7<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/ENSP00000320092' target='_blank'>SH3GL3<\/a><\/td><td><a href='http://www.ensembl.org/id/T04D1.3d' target='_blank'>UNC-57<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/ENSP00000342276' target='_blank'>SNX18<\/a><\/td><td><a href='http://www.ensembl.org/id/Y37A1B.2b' target='_blank'>LST-4<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/ENSP00000317790' target='_blank'>SPTBN5<\/a><\/td><td><a href='http://www.ensembl.org/id/R31.1a' target='_blank'>SMA-1<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/ENSP00000320117' target='_blank'>TRIP10<\/a><\/td><td><a href='http://www.ensembl.org/id/F09E10.8a' target='_blank'>TOCA-1<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/ENSP00000472929' target='_blank'>VAV1<\/a><\/td><td><a href='http://www.ensembl.org/id/C35B8.2b' target='_blank'>VAV-1<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/ENSP00000360916' target='_blank'>VAV2<\/a><\/td><td><a href='http://www.ensembl.org/id/C35B8.2b' target='_blank'>VAV-1<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/ENSP00000432540' target='_blank'>VAV3<\/a><\/td><td><a href='http://www.ensembl.org/id/C35B8.2b' target='_blank'>VAV-1<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/ENSP00000265428' target='_blank'>WWP1<\/a><\/td><td><a href='http://www.ensembl.org/id/Y65B4BR.4a' target='_blank'>WWP-1<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/ENSP00000352069' target='_blank'>WWP2<\/a><\/td><td><a href='http://www.ensembl.org/id/Y65B4BR.4a' target='_blank'>WWP-1<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/ENSP00000464380' target='_blank'>YES1<\/a><\/td><td><a href='http://www.ensembl.org/id/Y92H12A.1b' target='_blank'>SRC-1<\/a><\/td><\/tr><\/table>",
+    "id": "pp_missing_interologs2"
+  },
+  "removed": false,
+  "selectable": false,
+  "classes": "hidden",
+  "grabbable": false,
+  "position": {
+    "x": 0,
+    "y": 0
+  },
+  "locked": true,
+  "selected": false,
+  "group": "nodes"
+},
+  {
+  "data": {
+    "numInterologs": 15,
+    "numUnmatchedProteins1": 8,
+    "numUnmatchedProteins2": 36,
+    "species2": "H.sapiens",
+    "protein1": "DYN-1",
+    "weight": 0,
+    "protein2": "DNM1",
+    "numMissingInterologs": 70,
+    "species1": "C.elegans",
+    "numInterologProteins1": 10,
+    "numUnmatchableProteins2": 15,
+    "numInterologProteins2": 15,
+    "score": "17.65",
+    "numUnmatchableProteins1": 2,
+    "name": "pp_stats",
+    "id": "pp_stats"
+  },
+  "removed": false,
+  "selectable": false,
+  "classes": "hidden",
+  "grabbable": false,
+  "position": {
+    "x": 0,
+    "y": 0
+  },
+  "locked": true,
+  "selected": false,
+  "group": "nodes"
+},
+  {
+  "data": {
+    "name": "pd_missing_interologs1",
+    "weight": 0,
+    "html": "<table class='missing_interologs_table'><tr><th colspan='3' id='missing_interologs_header_1'>Predicted C.elegans DYN-1 interactions<\/th><\/tr><tr><th># Missed Interologs<\/th><th>Predicted Interactor<\/th><th>Indicating DNM1 Interactors<\/tr><tr><td>2<\/td><td><a href='http://www.ensembl.org/id/F58G6.1.1' target='_blank'>AMPH-1<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000348602' target='_blank'>AMPH<\/a>, <a href='http://www.ensembl.org/id/ENSP00000316779' target='_blank'>BIN1<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/F25H2.5.1' target='_blank'>NDK-1<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000013034' target='_blank'>NME1<\/a>, <a href='http://www.ensembl.org/id/ENSP00000376886' target='_blank'>NME2<\/a><\/td><\/tr><tr><td>1<\/td><td><a href='http://www.ensembl.org/id/M79.1a' target='_blank'>ABL-1<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000361423' target='_blank'>ABL1<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/T20B5.1.1' target='_blank'>APA-2<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000351926' target='_blank'>AP2A1<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/C42D8.8a' target='_blank'>APL-1<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000284981' target='_blank'>APP<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/F53H8.2' target='_blank'>ARR-1<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000409581' target='_blank'>ARRB1<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/C30A5.3' target='_blank'>C30A5.3<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000315702' target='_blank'>MOB4<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/C36E8.4' target='_blank'>C36E8.4<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000394051' target='_blank'>NOSTRIN<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/C52E4.7' target='_blank'>C52E4.7<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000317327' target='_blank'>UBASH3A<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/T27E9.3' target='_blank'>CDK-5<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000419782' target='_blank'>CDK5<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/K08E3.4' target='_blank'>DBN-1<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000365745' target='_blank'>CTTN<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/C02C6.1b' target='_blank'>DYN-1<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000347890' target='_blank'>DNM2<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/C27C12.2' target='_blank'>EGRH-1<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000239938' target='_blank'>EGR1<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/Y55F3AM.7b' target='_blank'>EGRH-2<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000239938' target='_blank'>EGR1<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/Y94H6A.11a' target='_blank'>EGRH-3<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000239938' target='_blank'>EGR1<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/ZK1248.3a' target='_blank'>EHS-1<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000360798' target='_blank'>EPS15<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/F09C12.8' target='_blank'>F09C12.8<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000317327' target='_blank'>UBASH3A<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/F53B6.7' target='_blank'>F53B6.7<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000317327' target='_blank'>UBASH3A<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/F55A11.11' target='_blank'>F55A11.11<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000317327' target='_blank'>UBASH3A<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/F56D12.6a' target='_blank'>FCHO-1<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000393776' target='_blank'>FCHO2<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/W10D5.3c.1' target='_blank'>GEI-17<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000438574' target='_blank'>PIAS1<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/F29D10.4' target='_blank'>HUM-1<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000288235' target='_blank'>MYO1E<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/C30F8.4a' target='_blank'>KIN-32<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000332816' target='_blank'>PTK2B<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/T27C10.6' target='_blank'>LRK-1<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000298910' target='_blank'>LRRK2<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/M03E7.4' target='_blank'>M03E7.4<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000318607' target='_blank'>LDLRAD3<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/T04C10.1' target='_blank'>MBK-1<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000381932' target='_blank'>DYRK1A<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/F32H2.2b' target='_blank'>MDT-31<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000225728' target='_blank'>MED31<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/K11D12.10c' target='_blank'>MLK-1<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000253055' target='_blank'>MAP3K10<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/Y48C3A.16' target='_blank'>PINN-4<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000362773' target='_blank'>PIN4<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/R12C12.6a' target='_blank'>R12C12.6<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000433361' target='_blank'>TMEM9B<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/C34E11.1' target='_blank'>RSD-3<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000429824' target='_blank'>CLINT1<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/T21C9.12' target='_blank'>SCPL-4<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000318115' target='_blank'>TIMM50<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/T01D3.5' target='_blank'>T01D3.5<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000336887' target='_blank'>SLC39A9<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/T07F12.1' target='_blank'>T07F12.1<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000317327' target='_blank'>UBASH3A<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/Y48E1C.3' target='_blank'>TBC-15<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000448182' target='_blank'>TBC1D15<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/K08E3.3b' target='_blank'>TOCA-2<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000413625' target='_blank'>FNBP1<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/D1073.1b' target='_blank'>TRK-1<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000431418' target='_blank'>NTRK1<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/F29B9.6' target='_blank'>UBC-9<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000384361' target='_blank'>UBE2I<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/Y37D8A.13' target='_blank'>UNC-71<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000265708' target='_blank'>ADAM2<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/Y44E3A.4' target='_blank'>Y44E3A.4<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000380921' target='_blank'>SH3KBP1<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/Y92H12BL.1a' target='_blank'>Y92H12BL.1<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000274695' target='_blank'>CDKAL1<\/a><\/td><\/tr><\/table>",
+    "id": "pd_missing_interologs1"
+  },
+  "removed": false,
+  "selectable": false,
+  "classes": "hidden",
+  "grabbable": false,
+  "position": {
+    "x": 0,
+    "y": 0
+  },
+  "locked": true,
+  "selected": false,
+  "group": "nodes"
+},
+  {
+  "data": {
+    "name": "pd_missing_interologs2",
+    "weight": 0,
+    "html": "<table class='missing_interologs_table'><tr><th colspan='3' id='missing_interologs_header_2'>Predicted H.sapiens DNM1 interactions<\/th><\/tr><tr><th># Missed Interologs<\/th><th>Predicted Interactor<\/th><th>Indicating DYN-1 Interactors<\/tr><tr><td>1<\/td><td><a href='http://www.ensembl.org/id/ENSP00000328083' target='_blank'>ARHGEF37<\/a><\/td><td><a href='http://www.ensembl.org/id/Y37A1B.17a' target='_blank'>Y37A1B.17<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/ENSP00000416125' target='_blank'>ARHGEF38<\/a><\/td><td><a href='http://www.ensembl.org/id/Y37A1B.17a' target='_blank'>Y37A1B.17<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/ENSP00000259089' target='_blank'>BLK<\/a><\/td><td><a href='http://www.ensembl.org/id/Y92H12A.1b' target='_blank'>SRC-1<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/ENSP00000320434' target='_blank'>CTNNAL1<\/a><\/td><td><a href='http://www.ensembl.org/id/Y23H5A.5a' target='_blank'>CTN-1<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/ENSP00000363115' target='_blank'>FGR<\/a><\/td><td><a href='http://www.ensembl.org/id/Y92H12A.1b' target='_blank'>SRC-1<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/ENSP00000473921' target='_blank'>FNBP1L<\/a><\/td><td><a href='http://www.ensembl.org/id/F09E10.8a' target='_blank'>TOCA-1<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/ENSP00000476145' target='_blank'>FRK<\/a><\/td><td><a href='http://www.ensembl.org/id/F49B2.5' target='_blank'>SRC-2<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/ENSP00000346671' target='_blank'>FYN<\/a><\/td><td><a href='http://www.ensembl.org/id/Y92H12A.1b' target='_blank'>SRC-1<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/ENSP00000284154' target='_blank'>GRAP<\/a><\/td><td><a href='http://www.ensembl.org/id/C14F5.5' target='_blank'>SEM-5<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/ENSP00000365012' target='_blank'>HCK<\/a><\/td><td><a href='http://www.ensembl.org/id/Y92H12A.1b' target='_blank'>SRC-1<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/ENSP00000413520' target='_blank'>HID1<\/a><\/td><td><a href='http://www.ensembl.org/id/K02E10.2a' target='_blank'>HID-1<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/ENSP00000262650' target='_blank'>ITCH<\/a><\/td><td><a href='http://www.ensembl.org/id/Y65B4BR.4a' target='_blank'>WWP-1<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/ENSP00000347244' target='_blank'>ITSN2<\/a><\/td><td><a href='http://www.ensembl.org/id/Y116A8C.36d.1' target='_blank'>ITSN-1<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/ENSP00000328213' target='_blank'>LCK<\/a><\/td><td><a href='http://www.ensembl.org/id/Y92H12A.1b' target='_blank'>SRC-1<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/ENSP00000428924' target='_blank'>LYN<\/a><\/td><td><a href='http://www.ensembl.org/id/Y92H12A.1b' target='_blank'>SRC-1<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/ENSP00000295030' target='_blank'>PEX13<\/a><\/td><td><a href='http://www.ensembl.org/id/F32A5.6' target='_blank'>PRX-13<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/ENSP00000302913' target='_blank'>SH3D19<\/a><\/td><td><a href='http://www.ensembl.org/id/B0303.7a' target='_blank'>B0303.7<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/ENSP00000320092' target='_blank'>SH3GL3<\/a><\/td><td><a href='http://www.ensembl.org/id/T04D1.3d' target='_blank'>UNC-57<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/ENSP00000342276' target='_blank'>SNX18<\/a><\/td><td><a href='http://www.ensembl.org/id/Y37A1B.2b' target='_blank'>LST-4<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/ENSP00000317790' target='_blank'>SPTBN5<\/a><\/td><td><a href='http://www.ensembl.org/id/R31.1a' target='_blank'>SMA-1<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/ENSP00000320117' target='_blank'>TRIP10<\/a><\/td><td><a href='http://www.ensembl.org/id/F09E10.8a' target='_blank'>TOCA-1<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/ENSP00000472929' target='_blank'>VAV1<\/a><\/td><td><a href='http://www.ensembl.org/id/C35B8.2b' target='_blank'>VAV-1<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/ENSP00000360916' target='_blank'>VAV2<\/a><\/td><td><a href='http://www.ensembl.org/id/C35B8.2b' target='_blank'>VAV-1<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/ENSP00000432540' target='_blank'>VAV3<\/a><\/td><td><a href='http://www.ensembl.org/id/C35B8.2b' target='_blank'>VAV-1<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/ENSP00000265428' target='_blank'>WWP1<\/a><\/td><td><a href='http://www.ensembl.org/id/Y65B4BR.4a' target='_blank'>WWP-1<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/ENSP00000352069' target='_blank'>WWP2<\/a><\/td><td><a href='http://www.ensembl.org/id/Y65B4BR.4a' target='_blank'>WWP-1<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/ENSP00000464380' target='_blank'>YES1<\/a><\/td><td><a href='http://www.ensembl.org/id/Y92H12A.1b' target='_blank'>SRC-1<\/a><\/td><\/tr><\/table>",
+    "id": "pd_missing_interologs2"
+  },
+  "removed": false,
+  "selectable": false,
+  "classes": "hidden",
+  "grabbable": false,
+  "position": {
+    "x": 0,
+    "y": 0
+  },
+  "locked": true,
+  "selected": false,
+  "group": "nodes"
+},
+  {
+  "data": {
+    "numInterologs": 15,
+    "numUnmatchedProteins1": 8,
+    "numUnmatchedProteins2": 36,
+    "species2": "H.sapiens",
+    "protein1": "DYN-1",
+    "weight": 0,
+    "protein2": "DNM1",
+    "numMissingInterologs": 70,
+    "species1": "C.elegans",
+    "numInterologProteins1": 10,
+    "numUnmatchableProteins2": 15,
+    "numInterologProteins2": 15,
+    "score": "17.65",
+    "numUnmatchableProteins1": 2,
+    "name": "pd_stats",
+    "id": "pd_stats"
+  },
+  "removed": false,
+  "selectable": false,
+  "classes": "hidden",
+  "grabbable": false,
+  "position": {
+    "x": 0,
+    "y": 0
+  },
+  "locked": true,
+  "selected": false,
+  "group": "nodes"
+},
+  {
+  "data": {
+    "name": "vp_missing_interologs1",
+    "weight": 0,
+    "html": "<table class='missing_interologs_table'><tr><th colspan='3' id='missing_interologs_header_1'>Predicted C.elegans DYN-1 interactions<\/th><\/tr><tr><th># Missed Interologs<\/th><th>Predicted Interactor<\/th><th>Indicating DNM1 Interactors<\/tr><tr><td>2<\/td><td><a href='http://www.ensembl.org/id/F58G6.1.1' target='_blank'>AMPH-1<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000348602' target='_blank'>AMPH<\/a>, <a href='http://www.ensembl.org/id/ENSP00000316779' target='_blank'>BIN1<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/F25H2.5.1' target='_blank'>NDK-1<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000013034' target='_blank'>NME1<\/a>, <a href='http://www.ensembl.org/id/ENSP00000376886' target='_blank'>NME2<\/a><\/td><\/tr><tr><td>1<\/td><td><a href='http://www.ensembl.org/id/M79.1a' target='_blank'>ABL-1<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000361423' target='_blank'>ABL1<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/T20B5.1.1' target='_blank'>APA-2<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000351926' target='_blank'>AP2A1<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/C42D8.8a' target='_blank'>APL-1<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000284981' target='_blank'>APP<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/F53H8.2' target='_blank'>ARR-1<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000409581' target='_blank'>ARRB1<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/C30A5.3' target='_blank'>C30A5.3<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000315702' target='_blank'>MOB4<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/C36E8.4' target='_blank'>C36E8.4<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000394051' target='_blank'>NOSTRIN<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/C52E4.7' target='_blank'>C52E4.7<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000317327' target='_blank'>UBASH3A<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/T27E9.3' target='_blank'>CDK-5<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000419782' target='_blank'>CDK5<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/K08E3.4' target='_blank'>DBN-1<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000365745' target='_blank'>CTTN<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/C02C6.1b' target='_blank'>DYN-1<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000347890' target='_blank'>DNM2<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/C27C12.2' target='_blank'>EGRH-1<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000239938' target='_blank'>EGR1<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/Y55F3AM.7b' target='_blank'>EGRH-2<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000239938' target='_blank'>EGR1<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/Y94H6A.11a' target='_blank'>EGRH-3<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000239938' target='_blank'>EGR1<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/ZK1248.3a' target='_blank'>EHS-1<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000360798' target='_blank'>EPS15<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/F09C12.8' target='_blank'>F09C12.8<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000317327' target='_blank'>UBASH3A<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/F53B6.7' target='_blank'>F53B6.7<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000317327' target='_blank'>UBASH3A<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/F55A11.11' target='_blank'>F55A11.11<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000317327' target='_blank'>UBASH3A<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/F56D12.6a' target='_blank'>FCHO-1<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000393776' target='_blank'>FCHO2<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/W10D5.3c.1' target='_blank'>GEI-17<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000438574' target='_blank'>PIAS1<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/F29D10.4' target='_blank'>HUM-1<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000288235' target='_blank'>MYO1E<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/C30F8.4a' target='_blank'>KIN-32<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000332816' target='_blank'>PTK2B<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/T27C10.6' target='_blank'>LRK-1<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000298910' target='_blank'>LRRK2<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/M03E7.4' target='_blank'>M03E7.4<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000318607' target='_blank'>LDLRAD3<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/T04C10.1' target='_blank'>MBK-1<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000381932' target='_blank'>DYRK1A<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/F32H2.2b' target='_blank'>MDT-31<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000225728' target='_blank'>MED31<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/K11D12.10c' target='_blank'>MLK-1<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000253055' target='_blank'>MAP3K10<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/Y48C3A.16' target='_blank'>PINN-4<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000362773' target='_blank'>PIN4<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/R12C12.6a' target='_blank'>R12C12.6<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000433361' target='_blank'>TMEM9B<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/C34E11.1' target='_blank'>RSD-3<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000429824' target='_blank'>CLINT1<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/T21C9.12' target='_blank'>SCPL-4<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000318115' target='_blank'>TIMM50<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/T01D3.5' target='_blank'>T01D3.5<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000336887' target='_blank'>SLC39A9<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/T07F12.1' target='_blank'>T07F12.1<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000317327' target='_blank'>UBASH3A<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/Y48E1C.3' target='_blank'>TBC-15<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000448182' target='_blank'>TBC1D15<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/K08E3.3b' target='_blank'>TOCA-2<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000413625' target='_blank'>FNBP1<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/D1073.1b' target='_blank'>TRK-1<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000431418' target='_blank'>NTRK1<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/F29B9.6' target='_blank'>UBC-9<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000384361' target='_blank'>UBE2I<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/Y37D8A.13' target='_blank'>UNC-71<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000265708' target='_blank'>ADAM2<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/Y44E3A.4' target='_blank'>Y44E3A.4<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000380921' target='_blank'>SH3KBP1<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/Y92H12BL.1a' target='_blank'>Y92H12BL.1<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000274695' target='_blank'>CDKAL1<\/a><\/td><\/tr><\/table>",
+    "id": "vp_missing_interologs1"
+  },
+  "removed": false,
+  "selectable": false,
+  "classes": "hidden",
+  "grabbable": false,
+  "position": {
+    "x": 0,
+    "y": 0
+  },
+  "locked": true,
+  "selected": false,
+  "group": "nodes"
+},
+  {
+  "data": {
+    "name": "vp_missing_interologs2",
+    "weight": 0,
+    "html": "<table class='missing_interologs_table'><tr><th colspan='3' id='missing_interologs_header_2'>Predicted H.sapiens DNM1 interactions<\/th><\/tr><tr><th># Missed Interologs<\/th><th>Predicted Interactor<\/th><th>Indicating DYN-1 Interactors<\/tr><tr><td>1<\/td><td><a href='http://www.ensembl.org/id/ENSP00000328083' target='_blank'>ARHGEF37<\/a><\/td><td><a href='http://www.ensembl.org/id/Y37A1B.17a' target='_blank'>Y37A1B.17<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/ENSP00000416125' target='_blank'>ARHGEF38<\/a><\/td><td><a href='http://www.ensembl.org/id/Y37A1B.17a' target='_blank'>Y37A1B.17<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/ENSP00000259089' target='_blank'>BLK<\/a><\/td><td><a href='http://www.ensembl.org/id/Y92H12A.1b' target='_blank'>SRC-1<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/ENSP00000320434' target='_blank'>CTNNAL1<\/a><\/td><td><a href='http://www.ensembl.org/id/Y23H5A.5a' target='_blank'>CTN-1<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/ENSP00000363115' target='_blank'>FGR<\/a><\/td><td><a href='http://www.ensembl.org/id/Y92H12A.1b' target='_blank'>SRC-1<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/ENSP00000473921' target='_blank'>FNBP1L<\/a><\/td><td><a href='http://www.ensembl.org/id/F09E10.8a' target='_blank'>TOCA-1<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/ENSP00000476145' target='_blank'>FRK<\/a><\/td><td><a href='http://www.ensembl.org/id/F49B2.5' target='_blank'>SRC-2<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/ENSP00000346671' target='_blank'>FYN<\/a><\/td><td><a href='http://www.ensembl.org/id/Y92H12A.1b' target='_blank'>SRC-1<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/ENSP00000284154' target='_blank'>GRAP<\/a><\/td><td><a href='http://www.ensembl.org/id/C14F5.5' target='_blank'>SEM-5<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/ENSP00000365012' target='_blank'>HCK<\/a><\/td><td><a href='http://www.ensembl.org/id/Y92H12A.1b' target='_blank'>SRC-1<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/ENSP00000413520' target='_blank'>HID1<\/a><\/td><td><a href='http://www.ensembl.org/id/K02E10.2a' target='_blank'>HID-1<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/ENSP00000262650' target='_blank'>ITCH<\/a><\/td><td><a href='http://www.ensembl.org/id/Y65B4BR.4a' target='_blank'>WWP-1<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/ENSP00000347244' target='_blank'>ITSN2<\/a><\/td><td><a href='http://www.ensembl.org/id/Y116A8C.36d.1' target='_blank'>ITSN-1<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/ENSP00000328213' target='_blank'>LCK<\/a><\/td><td><a href='http://www.ensembl.org/id/Y92H12A.1b' target='_blank'>SRC-1<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/ENSP00000428924' target='_blank'>LYN<\/a><\/td><td><a href='http://www.ensembl.org/id/Y92H12A.1b' target='_blank'>SRC-1<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/ENSP00000295030' target='_blank'>PEX13<\/a><\/td><td><a href='http://www.ensembl.org/id/F32A5.6' target='_blank'>PRX-13<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/ENSP00000302913' target='_blank'>SH3D19<\/a><\/td><td><a href='http://www.ensembl.org/id/B0303.7a' target='_blank'>B0303.7<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/ENSP00000320092' target='_blank'>SH3GL3<\/a><\/td><td><a href='http://www.ensembl.org/id/T04D1.3d' target='_blank'>UNC-57<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/ENSP00000342276' target='_blank'>SNX18<\/a><\/td><td><a href='http://www.ensembl.org/id/Y37A1B.2b' target='_blank'>LST-4<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/ENSP00000317790' target='_blank'>SPTBN5<\/a><\/td><td><a href='http://www.ensembl.org/id/R31.1a' target='_blank'>SMA-1<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/ENSP00000320117' target='_blank'>TRIP10<\/a><\/td><td><a href='http://www.ensembl.org/id/F09E10.8a' target='_blank'>TOCA-1<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/ENSP00000472929' target='_blank'>VAV1<\/a><\/td><td><a href='http://www.ensembl.org/id/C35B8.2b' target='_blank'>VAV-1<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/ENSP00000360916' target='_blank'>VAV2<\/a><\/td><td><a href='http://www.ensembl.org/id/C35B8.2b' target='_blank'>VAV-1<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/ENSP00000432540' target='_blank'>VAV3<\/a><\/td><td><a href='http://www.ensembl.org/id/C35B8.2b' target='_blank'>VAV-1<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/ENSP00000265428' target='_blank'>WWP1<\/a><\/td><td><a href='http://www.ensembl.org/id/Y65B4BR.4a' target='_blank'>WWP-1<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/ENSP00000352069' target='_blank'>WWP2<\/a><\/td><td><a href='http://www.ensembl.org/id/Y65B4BR.4a' target='_blank'>WWP-1<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/ENSP00000464380' target='_blank'>YES1<\/a><\/td><td><a href='http://www.ensembl.org/id/Y92H12A.1b' target='_blank'>SRC-1<\/a><\/td><\/tr><\/table>",
+    "id": "vp_missing_interologs2"
+  },
+  "removed": false,
+  "selectable": false,
+  "classes": "hidden",
+  "grabbable": false,
+  "position": {
+    "x": 0,
+    "y": 0
+  },
+  "locked": true,
+  "selected": false,
+  "group": "nodes"
+},
+  {
+  "data": {
+    "numInterologs": 15,
+    "numUnmatchedProteins1": 8,
+    "numUnmatchedProteins2": 36,
+    "species2": "H.sapiens",
+    "protein1": "DYN-1",
+    "weight": 0,
+    "protein2": "DNM1",
+    "numMissingInterologs": 70,
+    "species1": "C.elegans",
+    "numInterologProteins1": 10,
+    "numUnmatchableProteins2": 15,
+    "numInterologProteins2": 15,
+    "score": "17.65",
+    "numUnmatchableProteins1": 2,
+    "name": "vp_stats",
+    "id": "vp_stats"
+  },
+  "removed": false,
+  "selectable": false,
+  "classes": "hidden",
+  "grabbable": false,
+  "position": {
+    "x": 0,
+    "y": 0
+  },
+  "locked": true,
+  "selected": false,
+  "group": "nodes"
+},
+  {
+  "data": {
+    "name": "vd_missing_interologs1",
+    "weight": 0,
+    "html": "<table class='missing_interologs_table'><tr><th colspan='3' id='missing_interologs_header_1'>Predicted C.elegans DYN-1 interactions<\/th><\/tr><tr><th># Missed Interologs<\/th><th>Predicted Interactor<\/th><th>Indicating DNM1 Interactors<\/tr><tr><td>2<\/td><td><a href='http://www.ensembl.org/id/F58G6.1.1' target='_blank'>AMPH-1<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000348602' target='_blank'>AMPH<\/a>, <a href='http://www.ensembl.org/id/ENSP00000316779' target='_blank'>BIN1<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/F25H2.5.1' target='_blank'>NDK-1<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000013034' target='_blank'>NME1<\/a>, <a href='http://www.ensembl.org/id/ENSP00000376886' target='_blank'>NME2<\/a><\/td><\/tr><tr><td>1<\/td><td><a href='http://www.ensembl.org/id/M79.1a' target='_blank'>ABL-1<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000361423' target='_blank'>ABL1<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/T20B5.1.1' target='_blank'>APA-2<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000351926' target='_blank'>AP2A1<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/C42D8.8a' target='_blank'>APL-1<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000284981' target='_blank'>APP<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/F53H8.2' target='_blank'>ARR-1<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000409581' target='_blank'>ARRB1<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/C30A5.3' target='_blank'>C30A5.3<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000315702' target='_blank'>MOB4<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/C36E8.4' target='_blank'>C36E8.4<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000394051' target='_blank'>NOSTRIN<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/C52E4.7' target='_blank'>C52E4.7<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000317327' target='_blank'>UBASH3A<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/T27E9.3' target='_blank'>CDK-5<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000419782' target='_blank'>CDK5<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/K08E3.4' target='_blank'>DBN-1<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000365745' target='_blank'>CTTN<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/C02C6.1b' target='_blank'>DYN-1<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000347890' target='_blank'>DNM2<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/C27C12.2' target='_blank'>EGRH-1<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000239938' target='_blank'>EGR1<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/Y55F3AM.7b' target='_blank'>EGRH-2<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000239938' target='_blank'>EGR1<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/Y94H6A.11a' target='_blank'>EGRH-3<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000239938' target='_blank'>EGR1<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/ZK1248.3a' target='_blank'>EHS-1<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000360798' target='_blank'>EPS15<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/F09C12.8' target='_blank'>F09C12.8<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000317327' target='_blank'>UBASH3A<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/F53B6.7' target='_blank'>F53B6.7<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000317327' target='_blank'>UBASH3A<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/F55A11.11' target='_blank'>F55A11.11<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000317327' target='_blank'>UBASH3A<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/F56D12.6a' target='_blank'>FCHO-1<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000393776' target='_blank'>FCHO2<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/W10D5.3c.1' target='_blank'>GEI-17<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000438574' target='_blank'>PIAS1<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/F29D10.4' target='_blank'>HUM-1<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000288235' target='_blank'>MYO1E<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/C30F8.4a' target='_blank'>KIN-32<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000332816' target='_blank'>PTK2B<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/T27C10.6' target='_blank'>LRK-1<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000298910' target='_blank'>LRRK2<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/M03E7.4' target='_blank'>M03E7.4<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000318607' target='_blank'>LDLRAD3<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/T04C10.1' target='_blank'>MBK-1<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000381932' target='_blank'>DYRK1A<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/F32H2.2b' target='_blank'>MDT-31<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000225728' target='_blank'>MED31<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/K11D12.10c' target='_blank'>MLK-1<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000253055' target='_blank'>MAP3K10<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/Y48C3A.16' target='_blank'>PINN-4<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000362773' target='_blank'>PIN4<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/R12C12.6a' target='_blank'>R12C12.6<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000433361' target='_blank'>TMEM9B<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/C34E11.1' target='_blank'>RSD-3<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000429824' target='_blank'>CLINT1<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/T21C9.12' target='_blank'>SCPL-4<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000318115' target='_blank'>TIMM50<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/T01D3.5' target='_blank'>T01D3.5<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000336887' target='_blank'>SLC39A9<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/T07F12.1' target='_blank'>T07F12.1<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000317327' target='_blank'>UBASH3A<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/Y48E1C.3' target='_blank'>TBC-15<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000448182' target='_blank'>TBC1D15<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/K08E3.3b' target='_blank'>TOCA-2<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000413625' target='_blank'>FNBP1<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/D1073.1b' target='_blank'>TRK-1<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000431418' target='_blank'>NTRK1<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/F29B9.6' target='_blank'>UBC-9<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000384361' target='_blank'>UBE2I<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/Y37D8A.13' target='_blank'>UNC-71<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000265708' target='_blank'>ADAM2<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/Y44E3A.4' target='_blank'>Y44E3A.4<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000380921' target='_blank'>SH3KBP1<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/Y92H12BL.1a' target='_blank'>Y92H12BL.1<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000274695' target='_blank'>CDKAL1<\/a><\/td><\/tr><\/table>",
+    "id": "vd_missing_interologs1"
+  },
+  "removed": false,
+  "selectable": false,
+  "classes": "hidden",
+  "grabbable": false,
+  "position": {
+    "x": 0,
+    "y": 0
+  },
+  "locked": true,
+  "selected": false,
+  "group": "nodes"
+},
+  {
+  "data": {
+    "name": "vd_missing_interologs2",
+    "weight": 0,
+    "html": "<table class='missing_interologs_table'><tr><th colspan='3' id='missing_interologs_header_2'>Predicted H.sapiens DNM1 interactions<\/th><\/tr><tr><th># Missed Interologs<\/th><th>Predicted Interactor<\/th><th>Indicating DYN-1 Interactors<\/tr><tr><td>1<\/td><td><a href='http://www.ensembl.org/id/ENSP00000328083' target='_blank'>ARHGEF37<\/a><\/td><td><a href='http://www.ensembl.org/id/Y37A1B.17a' target='_blank'>Y37A1B.17<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/ENSP00000416125' target='_blank'>ARHGEF38<\/a><\/td><td><a href='http://www.ensembl.org/id/Y37A1B.17a' target='_blank'>Y37A1B.17<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/ENSP00000259089' target='_blank'>BLK<\/a><\/td><td><a href='http://www.ensembl.org/id/Y92H12A.1b' target='_blank'>SRC-1<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/ENSP00000320434' target='_blank'>CTNNAL1<\/a><\/td><td><a href='http://www.ensembl.org/id/Y23H5A.5a' target='_blank'>CTN-1<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/ENSP00000363115' target='_blank'>FGR<\/a><\/td><td><a href='http://www.ensembl.org/id/Y92H12A.1b' target='_blank'>SRC-1<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/ENSP00000473921' target='_blank'>FNBP1L<\/a><\/td><td><a href='http://www.ensembl.org/id/F09E10.8a' target='_blank'>TOCA-1<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/ENSP00000476145' target='_blank'>FRK<\/a><\/td><td><a href='http://www.ensembl.org/id/F49B2.5' target='_blank'>SRC-2<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/ENSP00000346671' target='_blank'>FYN<\/a><\/td><td><a href='http://www.ensembl.org/id/Y92H12A.1b' target='_blank'>SRC-1<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/ENSP00000284154' target='_blank'>GRAP<\/a><\/td><td><a href='http://www.ensembl.org/id/C14F5.5' target='_blank'>SEM-5<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/ENSP00000365012' target='_blank'>HCK<\/a><\/td><td><a href='http://www.ensembl.org/id/Y92H12A.1b' target='_blank'>SRC-1<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/ENSP00000413520' target='_blank'>HID1<\/a><\/td><td><a href='http://www.ensembl.org/id/K02E10.2a' target='_blank'>HID-1<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/ENSP00000262650' target='_blank'>ITCH<\/a><\/td><td><a href='http://www.ensembl.org/id/Y65B4BR.4a' target='_blank'>WWP-1<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/ENSP00000347244' target='_blank'>ITSN2<\/a><\/td><td><a href='http://www.ensembl.org/id/Y116A8C.36d.1' target='_blank'>ITSN-1<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/ENSP00000328213' target='_blank'>LCK<\/a><\/td><td><a href='http://www.ensembl.org/id/Y92H12A.1b' target='_blank'>SRC-1<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/ENSP00000428924' target='_blank'>LYN<\/a><\/td><td><a href='http://www.ensembl.org/id/Y92H12A.1b' target='_blank'>SRC-1<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/ENSP00000295030' target='_blank'>PEX13<\/a><\/td><td><a href='http://www.ensembl.org/id/F32A5.6' target='_blank'>PRX-13<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/ENSP00000302913' target='_blank'>SH3D19<\/a><\/td><td><a href='http://www.ensembl.org/id/B0303.7a' target='_blank'>B0303.7<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/ENSP00000320092' target='_blank'>SH3GL3<\/a><\/td><td><a href='http://www.ensembl.org/id/T04D1.3d' target='_blank'>UNC-57<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/ENSP00000342276' target='_blank'>SNX18<\/a><\/td><td><a href='http://www.ensembl.org/id/Y37A1B.2b' target='_blank'>LST-4<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/ENSP00000317790' target='_blank'>SPTBN5<\/a><\/td><td><a href='http://www.ensembl.org/id/R31.1a' target='_blank'>SMA-1<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/ENSP00000320117' target='_blank'>TRIP10<\/a><\/td><td><a href='http://www.ensembl.org/id/F09E10.8a' target='_blank'>TOCA-1<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/ENSP00000472929' target='_blank'>VAV1<\/a><\/td><td><a href='http://www.ensembl.org/id/C35B8.2b' target='_blank'>VAV-1<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/ENSP00000360916' target='_blank'>VAV2<\/a><\/td><td><a href='http://www.ensembl.org/id/C35B8.2b' target='_blank'>VAV-1<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/ENSP00000432540' target='_blank'>VAV3<\/a><\/td><td><a href='http://www.ensembl.org/id/C35B8.2b' target='_blank'>VAV-1<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/ENSP00000265428' target='_blank'>WWP1<\/a><\/td><td><a href='http://www.ensembl.org/id/Y65B4BR.4a' target='_blank'>WWP-1<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/ENSP00000352069' target='_blank'>WWP2<\/a><\/td><td><a href='http://www.ensembl.org/id/Y65B4BR.4a' target='_blank'>WWP-1<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/ENSP00000464380' target='_blank'>YES1<\/a><\/td><td><a href='http://www.ensembl.org/id/Y92H12A.1b' target='_blank'>SRC-1<\/a><\/td><\/tr><\/table>",
+    "id": "vd_missing_interologs2"
+  },
+  "removed": false,
+  "selectable": false,
+  "classes": "hidden",
+  "grabbable": false,
+  "position": {
+    "x": 0,
+    "y": 0
+  },
+  "locked": true,
+  "selected": false,
+  "group": "nodes"
+},
+  {
+  "data": {
+    "numInterologs": 15,
+    "numUnmatchedProteins1": 8,
+    "numUnmatchedProteins2": 36,
+    "species2": "H.sapiens",
+    "protein1": "DYN-1",
+    "weight": 0,
+    "protein2": "DNM1",
+    "numMissingInterologs": 70,
+    "species1": "C.elegans",
+    "numInterologProteins1": 10,
+    "numUnmatchableProteins2": 15,
+    "numInterologProteins2": 15,
+    "score": "17.65",
+    "numUnmatchableProteins1": 2,
+    "name": "vd_stats",
+    "id": "vd_stats"
+  },
+  "removed": false,
+  "selectable": false,
+  "classes": "hidden",
+  "grabbable": false,
+  "position": {
+    "x": 0,
+    "y": 0
+  },
+  "locked": true,
+  "selected": false,
+  "group": "nodes"
+}
+]
