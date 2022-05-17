@@ -1,0 +1,1087 @@
+[
+  {
+  "data": {
+    "parent": "F41D9.1",
+    "name": "N",
+    "weight": 75,
+    "id": "n-term-1"
+  },
+  "removed": false,
+  "selectable": true,
+  "classes": "species1 terminus",
+  "grabbable": true,
+  "position": {
+    "x": -150,
+    "y": -25
+  },
+  "locked": false,
+  "selected": false,
+  "group": "nodes"
+},
+  {
+  "data": {
+    "parent": "F41D9.1",
+    "name": "C",
+    "weight": 75,
+    "id": "c-term-1"
+  },
+  "removed": false,
+  "selectable": true,
+  "classes": "species1 terminus",
+  "grabbable": true,
+  "position": {
+    "x": -150,
+    "y": 25
+  },
+  "locked": false,
+  "selected": false,
+  "group": "nodes"
+},
+  {
+  "data": {
+    "parent": "ENSP00000248929",
+    "name": "N",
+    "weight": 75,
+    "id": "n-term-2"
+  },
+  "removed": false,
+  "selectable": true,
+  "classes": "species2 terminus",
+  "grabbable": true,
+  "position": {
+    "x": 150,
+    "y": -25
+  },
+  "locked": false,
+  "selected": false,
+  "group": "nodes"
+},
+  {
+  "data": {
+    "parent": "ENSP00000248929",
+    "name": "C",
+    "weight": 75,
+    "id": "c-term-2"
+  },
+  "removed": false,
+  "selectable": true,
+  "classes": "species2 terminus",
+  "grabbable": true,
+  "position": {
+    "x": 150,
+    "y": 25
+  },
+  "locked": false,
+  "selected": false,
+  "group": "nodes"
+},
+  {
+  "data": {
+    "name": "Unmatched 1",
+    "weight": 75,
+    "id": "Unmatched 1"
+  },
+  "removed": false,
+  "selectable": true,
+  "classes": "container",
+  "grabbable": true,
+  "position": {
+    "x": 0,
+    "y": 0
+  },
+  "locked": false,
+  "selected": false,
+  "group": "nodes"
+},
+  {
+  "data": {
+    "name": "Unmatchable 1",
+    "weight": 75,
+    "id": "Unmatchable 1"
+  },
+  "removed": false,
+  "selectable": true,
+  "classes": "container",
+  "grabbable": true,
+  "position": {
+    "x": 0,
+    "y": 0
+  },
+  "locked": false,
+  "selected": false,
+  "group": "nodes"
+},
+  {
+  "data": {
+    "name": "Unmatched 2",
+    "weight": 75,
+    "id": "Unmatched 2"
+  },
+  "removed": false,
+  "selectable": true,
+  "classes": "container",
+  "grabbable": true,
+  "position": {
+    "x": 0,
+    "y": 0
+  },
+  "locked": false,
+  "selected": false,
+  "group": "nodes"
+},
+  {
+  "data": {
+    "name": "Unmatchable 2",
+    "weight": 75,
+    "id": "Unmatchable 2"
+  },
+  "removed": false,
+  "selectable": true,
+  "classes": "container",
+  "grabbable": true,
+  "position": {
+    "x": 0,
+    "y": 0
+  },
+  "locked": false,
+  "selected": false,
+  "group": "nodes"
+},
+  {
+  "data": {
+    "parent": "Unmatchable 1",
+    "num_neighbours": 37,
+    "name": "FLH-1",
+    "length": 507,
+    "weight": 75,
+    "neighbours": "APTF-2, CEH-30, CEH-31, CEH-54, EGL-13, EPHX-1, F19C7.8, FLH-1, FLH-2, FLH-3...",
+    "id": "Y11D7A.12a"
+  },
+  "removed": false,
+  "selectable": true,
+  "classes": "protein protein-target species1 unmatchable validated",
+  "grabbable": true,
+  "position": {
+    "x": -280,
+    "y": 110
+  },
+  "locked": false,
+  "selected": false,
+  "group": "nodes"
+},
+  {
+  "data": {
+    "parent": "Unmatchable 2",
+    "num_neighbours": 335,
+    "name": "SNCA",
+    "length": 140,
+    "weight": 75,
+    "neighbours": "A1BG, ABL1, ACTA1, ACTB, ACTG1, ACTR1A, ACTR1B, ADAP2, AGAP2, AKAP17A...",
+    "id": "ENSP00000338345"
+  },
+  "removed": false,
+  "selectable": true,
+  "classes": "protein protein-target species2 unmatchable validated",
+  "grabbable": true,
+  "position": {
+    "x": 280,
+    "y": 110
+  },
+  "locked": false,
+  "selected": false,
+  "group": "nodes"
+},
+  {
+  "data": {
+    "parent": "Unmatchable 2",
+    "num_neighbours": 375,
+    "name": "HLA-B",
+    "length": 363,
+    "weight": 75,
+    "neighbours": "AARS, AASDHPPT, ACAT1, ACAT2, ACTR1A, ACTR2, ADAM21, ADRB2, ADSS, AFP...",
+    "id": "ENSP00000491291"
+  },
+  "removed": false,
+  "selectable": true,
+  "classes": "protein protein-target species2 unmatchable validated",
+  "grabbable": true,
+  "position": {
+    "x": 250,
+    "y": 110
+  },
+  "locked": false,
+  "selected": false,
+  "group": "nodes"
+},
+  {
+  "data": {
+    "parent": "Unmatched 2",
+    "num_neighbours": 1857,
+    "name": "NTRK1",
+    "length": 796,
+    "weight": 75,
+    "neighbours": "AAAS, AAK1, AARS, AARS2, AASDHPPT, ABCB1, ABCB7, ABCC1, ABCD1, ABCD2...",
+    "id": "ENSP00000431418"
+  },
+  "removed": false,
+  "selectable": true,
+  "classes": "protein protein-target species2 unmatched validated",
+  "grabbable": true,
+  "position": {
+    "x": 250,
+    "y": -110
+  },
+  "locked": false,
+  "selected": false,
+  "group": "nodes"
+},
+  {
+  "data": {
+    "parent": "ENSP00000248929",
+    "name": "SH3-1",
+    "weight": 75,
+    "id": "ENSP00000248929-domain-0"
+  },
+  "removed": false,
+  "selectable": true,
+  "classes": "domain species2",
+  "grabbable": true,
+  "position": {
+    "x": 150,
+    "y": 0
+  },
+  "locked": false,
+  "selected": false,
+  "group": "nodes"
+},
+  {
+  "data": {
+    "parent": "Unmatched 2",
+    "num_neighbours": 194,
+    "name": "RAB5C",
+    "length": 249,
+    "weight": 75,
+    "neighbours": "ABCD1, ABCG2, ABT1, ACBD5, ACIN1, ACTB, ALS2CL, APP, APPL2, ARHGAP39...",
+    "id": "ENSP00000447053"
+  },
+  "removed": false,
+  "selectable": true,
+  "classes": "protein protein-target species2 unmatched validated",
+  "grabbable": true,
+  "position": {
+    "x": 250,
+    "y": -80
+  },
+  "locked": false,
+  "selected": false,
+  "group": "nodes"
+},
+  {
+  "data": {
+    "parent": "Unmatched 1",
+    "num_neighbours": 34,
+    "name": "MEP-1",
+    "length": 870,
+    "weight": 75,
+    "neighbours": "CIR-1, CYN-4, DMD-8, EGL-18, EGL-27, ELT-6, F54D10.3, FKH-7, FLH-2, HDA-1...",
+    "id": "M04B2.1"
+  },
+  "removed": false,
+  "selectable": true,
+  "classes": "protein protein-target species1 unmatched validated",
+  "grabbable": true,
+  "position": {
+    "x": -250,
+    "y": -80
+  },
+  "locked": false,
+  "selected": false,
+  "group": "nodes"
+},
+  {
+  "data": {
+    "parent": "Unmatched 2",
+    "num_neighbours": 381,
+    "name": "RPL35",
+    "length": 123,
+    "weight": 75,
+    "neighbours": "AC011498.1, ACTN2, ADAR, ADH4, AGO4, ARRB2, ASCC3, AVEN, BAIAP2, BANF1...",
+    "id": "ENSP00000259469"
+  },
+  "removed": false,
+  "selectable": true,
+  "classes": "protein protein-target species2 unmatched validated",
+  "grabbable": true,
+  "position": {
+    "x": 280,
+    "y": -80
+  },
+  "locked": false,
+  "selected": false,
+  "group": "nodes"
+},
+  {
+  "data": {
+    "parent": "Unmatched 2",
+    "num_neighbours": 22,
+    "name": "RAB39B",
+    "length": 213,
+    "weight": 75,
+    "neighbours": "ALPI, BECN1, CARM1, CBL, CLEC16A, GOLGA2, HBS1L, KLK8, KPNA2, LAMP3...",
+    "id": "ENSP00000358466"
+  },
+  "removed": false,
+  "selectable": true,
+  "classes": "protein protein-target species2 unmatched validated",
+  "grabbable": true,
+  "position": {
+    "x": 310,
+    "y": -110
+  },
+  "locked": false,
+  "selected": false,
+  "group": "nodes"
+},
+  {
+  "data": {
+    "parent": "Unmatched 2",
+    "num_neighbours": 83,
+    "name": "RAB5A",
+    "length": 215,
+    "weight": 75,
+    "neighbours": "ACSL4, AGTR1, ALS2, ALS2CL, ANKFY1, APPL1, APPL2, ATE1, BAG3, BTRC...",
+    "id": "ENSP00000273047"
+  },
+  "removed": false,
+  "selectable": true,
+  "classes": "protein protein-target species2 unmatched validated",
+  "grabbable": true,
+  "position": {
+    "x": 340,
+    "y": -110
+  },
+  "locked": false,
+  "selected": false,
+  "group": "nodes"
+},
+  {
+  "data": {
+    "num_neighbours": 12,
+    "name": "SGSM3",
+    "length": 749,
+    "weight": 75,
+    "neighbours": "FMO3, HLA-B, KLF8, LEMD2, NF2, NTRK1, PDCD6IP, RAB39B, RAB5A, RAB5C...",
+    "id": "ENSP00000248929"
+  },
+  "removed": false,
+  "selectable": true,
+  "classes": "queryProtein species2",
+  "grabbable": true,
+  "position": {
+    "x": 0,
+    "y": 0
+  },
+  "locked": false,
+  "selected": false,
+  "group": "nodes"
+},
+  {
+  "data": {
+    "parent": "Unmatched 2",
+    "num_neighbours": 144,
+    "name": "PDCD6IP",
+    "length": 873,
+    "weight": 75,
+    "neighbours": "ACTC1, ALDH2, ALDH7A1, ALG2, AMOTL1, ARRDC1, ARRDC3, ATG12, ATG3, BAG3...",
+    "id": "ENSP00000411825"
+  },
+  "removed": false,
+  "selectable": true,
+  "classes": "protein protein-target species2 unmatched validated",
+  "grabbable": true,
+  "position": {
+    "x": 280,
+    "y": -110
+  },
+  "locked": false,
+  "selected": false,
+  "group": "nodes"
+},
+  {
+  "data": {
+    "parent": "Unmatched 1",
+    "num_neighbours": 26,
+    "name": "CEH-14",
+    "length": 351,
+    "weight": 75,
+    "neighbours": "ATF-2, B0336.7, B0507.3, DMD-8, DRAP-1, EGL-13, ELT-6, F21A9.2, GLA-3, H02I12.5...",
+    "id": "F46C8.5"
+  },
+  "removed": false,
+  "selectable": true,
+  "classes": "protein protein-target species1 unmatched validated",
+  "grabbable": true,
+  "position": {
+    "x": -280,
+    "y": -80
+  },
+  "locked": false,
+  "selected": false,
+  "group": "nodes"
+},
+  {
+  "data": {
+    "parent": "Unmatched 2",
+    "num_neighbours": 32,
+    "name": "LEMD2",
+    "length": 503,
+    "weight": 75,
+    "neighbours": "ANO6, ASPH, ATP2B2, B4GAT1, CHRNA3, CHRNA9, CHRNB3, DLK1, GDPD5, HAUS7...",
+    "id": "ENSP00000293760"
+  },
+  "removed": false,
+  "selectable": true,
+  "classes": "protein protein-target species2 unmatched validated",
+  "grabbable": true,
+  "position": {
+    "x": 310,
+    "y": -140
+  },
+  "locked": false,
+  "selected": false,
+  "group": "nodes"
+},
+  {
+  "data": {
+    "parent": "Unmatched 2",
+    "num_neighbours": 5,
+    "name": "FMO3",
+    "length": 532,
+    "weight": 75,
+    "neighbours": "CEBPB, CLEC10A, CREB3, SACM1L, SGSM3",
+    "id": "ENSP00000356729"
+  },
+  "removed": false,
+  "selectable": true,
+  "classes": "protein protein-target species2 unmatched validated",
+  "grabbable": true,
+  "position": {
+    "x": 250,
+    "y": -140
+  },
+  "locked": false,
+  "selected": false,
+  "group": "nodes"
+},
+  {
+  "data": {
+    "num_neighbours": 3,
+    "name": "TBC-18",
+    "length": 826,
+    "weight": 75,
+    "neighbours": "CEH-14, FLH-1, MEP-1",
+    "id": "F41D9.1"
+  },
+  "removed": false,
+  "selectable": true,
+  "classes": "queryProtein species1",
+  "grabbable": true,
+  "position": {
+    "x": 0,
+    "y": 0
+  },
+  "locked": false,
+  "selected": false,
+  "group": "nodes"
+},
+  {
+  "data": {
+    "parent": "F41D9.1",
+    "name": "SH3-1",
+    "weight": 75,
+    "id": "F41D9.1-domain-0"
+  },
+  "removed": false,
+  "selectable": true,
+  "classes": "domain species1",
+  "grabbable": true,
+  "position": {
+    "x": -150,
+    "y": 0
+  },
+  "locked": false,
+  "selected": false,
+  "group": "nodes"
+},
+  {
+  "data": {
+    "parent": "Unmatched 2",
+    "num_neighbours": 14,
+    "name": "KLF8",
+    "length": 359,
+    "weight": 75,
+    "neighbours": "ANTXR1, APP, BIN1, CREBBP, CTBP1, CTBP2, DGCR8, DLG4, EP300, KAT2B...",
+    "id": "ENSP00000417303"
+  },
+  "removed": false,
+  "selectable": true,
+  "classes": "protein protein-target species2 unmatched validated",
+  "grabbable": true,
+  "position": {
+    "x": 280,
+    "y": -140
+  },
+  "locked": false,
+  "selected": false,
+  "group": "nodes"
+},
+  {
+  "data": {
+    "parent": "Unmatched 2",
+    "num_neighbours": 208,
+    "name": "NF2",
+    "length": 595,
+    "weight": 75,
+    "neighbours": "AFG3L2, AGAP2, AKAP8L, AKT1, AMOT, AMOTL1, AMOTL2, ARHGAP17, ATAD3A, ATAD3B...",
+    "id": "ENSP00000344666"
+  },
+  "removed": false,
+  "selectable": true,
+  "classes": "protein protein-target species2 unmatched validated",
+  "grabbable": true,
+  "position": {
+    "x": 340,
+    "y": -140
+  },
+  "locked": false,
+  "selected": false,
+  "group": "nodes"
+},
+  {
+  "data": {
+    "weight": 75,
+    "source": "ENSP00000248929",
+    "target": "ENSP00000259469"
+  },
+  "removed": false,
+  "selectable": true,
+  "grabbable": true,
+  "locked": false,
+  "selected": false,
+  "group": "edges"
+},
+  {
+  "data": {
+    "weight": 75,
+    "source": "ENSP00000248929",
+    "target": "ENSP00000431418"
+  },
+  "removed": false,
+  "selectable": true,
+  "grabbable": true,
+  "locked": false,
+  "selected": false,
+  "group": "edges"
+},
+  {
+  "data": {
+    "weight": 75,
+    "source": "ENSP00000248929",
+    "target": "ENSP00000491291"
+  },
+  "removed": false,
+  "selectable": true,
+  "grabbable": true,
+  "locked": false,
+  "selected": false,
+  "group": "edges"
+},
+  {
+  "data": {
+    "weight": 75,
+    "source": "ENSP00000248929",
+    "target": "ENSP00000338345"
+  },
+  "removed": false,
+  "selectable": true,
+  "grabbable": true,
+  "locked": false,
+  "selected": false,
+  "group": "edges"
+},
+  {
+  "data": {
+    "weight": 75,
+    "source": "ENSP00000248929-domain-0",
+    "target": "c-term-2"
+  },
+  "removed": false,
+  "selectable": true,
+  "classes": "protein_sequence",
+  "grabbable": true,
+  "locked": false,
+  "selected": false,
+  "group": "edges"
+},
+  {
+  "data": {
+    "weight": 75,
+    "source": "ENSP00000248929",
+    "target": "ENSP00000344666"
+  },
+  "removed": false,
+  "selectable": true,
+  "grabbable": true,
+  "locked": false,
+  "selected": false,
+  "group": "edges"
+},
+  {
+  "data": {
+    "weight": 75,
+    "source": "ENSP00000248929",
+    "target": "ENSP00000356729"
+  },
+  "removed": false,
+  "selectable": true,
+  "grabbable": true,
+  "locked": false,
+  "selected": false,
+  "group": "edges"
+},
+  {
+  "data": {
+    "weight": 75,
+    "source": "ENSP00000248929",
+    "target": "ENSP00000273047"
+  },
+  "removed": false,
+  "selectable": true,
+  "grabbable": true,
+  "locked": false,
+  "selected": false,
+  "group": "edges"
+},
+  {
+  "data": {
+    "weight": 75,
+    "source": "F41D9.1-domain-0",
+    "target": "n-term-1"
+  },
+  "removed": false,
+  "selectable": true,
+  "classes": "protein_sequence",
+  "grabbable": true,
+  "locked": false,
+  "selected": false,
+  "group": "edges"
+},
+  {
+  "data": {
+    "weight": 75,
+    "source": "F41D9.1-domain-0",
+    "target": "c-term-1"
+  },
+  "removed": false,
+  "selectable": true,
+  "classes": "protein_sequence",
+  "grabbable": true,
+  "locked": false,
+  "selected": false,
+  "group": "edges"
+},
+  {
+  "data": {
+    "weight": 75,
+    "source": "ENSP00000248929",
+    "target": "ENSP00000293760"
+  },
+  "removed": false,
+  "selectable": true,
+  "grabbable": true,
+  "locked": false,
+  "selected": false,
+  "group": "edges"
+},
+  {
+  "data": {
+    "weight": 75,
+    "source": "ENSP00000248929-domain-0",
+    "target": "n-term-2"
+  },
+  "removed": false,
+  "selectable": true,
+  "classes": "protein_sequence",
+  "grabbable": true,
+  "locked": false,
+  "selected": false,
+  "group": "edges"
+},
+  {
+  "data": {
+    "weight": 75,
+    "source": "ENSP00000248929",
+    "target": "ENSP00000411825"
+  },
+  "removed": false,
+  "selectable": true,
+  "grabbable": true,
+  "locked": false,
+  "selected": false,
+  "group": "edges"
+},
+  {
+  "data": {
+    "weight": 75,
+    "source": "ENSP00000248929",
+    "target": "ENSP00000358466"
+  },
+  "removed": false,
+  "selectable": true,
+  "grabbable": true,
+  "locked": false,
+  "selected": false,
+  "group": "edges"
+},
+  {
+  "data": {
+    "weight": 75,
+    "source": "F41D9.1",
+    "target": "M04B2.1"
+  },
+  "removed": false,
+  "selectable": true,
+  "grabbable": true,
+  "locked": false,
+  "selected": false,
+  "group": "edges"
+},
+  {
+  "data": {
+    "weight": 75,
+    "source": "ENSP00000248929",
+    "target": "ENSP00000417303"
+  },
+  "removed": false,
+  "selectable": true,
+  "grabbable": true,
+  "locked": false,
+  "selected": false,
+  "group": "edges"
+},
+  {
+  "data": {
+    "weight": 75,
+    "source": "ENSP00000248929",
+    "target": "ENSP00000447053"
+  },
+  "removed": false,
+  "selectable": true,
+  "grabbable": true,
+  "locked": false,
+  "selected": false,
+  "group": "edges"
+},
+  {
+  "data": {
+    "weight": 75,
+    "source": "F41D9.1",
+    "target": "Y11D7A.12a"
+  },
+  "removed": false,
+  "selectable": true,
+  "grabbable": true,
+  "locked": false,
+  "selected": false,
+  "group": "edges"
+},
+  {
+  "data": {
+    "weight": 75,
+    "source": "F41D9.1",
+    "target": "F46C8.5"
+  },
+  "removed": false,
+  "selectable": true,
+  "grabbable": true,
+  "locked": false,
+  "selected": false,
+  "group": "edges"
+},
+  {
+  "data": {
+    "name": "pp_missing_interologs1",
+    "weight": 0,
+    "html": "<table class='missing_interologs_table'><tr><th colspan='3' id='missing_interologs_header_1'>Predicted C.elegans TBC-18 interactions<\/th><\/tr><tr><th># Missed Interologs<\/th><th>Predicted Interactor<\/th><th>Indicating SGSM3 Interactors<\/tr><tr><td>2<\/td><td><a href='http://www.ensembl.org/id/F26H9.6' target='_blank'>RAB-5<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000273047' target='_blank'>RAB5A<\/a>, <a href='http://www.ensembl.org/id/ENSP00000447053' target='_blank'>RAB5C<\/a><\/td><\/tr><tr><td>1<\/td><td><a href='http://www.ensembl.org/id/R10E12.1b' target='_blank'>ALX-1<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000411825' target='_blank'>PDCD6IP<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/K08C7.2.1' target='_blank'>FMO-1<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000356729' target='_blank'>FMO3<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/K08C7.5' target='_blank'>FMO-2<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000356729' target='_blank'>FMO3<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/Y39A1A.19' target='_blank'>FMO-3<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000356729' target='_blank'>FMO3<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/F53F4.5a' target='_blank'>FMO-4<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000356729' target='_blank'>FMO3<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/H24K24.5a' target='_blank'>FMO-5<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000356729' target='_blank'>FMO3<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/F54H5.4b' target='_blank'>KLF-3<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000417303' target='_blank'>KLF8<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/W01G7.5' target='_blank'>LEM-2<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000293760' target='_blank'>LEMD2<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/F42A10.2b' target='_blank'>NFM-1<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000344666' target='_blank'>NF2<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/D2013.1' target='_blank'>RAB-39<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000358466' target='_blank'>RAB39B<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/ZK652.4.1' target='_blank'>RPL-35<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000259469' target='_blank'>RPL35<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/D1073.1b' target='_blank'>TRK-1<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000431418' target='_blank'>NTRK1<\/a><\/td><\/tr><\/table>",
+    "id": "pp_missing_interologs1"
+  },
+  "removed": false,
+  "selectable": false,
+  "classes": "hidden",
+  "grabbable": false,
+  "position": {
+    "x": 0,
+    "y": 0
+  },
+  "locked": true,
+  "selected": false,
+  "group": "nodes"
+},
+  {
+  "data": {
+    "name": "pp_missing_interologs2",
+    "weight": 0,
+    "html": "<table class='missing_interologs_table'><tr><th colspan='3' id='missing_interologs_header_2'>Predicted H.sapiens SGSM3 interactions<\/th><\/tr><tr><th># Missed Interologs<\/th><th>Predicted Interactor<\/th><th>Indicating TBC-18 Interactors<\/tr><tr><td>1<\/td><td><a href='http://www.ensembl.org/id/ENSP00000360811' target='_blank'>LHX3<\/a><\/td><td><a href='http://www.ensembl.org/id/F46C8.5' target='_blank'>CEH-14<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/ENSP00000263726' target='_blank'>LHX4<\/a><\/td><td><a href='http://www.ensembl.org/id/F46C8.5' target='_blank'>CEH-14<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/ENSP00000367069' target='_blank'>ZFAT<\/a><\/td><td><a href='http://www.ensembl.org/id/M04B2.1' target='_blank'>MEP-1<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/ENSP00000368486' target='_blank'>ZFX<\/a><\/td><td><a href='http://www.ensembl.org/id/M04B2.1' target='_blank'>MEP-1<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/ENSP00000155093' target='_blank'>ZFY<\/a><\/td><td><a href='http://www.ensembl.org/id/M04B2.1' target='_blank'>MEP-1<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/ENSP00000353922' target='_blank'>ZNF711<\/a><\/td><td><a href='http://www.ensembl.org/id/M04B2.1' target='_blank'>MEP-1<\/a><\/td><\/tr><\/table>",
+    "id": "pp_missing_interologs2"
+  },
+  "removed": false,
+  "selectable": false,
+  "classes": "hidden",
+  "grabbable": false,
+  "position": {
+    "x": 0,
+    "y": 0
+  },
+  "locked": true,
+  "selected": false,
+  "group": "nodes"
+},
+  {
+  "data": {
+    "numInterologs": 0,
+    "numUnmatchedProteins1": 2,
+    "numUnmatchedProteins2": 10,
+    "species2": "H.sapiens",
+    "protein1": "TBC-18",
+    "weight": 0,
+    "protein2": "SGSM3",
+    "numMissingInterologs": 20,
+    "species1": "C.elegans",
+    "numInterologProteins1": 0,
+    "numUnmatchableProteins2": 2,
+    "numInterologProteins2": 0,
+    "score": "0.00",
+    "numUnmatchableProteins1": 1,
+    "name": "pp_stats",
+    "id": "pp_stats"
+  },
+  "removed": false,
+  "selectable": false,
+  "classes": "hidden",
+  "grabbable": false,
+  "position": {
+    "x": 0,
+    "y": 0
+  },
+  "locked": true,
+  "selected": false,
+  "group": "nodes"
+},
+  {
+  "data": {
+    "name": "pd_missing_interologs1",
+    "weight": 0,
+    "html": "<table class='missing_interologs_table'><tr><th colspan='3' id='missing_interologs_header_1'>Predicted C.elegans TBC-18 interactions<\/th><\/tr><tr><th># Missed Interologs<\/th><th>Predicted Interactor<\/th><th>Indicating SGSM3 Interactors<\/tr><tr><td>2<\/td><td><a href='http://www.ensembl.org/id/F26H9.6' target='_blank'>RAB-5<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000273047' target='_blank'>RAB5A<\/a>, <a href='http://www.ensembl.org/id/ENSP00000447053' target='_blank'>RAB5C<\/a><\/td><\/tr><tr><td>1<\/td><td><a href='http://www.ensembl.org/id/R10E12.1b' target='_blank'>ALX-1<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000411825' target='_blank'>PDCD6IP<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/K08C7.2.1' target='_blank'>FMO-1<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000356729' target='_blank'>FMO3<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/K08C7.5' target='_blank'>FMO-2<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000356729' target='_blank'>FMO3<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/Y39A1A.19' target='_blank'>FMO-3<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000356729' target='_blank'>FMO3<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/F53F4.5a' target='_blank'>FMO-4<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000356729' target='_blank'>FMO3<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/H24K24.5a' target='_blank'>FMO-5<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000356729' target='_blank'>FMO3<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/F54H5.4b' target='_blank'>KLF-3<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000417303' target='_blank'>KLF8<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/W01G7.5' target='_blank'>LEM-2<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000293760' target='_blank'>LEMD2<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/F42A10.2b' target='_blank'>NFM-1<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000344666' target='_blank'>NF2<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/D2013.1' target='_blank'>RAB-39<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000358466' target='_blank'>RAB39B<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/ZK652.4.1' target='_blank'>RPL-35<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000259469' target='_blank'>RPL35<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/D1073.1b' target='_blank'>TRK-1<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000431418' target='_blank'>NTRK1<\/a><\/td><\/tr><\/table>",
+    "id": "pd_missing_interologs1"
+  },
+  "removed": false,
+  "selectable": false,
+  "classes": "hidden",
+  "grabbable": false,
+  "position": {
+    "x": 0,
+    "y": 0
+  },
+  "locked": true,
+  "selected": false,
+  "group": "nodes"
+},
+  {
+  "data": {
+    "name": "pd_missing_interologs2",
+    "weight": 0,
+    "html": "<table class='missing_interologs_table'><tr><th colspan='3' id='missing_interologs_header_2'>Predicted H.sapiens SGSM3 interactions<\/th><\/tr><tr><th># Missed Interologs<\/th><th>Predicted Interactor<\/th><th>Indicating TBC-18 Interactors<\/tr><tr><td>1<\/td><td><a href='http://www.ensembl.org/id/ENSP00000360811' target='_blank'>LHX3<\/a><\/td><td><a href='http://www.ensembl.org/id/F46C8.5' target='_blank'>CEH-14<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/ENSP00000263726' target='_blank'>LHX4<\/a><\/td><td><a href='http://www.ensembl.org/id/F46C8.5' target='_blank'>CEH-14<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/ENSP00000367069' target='_blank'>ZFAT<\/a><\/td><td><a href='http://www.ensembl.org/id/M04B2.1' target='_blank'>MEP-1<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/ENSP00000368486' target='_blank'>ZFX<\/a><\/td><td><a href='http://www.ensembl.org/id/M04B2.1' target='_blank'>MEP-1<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/ENSP00000155093' target='_blank'>ZFY<\/a><\/td><td><a href='http://www.ensembl.org/id/M04B2.1' target='_blank'>MEP-1<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/ENSP00000353922' target='_blank'>ZNF711<\/a><\/td><td><a href='http://www.ensembl.org/id/M04B2.1' target='_blank'>MEP-1<\/a><\/td><\/tr><\/table>",
+    "id": "pd_missing_interologs2"
+  },
+  "removed": false,
+  "selectable": false,
+  "classes": "hidden",
+  "grabbable": false,
+  "position": {
+    "x": 0,
+    "y": 0
+  },
+  "locked": true,
+  "selected": false,
+  "group": "nodes"
+},
+  {
+  "data": {
+    "numInterologs": 0,
+    "numUnmatchedProteins1": 2,
+    "numUnmatchedProteins2": 10,
+    "species2": "H.sapiens",
+    "protein1": "TBC-18",
+    "weight": 0,
+    "protein2": "SGSM3",
+    "numMissingInterologs": 20,
+    "species1": "C.elegans",
+    "numInterologProteins1": 0,
+    "numUnmatchableProteins2": 2,
+    "numInterologProteins2": 0,
+    "score": "0.00",
+    "numUnmatchableProteins1": 1,
+    "name": "pd_stats",
+    "id": "pd_stats"
+  },
+  "removed": false,
+  "selectable": false,
+  "classes": "hidden",
+  "grabbable": false,
+  "position": {
+    "x": 0,
+    "y": 0
+  },
+  "locked": true,
+  "selected": false,
+  "group": "nodes"
+},
+  {
+  "data": {
+    "name": "vp_missing_interologs1",
+    "weight": 0,
+    "html": "<table class='missing_interologs_table'><tr><th colspan='3' id='missing_interologs_header_1'>Predicted C.elegans TBC-18 interactions<\/th><\/tr><tr><th># Missed Interologs<\/th><th>Predicted Interactor<\/th><th>Indicating SGSM3 Interactors<\/tr><tr><td>2<\/td><td><a href='http://www.ensembl.org/id/F26H9.6' target='_blank'>RAB-5<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000273047' target='_blank'>RAB5A<\/a>, <a href='http://www.ensembl.org/id/ENSP00000447053' target='_blank'>RAB5C<\/a><\/td><\/tr><tr><td>1<\/td><td><a href='http://www.ensembl.org/id/R10E12.1b' target='_blank'>ALX-1<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000411825' target='_blank'>PDCD6IP<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/K08C7.2.1' target='_blank'>FMO-1<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000356729' target='_blank'>FMO3<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/K08C7.5' target='_blank'>FMO-2<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000356729' target='_blank'>FMO3<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/Y39A1A.19' target='_blank'>FMO-3<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000356729' target='_blank'>FMO3<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/F53F4.5a' target='_blank'>FMO-4<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000356729' target='_blank'>FMO3<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/H24K24.5a' target='_blank'>FMO-5<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000356729' target='_blank'>FMO3<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/F54H5.4b' target='_blank'>KLF-3<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000417303' target='_blank'>KLF8<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/W01G7.5' target='_blank'>LEM-2<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000293760' target='_blank'>LEMD2<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/F42A10.2b' target='_blank'>NFM-1<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000344666' target='_blank'>NF2<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/D2013.1' target='_blank'>RAB-39<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000358466' target='_blank'>RAB39B<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/ZK652.4.1' target='_blank'>RPL-35<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000259469' target='_blank'>RPL35<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/D1073.1b' target='_blank'>TRK-1<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000431418' target='_blank'>NTRK1<\/a><\/td><\/tr><\/table>",
+    "id": "vp_missing_interologs1"
+  },
+  "removed": false,
+  "selectable": false,
+  "classes": "hidden",
+  "grabbable": false,
+  "position": {
+    "x": 0,
+    "y": 0
+  },
+  "locked": true,
+  "selected": false,
+  "group": "nodes"
+},
+  {
+  "data": {
+    "name": "vp_missing_interologs2",
+    "weight": 0,
+    "html": "<table class='missing_interologs_table'><tr><th colspan='3' id='missing_interologs_header_2'>Predicted H.sapiens SGSM3 interactions<\/th><\/tr><tr><th># Missed Interologs<\/th><th>Predicted Interactor<\/th><th>Indicating TBC-18 Interactors<\/tr><tr><td>1<\/td><td><a href='http://www.ensembl.org/id/ENSP00000360811' target='_blank'>LHX3<\/a><\/td><td><a href='http://www.ensembl.org/id/F46C8.5' target='_blank'>CEH-14<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/ENSP00000263726' target='_blank'>LHX4<\/a><\/td><td><a href='http://www.ensembl.org/id/F46C8.5' target='_blank'>CEH-14<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/ENSP00000367069' target='_blank'>ZFAT<\/a><\/td><td><a href='http://www.ensembl.org/id/M04B2.1' target='_blank'>MEP-1<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/ENSP00000368486' target='_blank'>ZFX<\/a><\/td><td><a href='http://www.ensembl.org/id/M04B2.1' target='_blank'>MEP-1<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/ENSP00000155093' target='_blank'>ZFY<\/a><\/td><td><a href='http://www.ensembl.org/id/M04B2.1' target='_blank'>MEP-1<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/ENSP00000353922' target='_blank'>ZNF711<\/a><\/td><td><a href='http://www.ensembl.org/id/M04B2.1' target='_blank'>MEP-1<\/a><\/td><\/tr><\/table>",
+    "id": "vp_missing_interologs2"
+  },
+  "removed": false,
+  "selectable": false,
+  "classes": "hidden",
+  "grabbable": false,
+  "position": {
+    "x": 0,
+    "y": 0
+  },
+  "locked": true,
+  "selected": false,
+  "group": "nodes"
+},
+  {
+  "data": {
+    "numInterologs": 0,
+    "numUnmatchedProteins1": 2,
+    "numUnmatchedProteins2": 10,
+    "species2": "H.sapiens",
+    "protein1": "TBC-18",
+    "weight": 0,
+    "protein2": "SGSM3",
+    "numMissingInterologs": 20,
+    "species1": "C.elegans",
+    "numInterologProteins1": 0,
+    "numUnmatchableProteins2": 2,
+    "numInterologProteins2": 0,
+    "score": "0.00",
+    "numUnmatchableProteins1": 1,
+    "name": "vp_stats",
+    "id": "vp_stats"
+  },
+  "removed": false,
+  "selectable": false,
+  "classes": "hidden",
+  "grabbable": false,
+  "position": {
+    "x": 0,
+    "y": 0
+  },
+  "locked": true,
+  "selected": false,
+  "group": "nodes"
+},
+  {
+  "data": {
+    "name": "vd_missing_interologs1",
+    "weight": 0,
+    "html": "<table class='missing_interologs_table'><tr><th colspan='3' id='missing_interologs_header_1'>Predicted C.elegans TBC-18 interactions<\/th><\/tr><tr><th># Missed Interologs<\/th><th>Predicted Interactor<\/th><th>Indicating SGSM3 Interactors<\/tr><tr><td>2<\/td><td><a href='http://www.ensembl.org/id/F26H9.6' target='_blank'>RAB-5<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000273047' target='_blank'>RAB5A<\/a>, <a href='http://www.ensembl.org/id/ENSP00000447053' target='_blank'>RAB5C<\/a><\/td><\/tr><tr><td>1<\/td><td><a href='http://www.ensembl.org/id/R10E12.1b' target='_blank'>ALX-1<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000411825' target='_blank'>PDCD6IP<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/K08C7.2.1' target='_blank'>FMO-1<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000356729' target='_blank'>FMO3<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/K08C7.5' target='_blank'>FMO-2<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000356729' target='_blank'>FMO3<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/Y39A1A.19' target='_blank'>FMO-3<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000356729' target='_blank'>FMO3<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/F53F4.5a' target='_blank'>FMO-4<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000356729' target='_blank'>FMO3<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/H24K24.5a' target='_blank'>FMO-5<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000356729' target='_blank'>FMO3<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/F54H5.4b' target='_blank'>KLF-3<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000417303' target='_blank'>KLF8<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/W01G7.5' target='_blank'>LEM-2<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000293760' target='_blank'>LEMD2<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/F42A10.2b' target='_blank'>NFM-1<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000344666' target='_blank'>NF2<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/D2013.1' target='_blank'>RAB-39<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000358466' target='_blank'>RAB39B<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/ZK652.4.1' target='_blank'>RPL-35<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000259469' target='_blank'>RPL35<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/D1073.1b' target='_blank'>TRK-1<\/a><\/td><td><a href='http://www.ensembl.org/id/ENSP00000431418' target='_blank'>NTRK1<\/a><\/td><\/tr><\/table>",
+    "id": "vd_missing_interologs1"
+  },
+  "removed": false,
+  "selectable": false,
+  "classes": "hidden",
+  "grabbable": false,
+  "position": {
+    "x": 0,
+    "y": 0
+  },
+  "locked": true,
+  "selected": false,
+  "group": "nodes"
+},
+  {
+  "data": {
+    "name": "vd_missing_interologs2",
+    "weight": 0,
+    "html": "<table class='missing_interologs_table'><tr><th colspan='3' id='missing_interologs_header_2'>Predicted H.sapiens SGSM3 interactions<\/th><\/tr><tr><th># Missed Interologs<\/th><th>Predicted Interactor<\/th><th>Indicating TBC-18 Interactors<\/tr><tr><td>1<\/td><td><a href='http://www.ensembl.org/id/ENSP00000360811' target='_blank'>LHX3<\/a><\/td><td><a href='http://www.ensembl.org/id/F46C8.5' target='_blank'>CEH-14<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/ENSP00000263726' target='_blank'>LHX4<\/a><\/td><td><a href='http://www.ensembl.org/id/F46C8.5' target='_blank'>CEH-14<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/ENSP00000367069' target='_blank'>ZFAT<\/a><\/td><td><a href='http://www.ensembl.org/id/M04B2.1' target='_blank'>MEP-1<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/ENSP00000368486' target='_blank'>ZFX<\/a><\/td><td><a href='http://www.ensembl.org/id/M04B2.1' target='_blank'>MEP-1<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/ENSP00000155093' target='_blank'>ZFY<\/a><\/td><td><a href='http://www.ensembl.org/id/M04B2.1' target='_blank'>MEP-1<\/a><\/td><\/tr><tr><td><\/td><td><a href='http://www.ensembl.org/id/ENSP00000353922' target='_blank'>ZNF711<\/a><\/td><td><a href='http://www.ensembl.org/id/M04B2.1' target='_blank'>MEP-1<\/a><\/td><\/tr><\/table>",
+    "id": "vd_missing_interologs2"
+  },
+  "removed": false,
+  "selectable": false,
+  "classes": "hidden",
+  "grabbable": false,
+  "position": {
+    "x": 0,
+    "y": 0
+  },
+  "locked": true,
+  "selected": false,
+  "group": "nodes"
+},
+  {
+  "data": {
+    "numInterologs": 0,
+    "numUnmatchedProteins1": 2,
+    "numUnmatchedProteins2": 10,
+    "species2": "H.sapiens",
+    "protein1": "TBC-18",
+    "weight": 0,
+    "protein2": "SGSM3",
+    "numMissingInterologs": 20,
+    "species1": "C.elegans",
+    "numInterologProteins1": 0,
+    "numUnmatchableProteins2": 2,
+    "numInterologProteins2": 0,
+    "score": "0.00",
+    "numUnmatchableProteins1": 1,
+    "name": "vd_stats",
+    "id": "vd_stats"
+  },
+  "removed": false,
+  "selectable": false,
+  "classes": "hidden",
+  "grabbable": false,
+  "position": {
+    "x": 0,
+    "y": 0
+  },
+  "locked": true,
+  "selected": false,
+  "group": "nodes"
+}
+]
