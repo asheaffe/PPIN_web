@@ -9,6 +9,6 @@ A web tool for visualizing PPINs using cytoscape.js
      python3 -m http.server
    If using Python 2, enter:
      python -m SimpleHTTPServer
-4. Open a web browser and access POINT at http://localhost:8000/PPIN_web/demo.html
+4. Open a web browser and access at http://localhost:8000/PPIN_web/demo.html
 5. Open a POINT JSON file using the available dialog.
 ```
