@@ -3,17 +3,16 @@
 body {
   font-family: helvetica, arial, sans-serif;
   font-size: 14px;
+  display: flex;
 }
 
 #sidebar {
   position: fixed; /* stays in position on scroll */
   top: 0;
   left: 0;
-  height: 100%;
-  width: 250px; /* setting the length of the sidebar */
-  background-color: pink;
-  overflow-x: hidden; /* no horizontal scroll */
-  border-right: 1px solid black;
+  right: 0; /* setting the length of the sidebar */
+  bottom: 75%;
+  border-bottom: 2px solid black;
 }
 
 h1 {
@@ -36,17 +35,9 @@ hr {
 
 #cy {
   position: absolute;
-  top: 0;
-  right: 0;
   left: 0;
+  top: 25%;
   bottom: 0;
-  z-index: 1;
-}
-
-#hollow {
-  position: absolute;
   right: 0;
-  top: 0;
-  margin: 0.5em;
-  z-index: 2;
+  z-index: 1;
 }
