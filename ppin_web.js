@@ -21,6 +21,17 @@ var cy = cytoscape({
         'curve-style': 'bezier',
         'width': 6,
         'line-color': '#ffaaaa'
+      })
+    .selector('$node > node')
+      .css({
+        'padding-top': '1px',
+        'padding-left': '1px',
+        'padding-bottom': '1px',
+        'padding-right': '1px',
+        'text-valign': 'top',
+        'text-halign': 'center',
+        'font-size': 14,
+        'background-color': '#eee'
       }),
 
   elements: {
@@ -32,63 +43,15 @@ var cy = cytoscape({
       { data: { id: 'n4' }}
     ],
     edges: [
-      { data: { source: 'n1', target: 'n2' } },
-      { data: { source: 'n2', target: 'n4' } },
-      { data: {source: 'n0', target: 'n4'}},
-      { data: {source: 'n3', target: 'n2'}}
+      { data: { source: 'n1', target: 'n0' } },
+      {data: {source: 'n2', target: 'n0'}},
+      {data: {source: 'n3', target: 'n0'}},
+      {data: {source: 'n4', target: 'n3'}},
+      {data: {source: 'n0', target: 'n4'}}
     ]
   },
 
   layout: {
-    name: 'breadthfirst',
-    padding: 250,
+    name: 'circle',
   }
 }); // cy init
-
-cy.on('tap', 'node', function(){
-  var nodes = this;
-  var tapped = nodes;
-  var network = [];
-
-  for(;;){
-    var connectedEdges = nodes.connectedEdges(function(el){
-      return !el.target().anySame( nodes );
-    });
-
-    var connectedNodes = connectedEdges.targets();
-
-    Array.prototype.push.apply( network, connectedNodes );
-
-    nodes = connectedNodes;
-
-    if( nodes.empty() ){ break; }
-  }
-
-  for( var i = network.length - 1; i >= 0; i-- ){ (function(){
-    var thisNode = network[i];
-    var parent = thisNode.connectedEdges(function(el){
-      return el.target().same(thisNode);
-    }).source();
-
-    /*
-    thisNode.delay( delay, function(){
-      parent.addClass('child');
-    } ).animate({
-      position: parent.position(),
-      css: {
-        'width': 10,
-        'height': 10,
-        'border-width': 0,
-        'opacity': 0
-      }
-    }, {
-      duration: duration,
-      complete: function(){
-        thisNode.remove();
-      }
-    });
-
-    delay += duration;*/
-  })(); } // for
-
-}); // on tap
