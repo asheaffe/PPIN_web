@@ -13,6 +13,7 @@ var cy = cytoscape({
         'width': 80,
         'background-fit': 'cover',
         'border-color': '#000',
+        'background-color': 'red',
         'border-width': 3,
         'border-opacity': 0.5
       })
@@ -36,22 +37,62 @@ var cy = cytoscape({
 
   elements: {
     nodes: [
-      { data: { id: 'n0' }},
-      { data: { id: 'n1' }},
-      { data: { id: 'n2' }},
-      { data: { id: 'n3' }},
-      { data: { id: 'n4' }}
+      { data: { id: 'g1n0'}},
+      { data: { id: 'g1n1' }},
+      { data: { id: 'g1n2' }},
+      { data: { id: 'g1n3' }},
+      { data: { id: 'g1n4' }},
+
+      { data: { id: 'g2n0'}},
+      { data: { id: 'g2n1' }},
+      { data: { id: 'g2n2' }},
+      { data: { id: 'g2n3' }}
     ],
     edges: [
-      { data: { source: 'n1', target: 'n0' } },
-      {data: {source: 'n2', target: 'n0'}},
-      {data: {source: 'n3', target: 'n0'}},
-      {data: {source: 'n4', target: 'n3'}},
-      {data: {source: 'n0', target: 'n4'}}
+      {data: {source: 'g1n1', target: 'g1n0'}},
+      {data: {source: 'g1n2', target: 'g1n0'}},
+      {data: {source: 'g1n3', target: 'g1n0'}},
+      {data: {source: 'g1n4', target: 'g1n3'}},
+      {data: {source: 'g1n0', target: 'g1n4'}},
+
+      {data: {source: 'g2n0', target: 'g2n1'}},
+      {data: {source: 'g2n1', target: 'g2n2'}},
+      {data: {source: 'g2n3', target: 'g2n0'}},
+
+      {data: {source: 'g1n0', target: 'g2n0'}}
     ]
   },
 
   layout: {
     name: 'circle',
+  },
+
+  ready: function () {
+    // buttons open corresponding windows
+    openItem("#b1", "#button1");
+    openItem("#b2", "#button2");
+    openItem("#b3", "#button3");
   }
 }); // cy init
+
+// code taken from jqueryui.com
+// makes elements in div id "draggable" to be draggable
+function dragItem(win) {
+  $(win)
+    .draggable({
+      containment: "#cy",
+      scroll: false
+  });
+}
+
+function resizeItem(win) {
+  $(win).resizable();
+}
+
+function openItem(button, win) {
+  $(button).click(function(){
+    $(win).show();
+    dragItem(win);
+    resizeItem(win);
+  });
+}
