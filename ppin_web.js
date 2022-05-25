@@ -12,54 +12,273 @@ var cy = cytoscape({
         'height': 80,
         'width': 80,
         'background-fit': 'cover',
-        'border-color': '#000',
-        'background-color': 'red',
+        'border-color': 'black',
+        //'background-color': 'red',
         'border-width': 3,
         'border-opacity': 0.5
       })
     .selector('edge')
       .css({
-        'curve-style': 'bezier',
+        'curve-style': 'haystack',
         'width': 6,
-        'line-color': '#ffaaaa'
+        'line-color': '#425f42'
       })
-    .selector('$node > node')
+    .selector('node.species1')
       .css({
-        'padding-top': '1px',
-        'padding-left': '1px',
-        'padding-bottom': '1px',
-        'padding-right': '1px',
-        'text-valign': 'top',
-        'text-halign': 'center',
-        'font-size': 14,
-        'background-color': '#eee'
+        "background-color": "blue"
+      })
+    .selector('node.species2')
+      .css({
+        "background-color": "red"
+      })
+    .selector('node.matched')
+      .css({
+        'border-width': 2,
+        'border-color': 'black',
+        'font-size': 6,
+        'background-color': 'green'
+      })
+    .selector('node.unmatched')
+      .css({
+        "border-width": 2,
+        "border-color": "black",
+        'font-size': 6
+      })
+    .selector('edge.orthology')
+      .css({
+        'curve-style': 'haystack',
+        'line-color': 'green',
+        'line-style': 'dashed'
+      })
+    .selector('edge.species1')
+      .css({
+        'line-color': 'blue'
+      })
+    .selector('edge.species2')
+      .css({
+        'line-color': 'red'
+      })
+    .selector('edge.matched')
+      .css({
+        'line-color': 'green'
       }),
 
   elements: {
     nodes: [
-      { data: { id: 'g1n0'}},
-      { data: { id: 'g1n1' }},
-      { data: { id: 'g1n2' }},
-      { data: { id: 'g1n3' }},
-      { data: { id: 'g1n4' }},
+      // species 1
+      {
+        data: {
+          "num_neighbors": 2,
+          "id": 'n0',
+          //"length": 5,
+          //"weight": 7,
+          "neighbors": "n2, n4"
+        },
+        "selectable": true,
+        "classes": "species1 matched predicted",
+        "selected": false
+      },
+      {
+        data: {
+          "num_neighbors": 1,
+          "id": 'n1',
+          //"length": 4,
+          //"weight": 2,
+          "neighbors": "n2"
+        },
+        "selectable": true,
+        "classes": "species1 matched predicted",
+        "selected": false
+      },
+      {
+        data: {
+          "num_neighbors": 2,
+          "id": 'n2',
+          //"length": 7,
+          //"weight": 0,
+          "neighbors": "n1, n0"
+        },
+        "selectable": true,
+        "classes": "species1 unmatched predicted",
+        "selected": false
+      },
+      {
+        data: {
+          "num_neighbors": 1,
+          "id": 'n3',
+          //"length": 2,
+          //"weight": 6,
+          "neighbors": "n4"
+        },
+        "selectable": true,
+        "classes": "species1 unmatched predicted",
+        "selected": false
+      },
+      {
+        data: {
+          "num_neighbors": 2,
+          "id": 'n4',
+          //"length": 4,
+          //"weight": 0,
+          "neighbors": "n3, n0"
+        },
+        "selectable": true,
+        "classes": "species1 unmatched predicted",
+        "selected": false
+      },
 
-      { data: { id: 'g2n0'}},
-      { data: { id: 'g2n1' }},
-      { data: { id: 'g2n2' }},
-      { data: { id: 'g2n3' }}
+      // species2
+      {
+        data: {
+          "num_neighbors": 3,
+          "id": 'n0',
+          //"length": 3,
+          //"weight": 1,
+          "neighbors": "n1, n7, n8"
+        },
+        "selectable": true,
+        "classes": "species2 matched predicted",
+        "selected": false
+      },
+      {
+        data: {
+          "num_neighbors": 2,
+          "id": 'n1',
+          //"length": 4,
+          //"weight": 0,
+          "neighbors": "n0, n8"
+        },
+        "selectable": true,
+        "classes": "species2 matched predicted",
+        "selected": false
+      },
+      {
+        data: {
+          "num_neighbors": 1,
+          "id": 'n7',
+          //"length": 2,
+          //"weight": 4,
+          "neighbors": "n0"
+        },
+        "selectable": true,
+        "classes": "species2 unmatched predicted",
+        "selected": false
+      },
+      {
+        data: {
+          "num_neighbors": 2,
+          "id": 'n8',
+          //"length": 8,
+          //"weight": 4,
+          "neighbors": "n0, n1"
+        },
+        "selectable": true,
+        "classes": "species2 unmatched predicted",
+        "selected": false
+      }
     ],
     edges: [
-      {data: {source: 'g1n1', target: 'g1n0'}},
-      {data: {source: 'g1n2', target: 'g1n0'}},
-      {data: {source: 'g1n3', target: 'g1n0'}},
-      {data: {source: 'g1n4', target: 'g1n3'}},
-      {data: {source: 'g1n0', target: 'g1n4'}},
 
-      {data: {source: 'g2n0', target: 'g2n1'}},
-      {data: {source: 'g2n1', target: 'g2n2'}},
-      {data: {source: 'g2n3', target: 'g2n0'}},
 
-      {data: {source: 'g1n0', target: 'g2n0'}}
+      // edges
+      {
+        data: {
+          "weight": 60,
+          "source": 'n0',
+          "target": 'n2'
+        },
+        "classes": "species1 unmatched",
+        "selectable": "true",
+        "selected": "false"
+      },
+
+      {
+        data: {
+          "weight": 60,
+          "source": 'n0',
+          "target": 'n4'
+        },
+        "classes": "species1 unmatched",
+        "selectable": "true",
+        "selected": "false"
+      },
+
+      {
+        data: {
+          "weight": 60,
+          "source": 'n1',
+          "target": 'n2'
+        },
+        "classes": "species1 unmatched",
+        "selectable": "true",
+        "selected": "false"
+      },
+
+      {
+        data: {
+          "weight": 60,
+          "source": 'n0',
+          "target": 'n4'
+        },
+        "classes": "species1 unmatched",
+        "selectable": "true",
+        "selected": "false"
+      },
+
+      {
+        data: {
+          "weight": 60,
+          "source": 'n3',
+          "target": 'n4'
+        },
+        "classes": "species1 unmatched",
+        "selectable": "true",
+        "selected": "false"
+      },
+
+      {
+        data: {
+          "weight": 60,
+          "source": 'n0',
+          "target": 'n1'
+        },
+        "classes": "species2 matched",
+        "selectable": "true",
+        "selected": "false"
+      },
+
+      {
+        data: {
+          "weight": 60,
+          "source": 'n0',
+          "target": 'n7'
+        },
+        "classes": "species2 unmatched",
+        "selectable": "true",
+        "selected": "false"
+      },
+
+      {
+        data: {
+          "weight": 60,
+          "source": 'n0',
+          "target": 'n8'
+        },
+        "classes": "species2 unmatched",
+        "selectable": "true",
+        "selected": "false"
+      },
+
+      {
+        data: {
+          "weight": 60,
+          "source": 'n1',
+          "target": 'n8'
+        },
+        "classes": "species2 unmatched",
+        "selectable": "true",
+        "selected": "false"
+      }
     ]
   },
 
@@ -76,7 +295,7 @@ var cy = cytoscape({
 }); // cy init
 
 // code taken from jqueryui.com
-// makes elements in div id "draggable" to be draggable
+// makes elements in div window to be draggable
 function dragItem(win) {
   $(win)
     .draggable({
@@ -85,13 +304,15 @@ function dragItem(win) {
   });
 }
 
+// makes elements in div window to be resizable
 function resizeItem(win) {
   $(win).resizable();
 }
 
+// opens the div and gives it the ability to drag and resize
 function openItem(button, win) {
   $(button).click(function(){
-    $(win).show();
+    $(win).toggle();
     dragItem(win);
     resizeItem(win);
   });

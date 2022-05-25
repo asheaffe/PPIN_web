@@ -28,6 +28,14 @@ h2 {
   text-decoration: none;
 }
 
+#sidebar a:hover {
+  opacity: 0.30;
+}
+
+#sidebar a:active {
+  opacity: 0.5;
+}
+
 #sidebar #title { /*title text styling*/
   text-align: center;
 }
