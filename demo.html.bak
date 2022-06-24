@@ -18,9 +18,7 @@
   <body>
 
     <div id="sidebar">
-      Select a JSON file: <input type="file" id="myFile">
       <p id="title"><a href="http://localhost:8000/PPIN_web/demo.html">PPIN Visualizer</a></p>
-
     </div>
 
     <div id="cy"></div>
@@ -42,15 +40,11 @@
     <!--div for the second button-->
     <div id="button2">
       <h2>Controls</h2>
-
     </div>
 
     <!--div for the third button-->
     <div id="button3">
       <h2>Legend</h2>
-      <h3 id="s1">Species1</h3>
-      <h3 id="s2">Species2</h3>
-      <h3 id="al">Aligned</h3>
     </div>
 
     <!-- Load application code at the end to ensure DOM is loaded -->

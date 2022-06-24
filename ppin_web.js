@@ -1,298 +1,225 @@
 // Base code originates from the breadthfirst layout on js.cytoscape.org
+document.getElementById('myFile').addEventListener('change', loadFile);
 
-var cy = cytoscape({
-  container: document.getElementById('cy'),
+function loadFile(event) {
+  f = event.target.files[0];
 
-  boxSelectionEnabled: false,
-  autounselectify: true,
+  fr = new FileReader();
+  fr.addEventListener("load", e => {
+    runCytoscape(fr.result);
+  });
 
-  style: cytoscape.stylesheet()
-    .selector('node')
-      .css({
-        'height': 80,
-        'width': 80,
-        'background-fit': 'cover',
-        'border-color': 'black',
-        //'background-color': 'red',
-        'border-width': 3,
-        'border-opacity': 0.5
+  fr.readAsText(f);
+}
+
+function runCytoscape(data) {
+  var cy = window.cy = cytoscape({
+    container: document.getElementById('cy'),
+
+    boxSelectionEnabled: false,
+    autounselectify: true,
+
+    style: cytoscape.stylesheet()
+      .selector('node')
+        .css({
+          'label': 'data(name)',
+          'border-color': 'black',
+          'border-width': 2,
+          'height': 80,
+          'width': 80
+        })
+      .selector('edge')
+        .css({
+          'curve-style': 'haystack',
+          'width': 6
+        })
+      .selector(":parent")
+        .css({
+          'text-valign': 'top',
+          'text-halign': 'center'
+        })
+      .selector("node.container")
+        .css({
+          'border-width': 2,
+          'border-color': 'black'
+        })
+      .selector('node.species1')
+        .css({
+          "background-color": "blue"
+        })
+      .selector('node.species2')
+        .css({
+          "background-color": "red"
+        })
+      .selector('node.aligned')
+        .css({
+          'background-color': 'green'
+        })
+      .selector("node.query")
+        .css({
+          'shape': 'triangle'
+        })
+      .selector("node.ortho")
+        .css({
+          'background-color': "yellow"
+        })
+      .selector('edge.ortho')
+        .css({
+          'line-color': 'green'
+        })
+      .selector("edge.nOrtho")
+        .css({
+          "line-color": "black"
+        })
+      .selector('edge.species1')
+        .css({
+          'line-color': 'blue'
+        })
+      .selector('edge.species2')
+        .css({
+          'line-color': 'red'
+        })
+      .selector('edge.aligned')
+        .css({
+          'line-color': 'green'
+        }),
+
+    elements: JSON.parse(data),
+
+    layout: {
+      name: 'preset',
+    },
+
+    ready: function () {
+
+      cy = this;
+      // buttons open corresponding windows
+      openItem("#b1", "#button1");
+      openItem("#b2", "#button2");
+      openItem("#b3", "#button3");
+
+      // only the nodes within the container nodes are in grid format
+      // unaligned species 1
+      var nodes = cy.$(function(element, i) {
+        return element.hasClass('species1');
       })
-    .selector('edge')
-      .css({
-        'curve-style': 'haystack',
-        'width': 6,
-        'line-color': '#425f42'
+
+      var hSize = Math.ceil(Math.sqrt(nodes.size()));
+      var vSize = Math.ceil(nodes.size() / hSize);
+
+      // hDist and vDist use the size of the nodes and the number of
+      // rows and columns to calculate distance from the query
+      var hDist = (80) + 40;
+      var vDist = (80) + 40;
+
+      var layout = nodes.layout({
+        name: 'grid',
+        fit: false,
+        padding: 2,
+        avoidOverlapPadding: 3,
+        rows: hSize,
+        cols: vSize,
+        boundingBox: {x1: vDist, y1: hDist, w: 30, h: 30},
+        sort: function (a, b) {
+          return a.connectedEdges().classes().toString().localeCompare(b.connectedEdges().classes().toString());
+        }
+      });
+      layout.run();
+      nodes.forEach(function (element, i) {
+        element.move({parent: 'unaligned1'});
+      });
+
+      // unaligned species 2
+      var nodes = cy.$(function(element, i) {
+        return element.hasClass('species2');
       })
-    .selector('node.species1')
-      .css({
-        "background-color": "blue"
+
+      var hSize = Math.ceil(Math.sqrt(nodes.size()));
+      var vSize = Math.ceil(nodes.size() / hSize);
+
+      // hDist and vDist use the size of the nodes and the number of
+      // rows and columns to calculate distance from the query
+      var hDist = (80) + 40;
+      var vDist = -((vSize*80) + 40);
+
+      var layout = nodes.layout({
+        name: 'grid',
+        fit: false,
+        padding: 2,
+        avoidOverlapPadding: 3,
+        rows: hSize,
+        cols: vSize,
+        boundingBox: {x1: vDist, y1: hDist, w: 30, h: 30},
+        sort: function (a, b) {
+          return a.connectedEdges().classes().toString().localeCompare(b.connectedEdges().classes().toString());
+        }
+      });
+      layout.run();
+      nodes.forEach(function (element, i) {
+        element.move({parent: 'unaligned2'});
+      });
+
+      // aligned non-orthology
+      var nodes2 = cy.$(function(element, i) {
+        return element.hasClass('aligned') && element.hasClass('nOrtho');
       })
-    .selector('node.species2')
-      .css({
-        "background-color": "red"
+      var hSize = Math.ceil(Math.sqrt(nodes2.size()));
+      var vSize = Math.ceil(nodes2.size() / hSize);
+
+      // hDist and vDist use the size of the nodes and the number of
+      // rows and columns to calculate distance from the query
+      var hDist = -((hSize*80) + 40);
+      var vDist = (80) + 40;
+
+      var layout = nodes2.layout({
+        name: 'grid',
+        fit: false,
+        padding: 2,
+        avoidOverlapPadding: 3,
+        rows: hSize,
+        cols: vSize,
+        boundingBox: {x1: vDist, y1: hDist, w: 30, h: 30},
+        sort: function (a, b) {
+          return a.connectedEdges().classes().toString().localeCompare(b.connectedEdges().classes().toString());
+        }
+      });
+      layout.run();
+      nodes2.forEach(function (element, i) {
+        element.move({parent: 'aligned non-ortho'});
+      });
+
+      // aligned orthology
+      var nodes3 = cy.$(function(element, i) {
+        return element.hasClass('aligned') && element.hasClass('ortho');
       })
-    .selector('node.matched')
-      .css({
-        'border-width': 2,
-        'border-color': 'black',
-        'font-size': 6,
-        'background-color': 'green'
-      })
-    .selector('node.unmatched')
-      .css({
-        "border-width": 2,
-        "border-color": "black",
-        'font-size': 6
-      })
-    .selector('edge.orthology')
-      .css({
-        'curve-style': 'haystack',
-        'line-color': 'green',
-        'line-style': 'dashed'
-      })
-    .selector('edge.species1')
-      .css({
-        'line-color': 'blue'
-      })
-    .selector('edge.species2')
-      .css({
-        'line-color': 'red'
-      })
-    .selector('edge.matched')
-      .css({
-        'line-color': 'green'
-      }),
+      var hSize = Math.ceil(Math.sqrt(nodes3.size()));
+      var vSize = Math.ceil(nodes3.size() / hSize);
 
-  elements: {
-    nodes: [
-      // species 1
-      {
-        data: {
-          "num_neighbors": 2,
-          "id": 'n0',
-          //"length": 5,
-          //"weight": 7,
-          "neighbors": "n2, n4"
-        },
-        "selectable": true,
-        "classes": "species1 matched predicted",
-        "selected": false
-      },
-      {
-        data: {
-          "num_neighbors": 1,
-          "id": 'n1',
-          //"length": 4,
-          //"weight": 2,
-          "neighbors": "n2"
-        },
-        "selectable": true,
-        "classes": "species1 matched predicted",
-        "selected": false
-      },
-      {
-        data: {
-          "num_neighbors": 2,
-          "id": 'n2',
-          //"length": 7,
-          //"weight": 0,
-          "neighbors": "n1, n0"
-        },
-        "selectable": true,
-        "classes": "species1 unmatched predicted",
-        "selected": false
-      },
-      {
-        data: {
-          "num_neighbors": 1,
-          "id": 'n3',
-          //"length": 2,
-          //"weight": 6,
-          "neighbors": "n4"
-        },
-        "selectable": true,
-        "classes": "species1 unmatched predicted",
-        "selected": false
-      },
-      {
-        data: {
-          "num_neighbors": 2,
-          "id": 'n4',
-          //"length": 4,
-          //"weight": 0,
-          "neighbors": "n3, n0"
-        },
-        "selectable": true,
-        "classes": "species1 unmatched predicted",
-        "selected": false
-      },
+      // hDist and vDist use the size of the nodes and the number of
+      // rows and columns to calculate distance from the query
+      var hDist = -((hSize*80) + 40);
+      var vDist = -((vSize*80) + 40);
 
-      // species2
-      {
-        data: {
-          "num_neighbors": 3,
-          "id": 'n0',
-          //"length": 3,
-          //"weight": 1,
-          "neighbors": "n1, n7, n8"
-        },
-        "selectable": true,
-        "classes": "species2 matched predicted",
-        "selected": false
-      },
-      {
-        data: {
-          "num_neighbors": 2,
-          "id": 'n1',
-          //"length": 4,
-          //"weight": 0,
-          "neighbors": "n0, n8"
-        },
-        "selectable": true,
-        "classes": "species2 matched predicted",
-        "selected": false
-      },
-      {
-        data: {
-          "num_neighbors": 1,
-          "id": 'n7',
-          //"length": 2,
-          //"weight": 4,
-          "neighbors": "n0"
-        },
-        "selectable": true,
-        "classes": "species2 unmatched predicted",
-        "selected": false
-      },
-      {
-        data: {
-          "num_neighbors": 2,
-          "id": 'n8',
-          //"length": 8,
-          //"weight": 4,
-          "neighbors": "n0, n1"
-        },
-        "selectable": true,
-        "classes": "species2 unmatched predicted",
-        "selected": false
-      }
-    ],
-    edges: [
+      var layout = nodes3.layout({
+        name: 'grid',
+        fit: false,
+        padding: 2,
+        avoidOverlapPadding: 3,
+        rows: hSize,
+        cols: vSize,
+        boundingBox: {x1: vDist, y1: hDist, w: 30, h: 30},
+        sort: function (a, b) {
+          return a.connectedEdges().classes().toString().localeCompare(b.connectedEdges().classes().toString());
+        }
+      });
+      layout.run();
+      nodes3.forEach(function (element, i) {
+        element.move({parent: 'aligned ortho'});
+      });
 
-
-      // edges
-      {
-        data: {
-          "weight": 60,
-          "source": 'n0',
-          "target": 'n2'
-        },
-        "classes": "species1 unmatched",
-        "selectable": "true",
-        "selected": "false"
-      },
-
-      {
-        data: {
-          "weight": 60,
-          "source": 'n0',
-          "target": 'n4'
-        },
-        "classes": "species1 unmatched",
-        "selectable": "true",
-        "selected": "false"
-      },
-
-      {
-        data: {
-          "weight": 60,
-          "source": 'n1',
-          "target": 'n2'
-        },
-        "classes": "species1 unmatched",
-        "selectable": "true",
-        "selected": "false"
-      },
-
-      {
-        data: {
-          "weight": 60,
-          "source": 'n0',
-          "target": 'n4'
-        },
-        "classes": "species1 unmatched",
-        "selectable": "true",
-        "selected": "false"
-      },
-
-      {
-        data: {
-          "weight": 60,
-          "source": 'n3',
-          "target": 'n4'
-        },
-        "classes": "species1 unmatched",
-        "selectable": "true",
-        "selected": "false"
-      },
-
-      {
-        data: {
-          "weight": 60,
-          "source": 'n0',
-          "target": 'n1'
-        },
-        "classes": "species2 matched",
-        "selectable": "true",
-        "selected": "false"
-      },
-
-      {
-        data: {
-          "weight": 60,
-          "source": 'n0',
-          "target": 'n7'
-        },
-        "classes": "species2 unmatched",
-        "selectable": "true",
-        "selected": "false"
-      },
-
-      {
-        data: {
-          "weight": 60,
-          "source": 'n0',
-          "target": 'n8'
-        },
-        "classes": "species2 unmatched",
-        "selectable": "true",
-        "selected": "false"
-      },
-
-      {
-        data: {
-          "weight": 60,
-          "source": 'n1',
-          "target": 'n8'
-        },
-        "classes": "species2 unmatched",
-        "selectable": "true",
-        "selected": "false"
-      }
-    ]
-  },
-
-  layout: {
-    name: 'circle',
-  },
-
-  ready: function () {
-    // buttons open corresponding windows
-    openItem("#b1", "#button1");
-    openItem("#b2", "#button2");
-    openItem("#b3", "#button3");
-  }
-}); // cy init
+    }
+  }); // cy init
+}
 
 // code taken from jqueryui.com
 // makes elements in div window to be draggable
@@ -317,3 +244,11 @@ function openItem(button, win) {
     resizeItem(win);
   });
 }
+
+
+/*
+let test = cy.$('#n0');
+let neighborhood = test.neighborhood().filter('node');
+for (let neighbor of neighborhood) {
+  console.log(neighbor.data('id'));
+} */

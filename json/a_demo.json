@@ -1,0 +1,330 @@
+[
+  {
+    "data": {
+      "id": "n0",
+      "name": "FIGL-1, SAP1"
+    },
+    "classes": "ortho query"
+  },
+
+  {
+    "data": {
+      "id": "n1",
+      "name": "Y37A1B.17, NBP2",
+      "parent": "aligned non-ortho"
+    },
+    "classes": "aligned nOrtho"
+  },
+
+  {
+    "data": {
+      "id": "n2",
+      "name": "NCK-1, BBC1",
+      "parent": "aligned non-ortho"
+    },
+    "classes": "aligned nOrtho"
+  },
+
+  {
+    "data": {
+      "id": "n3",
+      "name": "SDPN-1, MYO3",
+      "parent": "aligned non-ortho"
+    },
+    "classes": "aligned nOrtho"
+  },
+
+  {
+    "data": {
+      "id": "n4",
+      "name": "TAG-168, HOF1",
+      "parent": "aligned non-ortho"
+    },
+    "classes": "aligned nOrtho"
+  },
+
+  {
+    "data": {
+      "id": "n5",
+      "name": "F49E2.2b, MYO5",
+      "parent": "aligned non-ortho"
+    },
+    "classes": "aligned nOrtho"
+  },
+
+  {
+    "data": {
+      "id": "n6",
+      "name": "LST-4",
+      "parent": "unaligned"
+    },
+    "classes": "species1"
+  },
+
+  {
+    "data": {
+      "id": "n7",
+      "name": "TAG-208, YSC84",
+      "parent": "aligned non-ortho"
+    },
+    "classes": "aligned nOrtho"
+  },
+
+  {
+    "data": {
+      "id": "n8",
+      "name": "B0303.7",
+      "parent": "unaligned"
+    },
+    "classes": "species1"
+  },
+
+  {
+    "data": {
+      "id": "n9",
+      "name": "VAV-1, PEX13",
+      "parent": "aligned non-ortho"
+    },
+    "classes": "aligned nOrtho"
+  },
+
+  {
+    "data": {
+      "id": "n10",
+      "name": "TAG-208, SHO1",
+      "parent": "aligned non-ortho"
+    },
+    "classes": "aligned nOrtho"
+  },
+
+  {
+    "data": {
+      "id": "n11",
+      "name": "ITSN-1",
+      "parent": "unaligned"
+    },
+    "classes": "species1"
+  },
+
+  {
+    "data": {
+      "id": "n12",
+      "name": "ABI-1, LSB3",
+      "parent": "aligned non-ortho"
+    },
+    "classes": "aligned nOrtho"
+  },
+
+  {
+    "data": {
+      "id": "n13",
+      "name": "ABC-D",
+      "parent": "unaligned"
+    },
+    "classes": "species2"
+  },
+
+  {
+    "data": {
+      "id": "n14",
+      "name": "ABC-E",
+      "parent": "unaligned"
+    },
+    "classes": "species2"
+  },
+
+  {
+    "data": {
+      "id": "n15",
+      "name": "ABC-f",
+      "parent": "unaligned"
+    },
+    "classes": "species2"
+  },
+
+  {
+    "data": {
+      "id": "n16",
+      "name": "FET, PET",
+      "parent": "aligned ortho"
+    },
+    "classes": "aligned ortho"
+  },
+
+  {
+    "data": {
+      "id": "n17",
+      "name": "REX, HAT",
+      "parent": "aligned ortho"
+    },
+    "classes": "aligned ortho"
+  },
+
+  {
+    "data": {
+      "source": "n0",
+      "target": "n1"
+    },
+    "classes": "species1"
+  },
+
+  {
+    "data": {
+      "source": "n0",
+      "target": "n2"
+    },
+    "classes": "species2"
+  },
+
+  {
+    "data": {
+      "source": "n0",
+      "target": "n3"
+    },
+    "classes": "aligned"
+  },
+
+  {
+    "data": {
+      "source": "n0",
+      "target": "n4"
+    },
+    "classes": "species2"
+  },
+
+  {
+    "data": {
+      "source": "n0",
+      "target": "n5"
+    },
+    "classes": "species2"
+  },
+
+  {
+    "data": {
+      "source": "n0",
+      "target": "n6"
+    },
+    "classes": "species1"
+  },
+
+  {
+    "data": {
+      "source": "n0",
+      "target": "n7"
+    },
+    "classes": "species2"
+  },
+
+  {
+    "data": {
+      "source": "n0",
+      "target": "n8"
+    },
+    "classes": "species1"
+  },
+
+  {
+    "data": {
+      "source": "n0",
+      "target": "n9"
+    },
+    "classes": "species2"
+  },
+
+  {
+    "data": {
+      "source": "n0",
+      "target": "n10"
+    },
+    "classes": "aligned"
+  },
+
+  {
+    "data": {
+      "source": "n0",
+      "target": "n11"
+    },
+    "classes": "species1"
+  },
+
+  {
+    "data": {
+      "source": "n0",
+      "target": "n12"
+    },
+    "classes": "aligned"
+  },
+
+  {
+    "data": {
+      "source": "n0",
+      "target": "n13"
+    },
+    "classes": "species2"
+  },
+
+  {
+    "data": {
+      "source": "n0",
+      "target": "n14"
+    },
+    "classes": "species2"
+  },
+
+  {
+    "data": {
+      "source": "n0",
+      "target": "n15"
+    },
+    "classes": "species2"
+  },
+
+  {
+    "data": {
+      "source": "n0",
+      "target": "n16"
+    },
+    "classes": "aligned"
+  },
+
+  {
+    "data": {
+      "source": "n0",
+      "target": "n17"
+    },
+    "classes": "aligned"
+  },
+
+  {
+    "data": {
+      "id": "aligned non-ortho",
+      "name": "aligned non-orthology"
+    },
+    "classes": "container"
+  },
+
+  {
+    "data": {
+      "id": "unaligned1",
+      "name": "unaligned species 1"
+    },
+    "classes": "container"
+  },
+
+  {
+    "data": {
+      "id": "unaligned2",
+      "name": "unaligned species 2"
+    },
+    "classes": "container"
+  },
+
+  {
+    "data": {
+      "id": "aligned ortho",
+      "name": "aligned orthology"
+    },
+    "classes": "container"
+  }
+]
