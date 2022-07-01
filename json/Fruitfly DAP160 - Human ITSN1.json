@@ -1127,7 +1127,9 @@
     "length": 1450,
     "weight": 75,
     "neighbours": "APP, ARIH2, ARPC3, CAPZA2, CD2AP, CDC42, FGFR3, FPR2, GRB2, HMGXB4...",
-    "id": "ENSP00000377233"
+    "id": "ENSP00000377233",
+    "genbank": "31321",
+    "uniprot": "Q83838"
   },
   "removed": false,
   "selectable": true,
