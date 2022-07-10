@@ -37,7 +37,7 @@
   {
     "data": {
       "id": "n4",
-      "name": "TAG-168, HOF1",
+      "name": "dod-23, HOF1",
       "parent": "aligned non-ortho"
     },
     "classes": "aligned nOrtho"
@@ -46,7 +46,7 @@
   {
     "data": {
       "id": "n5",
-      "name": "F49E2.2b, MYO5",
+      "name": "F49E2.2, MYO5",
       "parent": "aligned non-ortho"
     },
     "classes": "aligned nOrtho"
@@ -64,7 +64,7 @@
   {
     "data": {
       "id": "n7",
-      "name": "TAG-208, YSC84",
+      "name": "F54B11.5, YSC84",
       "parent": "aligned non-ortho"
     },
     "classes": "aligned nOrtho"
@@ -91,7 +91,7 @@
   {
     "data": {
       "id": "n10",
-      "name": "TAG-208, SHO1",
+      "name": "dod-22, SHO1",
       "parent": "aligned non-ortho"
     },
     "classes": "aligned nOrtho"
@@ -118,7 +118,7 @@
   {
     "data": {
       "id": "n13",
-      "name": "ABC-D",
+      "name": "BMS1",
       "parent": "unaligned"
     },
     "classes": "species2"
@@ -127,7 +127,7 @@
   {
     "data": {
       "id": "n14",
-      "name": "ABC-E",
+      "name": "CMP2",
       "parent": "unaligned"
     },
     "classes": "species2"
@@ -136,7 +136,7 @@
   {
     "data": {
       "id": "n15",
-      "name": "ABC-f",
+      "name": "HMI1",
       "parent": "unaligned"
     },
     "classes": "species2"
@@ -145,7 +145,7 @@
   {
     "data": {
       "id": "n16",
-      "name": "FET, PET",
+      "name": "nhr-192, CRT10",
       "parent": "aligned ortho"
     },
     "classes": "aligned ortho"
@@ -154,7 +154,7 @@
   {
     "data": {
       "id": "n17",
-      "name": "REX, HAT",
+      "name": "F57A10.2, CUE4",
       "parent": "aligned ortho"
     },
     "classes": "aligned ortho"

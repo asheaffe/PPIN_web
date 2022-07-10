@@ -6,14 +6,23 @@ import json
 
 ## python code that will be used to convert ensembl file to json ##
 def main():
-    content = read_data("worm_protein_ids106.txt")
-    json = read_json("C:/users/annsb/OneDrive/Documents/PPIN_web/json/a_demo.json")
-    e_dict = extract_data(content)
-    p_list = match_name(json, e_dict)
-    print(p_list)
-    #update_json(p_list, e_dict, json)
+    # content based on the id data for worm and yeast
+    w_content = read_data("worm_protein_ids106.txt")
+    y_content = read_data("yeast_protein_ids_ensembl106.txt")
 
-# takes in a file name as param and reads the ensembl
+    # read the json file
+    json = read_json("C:/users/annsb/OneDrive/Documents/PPIN_web/json/a_demo.json")
+
+    # extract the desired data from the json file
+    w_dict = extract_data(w_content)
+    y_dict = extract_data(y_content)
+
+    # combine the 2 dictionaries to make a master dictionary of all possible data
+    master_dict = {**w_dict, **y_dict}
+
+    update_json(json, master_dict, "C:/users/annsb/OneDrive/Documents/PPIN_web/json/a_demo_update.json")
+
+# takes in a file name as param and reads the ensembl+
 def read_data(file_name):
     with open(file_name) as f:
         contents = f.readlines()
@@ -29,6 +38,10 @@ def read_json(file_path):
         data = json.load(file)
 
     for i in range(len(data)):
+        # do not consider container nodes
+        if data[i]['classes'] == 'container':
+            break
+
         if 'id' in data[i]['data']:
             current = data[i]['data']['name']
             current = current.split(",")
@@ -37,8 +50,6 @@ def read_json(file_path):
                 current[j] = current[j].strip()
 
             data[i]['data']['name'] = current
-        else:
-            data[i]['data']['name'] = []
 
         #print(data)
         #print(data[1])
@@ -48,7 +59,7 @@ def read_json(file_path):
 
     return data
 
-# takes the data from the content and makes it into a dictionary
+# takes the data from ensembl file and makes it into a dictionary
 def extract_data(content):
     gene_dict = {}
 
@@ -72,20 +83,20 @@ def extract_data(content):
 
     return gene_dict
 
-# find the name from each element in the json file and match it with a name in the ensemble file
-def match_name(json, dict):
+# match a name from the json file with the corresponding id info from the ensembl file
+# returns the list of ids associated with the protein name
+def match_name(name, dict):
     # list of names to be returned
-    name_list = []
+    id_list = []
 
-    # loop through all of the proteins in the json file
-    for el in json:
-        for name in el['data']['name']:
-            if name.lower() in dict: # other special cases??????
-                name_list.append(name.lower())
-            elif name.upper() in dict:
-                name_list.append(name.upper())
+    if name.lower() in dict:
+        id_list = dict[name.lower()]
+    elif name.upper() in dict:
+        id_list = dict[name.upper()]
+    else:
+        id_list = None
 
-    return name_list
+    return id_list
 
 
 '''
@@ -96,21 +107,87 @@ www.ensemble.org/?q=ENSG108839393939
 
 '''
 
-# use the name list to update the json file based on the name list generated in match_name
-def update_json(name_list, dict, json):
-    # loop through the json file
-    for i in range(len(json)):
-        for el in json[i]["data"]:
-            # check if the data has reached "name"
-            if el == "name":
-                # join the list of names
-                json[i]["data"][el] = ", ".join(json[i]["data"][el])
+# take in the json file info and the dictionary with all of the protein data
+# loop through the json file and add the dictionary data when necessary
+def update_json(json, dict, filename):
+    temp = []
 
-                print(el, ": ", json[i]["data"][el])
+    original_stdout = sys.stdout
+    with open(filename, 'w') as f:
+        sys.stdout = f
 
-            # otherwise, just print the data as usual
+        print("[")
+
+        # loop through the json file
+        for i in range(len(json)):
+            # check if the data has element "name"
+            if 'name' in json[i]['data']:
+                name_list = json[i]['data']['name']
             else:
-                print(el, ": ", json[i]["data"][el])
+                print(str(json[i]).replace("'", '"'), ",", sep="")
+                continue # might want a diff approach????
 
+                # name_list remains the same after the name does not change
+                # i.e. the line is an edge and therefore does not have a name
+                # will continue to print the info for the last node along with the
+                # edge print statement
+
+            # pull the name from the line
+            for name in name_list:
+                is_matched = match_name(name, dict)
+                if is_matched is not None:
+                    temp = temp + match_name(name, dict)
+
+            # boolean value that keeps track of whether there are
+            # multiple proteins to a node
+            mult = False
+            if temp != []:
+                if len(name_list) > 1:
+                    mult = True
+
+                print('{ "data":', end='')
+                if 'id' in json[i]['data']:
+                    print(' { "id": "' + json[i]['data']['id'] + '",', end='')
+
+                print(' "e_id": "' + temp[0] + '",', end='')
+                if mult:
+                    print(' "e_id2": "' + temp[4] + '",', end='')
+                print(' "name": "' + ", ".join(name_list) + '",', end='')
+
+                # not all elements will have a parent
+                if 'parent' in json[i]['data']:
+                    print(' "parent": "' + json[i]['data']['parent'] + '",', end='')
+
+                print(' "ncbi": "' + temp[1] + '",', end='')
+                if mult:
+                    print(' "ncbi2": "' + temp[5] + '",', end='')
+
+                if temp[2] != "":
+                    print(' "uniprot": "' + temp[2] + '"', end='')
+                elif temp[3] != "":
+                    print(' "uniprot": "' + temp[3] + '"', end='')
+
+                if mult:
+                    if temp[6] != "":
+                        print(', "uniprot2": "' + temp[6] + '"', end='')
+                    elif temp[7] != "":
+                        print(', "uniprot2": "' + temp[7] + '"', end='')
+                print("}", end='')
+
+                if "classes" in json[i]:
+                    print(', "classes": "' + json[i]['classes'] + '"}', end='')
+
+            else:
+                print(str(json[i]).replace("'", '"'), end='')
+
+            # only have a comma if the current line is not the last one
+            if i != len(json)-1:
+                print(",")
+
+            temp = []
+
+        print("]")
+
+        sys.stdout = original_stdout
 
 main()
