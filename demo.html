@@ -4,12 +4,13 @@
   <head>
     <title>PPIN Visualizer Demo</title>
     <meta name="viewport" content="user-scalable=no, initial-scale=1.0, minimum-scale=1.0">
-
+    <link href="cytoscape-context-menus.css" rel="stylesheet" type="text/css" />
     <link href="style.css" rel="stylesheet" />
     <link rel="stylesheet" href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
 
     <script src="jquery_v3.6.0.js"></script>
     <script src="cytoscape.min.js"></script>
+    <script src="cytoscape-context-menus.js"></script>
 
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
     <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
@@ -37,6 +38,9 @@
     <!--div for the first button-->
     <div id="button1">
       <h2>Stats</h2>
+      <h3 id="b1text1">Dummy Text</h3>
+      <h3 id="b1text2">Dummy Text</h3>
+      <h3 id="b1text3">Dummy Text</h3>
     </div>
 
     <!--div for the second button-->
@@ -46,11 +50,12 @@
     </div>
 
     <!--div for the third button-->
-    <div id="button3">
+    <div id="button3" data-textfit-min="30">
       <h2>Legend</h2>
       <h3 id="s1">Species1</h3>
       <h3 id="s2">Species2</h3>
-      <h3 id="al">Aligned</h3>
+      <h3 id="al">aligned</h3>
+      <h3 id="o1">orthologous</h3>
     </div>
 
     <!-- Load application code at the end to ensure DOM is loaded -->
