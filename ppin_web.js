@@ -45,7 +45,7 @@ function runCytoscape(data) {
         })
       .selector('node.species1')
         .css({
-          "background-color": "blue"
+          "background-color": 'blue'
         })
       .selector('node.species2')
         .css({
@@ -310,9 +310,11 @@ function runCytoscape(data) {
       cy.on("cxttapstart", "node", function (event) {
 
 
-        // format protein name
+        // format protein names
         var node_name = event.target.data("name");
         var name_arr = node_name.split(",");
+
+        //console.log(name_arr);
 
         instance.disableMenuItem("protein_name");
         document.getElementById("protein_name").innerHTML = node_name;
@@ -321,6 +323,7 @@ function runCytoscape(data) {
         if (event.target.data("e_id") === undefined) {
           instance.hideMenuItem("ensembl_link1");
         } else {
+          instance.showMenuItem("ensembl_link1");
           document.getElementById("ensembl_link1").innerHTML = "ensembl " + name_arr[0];
         }
 
@@ -337,6 +340,7 @@ function runCytoscape(data) {
         if (event.target.data("ncbi") === undefined) {
           instance.hideMenuItem("ncbi_link1");
         } else {
+          instance.showMenuItem("ncbi_link1");
           document.getElementById("ncbi_link1").innerHTML = "ncbi " + name_arr[0];
         }
 
@@ -345,6 +349,7 @@ function runCytoscape(data) {
           instance.hideMenuItem("ncbi_link2");
           document.getElementById("ncbi_link1").innerHTML = "ncbi";
         } else {
+          instance.showMenuItem("ncbi_link2");
           document.getElementById("ncbi_link2").innerHTML = "ncbi" + name_arr[1];
         }
 
@@ -352,6 +357,7 @@ function runCytoscape(data) {
         if (event.target.data("uniprot") === undefined) {
           instance.hideMenuItem("uniprot_link1");
         } else {
+          instance.showMenuItem("uniprot_link1");
           document.getElementById("uniprot_link1").innerHTML = "uniprot " + name_arr[0];
         }
 
@@ -360,10 +366,26 @@ function runCytoscape(data) {
           instance.hideMenuItem("uniprot_link2");
           document.getElementById("uniprot_link1").innerHTML = "uniprot";
         } else {
+          instance.showMenuItem("uniprot_link2");
           document.getElementById("uniprot_link2").innerHTML = "uniprot" + name_arr[1];
         }
 
       });
+
+      // implementing jscolor to change the color scheme of network
+      updateSpecies1Color = function (jscolor) {
+        cy.startBatch();
+        // change the color of the species 1 nodes
+        cy.style().selector('node.species1').css({
+          'background-color': jscolor.toString()
+        }).update();
+
+        // change the color of the species 1 edges
+        cy.style().selector('edge.species1').css({
+          'line-color': jscolor.toString()
+        }).update();
+        cy.endBatch();
+      }
 
       // id for container species1
       var cont_node1 = cy.$(function(element, i){
@@ -384,17 +406,91 @@ function runCytoscape(data) {
         return element.hasClass("aligned") && element.hasClass("edge");
       })
 
+      // grab all of the edges
+      var all_edges = cy.$(function(element, i) {
+        return element.hasClass("edge");
+      })
+
+      // aligned edges between orthologous nodes.
+      ortho_e = nodes3.connectedEdges().filter('.aligned');
+
       // array of stats to be passed to the windows
-      var stats = [nodes3.size(), nodes2.size(), nodes_s1.size(), nodes_s2.size(), align_e.size()];
+      var stats = [nodes3.size(), nodes2.size(), nodes_s1.size(), nodes_s2.size(), align_e.size(), ortho_e.size(), all_edges.size()];
 
       // buttons open corresponding windows
-      openItem("#b1", "#button1", 110, 20, stats, species1_id, species2_id);
-      openItem("#b2", "#button2", 300, 20, stats, species1_id, species2_id);
-      openItem("#b3", "#button3", 110, 250, stats, species1_id, species2_id);
+      openMainItem("#b1", "#button1", 110, 20, stats, species1_id, species2_id);
+      openMainItem("#b2", "#button2", 300, 20, stats, species1_id, species2_id);
+      openMainItem("#b3", "#button3", 110, 250, stats, species1_id, species2_id);
+
+      // opens the color picker option in controls
+      openSideItem("#b2_colors", "#color_pick");
+
+      // collect all of the proteins in the network
+      var all_nodes = cy.$(function(element, i) {
+        return element.hasClass("protein");
+      })
+
+      buildTable(all_nodes);
 
     } // ready
   }); // cy init
 }
+
+// function for making a data table
+function buildTable(proteins) {
+  // building the sidebar data table
+  // developed from demo on delftstack.com
+  var table = document.createElement('table');
+  var thead = document.createElement('thead');
+  var tbody = document.createElement('tbody');
+
+  table.appendChild(thead);
+  table.appendChild(tbody);
+
+  // add the table just created to the body
+  document.getElementById('data_ctrl').appendChild(table);
+
+  // create a table row for the header
+  var header_row = document.createElement('tr');
+  var heading1 = document.createElement('th');
+  heading1.innerHTML = "Protein";
+  var heading2 = document.createElement('th');
+  heading2.innerHTML = "Species1";
+  var heading3 = document.createElement('th');
+  heading3.innerHTML = "Species2";
+  // append the heading to the header row
+  header_row.appendChild(heading1);
+  header_row.appendChild(heading2);
+  header_row.appendChild(heading3);
+  // append the row to the table
+  table.appendChild(header_row);
+
+  for (let i = 0; i < proteins.size(); i++) {
+    var current = proteins[i].data("name");
+
+    var temp_arr = [];
+    // separate proteins if two are present
+    if (current.includes(",")) {
+      temp_arr = current.split(",");
+    } else {
+      temp_arr.push(current);
+    }
+
+    // loop through the temp array and make a row for each element
+    for (let k = 0; k < temp_arr.length; k++) {
+      // create a row in the table
+      var prot_row = document.createElement('tr');
+      var prot = document.createElement('td');
+
+      prot.innerHTML = temp_arr[k];
+
+      prot_row.appendChild(prot);
+      table.appendChild(prot_row);
+    }
+
+  }
+}
+
 
 // code taken from jqueryui.com
 // makes elements in div window to be draggable
@@ -411,15 +507,27 @@ function resizeItem(win) {
   $(win).resizable().css({'overflow': 'hidden'});
 }
 
+// opens an item that doesnt include any data that would be included in the main items
+function openSideItem(button, win) {
+  $(button).click(function(){
+    $(win).toggle();
+    dragItem(win);
+    resizeItem(win);
+
+  });
+}
+
 // opens the div and gives it the ability to drag and resize
 // param: given button, window to be opened, y-location, x-location, list of stats, names for each species
-function openItem(button, win, top, left, stat_list, s1_name, s2_name) {
+function openMainItem(button, win, top, left, stat_list, s1_name, s2_name) {
   // stat list index definitions:
   // 0: number of orthologous aligned proteins
   // 1: number of non-orthologous aligned proteins
   // 2: number of unaligned species1
   // 3: number of unaligned species2
   // 4: number of aligned edges
+  // 5: number of interologs
+  // 6: count of all edges
 
   // check if the current button is the stats button
   if (win === "#button1") {
@@ -448,18 +556,43 @@ function openItem(button, win, top, left, stat_list, s1_name, s2_name) {
     var s2_align = (stat_list[0] + stat_list[1]) / s2_total;
 
     document.getElementById("b1text3").innerHTML = Math.round(s2_align * 1000) / 10 + "% (" + (stat_list[0] + stat_list[1]) + "/" + s2_total + ") of " + s2_name + " proteins are aligned";
+
+    // number of aligned edges that are orthologous
+    var intero_al = (stat_list[5] / stat_list[4]);
+
+    document.getElementById("b1text4").innerHTML = Math.round(intero_al*1000)/10 + "% (" + stat_list[5] + "/" + stat_list[4] + ") aligned edges are interologs";
+
+    // number of orthologous edges out of all edges
+    var intero_total = (stat_list[5] / stat_list[6]);
+
+    document.getElementById("b1text5").innerHTML = Math.round(intero_total*1000)/10 + "% (" + stat_list[5] + "/" + stat_list[6] + ") of all edges are interologs";
   };
+
+  // opens the data table upon button click within the controls menu
+  if (win === "#button2") {
+    $("#b2_data").click(function() {
+      $("#data_ctrl").toggle();
+
+      if ($("#data_ctrl").css('display') === 'block') {
+        document.getElementById("cy").style = "right:25%";
+      }
+      else if ($("#data_ctrl").css('display') === 'none') {
+        document.getElementById("cy").style = "right:0";
+      }
+    })
+  }
 
   // check if the current button is the legend button
   if (win === "#button3") {
-    document.getElementById("s1").innerHTML = s1_name;
-    document.getElementById("s2").innerHTML = s2_name;
+    //document.getElementById("s1").innerHTML = "Change color of " + s1_name;
+    //document.getElementById("s2").innerHTML = s2_name;
   }
 
   $(button).click(function(){
     $(win).toggle();
     dragItem(win);
     resizeItem(win);
+
   });
   $(win).css({'top': top, 'left': left, 'width': 'fit-content', 'height': 'fit-content', 'padding': "10", 'overflow': 'hidden'});
 

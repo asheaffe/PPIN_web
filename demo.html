@@ -11,6 +11,7 @@
     <script src="jquery_v3.6.0.js"></script>
     <script src="cytoscape.min.js"></script>
     <script src="cytoscape-context-menus.js"></script>
+    <script src="jscolor.min.js"></script>
 
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
     <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
@@ -18,7 +19,7 @@
   </head>
   <body>
 
-    <div id="sidebar">
+    <div id="sidebar" class="inter">
       Select a JSON file: <input type="file" id="myFile">
       <p id="title"><a href="http://localhost:8000/PPIN_web/demo.html">PPIN Visualizer</a></p>
 
@@ -27,7 +28,7 @@
     <div id="cy"></div>
 
     <!--div for the footer-->
-    <div id="footer">
+    <div id="footer" class="inter">
       <ul class="buttons">
         <li><a href="#button1" id="b1">Stats</a></li>
         <li><a href="#button2" id="b2">Controls</a></li>
@@ -36,26 +37,43 @@
     </div>
 
     <!--div for the first button-->
-    <div id="button1">
+    <div id="button1" class="footer_b">
       <h2>Stats</h2>
-      <h3 id="b1text1">Dummy Text</h3>
-      <h3 id="b1text2">Dummy Text</h3>
-      <h3 id="b1text3">Dummy Text</h3>
+      <h3 id="b1text1" class="innerText">Dummy Text</h3>
+      <h3 id="b1text2" class="innerText">Dummy Text</h3>
+      <h3 id="b1text3" class="innerText">Dummy Text</h3>
+      <h3 id="b1text4" class="innerText">Dummy Text</h3>
+      <h3 id="b1text5" class="innerText">Dummy Text</h3>
     </div>
 
     <!--div for the second button-->
-    <div id="button2">
+    <div id="button2" class="footer_b">
       <h2>Controls</h2>
+      <a href="#data_ctrl" id="b2_data"><h3>Data</h3></a>
+      <a href="#color_pick" id="b2_colors"><h3>Change Color Scheme</h3></a>
 
     </div>
 
     <!--div for the third button-->
-    <div id="button3" data-textfit-min="30">
+    <div id="button3" data-textfit-min="30" class="footer_b">
       <h2>Legend</h2>
-      <h3 id="s1">Species1</h3>
-      <h3 id="s2">Species2</h3>
-      <h3 id="al">aligned</h3>
-      <h3 id="o1">orthologous</h3>
+      <h3 class="legendText">Species1</h3>
+      <h3 class="legendText">Species2</h3>
+      <h3 class="legendText">aligned</h3>
+      <h3 class="legendText">orthologous</h3>
+    </div>
+
+    <!--div for the data window-->
+    <div id="data_ctrl">
+      <table>
+        <thead></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+
+    <!--div for the color picker for each type of node-->
+    <div id="color_pick"><h2>Color Scheme</h2>
+      <button id="color_species1" value = "blue" data-jscolor="{valueElement:null, onFineChange:'updateSpecies1Color(this)'}"><span id="species1_text">Species 1</span></div>
     </div>
 
     <!-- Load application code at the end to ensure DOM is loaded -->
