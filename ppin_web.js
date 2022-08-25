@@ -1,7 +1,19 @@
-// Base code originates from the breadthfirst layout on js.cytoscape.org
+/**
+  * @file
+  * Uses cystoscape.js to draw a graph based on data provided in a given json file
+  *
+  */
+
+
 document.getElementById('myFile').addEventListener('change', loadFile);
 
+
 function loadFile(event) {
+  /**
+    * Loads the chosen json file and runs cytoscape based on the formatting within in
+    *
+    * @param event signifies a button click
+    */
   f = event.target.files[0];
 
   fr = new FileReader();
@@ -13,6 +25,11 @@ function loadFile(event) {
 }
 
 function runCytoscape(data) {
+  /**
+    * Runs cytoscape.js given the data passed as input
+    *
+    * @param data signifies the data from the json file that is used for cytoscape formatting
+    */
   var cy = window.cy = cytoscape({
     container: document.getElementById('cy'),
 
@@ -384,8 +401,78 @@ function runCytoscape(data) {
         cy.style().selector('edge.species1').css({
           'line-color': jscolor.toString()
         }).update();
+
+        var temp_jscolor = 'color:' + jscolor.toString();
+
+        // change the color of the text in the legend
+        document.getElementById('s1').style = temp_jscolor;
+
         cy.endBatch();
-      }
+      };
+
+      // implement jscolor to change the legend color for species 2
+      updateSpecies2Color = function (jscolor) {
+        cy.startBatch();
+
+        // change color of species 2 nodes
+        cy.style().selector('node.species2').css({
+          'background-color': jscolor.toString()
+        }).update();
+
+        // change the color of species 2 edges
+        cy.style().selector('edge.species2').css({
+          'line-color': jscolor.toString()
+        }).update();
+
+        var temp_jscolor = 'color: ' + jscolor.toString();
+
+        // change the color within the legend text
+        document.getElementById('s2').style = temp_jscolor
+        cy.endBatch();
+      };
+
+      // implement jscolor to change the legend color for the aligned proteins
+      updateAlignedColor = function(jscolor) {
+        cy.startBatch();
+
+        // change color of aligned nodes
+        cy.style().selector('node.nOrtho').css({
+          'background-color': jscolor.toString()
+        }).update();
+
+        // change the color of aligned edges
+        cy.style().selector('edge.aligned').css({
+          'line-color': jscolor.toString()
+        }).update();
+
+        var temp_jscolor = 'color: ' + jscolor.toString();
+
+        // change the color within the legend text
+        document.getElementById('aligned').style = temp_jscolor;
+
+        cy.endBatch();
+      };
+
+      updateOrthoColor = function(jscolor) {
+        cy.startBatch();
+
+        // change color of orthologous nodes
+        cy.style().selector('node.ortho').css({
+          'background-color': jscolor.toString()
+        }).update();
+
+        // change the color of orthologous edges
+        cy.style().selector('edge.ortho').css({
+          'line-color': jscolor.toString()
+        }).update();
+
+        var temp_jscolor = 'color: ' + jscolor.toString();
+
+        // change the color within the legend text
+        document.getElementById('ortho').style = temp_jscolor;
+
+        cy.endBatch();
+      };
 
       // id for container species1
       var cont_node1 = cy.$(function(element, i){
@@ -423,7 +510,7 @@ function runCytoscape(data) {
       openMainItem("#b3", "#button3", 110, 250, stats, species1_id, species2_id);
 
       // opens the color picker option in controls
-      openSideItem("#b2_colors", "#color_pick");
+      openColorPick("#b2_colors", "#color_pick", species1_id, species2_id);
 
       // collect all of the proteins in the network
       var all_nodes = cy.$(function(element, i) {
@@ -495,6 +582,12 @@ function buildTable(proteins) {
 // code taken from jqueryui.com
 // makes elements in div window to be draggable
 function dragItem(win) {
+  /**
+    * Pass the id for a given window by parameter so that it will be made draggable
+    * using jquery
+    *
+    * @param win indicates the html div id for a given window
+    */
   $(win)
     .draggable({
       containment: "#cy",
@@ -504,17 +597,35 @@ function dragItem(win) {
 
 // makes elements in div window to be resizable
 function resizeItem(win) {
+  /**
+    * Uses div id for a given window to make that div resizeable
+    *
+    * @param win indicates the html div id for a given window
+    */
   $(win).resizable().css({'overflow': 'hidden'});
 }
 
 // opens an item that doesnt include any data that would be included in the main items
-function openSideItem(button, win) {
+function openColorPick(button, win, s1_name, s2_name) {
+  /**
+    * Makes the color picker window open when a button is clicked
+    *
+    * @param button is the div id for the link to be clicked that will open the window
+    * @param win is the html div id that will be opened when the button is clicked
+    * @param s1_name is the scientific name of species 1
+    * @param s2_name is the scientific name of species 2
+    */
   $(button).click(function(){
     $(win).toggle();
     dragItem(win);
     resizeItem(win);
-
   });
+
+  // check if the color picker window is open
+  if (win === "#color_pick") {
+    document.getElementById("species1_text").innerHTML = s1_name + ": ";
+    document.getElementById("species2_text").innerHTML = s2_name + ": ";
+  }
 }
 
 // opens the div and gives it the ability to drag and resize
@@ -584,8 +695,10 @@ function openMainItem(button, win, top, left, stat_list, s1_name, s2_name) {
 
   // check if the current button is the legend button
   if (win === "#button3") {
-    //document.getElementById("s1").innerHTML = "Change color of " + s1_name;
-    //document.getElementById("s2").innerHTML = s2_name;
+    // change the text within the legend window
+    document.getElementById("s1").innerHTML = s1_name;
+    document.getElementById("s2").innerHTML = s2_name;
+
   }
 
   $(button).click(function(){

@@ -16,6 +16,10 @@
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
     <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
 
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+
   </head>
   <body>
 
@@ -57,10 +61,10 @@
     <!--div for the third button-->
     <div id="button3" data-textfit-min="30" class="footer_b">
       <h2>Legend</h2>
-      <h3 class="legendText">Species1</h3>
-      <h3 class="legendText">Species2</h3>
-      <h3 class="legendText">aligned</h3>
-      <h3 class="legendText">orthologous</h3>
+      <h3 id="s1">Species1</h3>
+      <h3 id="s2">Species2</h3>
+      <h3 id="aligned">aligned</h3>
+      <h3 id="ortho">orthologous</h3>
     </div>
 
     <!--div for the data window-->
@@ -73,7 +77,10 @@
 
     <!--div for the color picker for each type of node-->
     <div id="color_pick"><h2>Color Scheme</h2>
-      <button id="color_species1" value = "blue" data-jscolor="{valueElement:null, onFineChange:'updateSpecies1Color(this)'}"><span id="species1_text">Species 1</span></div>
+      <span id="species1_text">Species 1: </span><input id="color_species1" class="color_buttons" data-jscolor="{onInput:'updateSpecies1Color(this)'}" value="#0000FF"><br>
+      <span id="species2_text">Species 2: </span><input id="color_species2" class="color_buttons" data-jscolor="{onInput:'updateSpecies2Color(this)'}" value="#FF0000"><br>
+      <span id="aligned_text">Aligned: </span><input id="color_aligned" class="color_buttons" data-jscolor="{onInput: 'updateAlignedColor(this)'}" value="00FF00"><br>
+      <span id="ortho_text">Orthologous:</span><input id="color_ortho" class="color_buttons" data-jscolor="{onInput: 'updateOrthoColor(this)'}" value="#FFFF00"><br>
     </div>
 
     <!-- Load application code at the end to ensure DOM is loaded -->
