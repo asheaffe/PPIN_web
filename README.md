@@ -33,5 +33,4 @@ A web tool for visualizing Protein-Protein Interaction Networks using cytoscape.
 # Current Bugs
 ```
 - Control/Information windows overlap when more than one is opened at a time.
-- 
 ```
