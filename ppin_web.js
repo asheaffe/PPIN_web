@@ -353,7 +353,7 @@ function runCytoscape(data) {
           instance.hideMenuItem("ensembl_link1");
         } else {
           instance.showMenuItem("ensembl_link1");
-          document.getElementById("ensembl_link1").innerHTML = "ensembl " + name_arr[0];
+          document.getElementById("ensembl_link1").innerHTML = "Ensembl webpage for  " + name_arr[0];
         }
 
         // ensembl id species 2
@@ -362,7 +362,7 @@ function runCytoscape(data) {
           document.getElementById("ensembl_link1").innerHTML = "ensembl";
         } else {
           instance.showMenuItem("ensembl_link2");
-          document.getElementById("ensembl_link2").innerHTML = "ensembl" + name_arr[1];
+          document.getElementById("ensembl_link2").innerHTML = "Ensembl webpage for" + name_arr[1];
         }
 
         // ncbi id species 1
@@ -370,7 +370,7 @@ function runCytoscape(data) {
           instance.hideMenuItem("ncbi_link1");
         } else {
           instance.showMenuItem("ncbi_link1");
-          document.getElementById("ncbi_link1").innerHTML = "ncbi " + name_arr[0];
+          document.getElementById("ncbi_link1").innerHTML = "NCBI webpage for  " + name_arr[0];
         }
 
         // ncbi id species 2
@@ -379,7 +379,7 @@ function runCytoscape(data) {
           document.getElementById("ncbi_link1").innerHTML = "ncbi";
         } else {
           instance.showMenuItem("ncbi_link2");
-          document.getElementById("ncbi_link2").innerHTML = "ncbi" + name_arr[1];
+          document.getElementById("ncbi_link2").innerHTML = "NCBI webpage for" + name_arr[1];
         }
 
         // uniprot id species 1
@@ -387,7 +387,7 @@ function runCytoscape(data) {
           instance.hideMenuItem("uniprot_link1");
         } else {
           instance.showMenuItem("uniprot_link1");
-          document.getElementById("uniprot_link1").innerHTML = "uniprot " + name_arr[0];
+          document.getElementById("uniprot_link1").innerHTML = "Uniprot webpage for " + name_arr[0];
         }
 
         // uniprot id species 2
@@ -396,7 +396,7 @@ function runCytoscape(data) {
           document.getElementById("uniprot_link1").innerHTML = "uniprot";
         } else {
           instance.showMenuItem("uniprot_link2");
-          document.getElementById("uniprot_link2").innerHTML = "uniprot" + name_arr[1];
+          document.getElementById("uniprot_link2").innerHTML = "Uniprot webpage for" + name_arr[1];
         }
 
       });
