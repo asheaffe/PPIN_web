@@ -36,6 +36,7 @@ function runCytoscape(data) {
     boxSelectionEnabled: false,
     autounselectify: true,
 
+    // styling for cytoscape.js graph
     style: cytoscape.stylesheet()
       .selector('node')
         .css({
@@ -125,6 +126,7 @@ function runCytoscape(data) {
       var hDist = (80) + 40;
       var vDist = (80) + 40;
 
+      // format layout for species 1 nodes
       var layout = nodes_s1.layout({
         name: 'grid',
         fit: false,
@@ -155,6 +157,7 @@ function runCytoscape(data) {
       var hDist = (80) + 40;
       var vDist = -((vSize*80) + 40);
 
+      // format layout for species 2 nodes
       var layout = nodes_s2.layout({
         name: 'grid',
         fit: false,
@@ -184,6 +187,7 @@ function runCytoscape(data) {
       var hDist = -((hSize*80) + 40);
       var vDist = (80) + 40;
 
+      // format layout for aligned non-orthologous nodes
       var layout = nodes2.layout({
         name: 'grid',
         fit: false,
@@ -213,6 +217,7 @@ function runCytoscape(data) {
       var hDist = -((hSize*80) + 40);
       var vDist = -((vSize*80) + 40);
 
+      // format layout for orthologous nodes
       var layout = nodes3.layout({
         name: 'grid',
         fit: false,
@@ -236,12 +241,14 @@ function runCytoscape(data) {
         // List of initial menu items
         menuItems: [
           {
+            // protein name(s), does nothing when clicked
             id: 'protein_name',
             content: 'content here',
             tooltipText: 'Protein Name(s)',
             selector: 'node.protein, node.query, node.aligned, node.species1, node.species2',
           },
           {
+            // click for ensembl link for first protein
             id: 'ensembl_link1',
             content: "ensembl species 1",
             tooltipText: "Visit Ensembl page",
@@ -255,6 +262,7 @@ function runCytoscape(data) {
             }
           },
           {
+            // click for ensembl link for second protein
             id: 'ensembl_link2',
             content: "ensembl species 2",
             tooltipText: "Visit Ensembl page",
@@ -268,6 +276,7 @@ function runCytoscape(data) {
             }
           },
           {
+            // ncbi link for first protein
             id: "ncbi_link1",
             content: "ncbi species 1",
             tooltipText: "Visit NCBI page",
@@ -281,6 +290,7 @@ function runCytoscape(data) {
             }
           },
           {
+            // ncbi link for second protein
             id: "ncbi_link2",
             content: "ncbi species 2",
             tooltipText: "Visit NCBI page",
@@ -294,6 +304,7 @@ function runCytoscape(data) {
             }
           },
           {
+            // uniprot link for first protein
             id: "uniprot_link1",
             content: "uniprot species 1",
             tooltipText: "Visit Uniprot page",
@@ -307,6 +318,7 @@ function runCytoscape(data) {
             }
           },
           {
+            // uniprot link for second protein
             id: "uniprot_link2",
             content: "uniprot species 2",
             tooltipText: "Visit Uniprot page",
@@ -523,6 +535,23 @@ function runCytoscape(data) {
   }); // cy init
 }
 
+/**
+  * Copies the text that within the data sidebar
+  *
+  */
+function copyText() {
+  var txt = document.getElementById("data_ctrl");
+
+  var test = document.createElement("textarea");
+  test.appendChild(txt);
+
+  test.select();
+
+  navigator.clipboard.writeText(test.value);
+
+  alert(test.value);
+}
+
 // function for making a data table
 function buildTable(proteins) {
   // building the sidebar data table
@@ -539,39 +568,95 @@ function buildTable(proteins) {
 
   // create a table row for the header
   var header_row = document.createElement('tr');
+
+  // create rows for each data section
   var heading1 = document.createElement('th');
   heading1.innerHTML = "Protein";
   var heading2 = document.createElement('th');
   heading2.innerHTML = "Species1";
   var heading3 = document.createElement('th');
   heading3.innerHTML = "Species2";
+  var heading4 = document.createElement('th');
+  heading4.innerHTML = "Aligned";
+  var heading5 = document.createElement('th');
+  heading5.innerHTML = "Orthologous";
+
+
   // append the heading to the header row
   header_row.appendChild(heading1);
   header_row.appendChild(heading2);
   header_row.appendChild(heading3);
+  header_row.appendChild(heading4);
+  header_row.appendChild(heading5);
+
   // append the row to the table
   table.appendChild(header_row);
 
+  // loop through all of the nodes
   for (let i = 0; i < proteins.size(); i++) {
     var current = proteins[i].data("name");
 
+    // make a 2D array of data
+    // the purpose of having this overarching array is to alphabetize the data
+    var data_arr = [];
+
+    // temporary array that will hold both the name array and the class array
     var temp_arr = [];
+
+    var name_arr = [];
     // separate proteins if two are present
     if (current.includes(",")) {
-      temp_arr = current.split(",");
+      name_arr = current.split(",");
     } else {
-      temp_arr.push(current);
+      name_arr.push(current);
     }
 
+    // add the array of names to the 2D data array
+    temp_arr.push(name_arr);
+
+    // class array will hold boolean values indicating which type of node is present
+    var class_arr = [];
+
+    class_arr.push(proteins[i].hasClass("species1"));
+    class_arr.push(proteins[i].hasClass("species2"));
+    class_arr.push(proteins[i].hasClass("nOrtho"));
+    class_arr.push(proteins[i].hasClass("ortho"));
+
+    temp_arr.push(class_arr);
+
+    data_arr.push(temp_arr);
+
     // loop through the temp array and make a row for each element
-    for (let k = 0; k < temp_arr.length; k++) {
+    for (let k = 0; k < name_arr.length; k++) {
       // create a row in the table
       var prot_row = document.createElement('tr');
-      var prot = document.createElement('td');
 
-      prot.innerHTML = temp_arr[k];
+      // data that will hold the protein name
+      var name = document.createElement('td');
+      name.innerHTML = name_arr[k];
 
-      prot_row.appendChild(prot);
+      // data that will hold boolean value for species 1
+      var s1 = document.createElement('td');
+      s1.innerHTML = class_arr[0];
+
+      // data that will hold boolean value for species 2
+      var s2 = document.createElement('td');
+      s2.innerHTML = class_arr[1];
+
+      // boolean value for aligned non-orthologous proteins
+      var al = document.createElement('td');
+      al.innerHTML = class_arr[2];
+
+      // boolean value for aligned orthologous proteins
+      var ort = document.createElement('td');
+      ort.innerHTML = class_arr[3];
+
+      // append each piece of data to the current row in order
+      prot_row.appendChild(name);
+      prot_row.appendChild(s1);
+      prot_row.appendChild(s2);
+      prot_row.appendChild(al);
+      prot_row.appendChild(ort);
       table.appendChild(prot_row);
     }
 
@@ -628,9 +713,21 @@ function openColorPick(button, win, s1_name, s2_name) {
   }
 }
 
+
 // opens the div and gives it the ability to drag and resize
 // param: given button, window to be opened, y-location, x-location, list of stats, names for each species
 function openMainItem(button, win, top, left, stat_list, s1_name, s2_name) {
+  /**
+    * opens the div and gives it the ability to drag and resize
+    *
+    * @param button name of button that will be clicked to open window
+    * @param win name of the window to be opened
+    * @param top y-coordinate where the top of the window will be placed on the screen
+    * @param left x-coordinate where the left of the window will be placed on the screen
+    * @param stat_list list of stats to be included in the stats window (more info below)
+    * @param s1_name name of species 1
+    * @param s2_name name of species 2
+    */
   // stat list index definitions:
   // 0: number of orthologous aligned proteins
   // 1: number of non-orthologous aligned proteins
