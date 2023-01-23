@@ -26,11 +26,12 @@ A web tool for visualizing Protein-Protein Interaction Networks using cytoscape.
 
 # Future Functionalities
 ```
-- Copy data within the sidebar with a single button click 
+- Copy data within the sidebar with a single button click
 - Have the webpage reflect real alignment data
 ```
 
 # Current Bugs
 ```
 - Control/Information windows overlap when more than one is opened at a time.
+- 'Copy data' button exists but it doesn't copy the data.
 ```
