@@ -353,7 +353,7 @@ function runCytoscape(data) {
           instance.hideMenuItem("ensembl_link1");
         } else {
           instance.showMenuItem("ensembl_link1");
-          document.getElementById("ensembl_link1").innerHTML = "Ensembl webpage for  " + name_arr[0];
+          document.getElementById("ensembl_link1").innerHTML = "Ensembl (" + name_arr[0] + ")";
         }
 
         // ensembl id species 2
@@ -362,7 +362,7 @@ function runCytoscape(data) {
           document.getElementById("ensembl_link1").innerHTML = "ensembl";
         } else {
           instance.showMenuItem("ensembl_link2");
-          document.getElementById("ensembl_link2").innerHTML = "Ensembl webpage for" + name_arr[1];
+          document.getElementById("ensembl_link2").innerHTML = "Ensembl (" + name_arr[1] + ")";
         }
 
         // ncbi id species 1
@@ -370,7 +370,7 @@ function runCytoscape(data) {
           instance.hideMenuItem("ncbi_link1");
         } else {
           instance.showMenuItem("ncbi_link1");
-          document.getElementById("ncbi_link1").innerHTML = "NCBI webpage for  " + name_arr[0];
+          document.getElementById("ncbi_link1").innerHTML = "NCBI (" + name_arr[0] + ")";
         }
 
         // ncbi id species 2
@@ -379,7 +379,7 @@ function runCytoscape(data) {
           document.getElementById("ncbi_link1").innerHTML = "ncbi";
         } else {
           instance.showMenuItem("ncbi_link2");
-          document.getElementById("ncbi_link2").innerHTML = "NCBI webpage for" + name_arr[1];
+          document.getElementById("ncbi_link2").innerHTML = "NCBI (" + name_arr[1] + ")";
         }
 
         // uniprot id species 1
@@ -387,7 +387,7 @@ function runCytoscape(data) {
           instance.hideMenuItem("uniprot_link1");
         } else {
           instance.showMenuItem("uniprot_link1");
-          document.getElementById("uniprot_link1").innerHTML = "Uniprot webpage for " + name_arr[0];
+          document.getElementById("uniprot_link1").innerHTML = "Uniprot (" + name_arr[0] + ")";
         }
 
         // uniprot id species 2
@@ -396,7 +396,7 @@ function runCytoscape(data) {
           document.getElementById("uniprot_link1").innerHTML = "uniprot";
         } else {
           instance.showMenuItem("uniprot_link2");
-          document.getElementById("uniprot_link2").innerHTML = "Uniprot webpage for" + name_arr[1];
+          document.getElementById("uniprot_link2").innerHTML = "Uniprot (" + name_arr[1] + ")";
         }
 
       });
@@ -517,9 +517,9 @@ function runCytoscape(data) {
       var stats = [nodes3.size(), nodes2.size(), nodes_s1.size(), nodes_s2.size(), align_e.size(), ortho_e.size(), all_edges.size()];
 
       // buttons open corresponding windows
-      openMainItem("#b1", "#button1", 110, 20, stats, species1_id, species2_id);
-      openMainItem("#b2", "#button2", 300, 20, stats, species1_id, species2_id);
-      openMainItem("#b3", "#button3", 110, 250, stats, species1_id, species2_id);
+      openMainItem("#b1", "#button1", 110, 500, stats, species1_id, species2_id);
+      //openMainItem("#b2", "#button2", 300, 20, stats, species1_id, species2_id);
+      openMainItem("#b3", "#button3", 110, 500, stats, species1_id, species2_id);
 
       // opens the color picker option in controls
       openColorPick("#b2_colors", "#color_pick", species1_id, species2_id);
@@ -530,6 +530,17 @@ function runCytoscape(data) {
       })
 
       buildTable(all_nodes);
+
+      $("#b2_data").click(function() {
+        $("#data_ctrl").toggle();
+
+          if ($("#data_ctrl").css('display') === 'block') {
+            document.getElementById("cy").style = "left:25%";
+          }
+          else if ($("#data_ctrl").css('display') === 'none') {
+            document.getElementById("cy").style = "left:0";
+          }
+        })
 
     } // ready
   }); // cy init
@@ -663,6 +674,18 @@ function buildTable(proteins) {
   }
 }
 
+// dropdown menu for header tabs
+// takes the id of the dropdown div as param
+function ctrlDrop(el) {
+  var temp = document.getElementById(el).style.display.toString();
+
+  // check if the dropdown is toggled on
+  if (temp === "block") {
+    document.getElementById(el).style.display = "none";
+  } else {
+    document.getElementById(el).style.display = 'block';
+  };
+}
 
 // code taken from jqueryui.com
 // makes elements in div window to be draggable
@@ -775,20 +798,6 @@ function openMainItem(button, win, top, left, stat_list, s1_name, s2_name) {
 
     document.getElementById("b1text5").innerHTML = Math.round(intero_total*1000)/10 + "% (" + stat_list[5] + "/" + stat_list[6] + ") of all edges are interologs";
   };
-
-  // opens the data table upon button click within the controls menu
-  if (win === "#button2") {
-    $("#b2_data").click(function() {
-      $("#data_ctrl").toggle();
-
-      if ($("#data_ctrl").css('display') === 'block') {
-        document.getElementById("cy").style = "right:25%";
-      }
-      else if ($("#data_ctrl").css('display') === 'none') {
-        document.getElementById("cy").style = "right:0";
-      }
-    })
-  }
 
   // check if the current button is the legend button
   if (win === "#button3") {

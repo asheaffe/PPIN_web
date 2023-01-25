@@ -27,13 +27,18 @@
       Select a JSON file: <input type="file" id="myFile">
       <!-- <p id="title">PPIN Visualizer</p> -->
       <ul class="buttons">
-        <li><p id="title">PPIN Visualizer</p></li>
         <li><a href="#button1" id="b1">Stats</a></li>
-        <li><a href="#button2" id="b2">Controls</a></li>
+        <li>
+          <div class='dropdown'>
+            <a id='b2' onclick="ctrlDrop('ctrlDropdown');">Controls</a>
+            <div id='ctrlDropdown' class='dropdown-content'>
+              <a href="#data_ctrl" id="b2_data">Data</a>
+              <a href="#color_pick" id="b2_colors">Change Color Scheme</a>
+            </div>
+          </div>
+        </li>
         <li><a href="#button3" id="b3">Legend</a></li>
       </ul>
-
-
     </div>
 
     <div id="cy"></div>
@@ -51,14 +56,6 @@
       <h3 id="b1text3" class="innerText">Dummy Text</h3>
       <h3 id="b1text4" class="innerText">Dummy Text</h3>
       <h3 id="b1text5" class="innerText">Dummy Text</h3>
-    </div>
-
-    <!--div for the second button-->
-    <div id="button2" class="footer_b">
-      <h2>Controls</h2>
-      <a href="#data_ctrl" id="b2_data"><h3>Data</h3></a>
-      <a href="#color_pick" id="b2_colors"><h3>Change Color Scheme</h3></a>
-
     </div>
 
     <!--div for the third button-->
