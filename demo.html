@@ -69,12 +69,12 @@
 
     <!--div for the data window-->
     <div id="data_ctrl">
-        <table>
-          <thead></thead>
-          <tbody></tbody>
-          <tfoot><button onclick="copyText()">Copy Data</button></tfoot>
+        <button onclick="copyText()">Copy Data</button>
+        <table id='data_tbl'>
         </table>
     </div>
+
+    <input hidden id='hidden-data'>
 
     <!--div for the color picker for each type of node-->
     <div id="color_pick"><h2>Color Scheme</h2>

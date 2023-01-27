@@ -51,8 +51,9 @@ h3.innerText:hover {
 
 #sidebar ul { /* tab list styling */
   list-style-type: none;
-  padding: 2px;
   text-align: right;
+  border: 1px solid black;
+  top: 0;
 }
 
 #sidebar li { /* individual tab styling */
@@ -174,17 +175,16 @@ input { /* styling for the file chooser */
   border: none;
 }
 
-#button2 button { /* buttons within the controls div */
-  padding: 5px;
-  border: none;
+#b2_data {
+  text-align: left;
+  width: 150px;
+  border: .5px dotted black;
 }
 
-#button2 button:hover {
-  border: 1px solid gray;
-}
-
-#button2 button:active {
-  border: none;
+#b2_colors {
+  text-align: left;
+  width: 150px;
+  border: .5px dotted black;
 }
 
 #data_ctrl { /* styling for data div in controls */

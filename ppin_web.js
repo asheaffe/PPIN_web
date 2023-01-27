@@ -551,31 +551,26 @@ function runCytoscape(data) {
   *
   */
 function copyText() {
-  var txt = document.getElementById("data_ctrl");
+  var txt = document.getElementById("data_tbl").innerHTML;
 
-  var test = document.createElement("textarea");
-  test.appendChild(txt);
+  // edit the raw HTML string
+  txt = txt.replace(/<tr>/g, '');
+  txt = txt.replace(/<th>/g, '');
+  txt = txt.replace(new RegExp("</th>", 'g'), '\t');
+  txt = txt.replace(new RegExp("</tr>", 'g'), '\n');
+  txt = txt.replace(/<td>/g, '');
+  txt = txt.replace(new RegExp("</td>", 'g'), '\t');
 
-  test.select();
+  navigator.clipboard.writeText(txt);
 
-  navigator.clipboard.writeText(test.value);
-
-  alert(test.value);
+  alert("Copied: " + txt);
 }
 
 // function for making a data table
 function buildTable(proteins) {
   // building the sidebar data table
   // developed from demo on delftstack.com
-  var table = document.createElement('table');
-  var thead = document.createElement('thead');
-  var tbody = document.createElement('tbody');
-
-  table.appendChild(thead);
-  table.appendChild(tbody);
-
-  // add the table just created to the body
-  document.getElementById('data_ctrl').appendChild(table);
+  var table = document.getElementById('data_tbl');
 
   // create a table row for the header
   var header_row = document.createElement('tr');
@@ -591,7 +586,6 @@ function buildTable(proteins) {
   heading4.innerHTML = "Aligned";
   var heading5 = document.createElement('th');
   heading5.innerHTML = "Orthologous";
-
 
   // append the heading to the header row
   header_row.appendChild(heading1);
@@ -668,6 +662,7 @@ function buildTable(proteins) {
       prot_row.appendChild(s2);
       prot_row.appendChild(al);
       prot_row.appendChild(ort);
+
       table.appendChild(prot_row);
     }
 
