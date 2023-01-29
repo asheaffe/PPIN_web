@@ -106,6 +106,7 @@ function runCytoscape(data) {
 
     layout: {
       name: 'preset',
+      fit: 'true'
     },
 
     ready: function () {
@@ -527,23 +528,31 @@ function runCytoscape(data) {
       // collect all of the proteins in the network
       var all_nodes = cy.$(function(element, i) {
         return element.hasClass("protein");
-      })
+      });
 
       buildTable(all_nodes);
 
       $("#b2_data").click(function() {
         $("#data_ctrl").toggle();
 
-          if ($("#data_ctrl").css('display') === 'block') {
-            document.getElementById("cy").style = "left:25%";
-          }
-          else if ($("#data_ctrl").css('display') === 'none') {
-            document.getElementById("cy").style = "left:0";
-          }
-        })
+        if ($("#data_ctrl").css('display') === 'block') {
+          document.getElementById("cy").style = "left:25%";
+        }
+        else if ($("#data_ctrl").css('display') === 'none') {
+          document.getElementById("cy").style = "left:0";
+        }
+      });
 
     } // ready
+
   }); // cy init
+
+  // panzoom slider with defaults
+  cy.panzoom({
+    animateOnFit: function() {
+      return true;
+    }
+  });
 }
 
 /**
