@@ -142,7 +142,7 @@ function runCytoscape(data) {
       });
       layout.run();
       nodes_s1.forEach(function (element, i) {
-        element.move({parent: 'worm'});
+        element.move({parent: 'species1'});
       });
 
       // unaligned species 2
@@ -173,7 +173,7 @@ function runCytoscape(data) {
       });
       layout.run();
       nodes_s2.forEach(function (element, i) {
-        element.move({parent: 'yeast'});
+        element.move({parent: 'species2'});
       });
 
       // aligned non-orthology
@@ -246,7 +246,7 @@ function runCytoscape(data) {
             id: 'protein_name',
             content: 'content here',
             tooltipText: 'Protein Name(s)',
-            selector: 'node.protein, node.query, node.aligned, node.species1, node.species2',
+            selector: 'node.protein, node.query, node.aligned, node.species1, node.species2'
           },
           {
             // click for ensembl link for first protein
@@ -487,19 +487,20 @@ function runCytoscape(data) {
         cy.endBatch();
       };
 
-      // id for container species1
-      var cont_node1 = cy.$(function(element, i){
-        return element.hasClass("container") && element.hasClass("s1");
-      })
+//      // id for container species1
+//      var cont_node1 = cy.$(function(element, i){
+//        return element.hasClass("container") && element.hasClass("s1");
+//      })
 
-      species1_id = cont_node1.id();
+      var json = JSON.parse(data);
 
-      // id for container species2
-      var cont_node2 = cy.$(function(element, i) {
-        return element.hasClass("container") && element.hasClass("s2");
-      })
+      species1_id = json[1]["data"]["name"];    // holds species1 name
+      species2_id = json[2]["data"]["name"]
 
-      species2_id = cont_node2.id();
+//      id for container species2
+//      var cont_node2 = cy.$(function(element, i) {
+//        return element.hasClass("container") && element.hasClass("s2");
+//      })
 
       // aligned edge composition
       var align_e = cy.$(function(element, i) {

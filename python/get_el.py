@@ -17,9 +17,15 @@ Runs the functions defined below
 """
 def main():
 
-    # read ensembl file
-    # relative directory
-    with open("C:\\Users\\annsb\\OneDrive\\Documents\\PPIN_web\\ensembl\\c_elegans_ensembl.txt", 'r') as f1:
+    # hold filepaths as strings
+    filepath1 = "../BioGRID/BIOGRID-ORGANISM-Caenorhabditis_elegans-4.4.219.mitab.txt"
+    filepath2 = "../BioGRID/BIOGRID-ORGANISM-Mus_musculus-4.4.219.mitab.txt"
+
+    species1 = extract_name(filepath1)
+    species2 = extract_name(filepath2)
+
+    # read ensembl file for worm
+    with open("../ensembl//c_elegans_ensembl.txt", 'r') as f1:
         content = f1.readlines() # i shouldn't be doing this :))
 
         # build a list of Protein objects
@@ -29,7 +35,8 @@ def main():
             id_map = Protein.Protein(line)
             objList1.append(id_map)
 
-    with open("C:\\Users\\annsb\\OneDrive\\Documents\\PPIN_web\\ensembl\\m_musculus_ensembl.txt", 'r') as f2:
+    # read ensembl file for mouse
+    with open("../ensembl/m_musculus_ensembl.txt", 'r') as f2:
         content = f2.readlines()
 
         # build a list of Protein objects
@@ -42,8 +49,8 @@ def main():
     # receive the physical and experimental codes
     phys_exp = retrieve_code()
 
-    # read the BioGRID file
-    with open("C:\\Users\\annsb\\OneDrive\\Documents\\PPIN_web\\BioGRID\\BIOGRID-ORGANISM-Caenorhabditis_elegans-4.4.219.mitab.txt", 'r') as f3:
+    # read the BioGRID file for worm
+    with open(filepath1, 'r') as f3:
 
         # build a list of interactions
         inter_list1 = []
@@ -58,7 +65,8 @@ def main():
                 if interaction != []:
                     inter_list1.append(interaction)
 
-    with open("C:\\Users\\annsb\\OneDrive\\Documents\\PPIN_web\\BioGRID\\BIOGRID-ORGANISM-Mus_musculus-4.4.219.mitab.txt", 'r') as f4:
+    # read the BioGRID file for mouse
+    with open(filepath2, 'r') as f4:
 
         # build a list of interactions
         inter_list2 = []
@@ -79,7 +87,7 @@ def main():
     prots_dict1 = list_to_dict(map_list1)
     prots_dict2 = list_to_dict(map_list2)
 
-    query_subnetwork(prots_dict1, "R05F9.1d.1", prots_dict2, "ENSMUSP00000090649", objList1, objList2)
+    query_subnetwork(prots_dict1, "R05F9.1d.1", prots_dict2, "ENSMUSP00000090649", objList1, objList2, species1, species2)
 
     ##### TESTING THE ENTIRE NETWORK #####
     # retList = dict_to_nodes(prots_dict, objList)
@@ -90,8 +98,19 @@ def main():
     #
     # # combines the protein and edge data for the entire network
 
+def extract_name(filepath):
+    """
+    Takes the BioGRID filepath and extracts the species name from it
+    :param filepath: str BioGRID filepath
+    :return: species name as str
+    """
+    species = filepath.split("/")
+    species = species[-1].split("-")
+    species = species[2]
+    species = species.replace('_', ' ')
+    return species
 
-def query_subnetwork(p_dict_s1, prot_s1, p_dict_s2, prot_s2, objList_s1, objList_s2):
+def query_subnetwork(p_dict_s1, prot_s1, p_dict_s2, prot_s2, objList_s1, objList_s2, s1, s2):
     """
     Takes in a query protein and query species and returns a subnetwork in JSON format
 
@@ -121,10 +140,13 @@ def query_subnetwork(p_dict_s1, prot_s1, p_dict_s2, prot_s2, objList_s1, objList
     edges1 = list_to_edges(prot_s1, prot_def1, edge_dict1)
     edges2 = list_to_edges(prot_s2, prot_def2, edge_dict2)
 
-    json_header = [{"_comment": "Test output for a JSON file -- contains network data for C. elegans"},
+    json_header = [{},
+                  {"data":
+                       {"id": "species1", "name": s1},
+                        "_comment": "Test output for a JSON file -- contains a subnetwork of C. elegans and a subnetwork of M. musculus",
+                        "classes": "container s1"},
+                  {"data": {"id": "species2", "name": s2}, "classes": "container s2"},
                   {"data": {"id": "aligned non-ortho", "name": "aligned non-orthology"}, "classes": "container"},
-                  {"data": {"id": "worm", "name": "unaligned worm"}, "classes": "container s1"},
-                  {"data": {"id": "mouse", "name": "unaligned mouse"}, "classes": "container s2"},
                   {"data": {"id": "aligned ortho", "name": "aligned orthology"}, "classes": "container"}]
 
     # add all lists of dict objects together to form the whole JSON file
@@ -185,6 +207,9 @@ def list_to_nodes(p_inters, objList, species_num):
 
         count += 1
 
+    # the last entry in the dict will be the query
+    json_dict["classes"] = json_dict["classes"] + " query"
+
     return [final_list, edge_dict]
 
 def list_to_edges(prot, e_list, e_dict):
@@ -211,6 +236,8 @@ def list_to_edges(prot, e_list, e_dict):
 
         # set the target to the interacting protein
         temp["data"]["target"] = e_dict[ele]
+
+        temp["classes"] = "species" + str(e_dict[prot][0]) + " edge"
 
         #print(temp)
 
