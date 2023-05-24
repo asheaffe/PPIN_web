@@ -54,7 +54,7 @@ class Protein:
     # d['ITSN-1'].get_swissprot()
 
 
-if __name__ == '__main__':
-    p = Protein(['1', '2', '3', '4', '5', '6', '7'])
-    print(p)
-    print(p.__dict__)
+# if __name__ == '__main__':
+#     p = Protein(['1', '2', '3', '4', '5', '6', '7'])
+#     print(p)
+#     print(p.__dict__)
