@@ -35,27 +35,34 @@ h3.innerText:hover {
   font-size: 15px;
 }
 
-#sidebar { /*sidebar styling*/
-  position: fixed; /* stays in position on scroll */
-  top: 0;
-  left: 0;
-  right: 0; /* setting the length of the sidebar */
-  bottom: 90%;
-  border-bottom: 2px solid black;
+#main-header {
+  width: 100%;
 }
 
-#title { /*title styling*/
-  text-align: center;
+#main-header li {
+  display: inline;
+  left: .5%;
+  right: .5%;
+}
+
+#file-choose {
+  padding-right: .5%;
+  padding-left: 50%;
+}
+
+#main-menu { /*dropdown menu styling*/
+  position: fixed; /* stays in position on scroll */
+  top: 50px;
+  left: .5%;
+  right: .5%;
+}
+
+#main-title { /*title styling*/
+  font-size: 30px;
   color: black;
 }
 
-#sidebar ul { /* tab list styling */
-  list-style-type: none;
-  text-align: right;
-  top: 0;
-}
-
-#sidebar li { /* individual tab styling */
+#main-menu li { /* individual tab styling */
   display: inline-block;
 }
 
@@ -246,10 +253,10 @@ input { /* styling for the file chooser */
 
 #cy { /* cytoscape window */
   position: absolute;
-  left: 0;
-  top: 10%;
-  bottom: 0;
-  right: 0;
+  left: 15%;
+  top: 20%;
+  height: 500px;
+  right: 15%;
   background-color: #e6f1f2;
-  z-index: -1;
+  border: 1px solid black;
 }

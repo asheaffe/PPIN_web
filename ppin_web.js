@@ -556,6 +556,13 @@ function runCytoscape(data) {
   });
 }
 
+// plugin initialization
+
+// dropdown menu plugin
+$(function() {
+    $('#main-menu').smartmenus();
+});
+
 /**
   * Copies the text that within the data sidebar
   *

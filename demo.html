@@ -13,6 +13,11 @@
     <script src="./web/cytoscape/cytoscape-context-menus.js"></script>
     <script src="jscolor.min.js"></script>
 
+    <!--SmartMenus import-->
+    <link href="./Responsive-Cross-platform-jQuery-Navigation-Menu-Plugin-Smart-Menus/src/css/sm-core-css.css" rel="stylesheet" type="text/css" />
+    <link href="./Responsive-Cross-platform-jQuery-Navigation-Menu-Plugin-Smart-Menus/src/css/sm-blue/sm-blue.css" rel="stylesheet" type="text/css" />
+    <script src="./Responsive-Cross-platform-jQuery-Navigation-Menu-Plugin-Smart-Menus/src/jquery.smartmenus.js" type="text/javascript"></script>
+
     <!-- panzoom import -->
     <link href='./web/cytoscape/cytoscape.js-panzoom.css' rel='stylesheet' type='text/css'/>
     <script src='./web/cytoscape/cytoscape-panzoom.js'></script>
@@ -27,24 +32,21 @@
 
   </head>
   <body>
+    <header id="main-header">
+      <li><a id="main-title">PPIN Visualizer Demo</a></li>
+      <li id="file-choose">Select a JSON file: <input type="file" id="myFile"></li>
+    </header>
 
-    <div id="sidebar" class="inter">
-      Select a JSON file: <input type="file" id="myFile">
-      <!-- <p id="title">PPIN Visualizer</p> -->
-      <ul class="buttons">
-        <li><a href="#button1" id="b1">Stats</a></li>
-        <li>
-          <div class='dropdown'>
-            <a id='b2' onclick="ctrlDrop('ctrlDropdown');">Controls</a>
-            <div id='ctrlDropdown' class='dropdown-content'>
-              <a href="#data_ctrl" id="b2_data">Data</a>
-              <a href="#color_pick" id="b2_colors">Change Color Scheme</a>
-            </div>
-          </div>
-        </li>
-        <li><a href="#button3" id="b3">Legend</a></li>
-      </ul>
-    </div>
+    <ul id="main-menu" class="sm sm-blue">
+      <li><a href="#button1" id="b1">Stats</a></li>
+      <li><a href="#b2_data">Controls</a>
+        <ul>
+          <li><a href="#data_ctrl" id="b2_data">Data</a></li>
+          <li><a href="#color_pick" id="b2_colors">Change Color Scheme</a></li>
+        </ul>
+      </li>
+      <li><a href="#button3" id="b3">Legend</a></li>
+    </ul>
 
     <div id="cy"></div>
 
