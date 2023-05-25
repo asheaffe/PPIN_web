@@ -4,6 +4,7 @@ __email__ = "asheaffe@iwu.edu"
 __date__ = "May 22, 2023"
 
 from classes import Orthologies
+from classes import Orthology
 
 def main():
     filepath = "./mouse_worm_inparanoid.fa"
@@ -13,12 +14,17 @@ def main():
 
         line1 = content[0].split('\t')
 
-        ortho = Orthologies.Orthologies
+        ortho_pair = Orthologies.Orthologies
+        ortho_pair.instance(line1)
+
+        ortho = Orthology.Orthology
         ortho.instance(line1)
         for line in content[1:]:
             line = line.split('\t')
-            ortho.add_protein(line)
+            ortho_pair.add_protein(line)
+            ortho.instance(line)
 
-    file = open("test_orthology_data.txt", "w")
-    file.write(str(ortho.instance([])))
+    print(ortho.instance(None))
+    # file = open("test_orthology_data.txt", "w")
+    # file.write(str(ortho_pair.instance([])))
 main()
