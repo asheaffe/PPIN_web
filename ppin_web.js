@@ -83,7 +83,8 @@ function runCytoscape(data) {
         })
       .selector('edge.ortho')
         .css({
-          'line-color': 'green'
+          'line-color': 'grey',
+          'line-border': 'dashed'
         })
       .selector("edge.nOrtho")
         .css({
@@ -116,7 +117,7 @@ function runCytoscape(data) {
       // only the nodes within the container nodes are in grid format
       // unaligned species 1
       var nodes_s1 = cy.$(function(element, i) {
-        return element.hasClass('species1') && element.hasClass('unaligned');
+        return element.hasClass('species1') && element.hasClass('unaligned') && !(element.hasClass('query'));
       })
 
       var hSize = Math.ceil(Math.sqrt(nodes_s1.size()));
@@ -124,22 +125,33 @@ function runCytoscape(data) {
 
       // hDist and vDist use the size of the nodes and the number of
       // rows and columns to calculate distance from the query
-      var hDist = (80) + 40;
-      var vDist = (80) + 40;
+      var hDist = -400 - (80*hSize);    // horizontal distance
+      var vDist = -(80*vSize) * 0.5;    // vertical distance
+
+      // move the query relative to the rest of the species1 nodes
+      var s1_query = cy.$(function(element, i) {
+        return element.hasClass('species1') && element.hasClass('query');
+      })
+
+      // change the query node position based on the position of the species1 node 'box'
+      s1_query.position('x', -300);
+      s1_query.position('y', 0);
 
       // format layout for species 1 nodes
       var layout = nodes_s1.layout({
         name: 'grid',
+        nodeDimensionsIncludeLabels: true,
         fit: false,
         padding: 2,
         avoidOverlapPadding: 3,
         rows: hSize,
         cols: vSize,
-        boundingBox: {x1: vDist, y1: hDist, w: 30, h: 30},
+        boundingBox: {x1: hDist, y1: vDist, w: 2, h: 2},
         sort: function (a, b) {
           return a.connectedEdges().classes().toString().localeCompare(b.connectedEdges().classes().toString());
         }
       });
+
       layout.run();
       nodes_s1.forEach(function (element, i) {
         element.move({parent: 'species1'});
@@ -147,7 +159,7 @@ function runCytoscape(data) {
 
       // unaligned species 2
       var nodes_s2 = cy.$(function(element, i) {
-        return element.hasClass('species2') && element.hasClass('unaligned');
+        return element.hasClass('species2') && element.hasClass('unaligned') && !(element.hasClass('query'));
       })
 
       var hSize = Math.ceil(Math.sqrt(nodes_s2.size()));
@@ -155,18 +167,28 @@ function runCytoscape(data) {
 
       // hDist and vDist use the size of the nodes and the number of
       // rows and columns to calculate distance from the query
-      var hDist = (80) + 40;
-      var vDist = -((vSize*80) + 40);
+      var hDist = 400 + hSize*80;
+      var vDist = -(80*vSize) * 0.5;
+
+      // move the query relative to the rest of the species2 nodes
+      var s2_query = cy.$(function(element, i) {
+        return element.hasClass('species2') && element.hasClass('query');
+      })
+
+      // change the query node position based on the position of the species2 node 'box'
+      s2_query.position('x', 300);
+      s2_query.position('y', 0);
 
       // format layout for species 2 nodes
       var layout = nodes_s2.layout({
         name: 'grid',
+        nodeDimensionsIncludeLabels: true,
         fit: false,
         padding: 2,
         avoidOverlapPadding: 3,
         rows: hSize,
         cols: vSize,
-        boundingBox: {x1: vDist, y1: hDist, w: 30, h: 30},
+        boundingBox: {x1: hDist, y1: vDist, w: 30, h: 30},
         sort: function (a, b) {
           return a.connectedEdges().classes().toString().localeCompare(b.connectedEdges().classes().toString());
         }
@@ -233,7 +255,7 @@ function runCytoscape(data) {
       });
       layout.run();
       nodes3.forEach(function (element, i) {
-        element.move({parent: 'aligned ortho'});
+        element.move({parent: 'ortho'});
       });
 
       // node dropdown menu options

@@ -1,5 +1,4 @@
-[
-{ "data": { "id": "n0", "e_id": "WBGene00017981", "e_id2": "YER047C", "name": "FIGL-1, SAP1", "ncbi": "178829", "ncbi2": "856771", "uniprot": "A0A168H4M8", "uniprot2": "P39955"}, "classes": "ortho query protein"},
+﻿[{ "data": { "id": "n0", "e_id": "WBGene00017981", "e_id2": "YER047C", "name": "FIGL-1, SAP1", "ncbi": "178829", "ncbi2": "856771", "uniprot": "A0A168H4M8", "uniprot2": "P39955"}, "classes": "ortho query protein"},
 { "data": { "id": "n1", "e_id": "WBGene00044989", "e_id2": "YDR162C", "name": "Y37A1B.17, NBP2", "parent": "aligned non-ortho", "ncbi": "4926960", "ncbi2": "851740", "uniprot": "G5EEQ7", "uniprot2": "Q12163"}, "classes": "aligned nOrtho protein"},
 { "data": { "id": "n2", "e_id": "WBGene00006410", "e_id2": "YJL020C", "name": "NCK-1, BBC1", "parent": "aligned non-ortho", "ncbi": "180690", "ncbi2": "853433", "uniprot": "Q95PX0", "uniprot2": "P47068"}, "classes": "aligned nOrtho protein"},
 { "data": { "id": "n3", "e_id": "WBGene00018467", "e_id2": "YKL129C", "name": "SDPN-1, MYO3", "parent": "aligned non-ortho", "ncbi": "181058", "ncbi2": "853729", "uniprot": "Q6AHQ8", "uniprot2": "P36006"}, "classes": "aligned nOrtho protein"},
@@ -35,6 +34,6 @@
 {"data": {"source": "n0", "target": "n16"}, "classes": "aligned edge"},
 {"data": {"source": "n0", "target": "n17"}, "classes": "aligned edge"},
 {"data": {"id": "aligned non-ortho", "name": "aligned non-orthology"}, "classes": "container"},
-{"data": {"id": "worm", "name": "unaligned worm"}, "classes": "container s1"},
-{"data": {"id": "yeast", "name": "unaligned yeast"}, "classes": "container s2"},
+{"data": {"id": "species1", "name": "unaligned worm"}, "classes": "container s1"},
+{"data": {"id": "species2", "name": "unaligned yeast"}, "classes": "container s2"},
 {"data": {"id": "aligned ortho", "name": "aligned orthology"}, "classes": "container"}]
