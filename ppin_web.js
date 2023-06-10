@@ -4,7 +4,6 @@
   *
   */
 
-
 document.getElementById('myFile').addEventListener('change', loadFile);
 
 
@@ -541,9 +540,9 @@ function runCytoscape(data) {
       var stats = [nodes3.size(), nodes2.size(), nodes_s1.size(), nodes_s2.size(), align_e.size(), ortho_e.size(), all_edges.size()];
 
       // buttons open corresponding windows
-      openMainItem("#b1", "#button1", 110, 500, stats, species1_id, species2_id);
+      openMainItem("#b1", "#button1", 'fit-content', 0, stats, species1_id, species2_id);
       //openMainItem("#b2", "#button2", 300, 20, stats, species1_id, species2_id);
-      openMainItem("#b3", "#button3", 110, 500, stats, species1_id, species2_id);
+      openMainItem("#b3", "#button3", 'fit-content', 500, stats, species1_id, species2_id);
 
       // opens the color picker option in controls
       openColorPick("#b2_colors", "#color_pick", species1_id, species2_id);
@@ -562,7 +561,7 @@ function runCytoscape(data) {
           document.getElementById("cy").style = "left:25%";
         }
         else if ($("#data_ctrl").css('display') === 'none') {
-          document.getElementById("cy").style = "left:0";
+          document.getElementById("cy").style = "left:5%";
         }
       });
 
@@ -581,9 +580,7 @@ function runCytoscape(data) {
 // plugin initialization
 
 // dropdown menu plugin
-$(function() {
-    $('#main-menu').smartmenus();
-});
+
 
 /**
   * Copies the text that within the data sidebar
@@ -732,7 +729,6 @@ function dragItem(win) {
     */
   $(win)
     .draggable({
-      containment: "#cy",
       scroll: false
   });
 }
@@ -759,8 +755,7 @@ function openColorPick(button, win, s1_name, s2_name) {
     */
   $(button).click(function(){
     $(win).toggle();
-    dragItem(win);
-    resizeItem(win);
+    //resizeItem(win);
   });
 
   // check if the color picker window is open
@@ -838,18 +833,36 @@ function openMainItem(button, win, top, left, stat_list, s1_name, s2_name) {
     // change the text within the legend window
     document.getElementById("s1").innerHTML = s1_name;
     document.getElementById("s2").innerHTML = s2_name;
-
   }
 
   $(button).click(function(){
     $(win).toggle();
-    dragItem(win);
-    resizeItem(win);
-
+    console.log($(".buttons").css("display"));
+    // controls when to open and close the sidebar
+    if ($("#button1").css("display") === 'block' || $('#button3').css("display") === 'block' || $("#color_pick").css("display") === 'block') {
+        document.getElementById('cy').style = "left:25%;";
+    }
+    else if ($("#button1").css("display") === "none" && $('#button3').css("display") === 'none' && $("#color_pick").css("display") === 'none') {
+        document.getElementById('cy').style = "left:5%;";
+    }
   });
-  $(win).css({'top': top, 'left': left, 'width': 'fit-content', 'height': 'fit-content', 'padding': "10", 'overflow': 'hidden'});
+
+  $(win).css({'top': top, 'left': left, 'height': 'fit-content', 'overflow': 'hidden'});
 
 }
+
+// stellarnav import js
+jQuery(document).ready(function($) {
+    jQuery('.stellarnav').stellarNav({
+        theme: 'dark',
+        position: 'static',
+        showArrows: true,
+        sticky: false,
+        closeLabel: 'Close',
+        scrollbarFix: false,
+        menuLabel: 'Menu'
+    });
+});
 
 
 /*
