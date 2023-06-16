@@ -1,29 +1,56 @@
-## Anna Sheaffer PPIN Web ##
-## Started June 24, 2022  ##
+"""
+    convert.py: converts ensembl/Biogrid files to a json format
+"""
+__author__ = "Anna Sheaffer"
+__email__ = "asheaffe@iwu.edu"
+__date__ = "June 24, 2022"
 
 import sys
 import json
 
-## python code that will be used to convert ensembl file to json ##
 def main():
-    # content based on the id data for worm and yeast
-    w_content = read_data("worm_protein_ids106.txt")
-    y_content = read_data("yeast_protein_ids_ensembl106.txt")
+    # # content based on the id data for worm and yeast
+    # w_content = read_data("worm_protein_ids106.txt")
+    # y_content = read_data("yeast_protein_ids_ensembl106.txt")
+    #
+    # # read the json file
+    # json = read_json("../json/a_demo.json")
+    #
+    # # extract the desired data from the json file
+    # w_dict = extract_data(w_content)
+    # y_dict = extract_data(y_content)
+    #
+    # # combine the 2 dictionaries to make a master dictionary of all possible data
+    # master_dict = {**w_dict, **y_dict}
+    #
+    # update_json(json, master_dict, "../json/a_demo_update.json")
 
-    # read the json file
-    json = read_json("C:/users/annsb/OneDrive/Documents/PPIN_web/json/a_demo.json")
+    read_network_file('network_files/s_cerevisiae.network-109-4.4.222.txt')
 
-    # extract the desired data from the json file
-    w_dict = extract_data(w_content)
-    y_dict = extract_data(y_content)
+def read_network_file(filename):
+    """
+    Takes in a filepath for a network file from PPI-Network-Alignment and stores data as a dict
+    :param filename: filepath as str
+    :return: dict file data
+    """
+    network_data = []
+    with open(filename, "r") as f:
+        for line in f:
+            if line[0] != "!" and line[0] != "\n":
+                network_data.append(line.strip().split('\t'))
 
-    # combine the 2 dictionaries to make a master dictionary of all possible data
-    master_dict = {**w_dict, **y_dict}
+    with open("test_network_data.txt", "w") as f1:
+        f1.write("! Test file: Taking S cerevisiae data and making it into a dict\n")
+        for interaction in network_data:
+            f1.write(str(interaction) + "\n")
 
-    update_json(json, master_dict, "C:/users/annsb/OneDrive/Documents/PPIN_web/json/a_demo_update.json")
-
-# takes in a file name as param and reads the ensembl+
 def read_data(file_name):
+    """
+        read_data(): takes in a file name as param and reads the ensembl file
+
+        :param file_name: filename as str
+        :return: contents of the file as list
+    """
     with open(file_name) as f:
         contents = f.readlines()
 
@@ -32,8 +59,12 @@ def read_data(file_name):
 
     return contents
 
-# takes in a file path str as param and reads a current json file
 def read_json(file_path):
+    """
+    Takes in a file path as param and reads a current json file
+    :param file_path: str file path
+    :return: json file contents as dict
+    """
     with open(file_path) as file:
         data = json.load(file)
 
@@ -59,8 +90,13 @@ def read_json(file_path):
 
     return data
 
-# takes the data from ensembl file and makes it into a dictionary
+
 def extract_data(content):
+    """
+    Takes the data from ensembl and makes it into a dictionary
+    :param content: ensembl data as list
+    :return: dict ensembl data
+    """
     gene_dict = {}
 
     # loop through the content
@@ -83,9 +119,14 @@ def extract_data(content):
 
     return gene_dict
 
-# match a name from the json file with the corresponding id info from the ensembl file
-# returns the list of ids associated with the protein name
 def match_name(name, dict):
+    """
+    Matches the name from a json file with the corresponding id info from the ensembl file
+    Returns the list of ids associated with the protein name
+    :param name: Key from json dict
+    :param dict: ensembl dictionary
+    :return: list of ids associated with the given protein name
+    """
     # list of names to be returned
     id_list = []
 
@@ -98,7 +139,6 @@ def match_name(name, dict):
 
     return id_list
 
-
 '''
 AAA-1, 848483, Q93783, ENSG3883839393
 www.ncbi.nih.gov/gene/848483
@@ -107,9 +147,15 @@ www.ensemble.org/?q=ENSG108839393939
 
 '''
 
-# take in the json file info and the dictionary with all of the protein data
-# loop through the json file and add the dictionary data when necessary
 def update_json(json, dict, filename):
+    """
+    Take in the json file info and dict with protein data and write data to a given file
+    Loop through json file and add the dict data when necessary
+    :param json: json dict
+    :param dict: ensembl dict
+    :param filename: name of file to be written to
+    :return: None
+    """
     temp = []
 
     original_stdout = sys.stdout
