@@ -4,6 +4,7 @@
   *
   */
 
+
 document.getElementById('myFile').addEventListener('change', loadFile);
 
 
@@ -82,8 +83,7 @@ function runCytoscape(data) {
         })
       .selector('edge.ortho')
         .css({
-          'line-color': 'grey',
-          'line-border': 'dashed'
+          'line-color': 'green'
         })
       .selector("edge.nOrtho")
         .css({
@@ -116,7 +116,7 @@ function runCytoscape(data) {
       // only the nodes within the container nodes are in grid format
       // unaligned species 1
       var nodes_s1 = cy.$(function(element, i) {
-        return element.hasClass('species1') && element.hasClass('unaligned') && !(element.hasClass('query'));
+        return element.hasClass('species1') && element.hasClass('unaligned');
       })
 
       var hSize = Math.ceil(Math.sqrt(nodes_s1.size()));
@@ -124,33 +124,22 @@ function runCytoscape(data) {
 
       // hDist and vDist use the size of the nodes and the number of
       // rows and columns to calculate distance from the query
-      var hDist = -400 - (80*hSize);    // horizontal distance
-      var vDist = -(80*vSize) * 0.5;    // vertical distance
-
-      // move the query relative to the rest of the species1 nodes
-      var s1_query = cy.$(function(element, i) {
-        return element.hasClass('species1') && element.hasClass('query');
-      })
-
-      // change the query node position based on the position of the species1 node 'box'
-      s1_query.position('x', -300);
-      s1_query.position('y', 0);
+      var hDist = (80) + 40;
+      var vDist = (80) + 40;
 
       // format layout for species 1 nodes
       var layout = nodes_s1.layout({
         name: 'grid',
-        nodeDimensionsIncludeLabels: true,
         fit: false,
         padding: 2,
         avoidOverlapPadding: 3,
         rows: hSize,
         cols: vSize,
-        boundingBox: {x1: hDist, y1: vDist, w: 2, h: 2},
+        boundingBox: {x1: vDist, y1: hDist, w: 30, h: 30},
         sort: function (a, b) {
           return a.connectedEdges().classes().toString().localeCompare(b.connectedEdges().classes().toString());
         }
       });
-
       layout.run();
       nodes_s1.forEach(function (element, i) {
         element.move({parent: 'species1'});
@@ -158,7 +147,7 @@ function runCytoscape(data) {
 
       // unaligned species 2
       var nodes_s2 = cy.$(function(element, i) {
-        return element.hasClass('species2') && element.hasClass('unaligned') && !(element.hasClass('query'));
+        return element.hasClass('species2') && element.hasClass('unaligned');
       })
 
       var hSize = Math.ceil(Math.sqrt(nodes_s2.size()));
@@ -166,28 +155,18 @@ function runCytoscape(data) {
 
       // hDist and vDist use the size of the nodes and the number of
       // rows and columns to calculate distance from the query
-      var hDist = 400 + hSize*80;
-      var vDist = -(80*vSize) * 0.5;
-
-      // move the query relative to the rest of the species2 nodes
-      var s2_query = cy.$(function(element, i) {
-        return element.hasClass('species2') && element.hasClass('query');
-      })
-
-      // change the query node position based on the position of the species2 node 'box'
-      s2_query.position('x', 300);
-      s2_query.position('y', 0);
+      var hDist = (80) + 40;
+      var vDist = -((vSize*80) + 40);
 
       // format layout for species 2 nodes
       var layout = nodes_s2.layout({
         name: 'grid',
-        nodeDimensionsIncludeLabels: true,
         fit: false,
         padding: 2,
         avoidOverlapPadding: 3,
         rows: hSize,
         cols: vSize,
-        boundingBox: {x1: hDist, y1: vDist, w: 30, h: 30},
+        boundingBox: {x1: vDist, y1: hDist, w: 30, h: 30},
         sort: function (a, b) {
           return a.connectedEdges().classes().toString().localeCompare(b.connectedEdges().classes().toString());
         }
@@ -254,7 +233,7 @@ function runCytoscape(data) {
       });
       layout.run();
       nodes3.forEach(function (element, i) {
-        element.move({parent: 'ortho'});
+        element.move({parent: 'aligned ortho'});
       });
 
       // node dropdown menu options
@@ -540,9 +519,9 @@ function runCytoscape(data) {
       var stats = [nodes3.size(), nodes2.size(), nodes_s1.size(), nodes_s2.size(), align_e.size(), ortho_e.size(), all_edges.size()];
 
       // buttons open corresponding windows
-      openMainItem("#b1", "#button1", 'fit-content', 0, stats, species1_id, species2_id);
+      openMainItem("#b1", "#button1", 110, 500, stats, species1_id, species2_id);
       //openMainItem("#b2", "#button2", 300, 20, stats, species1_id, species2_id);
-      openMainItem("#b3", "#button3", 'fit-content', 500, stats, species1_id, species2_id);
+      openMainItem("#b3", "#button3", 110, 500, stats, species1_id, species2_id);
 
       // opens the color picker option in controls
       openColorPick("#b2_colors", "#color_pick", species1_id, species2_id);
@@ -561,7 +540,7 @@ function runCytoscape(data) {
           document.getElementById("cy").style = "left:25%";
         }
         else if ($("#data_ctrl").css('display') === 'none') {
-          document.getElementById("cy").style = "left:5%";
+          document.getElementById("cy").style = "left:0";
         }
       });
 
@@ -577,10 +556,18 @@ function runCytoscape(data) {
   });
 }
 
-// plugin initialization
-
-// dropdown menu plugin
-
+// stellarnav import js
+jQuery(document).ready(function($) {
+    jQuery('.stellarnav').stellarNav({
+        theme: 'dark',
+        position: 'static',
+        showArrows: true,
+        sticky: false,
+        closeLabel: 'Close',
+        scrollbarFix: false,
+        menuLabel: 'Menu'
+    });
+});
 
 /**
   * Copies the text that within the data sidebar
@@ -729,6 +716,7 @@ function dragItem(win) {
     */
   $(win)
     .draggable({
+      containment: "#cy",
       scroll: false
   });
 }
@@ -755,7 +743,8 @@ function openColorPick(button, win, s1_name, s2_name) {
     */
   $(button).click(function(){
     $(win).toggle();
-    //resizeItem(win);
+    dragItem(win);
+    resizeItem(win);
   });
 
   // check if the color picker window is open
@@ -833,36 +822,18 @@ function openMainItem(button, win, top, left, stat_list, s1_name, s2_name) {
     // change the text within the legend window
     document.getElementById("s1").innerHTML = s1_name;
     document.getElementById("s2").innerHTML = s2_name;
+
   }
 
   $(button).click(function(){
     $(win).toggle();
-    console.log($(".buttons").css("display"));
-    // controls when to open and close the sidebar
-    if ($("#button1").css("display") === 'block' || $('#button3').css("display") === 'block' || $("#color_pick").css("display") === 'block') {
-        document.getElementById('cy').style = "left:25%;";
-    }
-    else if ($("#button1").css("display") === "none" && $('#button3').css("display") === 'none' && $("#color_pick").css("display") === 'none') {
-        document.getElementById('cy').style = "left:5%;";
-    }
-  });
+    dragItem(win);
+    resizeItem(win);
 
-  $(win).css({'top': top, 'left': left, 'height': 'fit-content', 'overflow': 'hidden'});
+  });
+  $(win).css({'top': top, 'left': left, 'width': 'fit-content', 'height': 'fit-content', 'padding': "10", 'overflow': 'hidden'});
 
 }
-
-// stellarnav import js
-jQuery(document).ready(function($) {
-    jQuery('.stellarnav').stellarNav({
-        theme: 'dark',
-        position: 'static',
-        showArrows: true,
-        sticky: false,
-        closeLabel: 'Close',
-        scrollbarFix: false,
-        menuLabel: 'Menu'
-    });
-});
 
 
 /*
