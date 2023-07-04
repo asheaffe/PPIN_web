@@ -18,13 +18,19 @@ body {
 }
 
 #main-menu li {
-  margin-right: 12%;
+  margin-left: 12px;
 }
 
 #main-title { /*title styling*/
   font-size: 30px;
   color: white;
   cursor: pointer;
+}
+
+#select-label {
+  display: flex;
+  flex-direction: column;
+  color: white;
 }
 
 /* code snippet taken from https://stackoverflow.com/questions/572768/styling-an-input-type-file-button */
@@ -115,7 +121,6 @@ div.inter {
 
 #data_ctrl { /* styling for data div in controls */
   display: none;
-  position: absolute;
   top: 15%;
 }
 
@@ -165,8 +170,4 @@ div.inter {
 
 #aligned {
   color: green;
-}
-
-#ortho {
-  color: yellow;
 }

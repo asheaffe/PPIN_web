@@ -1,5 +1,5 @@
 """
-    convert.py: converts ensembl/Biogrid files to a json format
+    convert_networks.py: converts ensembl/Biogrid files to a json format
 """
 __author__ = "Anna Sheaffer"
 __email__ = "asheaffe@iwu.edu"
@@ -9,40 +9,222 @@ import sys
 import json
 
 def main():
-    # # content based on the id data for worm and yeast
-    # w_content = read_data("worm_protein_ids106.txt")
-    # y_content = read_data("yeast_protein_ids_ensembl106.txt")
-    #
-    # # read the json file
-    # json = read_json("../json/a_demo.json")
-    #
-    # # extract the desired data from the json file
-    # w_dict = extract_data(w_content)
-    # y_dict = extract_data(y_content)
-    #
-    # # combine the 2 dictionaries to make a master dictionary of all possible data
-    # master_dict = {**w_dict, **y_dict}
-    #
-    # update_json(json, master_dict, "../json/a_demo_update.json")
+    network_yeast = '../../../PPI-Network-Alignment/networks/s_cerevisiae.network-109-4.4.219.txt'  # species 1
+    network_worm = '../../../PPI-Network-Alignment/networks/c_elegans.network-109-4.4.219.txt'      # species 2
 
-    read_network_file('network_files/s_cerevisiae.network-109-4.4.222.txt')
+    # access ensembl data from PPI-Network-Alignment repo
+    ensembl_ncbi_yeast = "../../../PPI-Network-Alignment/ensembl/s_cerevisiae_ensembl_ncbi-109.txt"
+    ensembl_others_yeast = "../../../PPI-Network-Alignment/ensembl/s_cerevisiae_ensembl_others-109.txt"
+    ensembl_ncbi_worm = "../../../PPI-Network-Alignment/ensembl/c_elegans_ensembl_others-109.txt"
+    ensembl_others_worm = "../../../PPI-Network-Alignment/ensembl/c_elegans_ensembl_others-109.txt"
+
+    # assemble ensembl data from each species
+    data_yeast = extract_ensembl_data_ncbi(ensembl_ncbi_yeast)
+    ensembl_data_yeast = extract_ensembl_data_other_ids(ensembl_others_yeast, data_yeast)
+
+    #data_worm = extract_ensembl_data_ncbi(ensembl_ncbi_worm)
+    #ensembl_data_worm = extract_ensembl_data_other_ids(ensembl_others_worm, data_worm)
+
+    # assemble network data from each species
+    #network_data_yeast = read_network_file(network_yeast)
+    #network_dict_yeast = list_to_dict(network_data_yeast)
+
+    #network_data_worm = read_network_file(network_worm)
+    #network_dict_worm = list_to_dict(network_data_worm)
+
+    #query_subnetwork(network_dict_yeast, 'YJL003W', network_dict_worm, 'WBGene00000103', ensembl_data_yeast, ensembl_data_worm, "S cerevisiae", "C elegans")
+
+    with open("test_network_data.txt", "w") as f1:
+        f1.write("! Test file: Taking S cerevisiae interaction data and making it into a dict\n" +
+                 "! Currently showing all interactions for each protein\n")
+        for entry in ensembl_data_yeast:
+            line = ensembl_data_yeast[entry]
+            f1.write(str(entry) + "\t" + str(line) + "\n")
+
+def query_subnetwork(p_dict_s1, prot_s1, p_dict_s2, prot_s2, protList_s1, protList_s2, s1, s2):
+    """
+    Takes in a query protein and query species and returns a subnetwork in JSON format
+
+    :param p_dict_s1: dictionary of proteins and their connections as def list for species 1
+    :param prot_s1: desired protein as str for species 1
+    :param p_dict_s2: dictionary of proteins and their connections as def list for species 2
+    :param prot_s2: desired protein as str for species 2
+    :param protList_s1: list of proteins as dict (from extract_ensembl functions)
+    :param protList_s2: list of proteins as dict (from extract_ensembl functions)
+    :param s1: str species 1 name
+    :param s2: str species 2 name
+    :return: list of dict values that corresponds with the desired subnetwork
+    """
+    prot_def1 = p_dict_s1[prot_s1]
+    prot_def2 = p_dict_s2[prot_s2]
+
+    # add the query protein to the list of its interacting proteins
+    temp1 = prot_def1
+    temp1.append(prot_s1)
+
+    temp2 = prot_def2
+    temp2.append(prot_s2)
+
+    retList1 = list_to_nodes(temp1, protList_s1, 1)
+    nodes1 = retList1[0]  # protein nodes to become JSON
+    edge_dict1 = retList1[1]  # dict of protein name as key and corresponding id as def
+
+    retList2 = list_to_nodes(temp2, protList_s2, 2)
+    nodes2 = retList2[0]  # protein nodes to become JSON
+    edge_dict2 = retList2[1]  # dict of protein name as key and corresponding id as def
+
+    edges1 = list_to_edges(prot_s1, prot_def1, edge_dict1)
+    edges2 = list_to_edges(prot_s2, prot_def2, edge_dict2)
+
+    json_header = [
+                  {"data":
+                       {"id": "species1", "name": s1},
+                        "_comment": "Test output for a JSON file -- contains a subnetwork of C. elegans and a subnetwork of M. musculus",
+                        "classes": "container s1"},
+                  {"data": {"id": "species2", "name": s2}, "classes": "container s2"},
+                  {"data": {"id": "aligned non-ortho", "name": "aligned non-edges"}, "classes": "container"},
+                  {"data": {"id": "aligned ortho", "name": "aligned edges"}, "classes": "container"}]
+
+    # add all lists of dict objects together to form the whole JSON file
+    json_header.extend(nodes1)
+    json_header.extend(edges1)
+    json_header.extend(nodes2)
+    json_header.extend(edges2)
+    json_str = json.dumps(json_header)
+
+    file = open("test_json.json", "w")
+    file.write(json_str)
+
+def list_to_nodes(p_inters, ensembl_data, species_num):
+    """
+    Converts python dictionary to JSON format with established conventions.
+    Writes to a JSON file, returns nothing.
+
+    :param p_inters: dictionary of proteins and their connections as def list
+    :param ensembl_data: dict of alternate ids from ensembl file
+    :param species_num: species 1 or 2?
+    :return: final list of JSON elements without edges, dict of edge ids and e_ids
+    """
+    # take a dictionary with the entrezgene as the key
+    #d = {x.get_p_sid(): x for x in ensembl_data}
+
+    # the list that will be ultimately converted to JSON
+    # start with comment and protein category boxes
+    final_list = []
+
+    # dictionary that will hold node ids and edges
+    edge_dict = {}
+
+    count = 0
+    for key in p_inters:
+        json_dict = {"data": {}}
+        json_dict["data"]["id"] = str(species_num) + "." + str(count)
+        for i in range(6):
+            if not ensembl_data[key][i] or '' in ensembl_data[key][i]:
+                ensembl_data[key][i] = {}
+
+        json_dict["data"]["e_id"] = key
+        json_dict["data"]["t_id"] = ensembl_data[key][0]
+        json_dict["data"]["p_id"] = ensembl_data[key][1]
+        json_dict["data"]["name"] = ensembl_data[key][2]
+        json_dict["data"]["ncbi"] = ensembl_data[key][3]
+        json_dict["data"]["swissprot"] = ensembl_data[key][4]
+        json_dict["data"]["trembl"] = ensembl_data[key][5]
+        json_dict["data"]["refseq"] = ensembl_data[key][6]
+        json_dict["data"]["parent"] = "unaligned"
+
+        json_dict["classes"] = "species" + str(species_num) + " unaligned protein"
+
+        # add data to edge dictionary
+        edge_dict[key] = json_dict["data"]["id"]
+
+        final_list.append(json_dict)
+
+        count += 1
+
+    # the last entry in the dict will be the query
+    json_dict["classes"] = json_dict["classes"] + " query"
+
+    return [final_list, edge_dict]
+
+def list_to_edges(prot, e_list, e_dict):
+    """
+    Takes the converted nodes and writes edges to JSON based on established conventions
+    and data in the established python dictionary
+
+    :param prot: dictionary of each protein in the network and their connections
+    :param e_list: list of edges within the network?
+    :param edge_dict: dictionary of id and its corresponding ensembl id
+    :return: list of JSON edges
+    """
+
+    # final list of JSON edges to be returned
+    final_list = []
+
+    temp = {}
+
+    # loop through p_dict
+    for ele in e_list:
+        temp = {"data": {}}
+
+        # set the source to the current protein
+        temp["data"]["source"] = e_dict[prot]
+
+        # set the target to the interacting protein
+        temp["data"]["target"] = e_dict[ele]
+
+        temp["classes"] = "species" + str(e_dict[prot][0]) + " edge"
+
+        #print(temp)
+
+        # add to the final list
+        final_list.append(temp)
+
+    return final_list
+
+def list_to_dict(map_list):
+    """
+    Constructs a dictionary with a list of each protein it interacts with
+    as def
+
+    :param map_list: list of mapped protein ids
+    :return: dict of each protein id and it's interactors
+    """
+
+    prot_hash = {}
+    for interaction in map_list:
+        current = 0
+        for prot in interaction:
+            # check if the protein already exists in the dictionary
+            if prot not in prot_hash:
+                prot_hash[prot] = []    # create a new list if not in dict
+
+            prot2 = interaction[current - 1]    # receive interacting protein (either 0 or -1)
+
+            # check if the interacting protein is already in the current def list
+            # and also not in the dict already so that there aren't duplicate interactions
+            if prot2 not in prot_hash[prot]:
+                # add the interacting protein to the list of interactors for the current
+                prot_hash[prot].append(interaction[current - 1])
+
+            current += 1
+
+    return prot_hash
 
 def read_network_file(filename):
     """
     Takes in a filepath for a network file from PPI-Network-Alignment and stores data as a dict
     :param filename: filepath as str
-    :return: dict file data
+    :return: list of tuple interaction pairs
     """
     network_data = []
     with open(filename, "r") as f:
         for line in f:
             if line[0] != "!" and line[0] != "\n":
-                network_data.append(line.strip().split('\t'))
+                interaction = line.strip().split('\t')
+                network_data.append(tuple(interaction))
 
-    with open("test_network_data.txt", "w") as f1:
-        f1.write("! Test file: Taking S cerevisiae data and making it into a dict\n")
-        for interaction in network_data:
-            f1.write(str(interaction) + "\n")
+    return network_data
 
 def read_data(file_name):
     """
@@ -51,11 +233,11 @@ def read_data(file_name):
         :param file_name: filename as str
         :return: contents of the file as list
     """
+    contents = []
     with open(file_name) as f:
-        contents = f.readlines()
-
-    for i in range(len(contents)):
-        contents[i] = contents[i].split('\t')
+        f.readline()
+        for line in f:
+            contents.append(line.strip().split('\t'))
 
     return contents
 
@@ -90,34 +272,67 @@ def read_json(file_path):
 
     return data
 
-
-def extract_data(content):
+def extract_ensembl_data_ncbi(filename):
     """
-    Takes the data from ensembl and makes it into a dictionary
+    Takes the data from the ensembl file with the ncbi id and initializes the dictionary with ids
+    with the gene stable id as the key
     :param content: ensembl data as list
     :return: dict ensembl data
     """
-    gene_dict = {}
+    with open(filename, 'r') as content:
+        content.readline()
+        gene_dict = {}
 
-    # loop through the content
-    for line in content:
-        # temporarily set 'straightforward' data to the corresponding var
-        gene_name = line[len(line)-1].strip()
+        # loop through the content
+        for line in content:
+          line = line.strip().split('\t')
 
-        ncbi = line[1]
-        ensembl = line[0]
+          while len(line) < 8:
+              line.append("")
 
-        s_prot = line[2]
-        t_prot = ""
+          if line[0] in gene_dict:
+              for i in range(1, len(line)-1):
+                  if gene_dict[line[0]][i] != "":
+                    if len(gene_dict[line[0]][i]) == 1:
+                        gene_dict[line[0]][i][1] = line[i]
+                    else:
+                        gene_dict[line[0]][i][len(gene_dict[line[0]][i])+1] = line[i]
 
-        # check if there are both trembl and swiss prot ids
-        if len(line) == 5:
-            t_prot = line[3]
+          else:
+              # key is the gene stable id because every line in the file will have one ('primary key')
+              gene_dict[line[0]] = []
 
-        # add the gene info to the dictionary
-        gene_dict[gene_name] = [ensembl, ncbi, s_prot, t_prot]
+              for ele in line[1:]:
+                gene_dict[line[0]].append({1:ele})
 
     return gene_dict
+
+def extract_ensembl_data_other_ids(filename, ensembl_dict):
+    """
+    Takes the data from the ensembl file with the other ids (swissprot, trembl, refseq)
+    and appends to the list of other ids if it already exists in the dict, otherwise adds a new
+    key/def for any new id entries
+    :param filename: filepath for the other id file
+    :param ensembl_dict: dict with ensembl data that has already been created
+    :return: updated dict with ensembl data
+    """
+    with open(filename, 'r') as content:
+      content.readline()
+
+      for line in content:
+        line = line.strip().split('\t')
+
+        while len(line) < 8:
+            line.append("")
+
+        for i in range(4, len(line)-1):
+            if ensembl_dict[line[0]][i] != "":
+                    if len(ensembl_dict[line[0]][i]) == 1:
+                        ensembl_dict[line[0]][i][1] = line[i]
+                    else:
+                        ensembl_dict[line[0]][i][len(ensembl_dict[line[0]][i])+1] = line[i]
+
+    return ensembl_dict
 
 def match_name(name, dict):
     """

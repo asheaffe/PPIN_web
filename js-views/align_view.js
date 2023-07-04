@@ -569,6 +569,9 @@ jQuery(document).ready(function($) {
     });
 });
 
+// segment.js call
+$(".segment-select").Segment();
+
 /**
   * Copies the text that within the data sidebar
   *
