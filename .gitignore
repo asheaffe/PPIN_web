@@ -5,6 +5,17 @@
 python/network/ensembl/
 python/network/network_files
 
+# exclude test files
+python/network/test_json.json
+python/network/test_mapping.txt
+python/network/test_network_data.txt
+
+# excel sheets specific to this project
+*.xlsx
+
+# for stellarnav extension
+.DS_Store
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
