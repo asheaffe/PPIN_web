@@ -39,7 +39,7 @@ function runCytoscape(data) {
     style: cytoscape.stylesheet()
       .selector('node')
         .css({
-          'label': 'data(name)',
+          'label': 'data(name.1)',
           'border-color': 'black',
           'border-width': 2,
           'height': 80,
@@ -57,6 +57,7 @@ function runCytoscape(data) {
         })
       .selector("node.container")
         .css({
+          'label': 'data(name)',
           'border-width': 2,
           'border-color': 'black'
         })
@@ -114,35 +115,33 @@ function runCytoscape(data) {
       // only the nodes within the container nodes are in grid format
       // unaligned species 1
       var nodes_s1 = cy.$(function(element, i) {
-        return element.hasClass('species1') && element.hasClass('unaligned') && !(element.hasClass('query'));
+        return element.hasClass('species1') && element.hasClass('unaligned');
       })
 
       var hSize = Math.ceil(Math.sqrt(nodes_s1.size()));
       var vSize = Math.ceil(nodes_s1.size() / hSize);
 
-      // hDist and vDist use the size of the nodes and the number of
-      // rows and columns to calculate distance from the query
+      // // hDist and vDist use the size of the nodes and the number of
+      // // rows and columns to calculate distance from the query
       var hDist = -400 - (80*hSize);    // horizontal distance
       var vDist = -(80*vSize) * 0.5;    // vertical distance
 
-      // move the query relative to the rest of the species1 nodes
-      var s1_query = cy.$(function(element, i) {
-        return element.hasClass('species1') && element.hasClass('query');
-      })
+      // // move the query relative to the rest of the species1 nodes
+      // var s1_query = cy.$(function(element, i) {
+      //   return element.hasClass('species1') && element.hasClass('query');
+      // })
 
-      // change the query node position based on the position of the species1 node 'box'
-      s1_query.position('x', -300);
-      s1_query.position('y', 0);
+      // // change the query node position based on the position of the species1 node 'box'
+      // s1_query.position('x', -300);
+      // s1_query.position('y', 0);
 
       // format layout for species 1 nodes
       var layout = nodes_s1.layout({
-        name: 'grid',
+        name: 'concentric',
         nodeDimensionsIncludeLabels: true,
         fit: false,
         padding: 2,
         avoidOverlapPadding: 3,
-        rows: hSize,
-        cols: vSize,
         boundingBox: {x1: hDist, y1: vDist, w: 2, h: 2},
         sort: function (a, b) {
           return a.connectedEdges().classes().toString().localeCompare(b.connectedEdges().classes().toString());
@@ -156,7 +155,7 @@ function runCytoscape(data) {
 
       // unaligned species 2
       var nodes_s2 = cy.$(function(element, i) {
-        return element.hasClass('species2') && element.hasClass('unaligned') && !(element.hasClass('query'));
+        return element.hasClass('species2') && element.hasClass('unaligned');
       })
 
       var hSize = Math.ceil(Math.sqrt(nodes_s2.size()));
@@ -168,23 +167,21 @@ function runCytoscape(data) {
       var vDist = -(80*vSize) * 0.5;
 
       // move the query relative to the rest of the species2 nodes
-      var s2_query = cy.$(function(element, i) {
-        return element.hasClass('species2') && element.hasClass('query');
-      })
+      // var s2_query = cy.$(function(element, i) {
+      //   return element.hasClass('species2') && element.hasClass('query');
+      // })
 
-      // change the query node position based on the position of the species2 node 'box'
-      s2_query.position('x', 300);
-      s2_query.position('y', 0);
+      // // change the query node position based on the position of the species2 node 'box'
+      // s2_query.position('x', 300);
+      // s2_query.position('y', 0);
 
       // format layout for species 2 nodes
       var layout = nodes_s2.layout({
-        name: 'grid',
+        name: 'concentric',
         nodeDimensionsIncludeLabels: true,
         fit: false,
         padding: 2,
         avoidOverlapPadding: 3,
-        rows: hSize,
-        cols: vSize,
         boundingBox: {x1: hDist, y1: vDist, w: 30, h: 30},
         sort: function (a, b) {
           return a.connectedEdges().classes().toString().localeCompare(b.connectedEdges().classes().toString());
@@ -587,11 +584,11 @@ function buildTable(proteins) {
 
     var name_arr = [];
     // separate proteins if two are present
-    if (current.includes(",")) {
-      name_arr = current.split(",");
-    } else {
-      name_arr.push(current);
-    }
+    // if (current.includes(",")) {
+    //   name_arr = current.split(",");
+    // } else {
+    //   name_arr.push(current);
+    // }
 
     // add the array of names to the 2D data array
     temp_arr.push(name_arr);

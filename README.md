@@ -4,12 +4,12 @@ A web tool for visualizing Protein-Protein Interaction Networks using cytoscape.
 # How to run:
 ```
 1. Open a command prompt.
-2. Navigate to the directory where PPIN_web was downloaded.
+2. Navigate to the PPIN_web directory.
 3. If using Python 3, enter:
      python3 -m http.server
    If using Python 2, enter:
      python -m SimpleHTTPServer
-4. Open a web browser and access at http://localhost:8000/PPIN_web/demo.html
+4. Open a web browser and access at http://localhost:8000/web/demo.html
 5. Open a POINT JSON file using the available dialog.
      - Only a_demo_update.json is the only json file that will work
      - Any of the other json files are for future testing and will not be formatted correctly

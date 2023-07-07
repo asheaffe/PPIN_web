@@ -81,9 +81,7 @@ def query_subnetwork(p_dict_s1, prot_s1, p_dict_s2, prot_s2, protList_s1, protLi
                        {"id": "species1", "name": s1},
                         "_comment": "Test output for a JSON file -- contains a subnetwork of C. elegans and a subnetwork of M. musculus",
                         "classes": "container s1"},
-                  {"data": {"id": "species2", "name": s2}, "classes": "container s2"},
-                  {"data": {"id": "aligned non-ortho", "name": "aligned non-edges"}, "classes": "container"},
-                  {"data": {"id": "aligned ortho", "name": "aligned edges"}, "classes": "container"}]
+                  {"data": {"id": "species2", "name": s2}, "classes": "container s2"}]
 
     # add all lists of dict objects together to form the whole JSON file
     json_header.extend(nodes1)
