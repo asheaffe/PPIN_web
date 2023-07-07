@@ -22,24 +22,24 @@ def main():
     data_yeast = extract_ensembl_data_ncbi(ensembl_ncbi_yeast)
     ensembl_data_yeast = extract_ensembl_data_other_ids(ensembl_others_yeast, data_yeast)
 
-    #data_worm = extract_ensembl_data_ncbi(ensembl_ncbi_worm)
-    #ensembl_data_worm = extract_ensembl_data_other_ids(ensembl_others_worm, data_worm)
+    data_worm = extract_ensembl_data_ncbi(ensembl_ncbi_worm)
+    ensembl_data_worm = extract_ensembl_data_other_ids(ensembl_others_worm, data_worm)
 
     # assemble network data from each species
-    #network_data_yeast = read_network_file(network_yeast)
-    #network_dict_yeast = list_to_dict(network_data_yeast)
+    network_data_yeast = read_network_file(network_yeast)
+    network_dict_yeast = list_to_dict(network_data_yeast)
 
-    #network_data_worm = read_network_file(network_worm)
-    #network_dict_worm = list_to_dict(network_data_worm)
+    network_data_worm = read_network_file(network_worm)
+    network_dict_worm = list_to_dict(network_data_worm)
 
-    #query_subnetwork(network_dict_yeast, 'YJL003W', network_dict_worm, 'WBGene00000103', ensembl_data_yeast, ensembl_data_worm, "S cerevisiae", "C elegans")
+    query_subnetwork(network_dict_yeast, 'YJL003W', network_dict_worm, 'WBGene00000103', ensembl_data_yeast, ensembl_data_worm, "S cerevisiae", "C elegans")
 
-    with open("test_network_data.txt", "w") as f1:
-        f1.write("! Test file: Taking S cerevisiae interaction data and making it into a dict\n" +
-                 "! Currently showing all interactions for each protein\n")
-        for entry in ensembl_data_yeast:
-            line = ensembl_data_yeast[entry]
-            f1.write(str(entry) + "\t" + str(line) + "\n")
+    # with open("test_network_data.txt", "w") as f1:
+    #     f1.write("! Test file: Taking S cerevisiae interaction data and making it into a dict\n" +
+    #              "! Currently showing all interactions for each protein\n")
+    #     for entry in ensembl_data_yeast:
+    #         line = ensembl_data_yeast[entry]
+    #         f1.write(str(entry) + "\t" + str(line) + "\n")
 
 def query_subnetwork(p_dict_s1, prot_s1, p_dict_s2, prot_s2, protList_s1, protList_s2, s1, s2):
     """
@@ -292,18 +292,29 @@ def extract_ensembl_data_ncbi(filename):
 
           if line[0] in gene_dict:
               for i in range(1, len(line)-1):
-                  if gene_dict[line[0]][i] != "":
-                    if len(gene_dict[line[0]][i]) == 1:
-                        gene_dict[line[0]][i][1] = line[i]
-                    else:
-                        gene_dict[line[0]][i][len(gene_dict[line[0]][i])+1] = line[i]
+                  # assigning variables for better readability
+                  current_gene_id = line[0]
+                  current_id = line[i]
+
+                  if gene_dict[current_gene_id][i-1]:    # if the dictionary has items in it
+                    current_dict = gene_dict[current_gene_id][i-1]  # dict associated with each id type
+
+                    if current_id not in current_dict.values():    # checks for duplicates
+                        gene_dict[current_gene_id][i-1][len(gene_dict[current_gene_id][i])+1] = current_id + " funct1"
+                  else:
+                    if current_id != "":   # don't add empty space
+                        # if the dict is empty
+                        gene_dict[current_gene_id][i-1][len(gene_dict[current_gene_id][i])+1] = current_id + " funct1"
 
           else:
               # key is the gene stable id because every line in the file will have one ('primary key')
               gene_dict[line[0]] = []
 
               for ele in line[1:]:
-                gene_dict[line[0]].append({1:ele})
+                if ele != "":
+                    gene_dict[line[0]].append({1:ele})
+                else:
+                    gene_dict[line[0]].append({})
 
     return gene_dict
 
@@ -325,12 +336,22 @@ def extract_ensembl_data_other_ids(filename, ensembl_dict):
         while len(line) < 8:
             line.append("")
 
-        for i in range(4, len(line)-1):
-            if ensembl_dict[line[0]][i] != "":
-                    if len(ensembl_dict[line[0]][i]) == 1:
-                        ensembl_dict[line[0]][i][1] = line[i]
-                    else:
-                        ensembl_dict[line[0]][i][len(ensembl_dict[line[0]][i])+1] = line[i]
+        if line[0] in ensembl_dict:
+            for i in range(4, len(line)-1):
+                # assigning variables for better readability
+                current_gene_id = line[0]
+                current_id = line[i]
+
+                if ensembl_dict[current_gene_id][i]:    # if the dictionary has items in it
+                    current_dict = ensembl_dict[current_gene_id][i]  # dict associated with each id type
+
+                    if current_id not in current_dict.values():    # checks for duplicates
+                        ensembl_dict[current_gene_id][i][len(ensembl_dict[current_gene_id][i])+1] = current_id + " funct2"
+                else:
+                    if current_id != "":   # don't add empty space
+                        # if the dict is empty
+                        ensembl_dict[current_gene_id][i][len(ensembl_dict[current_gene_id][i])+1] = current_id + " funct2"
+
 
     return ensembl_dict
 

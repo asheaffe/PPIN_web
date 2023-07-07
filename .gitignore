@@ -1,5 +1,11 @@
 # Project-specific ignore settings
 
+# Personal notes folder
+.vscode/
+
+# ignoring this for now 
+COPYING.txt
+
 # ensembl/network files are only used for testing
 #official implementation pulls files from PPI-Network-Alignment
 python/network/ensembl/
