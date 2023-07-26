@@ -7,6 +7,7 @@ __date__ = "June 24, 2022"
 
 import sys
 import json
+from python.classes import Orthogroups
 
 def main():
     network_yeast = '../../../PPI-Network-Alignment/networks/s_cerevisiae.network-109-4.4.219.txt'  # species 1
@@ -15,7 +16,7 @@ def main():
     # access ensembl data from PPI-Network-Alignment repo
     ensembl_ncbi_yeast = "../../../PPI-Network-Alignment/ensembl/s_cerevisiae_ensembl_ncbi-109.txt"
     ensembl_others_yeast = "../../../PPI-Network-Alignment/ensembl/s_cerevisiae_ensembl_others-109.txt"
-    ensembl_ncbi_worm = "../../../PPI-Network-Alignment/ensembl/c_elegans_ensembl_others-109.txt"
+    ensembl_ncbi_worm = "../../../PPI-Network-Alignment/ensembl/c_elegans_ensembl_ncbi-109.txt"
     ensembl_others_worm = "../../../PPI-Network-Alignment/ensembl/c_elegans_ensembl_others-109.txt"
 
     # assemble ensembl data from each species
@@ -32,14 +33,119 @@ def main():
     network_data_worm = read_network_file(network_worm)
     network_dict_worm = list_to_dict(network_data_worm)
 
-    query_subnetwork(network_dict_yeast, 'YJL003W', network_dict_worm, 'WBGene00000103', ensembl_data_yeast, ensembl_data_worm, "S cerevisiae", "C elegans")
+    subnetwork = query_subnetwork(network_dict_yeast, 'YPR181C', network_dict_worm, 'WBGene00004754', ensembl_data_yeast, ensembl_data_worm, "S cerevisiae", "C elegans")
 
-    # with open("test_network_data.txt", "w") as f1:
-    #     f1.write("! Test file: Taking S cerevisiae interaction data and making it into a dict\n" +
-    #              "! Currently showing all interactions for each protein\n")
-    #     for entry in ensembl_data_yeast:
-    #         line = ensembl_data_yeast[entry]
-    #         f1.write(str(entry) + "\t" + str(line) + "\n")
+    # orthology data for worm and yeast
+    orthology_data = query_orthology_data("S cerevisiae", "C elegans")
+
+    node_list = nodes_from_json(subnetwork)
+
+    matched_groups = combine_network_ortho(node_list, orthology_data)
+
+    add_ortho_to_json(subnetwork, node_list, matched_groups)
+
+    with open("test_network_data.txt", 'w') as test_network:
+        for ele in subnetwork:
+            test_network.write(str(ele) + "\n")
+
+def add_ortho_to_json(network_list, node_dict, matched_dict):
+    """Takes the JSON network_list and adds the orthology data based on matched_dict
+    
+    :param network_list: list of network elements in JSON format
+    :param node_dict: dict of gene ids as key, species for specified id as def
+    :param matched_dict: dictionary of network data matched with orthology data
+    :return: updated network data list"""
+    ortho_exists_out = set()
+    ortho_exists_in = set()
+    ortho_nonexist = set()
+
+    for node in network_list:
+        if 'e_id' in node['data']:
+            current_id = node['data']['e_id']
+            current_species = node_dict[current_id]
+
+            if current_id in node_dict:
+
+                if current_id not in matched_dict:
+                    # TODO: change this to altering adding the class to network_list
+                    ortho_nonexist.add(current_id)
+
+                # loop over all proteins in the orthogroup for the given protein in the network
+                else:
+                    for ortho in matched_dict[current_id]:
+
+                        try:
+                            # will filter matching the same proteins to one another
+                            ortho_species = node_dict[ortho]
+                        except:
+                            ortho_species = None
+                        finally:
+                            if current_species != ortho_species:
+                                if ortho in node_dict:
+                                    ortho_exists_in.add(ortho)
+                                else:
+                                    ortho_exists_out.add(ortho)
+
+    # TODO: add orthology classifications to JSON
+    print("ortho exists in opposite subnetwork: ", ortho_exists_in)
+    print("ortho exists outside opposite subnetwork: ", ortho_exists_out)
+    print("ortho is not in the network: ", ortho_nonexist)
+    # for testing if there will ever be orthology data in the opposite subnetwork
+    # if ortho_exists_in:
+    #     print("Orthology data found in ", node_dict[ortho_exists_in[0]])
+    #     print(ortho_exists_in)
+
+def nodes_from_json(network_list):
+    """Creates a list of all node gene ids
+    
+    :param network_list: list of network elements in json format
+    :return: list of gene ids that are nodes in the network"""
+    id_dict = {}
+    for ele in network_list:
+        if 'protein' in ele['classes']:
+            gene_id = ele['data']['e_id']
+            species = "species" + ele['data']['id'][0]
+            id_dict[gene_id] = species
+    
+    return id_dict
+
+def combine_network_ortho(node_dict, ortho_data):
+    """Pulls the orthology data from the proteins in the network list and combines ortho data with network data
+    
+    :param node_list: list of gene ids from nodes in the JSON network
+    :param ortho_data: list of Orthogroups objects"""
+    # dictionary will hold the potential matches for uniprot ids based on node ids
+    matched_groups = {}
+
+    ortho_lookup = {y:x for x in ortho_data for y in x.group}
+
+    for gene in node_dict:
+        if gene in ortho_lookup is not None:
+            # add set with gene removed to the matched_groups dict
+            matched_groups[gene] = ortho_lookup[gene].find_protein(gene)
+
+    return matched_groups
+
+def query_orthology_data(species1, species2):
+    """Compiles a list of Orthogroups objects for eventually receiving all of the orthology data within the network.
+    
+    :param species1: name of species 1 as str
+    :param species2: name of species 2 as str
+    :return: list of Orthogroups objects"""
+    # TODO: Change this so that file that opens reflects species passed by parameter
+    filepath = "../../../PPI-Network-Alignment/orthology-data/orthogroups/c_elegans-s_cerevisiae_orthogroups.txt"
+
+    # list of orthogroup objects
+    orthogroups = []
+    with open(filepath, 'r') as file:
+        for line in file:
+            if line[0] == '!':
+                file.readline()
+            else: 
+                group = line.strip().split("\t")
+                orthogroups.append(Orthogroups.Orthogroups(group))
+
+    return orthogroups
 
 def query_subnetwork(p_dict_s1, prot_s1, p_dict_s2, prot_s2, protList_s1, protList_s2, s1, s2):
     """
@@ -55,43 +161,51 @@ def query_subnetwork(p_dict_s1, prot_s1, p_dict_s2, prot_s2, protList_s1, protLi
     :param s2: str species 2 name
     :return: list of dict values that corresponds with the desired subnetwork
     """
-    prot_def1 = p_dict_s1[prot_s1]
-    prot_def2 = p_dict_s2[prot_s2]
+    try:
+        prot_def1 = p_dict_s1[prot_s1]
+        prot_def2 = p_dict_s2[prot_s2]
 
-    # add the query protein to the list of its interacting proteins
-    temp1 = prot_def1
-    temp1.append(prot_s1)
+    except Exception as exc:
+        raise ValueError("Protein does not exist in the network--input a different protein!") from exc
+    
+    else:
 
-    temp2 = prot_def2
-    temp2.append(prot_s2)
+        # add the query protein to the list of its interacting proteins
+        temp1 = prot_def1
+        temp1.append(prot_s1)
 
-    retList1 = list_to_nodes(temp1, protList_s1, 1)
-    nodes1 = retList1[0]  # protein nodes to become JSON
-    edge_dict1 = retList1[1]  # dict of protein name as key and corresponding id as def
+        temp2 = prot_def2
+        temp2.append(prot_s2)
 
-    retList2 = list_to_nodes(temp2, protList_s2, 2)
-    nodes2 = retList2[0]  # protein nodes to become JSON
-    edge_dict2 = retList2[1]  # dict of protein name as key and corresponding id as def
+        retList1 = list_to_nodes(temp1, protList_s1, 1)
+        nodes1 = retList1[0]  # protein nodes to become JSON
+        edge_dict1 = retList1[1]  # dict of protein name as key and corresponding id as def
 
-    edges1 = list_to_edges(prot_s1, prot_def1, edge_dict1)
-    edges2 = list_to_edges(prot_s2, prot_def2, edge_dict2)
+        retList2 = list_to_nodes(temp2, protList_s2, 2)
+        nodes2 = retList2[0]  # protein nodes to become JSON
+        edge_dict2 = retList2[1]  # dict of protein name as key and corresponding id as def
 
-    json_header = [
-                  {"data":
-                       {"id": "species1", "name": s1},
-                        "_comment": "Test output for a JSON file -- contains a subnetwork of C. elegans and a subnetwork of M. musculus",
-                        "classes": "container s1"},
-                  {"data": {"id": "species2", "name": s2}, "classes": "container s2"}]
+        edges1 = list_to_edges(prot_s1, prot_def1, edge_dict1)
+        edges2 = list_to_edges(prot_s2, prot_def2, edge_dict2)
 
-    # add all lists of dict objects together to form the whole JSON file
-    json_header.extend(nodes1)
-    json_header.extend(edges1)
-    json_header.extend(nodes2)
-    json_header.extend(edges2)
-    json_str = json.dumps(json_header)
+        json_header = [
+                    {"data":
+                        {"id": "species1", "name": s1},
+                            "_comment": "Test output for a JSON file -- contains a subnetwork of C. elegans and a subnetwork of M. musculus",
+                            "classes": "container s1"},
+                    {"data": {"id": "species2", "name": s2}, "classes": "container s2"}]
 
-    file = open("test_json.json", "w")
-    file.write(json_str)
+        # add all lists of dict objects together to form the whole JSON file
+        json_header.extend(nodes1)
+        json_header.extend(edges1)
+        json_header.extend(nodes2)
+        json_header.extend(edges2)
+        json_str = json.dumps(json_header)
+
+        file = open("test_json.json", "w")
+        file.write(json_str)
+
+        return json.loads(json_str)
 
 def list_to_nodes(p_inters, ensembl_data, species_num):
     """
@@ -285,34 +399,29 @@ def extract_ensembl_data_ncbi(filename):
         for line in content:
           line = line.strip().split('\t')
 
-          while len(line) < 8:
+          current_gene_id = line[0]
+          line.pop(0)
+
+          while len(line) < 7:
               line.append("")
 
-          if line[0] in gene_dict:
-              for i in range(1, len(line)-1):
-                  # assigning variables for better readability
-                  current_gene_id = line[0]
+          if current_gene_id in gene_dict:
+              for i in range(len(line)):
                   current_id = line[i]
-
-                  if gene_dict[current_gene_id][i-1]:    # if the dictionary has items in it
-                    current_dict = gene_dict[current_gene_id][i-1]  # dict associated with each id type
-
-                    if current_id not in current_dict.values():    # checks for duplicates
-                        gene_dict[current_gene_id][i-1][len(gene_dict[current_gene_id][i])+1] = current_id + " funct1"
-                  else:
-                    if current_id != "":   # don't add empty space
-                        # if the dict is empty
-                        gene_dict[current_gene_id][i-1][len(gene_dict[current_gene_id][i])+1] = current_id + " funct1"
-
+                  
+                  current_list = gene_dict[current_gene_id][i]  # list associated with each id type
+                  if current_id not in current_list and current_id != "":    # checks for duplicates
+                    gene_dict[current_gene_id][i].append(current_id)
+                
           else:
               # key is the gene stable id because every line in the file will have one ('primary key')
-              gene_dict[line[0]] = []
+              gene_dict[current_gene_id] = []
 
-              for ele in line[1:]:
+              for ele in line:
                 if ele != "":
-                    gene_dict[line[0]].append({1:ele})
+                    gene_dict[current_gene_id].append([ele])
                 else:
-                    gene_dict[line[0]].append({})
+                    gene_dict[current_gene_id].append([])
 
     return gene_dict
 
@@ -327,29 +436,35 @@ def extract_ensembl_data_other_ids(filename, ensembl_dict):
     """
     with open(filename, 'r') as content:
       content.readline()
-
       for line in content:
         line = line.strip().split('\t')
+        
+        # assigning variables for better readability
+        current_gene_id = line[0]
 
-        while len(line) < 8:
+        line.pop(0)     # remove the current gene id from the line for better transition
+        line.insert(3, "")   # insert an empty space for ncbi id
+
+        while len(line) < 7:
             line.append("")
 
-        if line[0] in ensembl_dict:
-            for i in range(4, len(line)-1):
-                # assigning variables for better readability
-                current_gene_id = line[0]
+        if current_gene_id in ensembl_dict:
+            for i in range(len(line)):
                 current_id = line[i]
+                current_list = ensembl_dict[current_gene_id][i]  # list associated with each id type
 
-                if ensembl_dict[current_gene_id][i]:    # if the dictionary has items in it
-                    current_dict = ensembl_dict[current_gene_id][i]  # dict associated with each id type
+                if current_id not in current_list and current_id != "":    # checks for duplicates
+                    ensembl_dict[current_gene_id][i].append(current_id)
 
-                    if current_id not in current_dict.values():    # checks for duplicates
-                        ensembl_dict[current_gene_id][i][len(ensembl_dict[current_gene_id][i])+1] = current_id + " funct2"
+        else:
+            # key is the gene stable id because every line in the file will have one ('primary key')
+            gene_dict[current_gene_id] = []
+
+            for ele in line:
+                if ele != "":
+                    gene_dict[current_gene_id].append([ele])
                 else:
-                    if current_id != "":   # don't add empty space
-                        # if the dict is empty
-                        ensembl_dict[current_gene_id][i][len(ensembl_dict[current_gene_id][i])+1] = current_id + " funct2"
-
+                    gene_dict[current_gene_id].append([])
 
     return ensembl_dict
 
