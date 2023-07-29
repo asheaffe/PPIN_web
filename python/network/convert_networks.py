@@ -42,58 +42,103 @@ def main():
 
     matched_groups = combine_network_ortho(node_list, orthology_data)
 
-    add_ortho_to_json(subnetwork, node_list, matched_groups)
+    ortho_nonexist, ortho_exists_in, ortho_exists_out = find_ortho_classes(subnetwork, node_list, matched_groups, network_dict_yeast, network_dict_worm)
 
-    with open("test_network_data.txt", 'w') as test_network:
-        for ele in subnetwork:
-            test_network.write(str(ele) + "\n")
+    subnetwork = add_ortho_to_json(ortho_nonexist, ortho_exists_in, ortho_exists_out, subnetwork)
 
-def add_ortho_to_json(network_list, node_dict, matched_dict):
+    subnetwork = json.dumps(subnetwork)
+
+    with open("test_json.json", 'w') as test_network:
+        test_network.write(str(subnetwork))
+
+def find_ortho_classes(network_list, node_dict, matched_dict, network_dict_s1, network_dict_s2):
     """Takes the JSON network_list and adds the orthology data based on matched_dict
     
     :param network_list: list of network elements in JSON format
-    :param node_dict: dict of gene ids as key, species for specified id as def
+    :param node_dict: dict of gene ids as key, species for specified id as def from the network list
     :param matched_dict: dictionary of network data matched with orthology data
+    :param network_dict_s1: all of the proteins in the species1 network
+    :param network_dict_s2: all of the proteins in the species2 network
     :return: updated network data list"""
     ortho_exists_out = set()
     ortho_exists_in = set()
     ortho_nonexist = set()
 
+    # combine species1 and species2 dictionaries
+    full_network_dict = network_dict_s1
+    full_network_dict.update(network_dict_s2)
+
+    # check every line in the network_list
     for node in network_list:
+        # get only the proteins from the data
         if 'e_id' in node['data']:
+            # current id is the ensembl id of the current element with its species
             current_id = node['data']['e_id']
             current_species = node_dict[current_id]
 
-            if current_id in node_dict:
+            # if the current id is not in the full networks for each species
+            if current_id not in full_network_dict:
+                ortho_nonexist.add(current_id)
 
-                if current_id not in matched_dict:
-                    # TODO: change this to altering adding the class to network_list
-                    ortho_nonexist.add(current_id)
-
-                # loop over all proteins in the orthogroup for the given protein in the network
-                else:
+            # otherwise, check if the protein is in the subnetworks queried for each species
+            # loop over all proteins in the orthogroup for the given protein in the network
+            else:
+                # if the current id is in one of the subnetworks
+                if current_id in matched_dict:
                     for ortho in matched_dict[current_id]:
 
                         try:
-                            # will filter matching the same proteins to one another
+                            # checks if the current protein is already in the network
+
+                            # ortho_species holds the species number for the orthologous protein if it is in either subnetwork
                             ortho_species = node_dict[ortho]
-                        except:
+                        except KeyError as ke:
+                            # if it's not set to None
                             ortho_species = None
                         finally:
+                            # filters for the same protein (?)
+                            # if the species of the current node is not equal to the species of the orthologous node
                             if current_species != ortho_species:
+                                # if the orthologous node is in one of the subnetworks
                                 if ortho in node_dict:
                                     ortho_exists_in.add(ortho)
-                                else:
-                                    ortho_exists_out.add(ortho)
 
-    # TODO: add orthology classifications to JSON
-    print("ortho exists in opposite subnetwork: ", ortho_exists_in)
-    print("ortho exists outside opposite subnetwork: ", ortho_exists_out)
-    print("ortho is not in the network: ", ortho_nonexist)
-    # for testing if there will ever be orthology data in the opposite subnetwork
-    # if ortho_exists_in:
-    #     print("Orthology data found in ", node_dict[ortho_exists_in[0]])
-    #     print(ortho_exists_in)
+                # if the orthologous node is not in one of the subnetworks
+                else:
+                    ortho_exists_out.add(ortho)
+
+    return ortho_nonexist, ortho_exists_in, ortho_exists_out
+
+def add_ortho_to_json(ortho_nonexist, ortho_in, ortho_out, network_list):
+    """Takes sets with different orthology classifications, adds classification to the class of each node
+    
+    :param ortho_nonexist: set of orthologous proteins that don't exist in the network
+    :param ortho_in: set of orthologous proteins that exist in the opposite species' subnetwork
+    :param ortho_out: set of orthologous proteins that exist in the network but not in the opposite species' subnetwork
+    :param network_list: list of nodes and edges in JSON format
+    :return: updated list of JSON elements with orthology data"""
+    temp = network_list
+    for i in range(len(network_list)):
+        if 'e_id' in network_list[i]['data']:
+            current_id = network_list[i]['data']['e_id']
+
+            if current_id in ortho_nonexist:
+                temp[i]['classes'] += " ortho_nonexist"
+            
+            elif current_id in ortho_in:
+                temp[i]['classes'] += " ortho_exists_in"
+
+            elif current_id in ortho_out:
+                temp[i]['classes'] += " ortho_exists_out"
+            
+            # if the current protein is not in any of these sets, it is not orthologous
+            else:
+                temp[i]['classes'] += " nonortho"
+
+    # sort based on class values so that nodes display based orthology status
+    sorted_dict = sorted(temp, key=lambda node: node['classes'])
+
+    return sorted_dict
 
 def nodes_from_json(network_list):
     """Creates a list of all node gene ids

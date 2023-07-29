@@ -39,7 +39,7 @@ function runCytoscape(data) {
     style: cytoscape.stylesheet()
       .selector('node')
         .css({
-          'label': 'data(name.1)',
+          'label': 'data(name)',
           'border-color': 'black',
           'border-width': 2,
           'height': 80,
@@ -61,42 +61,25 @@ function runCytoscape(data) {
           'border-width': 2,
           'border-color': 'black'
         })
-      .selector('node.species1')
-        .css({
-          "background-color": 'blue'
-        })
-      .selector('node.species2')
-        .css({
-          "background-color": "red"
-        })
-      .selector('node.aligned')
-        .css({
-          'background-color': 'green'
-        })
       .selector("node.query")
         .css({
           'shape': 'triangle'
         })
-      .selector('edge.ortho')
+      .selector('node.ortho_nonexist')
         .css({
-          'line-color': 'grey',
-          'line-border': 'dashed'
+          'background-color': 'orange'
         })
-      .selector("edge.nOrtho")
+      .selector('node.ortho_exists_in')
         .css({
-          "line-color": "black"
+          'background-color': '#85caff' // blue
         })
-      .selector('edge.species1')
+      .selector('node.ortho_exists_out')
         .css({
-          'line-color': 'blue'
+          'background-color': '#90e88b' // green
         })
-      .selector('edge.species2')
+      .selector('node.nonortho')
         .css({
-          'line-color': 'red'
-        })
-      .selector('edge.aligned')
-        .css({
-          'line-color': 'green'
+          'background-color': 'yellow'
         }),
 
     elements: JSON.parse(data),
@@ -110,7 +93,8 @@ function runCytoscape(data) {
 
       cy = this;
 
-      cy.fit(cy.$('node'), 50); // hello????
+      // TODO: Fix default zoom so that the networks are centered on loading
+      cy.fit(cy.$('node'), 25); // hello????
 
       // only the nodes within the container nodes are in grid format
       // unaligned species 1
@@ -118,22 +102,19 @@ function runCytoscape(data) {
         return element.hasClass('species1') && element.hasClass('unaligned');
       })
 
-      var hSize = Math.ceil(Math.sqrt(nodes_s1.size()));
+      // unaligned species 2
+      var nodes_s2 = cy.$(function(element, i) {
+        return element.hasClass('species2') && element.hasClass('unaligned');
+      })
+
+      // make hSize and vSize relative to whichever network is larger
+      var hSize = Math.ceil(Math.sqrt(Math.max(nodes_s1.size(), nodes_s2.size())));
       var vSize = Math.ceil(nodes_s1.size() / hSize);
 
-      // // hDist and vDist use the size of the nodes and the number of
-      // // rows and columns to calculate distance from the query
+      // hDist and vDist use the size of the nodes and the number of
+      // rows and columns to calculate distance from the query
       var hDist = -400 - (80*hSize);    // horizontal distance
       var vDist = -(80*vSize) * 0.5;    // vertical distance
-
-      // // move the query relative to the rest of the species1 nodes
-      // var s1_query = cy.$(function(element, i) {
-      //   return element.hasClass('species1') && element.hasClass('query');
-      // })
-
-      // // change the query node position based on the position of the species1 node 'box'
-      // s1_query.position('x', -300);
-      // s1_query.position('y', 0);
 
       // format layout for species 1 nodes
       var layout = nodes_s1.layout({
@@ -144,7 +125,7 @@ function runCytoscape(data) {
         avoidOverlapPadding: 3,
         boundingBox: {x1: hDist, y1: vDist, w: 2, h: 2},
         sort: function (a, b) {
-          return a.connectedEdges().classes().toString().localeCompare(b.connectedEdges().classes().toString());
+          return a.classes().toString().localeCompare(b.classes().toString());
         }
       });
 
@@ -153,28 +134,9 @@ function runCytoscape(data) {
         element.move({parent: 'species1'});
       });
 
-      // unaligned species 2
-      var nodes_s2 = cy.$(function(element, i) {
-        return element.hasClass('species2') && element.hasClass('unaligned');
-      })
-
-      var hSize = Math.ceil(Math.sqrt(nodes_s2.size()));
-      var vSize = Math.ceil(nodes_s2.size() / hSize);
-
-      // hDist and vDist use the size of the nodes and the number of
-      // rows and columns to calculate distance from the query
+      // make the horizontal distance between the two networks relative to the first species
       var hDist = 400 + hSize*80;
-      var vDist = -(80*vSize) * 0.5;
-
-      // move the query relative to the rest of the species2 nodes
-      // var s2_query = cy.$(function(element, i) {
-      //   return element.hasClass('species2') && element.hasClass('query');
-      // })
-
-      // // change the query node position based on the position of the species2 node 'box'
-      // s2_query.position('x', 300);
-      // s2_query.position('y', 0);
-
+      
       // format layout for species 2 nodes
       var layout = nodes_s2.layout({
         name: 'concentric',
@@ -184,7 +146,7 @@ function runCytoscape(data) {
         avoidOverlapPadding: 3,
         boundingBox: {x1: hDist, y1: vDist, w: 30, h: 30},
         sort: function (a, b) {
-          return a.connectedEdges().classes().toString().localeCompare(b.connectedEdges().classes().toString());
+          return a.classes().toString().localeCompare(b.classes().toString());
         }
       });
       layout.run();
@@ -192,36 +154,10 @@ function runCytoscape(data) {
         element.move({parent: 'species2'});
       });
 
-      // aligned orthology/species1/species2
+      // orthologous nodes
       var nodes3 = cy.$(function(element, i) {
-        return (element.hasClass('aligned') || (element.hasClass('species1') || element.hasClass('species2'))) && element.hasClass('ortho');
+        return (element.hasClass('ortho_nonexist') || element.hasClass('ortho_exists_in') || element.hasClass('ortho_exists_out'));
       })
-      var hSize = Math.ceil(Math.sqrt(nodes3.size()));
-      var vSize = Math.ceil(nodes3.size() / hSize);
-
-      // hDist and vDist use the size of the nodes and the number of
-      // rows and columns to calculate distance from the query
-      var hDist = -((hSize*80) + 40);
-      var vDist = -80;
-
-      // format layout for orthologous nodes
-      var layout = nodes3.layout({
-        name: 'grid',
-        fit: false,
-        padding: 2,
-        avoidOverlapPadding: 3,
-        rows: hSize,
-        cols: 2,
-        boundingBox: {x1: vDist, y1: hDist, w: 30, h: 30},
-        sort: function (a, b) {
-          //alert(a.connectedEdges().classes().toString());
-          return a.connectedEdges().classes().toString(), b.connectedEdges().classes().toString();
-        }
-      });
-      layout.run();
-      nodes3.forEach(function (element, i) {
-        element.move({parent: 'ortho'});
-      });
 
       // node dropdown menu options
       // options to be assigned to an instance later.. ?
@@ -487,6 +423,7 @@ function runCytoscape(data) {
       ortho_e = nodes3.connectedEdges().filter('.aligned');
 
       // array of stats to be passed to the windows
+      // TODO: Change the stats for the ortho view - most of them are dependent on alignment
       var stats = [nodes3.size(), ortho_n.size(), nodes_s1.size(), nodes_s2.size(), align_e.size(), ortho_e.size(), all_edges.size()];
 
       // collect all of the proteins in the network
