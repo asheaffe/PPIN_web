@@ -40,10 +40,13 @@ function runCytoscape(data) {
       .selector('node')
         .css({
           'label': 'data(name)',
+          'text-valign': 'center',
+          'text-halign': 'center',
           'border-color': 'black',
           'border-width': 2,
           'height': 80,
-          'width': 80
+          'width': 80,
+          'z-index': 7
         })
       .selector('edge')
         .css({
@@ -53,13 +56,15 @@ function runCytoscape(data) {
       .selector(":parent")
         .css({
           'text-valign': 'top',
-          'text-halign': 'center'
+          'text-halign': 'center',
+          'font-size': '100px'
         })
       .selector("node.container")
         .css({
           'label': 'data(name)',
           'border-width': 2,
-          'border-color': 'black'
+          'border-color': 'black',
+          'z-index': 1
         })
       .selector("node.query")
         .css({
@@ -80,6 +85,14 @@ function runCytoscape(data) {
       .selector('node.nonortho')
         .css({
           'background-color': 'yellow'
+        })
+      .selector('node.nonhighlight')
+        .css({
+          'visibility': 'hidden'
+        })
+      .selector('edge.nonhighlight')
+        .css({
+          'visibility': 'hidden'
         }),
 
     elements: JSON.parse(data),
@@ -93,8 +106,11 @@ function runCytoscape(data) {
 
       cy = this;
 
+      // used for toggling zoom
+      var current_layout = 'main';
+
       // TODO: Fix default zoom so that the networks are centered on loading
-      cy.fit(cy.$('node'), 25); // hello????
+      //cy.fit(cy.$('node'), 25); // hello????
 
       // only the nodes within the container nodes are in grid format
       // unaligned species 1
@@ -117,7 +133,7 @@ function runCytoscape(data) {
       var vDist = -(80*vSize) * 0.5;    // vertical distance
 
       // format layout for species 1 nodes
-      var layout = nodes_s1.layout({
+      const layout1 = nodes_s1.layout({
         name: 'concentric',
         nodeDimensionsIncludeLabels: true,
         fit: false,
@@ -129,7 +145,7 @@ function runCytoscape(data) {
         }
       });
 
-      layout.run();
+      layout1.run();
       nodes_s1.forEach(function (element, i) {
         element.move({parent: 'species1'});
       });
@@ -138,7 +154,7 @@ function runCytoscape(data) {
       var hDist = 400 + hSize*80;
       
       // format layout for species 2 nodes
-      var layout = nodes_s2.layout({
+      const layout2 = nodes_s2.layout({
         name: 'concentric',
         nodeDimensionsIncludeLabels: true,
         fit: false,
@@ -149,15 +165,34 @@ function runCytoscape(data) {
           return a.classes().toString().localeCompare(b.classes().toString());
         }
       });
-      layout.run();
+      layout2.run();
       nodes_s2.forEach(function (element, i) {
         element.move({parent: 'species2'});
       });
 
+      cy.fit();
+
       // orthologous nodes
       var nodes3 = cy.$(function(element, i) {
         return (element.hasClass('ortho_nonexist') || element.hasClass('ortho_exists_in') || element.hasClass('ortho_exists_out'));
-      })
+      });
+
+      cy.on('click', 'node', function (evt) {
+        if (current_layout === 'main') {
+          var select = evt.target;
+          var network = select.outgoers().union(select.incomers()).union(select);
+          window.value = cy.remove(cy.elements()
+            .difference(select.outgoers()
+              .union(select.incomers())));
+          cy.add(network);
+          cy.elements().layout({
+            name: 'grid',
+            animate: 'true',
+            animationDuration: 500
+          }).run();
+          current_layout = 'zoom';
+        }
+      });
 
       // node dropdown menu options
       // options to be assigned to an instance later.. ?
@@ -439,7 +474,29 @@ function runCytoscape(data) {
       openMainItem("#b3", "#button3", 'fit-content', 500, stats, species1_id, species2_id);
       openMainItem("#b2_colors", "#color_pick", 'fit-content', 500, stats, species1_id, species2_id);
       openMainItem("#b2_data", "#data_ctrl", 'fit-content', 500, stats, species1_id, species2_id);
+      
+      // create a reset button that will appear below it
+      var resetView = document.createElement("BUTTON");
+      resetView.setAttribute('id', 'resetView');
+      var buttonText = document.createTextNode("Reset");
+      resetView.appendChild(buttonText);
+      document.getElementById('cy').appendChild(resetView);
 
+      // function for reset button click
+      resetView.onclick = function(){
+        window.value.restore();
+        layout1.run();
+        layout2.run();
+        cy.animate({
+          fit:{
+            eles: cy.elements()
+          }
+        },
+        {
+          duration: 500
+        });
+        current_layout = 'main';
+      }
     } // ready
 
   }); // cy init

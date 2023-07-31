@@ -33,7 +33,7 @@ def main():
     network_data_worm = read_network_file(network_worm)
     network_dict_worm = list_to_dict(network_data_worm)
 
-    subnetwork = query_subnetwork(network_dict_yeast, 'YPR181C', network_dict_worm, 'WBGene00004754', ensembl_data_yeast, ensembl_data_worm, "S cerevisiae", "C elegans")
+    subnetwork = query_subnetwork(network_dict_yeast, 'YOR270C', network_dict_worm, 'WBGene00006914', ensembl_data_yeast, ensembl_data_worm, "S cerevisiae", "C elegans")
 
     # orthology data for worm and yeast
     orthology_data = query_orthology_data("S cerevisiae", "C elegans")
@@ -291,6 +291,11 @@ def list_to_nodes(p_inters, ensembl_data, species_num):
         json_dict["data"]["parent"] = "unaligned"
 
         json_dict["classes"] = "species" + str(species_num) + " unaligned protein"
+
+        # if there is not a name, make the name the ensembl id
+        if len(json_dict['data']['name']) == 0:
+            print('No name here!')
+            json_dict['data']['name'] = json_dict['data']['e_id']
 
         # add data to edge dictionary
         edge_dict[key] = json_dict["data"]["id"]

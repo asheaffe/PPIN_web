@@ -60,6 +60,14 @@ input[type="file"] {
   position: absolute;
   background-color: #f5f6fa;
   border: 1px solid black;
+  z-index: 1;
+}
+
+#resetView {
+  z-index: 4;
+  position: absolute;
+  width: 50px;
+  top: 40%;
 }
 
 .sidebar-container { /* div surrounding sidebar */
