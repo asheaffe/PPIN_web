@@ -25,7 +25,7 @@ def main():
 
     data_worm = extract_ensembl_data_ncbi(ensembl_ncbi_worm)
     ensembl_data_worm = extract_ensembl_data_other_ids(ensembl_others_worm, data_worm)
-
+    
     # assemble network data from each species
     network_data_yeast = read_network_file(network_yeast)
     network_dict_yeast = list_to_dict(network_data_yeast)
@@ -33,23 +33,337 @@ def main():
     network_data_worm = read_network_file(network_worm)
     network_dict_worm = list_to_dict(network_data_worm)
 
-    subnetwork = query_subnetwork(network_dict_yeast, 'YOR270C', network_dict_worm, 'WBGene00006914', ensembl_data_yeast, ensembl_data_worm, "S cerevisiae", "C elegans")
+    subnetwork = query_subnetwork(network_dict_yeast, 'YOL139C', network_dict_worm, 'WBGene00002061', ensembl_data_yeast, ensembl_data_worm, "S cerevisiae", "C elegans")
+
+    node_dict = nodes_from_json(subnetwork)
+
+    network_dict = create_network_dict(subnetwork)
 
     # orthology data for worm and yeast
-    orthology_data = query_orthology_data("S cerevisiae", "C elegans")
+    ortho_network, ortho_dict = compile_ortho_json(subnetwork, "S cerevisiae", "C elegans", network_dict_yeast, network_dict_worm)
+    
+    # create json for alignment view
+    alignment_data = query_alignment_data("S cerevisiae", "C elegans", node_dict)
+    align_subnetwork = find_alignment_classes(subnetwork, alignment_data, ortho_dict, network_dict)
 
-    node_list = nodes_from_json(subnetwork)
+    align_network = alignment_to_json(align_subnetwork, ortho_network, ensembl_data_yeast, ensembl_data_worm, network_dict, node_dict)
 
-    matched_groups = combine_network_ortho(node_list, orthology_data)
+    final_output = json.dumps(align_network)
 
-    ortho_nonexist, ortho_exists_in, ortho_exists_out = find_ortho_classes(subnetwork, node_list, matched_groups, network_dict_yeast, network_dict_worm)
+    with open("../../json/a_demo.json", 'w') as test_network:
+        test_network.write(str(final_output))
 
-    subnetwork = add_ortho_to_json(ortho_nonexist, ortho_exists_in, ortho_exists_out, subnetwork)
+    print("JSON file for alignment view compiled")
 
-    subnetwork = json.dumps(subnetwork)
+def alignment_to_json(alignment_data, ortho_network, ensembl_data_s1, ensembl_data_s2, network_dict, node_dict):
+    """Creates a list of network elements using JSON conventions
+    
+    :param alignment_data: dict of aligned protein pairs (tuple) as key and their classification as def
+    :param ortho_network: subnetworks for orthology view in JSON format
+    :param ensembl_data_s1: dict ensembl data for species 1
+    :param ensembl_data_s2: dict ensembl data for species 2
+    :param network_dict: dict of network elements with each protein as the key and json network ele as def
+    :param node_dict: dictionary of each node ensembl id as key with the species (species1/species2) as def
+    :return: list of JSON elements"""
+    align_network = []
 
-    with open("test_json.json", 'w') as test_network:
-        test_network.write(str(subnetwork))
+    # combine species1 and species2 ensembl dicts into one
+    ensembl_data = ensembl_data_s1
+    ensembl_data.update(ensembl_data_s2)
+    
+    # keeps track of proteins already added to align_network and associated id
+    prots_added = set()
+
+    # keeps track of the ids added to align_network and their associated alignment classes
+    ids_added = {}
+
+    # dictionary that indicates which nodes are in a group
+    node_parents = {}
+    parent = "group0"
+
+    for protein in alignment_data:
+
+        # create an ortho/aligned edge between this protein and each protein in its dict
+        for match in alignment_data[protein]:
+            new_edge = {}
+            match_class = alignment_data[protein][match]
+
+            if match in network_dict and protein in network_dict:
+                
+                # separate the class based on underscore
+                match_class_list = match_class.split("_")
+
+                # replace orthology class with alignment class
+                node_class_list1 = network_dict[protein]['classes'].split(" ")
+                node_class_list2 = network_dict[match]['classes'].split(" ")
+
+                # vars for each protein id for better readability
+                id1 = network_dict[protein]['data']['id']
+                id2 = network_dict[match]['data']['id']
+
+                # keep align_ortho nodes
+                # if match_class != "align_ortho" and id1 in ids_added:
+                #     class_update_1 = [match_class if 'ortho' in x else x for x in node_class_list1]
+                # elif match_class != "align_ortho" and id2 in ids_added:
+                #     class_update_2 = [match_class if 'ortho' in x else x for x in node_class_list2]
+                #     print(ids_added[id1])
+                # elif id1 not in ids_added and id2 not in ids_added:
+                class_update_1 = [match_class if 'ortho' in x else x for x in node_class_list1]
+                class_update_2 = [match_class if 'ortho' in x else x for x in node_class_list2]
+
+                # check if the nodes are already in the parent dictionary
+                if id1 in node_parents:
+                    assign_parent = node_parents[id1]
+                elif id2 in node_parents:
+                    assign_parent = node_parents[id2]
+                else:
+                    assign_parent = parent
+
+                    # add a group node
+                    group_node = {'data':
+                                  {
+                                      'id': assign_parent,
+                                      'name': ""
+                                  },
+                                  'classes': 'compound'}
+                    
+                    align_network.append(group_node)
+
+                    # update last value in the parent group name
+                    parent_num_old = int(parent[-1])
+                    parent_num_new = parent_num_old + 1
+                    parent = parent.replace(str(parent_num_old), str(parent_num_new))
+
+                # give the parent dictionary the id values
+                node_parents[id1] = assign_parent
+                node_parents[id2] = assign_parent
+
+                # update the node with the alignment classes
+                node_update1 = network_dict[protein]
+                node_update1['classes'] = " ".join(class_update_1)
+                node_update1['data']['parent'] = assign_parent
+
+                node_update2 = network_dict[match]
+                node_update2['classes'] = " ".join(class_update_2)
+                node_update2['data']['parent'] = assign_parent
+
+                new_edge = {
+                    'data': {
+                        'source': id1,
+                        'target': id2,
+                        'weight': 5
+                    }
+                }
+
+                if "ortho" in match_class_list and "nonalign" in match_class_list:
+                    new_edge['classes'] = 'ortho_edge'
+
+                elif "align" in match_class_list and "nonortho" in match_class_list:
+                    new_edge['classes'] = 'align_edge'
+                
+                elif "align" in match_class_list and "ortho" in match_class_list:
+                    new_edge['classes'] = 'alignortho_edge'
+
+                if new_edge:
+                    # add the protein to the alignment network if it isn't already in it
+                    if protein not in prots_added:
+                        align_network.append(node_update1)
+
+                    if match not in prots_added:
+                        align_network.append(node_update2)
+
+                    # keep track of proteins and ids added
+                    prots_added.add(match)
+                    prots_added.add(protein)
+                    ids_added[id1] = match_class
+                    ids_added[id2] = match_class
+
+                    # add the edge to the network
+                    align_network.append(new_edge)
+
+    # loop thru network data to add interaction edges for proteins in alignment view
+    for data in ortho_network:
+        if 'source' in data['data']:
+            temp_id1 = data['data']['source']
+            temp_id2 = data['data']['target']
+
+            if temp_id1 in ids_added and temp_id2 in ids_added:
+                # change the class to equal to the alignment class if aligned
+                if ids_added[temp_id1] == ids_added[temp_id2] and 'nonalign' not in ids_added[temp_id1]:
+                    data['classes'] = ids_added[temp_id1]
+                else:
+                    # replace 'edge' with 'plain_interaction'
+                    temp_classes = data['classes'].replace('edge', 'plain_interaction')
+                    data['classes'] = temp_classes
+
+                    data['data']['weight'] = 1
+
+                align_network.append(data)
+
+    # sort network elements based on classes                
+    align_network = sorted(align_network, key=lambda node: node['classes'])
+
+    # for ele in align_network:
+    #     print(ele)
+    return align_network
+
+def compile_ortho_json(query_subnetwork, species1, species2, network_dict_s1, network_dict_s2):
+    """Compiles the JSON file for orthology view
+    
+    :param query_subnetwork: subnetwork compiled from query_subnetwork()
+    :param species1: shortened scientific name for species 1
+    :param species2: shortened scientific name for species 2
+    :param network_dict_s1: network dict species 1
+    :param network_dict_s2: network dict species 2
+    :return: dictionary of orthologous proteins"""
+
+    orthology_data = query_orthology_data(species1, species2)
+
+    node_dict = nodes_from_json(query_subnetwork)
+
+    matched_groups = combine_network_ortho(node_dict, orthology_data)
+
+    ortho_nonexist, ortho_exists_in, ortho_exists_out, ortho_dict = find_ortho_classes(query_subnetwork, node_dict, matched_groups, network_dict_s1, network_dict_s2)
+
+    ortho_subnetwork = add_ortho_to_json(ortho_nonexist, ortho_exists_in, ortho_exists_out, query_subnetwork)
+
+    final_output = json.dumps(ortho_subnetwork)
+
+    with open("../../json/o_demo.json", 'w') as test_network:
+        test_network.write(str(final_output))
+
+    print("JSON file for orthology view compiled")
+
+    return ortho_subnetwork, ortho_dict
+
+def create_network_dict(network_list):
+    """Makes a dictionary for network data for easier iteration through the network
+    
+    :param network_list: list of network data with ortho classes in JSON format (output of add_ortho_to_json())
+    :return: dict with protein name as key and corresponding entry as def"""
+    prot_dict = {}
+    for ele in network_list:
+        if 'e_id' in ele['data']:
+            prot_dict[ele['data']['e_id']] = ele
+
+    return prot_dict
+
+def find_alignment_classes(network_list, alignment_data, ortho_dict, network_dict):
+    """Takes set of alignment data and the list of network data in JSON format with orthology
+    classifications and determines the alignment classifications
+    
+    :param network_list: list of network data with ortho classes in JSON format (output of add_ortho_to_json())
+    :param alignment_data: set of tuples with aligned proteins (from query_alignment_data())
+    :param ortho_dict: dictionary that indicates which nodes are orthologous to it
+    :param network_dict: dictionary of network elements for easier lookup
+    :return: dictionary of each node as key and alignment class as def"""
+    align_dict = {}
+
+    for alignment in alignment_data:
+        for protein in alignment:
+            
+            # keep track of the index of current element
+            index = alignment.index(protein)
+
+            if protein in network_dict and alignment[index-1] in network_dict:
+
+                # set default to aligned nonorthologous if the protein is in the network
+                align_dict[protein] = {alignment[index-1]: "align_nonortho"} 
+                align_dict[alignment[index-1]] = {protein: "align_nonortho"}
+
+                # overwrite align_nonortho to align_ortho if the node is also orthologous
+                if 'ortho_exists_in' in network_dict[protein]['classes']:
+                    align_dict[protein] = {alignment[index-1]: "align_ortho"} 
+                    align_dict[alignment[index-1]] = {protein: "align_ortho"}
+
+    # get the difference between proteins added to align_dict and proteins added to network_dict
+    network_diff = set(network_dict.keys()) - (set(align_dict.keys()))
+
+    # assign each element in the network diff set after the for loop to nonalign_ortho
+    for leftover in network_diff:
+        
+        # if the leftover protein is not in the ortho_dict, then it is not orthologous so exclude it
+        if leftover in ortho_dict and ortho_dict[leftover] in network_dict:
+            ortho = ortho_dict[leftover]
+
+            left_species = network_dict[leftover]
+            left_species = left_species['data']['id'][0]
+
+            ortho_species = network_dict[ortho]
+            ortho_species = ortho_species['data']['id'][0]
+
+            # make sure the two proteins are from different species
+            if left_species != ortho_species:
+                align_dict[leftover] = {ortho_dict[leftover]: "nonalign_ortho"}
+                align_dict[ortho_dict[leftover]] = {leftover: "nonalign_ortho"}
+        
+    # iterate through all network data
+    # for i in range(len(network_list)):
+    #     if 'e_id' in network_list[i]['data']:
+    #         if 'ortho_exists_in' in network_list[i]["classes"]:
+    #             current_id = network_list[i]['data']['e_id']
+
+    #             for alignment in alignment_data:
+
+    #                 if network_list[i]['data']['e_id'] in alignment:
+                        
+    #                     index = alignment.index(current_id)
+
+    #                     if alignment[index-1] in ortho_dict[alignment[index]]:
+    #                         align_dict[alignment] = "align_ortho"
+
+    #             # keep first element species 1 and second element species 2
+    #             # ortho_pair = tuple([current_id, ortho_dict[current_id]])
+    #             # ortho_pair_inverse = tuple([ortho_dict[current_id], current_id])
+
+    #             if current_id in ortho_dict and ortho_pair not in align_dict:
+    #                 align_dict[ortho_pair] = "nonalign_ortho"
+    
+    return align_dict
+
+def query_alignment_data(species1, species2, node_dict):
+    """Takes alignment data and queried network data and returns a set of tuples with aligned
+    nodes
+    
+    :param species1: shortened scientific name of species 1 as str
+    :param species2: shortened scientific name of species 2 as str
+    :param node_dict: list of all nodes and their species within the query subnetwork
+    :return: set of tuples containing aligned nodes from separate species"""
+    # TODO: open file that correlates with the input species1/species2
+    filepath = "../../../PPI-Network-Alignment/alignments/basic/worm_yeast.align"
+
+    temp_dict = node_dict
+
+    # a set of tuples for pairs of nodes that are from the query and aligned
+    # if only one node is in an alignment in the query, exclude it from the set
+    alignments = set()
+    # open the alignment file and iterate through each entry
+    with open(filepath, 'r') as file:
+
+        # while there are still proteins in the node_list
+        for line in file:
+
+            # only continue iterating through file while there are elements left in temp_list
+            if temp_dict:
+                line = line.strip().split("\t")
+
+                prot_pair = False
+                # check each element in line
+                for prot in line:
+                    if prot in node_dict:
+                        prot_pair = True
+                        del temp_dict[prot]
+                    else:
+                        prot_pair = False
+                
+                # only add elements that are both in the queried subnetworks
+                if prot_pair:
+                    alignments.add(tuple(line))
+            else:
+                break
+    
+    return alignments
+
 
 def find_ortho_classes(network_list, node_dict, matched_dict, network_dict_s1, network_dict_s2):
     """Takes the JSON network_list and adds the orthology data based on matched_dict
@@ -63,10 +377,7 @@ def find_ortho_classes(network_list, node_dict, matched_dict, network_dict_s1, n
     ortho_exists_out = set()
     ortho_exists_in = set()
     ortho_nonexist = set()
-
-    # combine species1 and species2 dictionaries
-    full_network_dict = network_dict_s1
-    full_network_dict.update(network_dict_s2)
+    ortho_dict = {}     # used to indicate which proteins each node in the network is orthologous to
 
     # check every line in the network_list
     for node in network_list:
@@ -76,17 +387,24 @@ def find_ortho_classes(network_list, node_dict, matched_dict, network_dict_s1, n
             current_id = node['data']['e_id']
             current_species = node_dict[current_id]
 
-            # if the current id is not in the full networks for each species
-            if current_id not in full_network_dict:
-                ortho_nonexist.add(current_id)
+            temp = False
 
-            # otherwise, check if the protein is in the subnetworks queried for each species
-            # loop over all proteins in the orthogroup for the given protein in the network
+            if current_species == "species1":
+                temp = current_id in network_dict_s1
             else:
+                temp = current_id in network_dict_s2
+            
+            # if the current id has a species
+            if temp:
                 # if the current id is in one of the subnetworks
                 if current_id in matched_dict:
-                    for ortho in matched_dict[current_id]:
+                    
+                    # add elements to ortho_dict from matched_dict data
+                    ortho_dict.update({prot:current_id for prot in matched_dict[current_id]})
+                    ortho_dict.update({current_id:prot for prot in  matched_dict[current_id]})
 
+                    for ortho in matched_dict[current_id]:
+                        
                         try:
                             # checks if the current protein is already in the network
 
@@ -101,13 +419,18 @@ def find_ortho_classes(network_list, node_dict, matched_dict, network_dict_s1, n
                             if current_species != ortho_species:
                                 # if the orthologous node is in one of the subnetworks
                                 if ortho in node_dict:
-                                    ortho_exists_in.add(ortho)
+                                    ortho_exists_in.add(current_id)
 
-                # if the orthologous node is not in one of the subnetworks
-                else:
-                    ortho_exists_out.add(ortho)
+                                # if the orthologous node is not in one of the subnetworks
+                                else:
+                                    ortho_exists_out.add(current_id)
 
-    return ortho_nonexist, ortho_exists_in, ortho_exists_out
+            # otherwise, check if the protein is in the subnetworks queried for each species
+            # loop over all proteins in the orthogroup for the given protein in the network
+            else:
+                ortho_nonexist.add(current_id)
+    
+    return ortho_nonexist, ortho_exists_in, ortho_exists_out, ortho_dict
 
 def add_ortho_to_json(ortho_nonexist, ortho_in, ortho_out, network_list):
     """Takes sets with different orthology classifications, adds classification to the class of each node
@@ -118,7 +441,11 @@ def add_ortho_to_json(ortho_nonexist, ortho_in, ortho_out, network_list):
     :param network_list: list of nodes and edges in JSON format
     :return: updated list of JSON elements with orthology data"""
     temp = network_list
+
+    # loop through every index of network_list
     for i in range(len(network_list)):
+
+        # check only proteins
         if 'e_id' in network_list[i]['data']:
             current_id = network_list[i]['data']['e_id']
 
@@ -208,10 +535,14 @@ def query_subnetwork(p_dict_s1, prot_s1, p_dict_s2, prot_s2, protList_s1, protLi
     """
     try:
         prot_def1 = p_dict_s1[prot_s1]
-        prot_def2 = p_dict_s2[prot_s2]
 
     except Exception as exc:
-        raise ValueError("Protein does not exist in the network--input a different protein!") from exc
+        raise ValueError("Protein 1 does not exist in the network--input a different protein!") from exc
+    
+    try:
+        prot_def2 = p_dict_s2[prot_s2]
+    except Exception as exc:
+        raise ValueError("Protein 2 does not exist in the network--input a different protein!")
     
     else:
 
@@ -288,13 +619,12 @@ def list_to_nodes(p_inters, ensembl_data, species_num):
         json_dict["data"]["swissprot"] = ensembl_data[key][4]
         json_dict["data"]["trembl"] = ensembl_data[key][5]
         json_dict["data"]["refseq"] = ensembl_data[key][6]
-        json_dict["data"]["parent"] = "unaligned"
+        json_dict["data"]["parent"] = "species" + str(species_num)
 
-        json_dict["classes"] = "species" + str(species_num) + " unaligned protein"
+        json_dict["classes"] = "species" + str(species_num) + " protein"
 
         # if there is not a name, make the name the ensembl id
         if len(json_dict['data']['name']) == 0:
-            print('No name here!')
             json_dict['data']['name'] = json_dict['data']['e_id']
 
         # add data to edge dictionary
@@ -324,6 +654,9 @@ def list_to_edges(prot, e_list, e_dict):
     final_list = []
 
     temp = {}
+
+    # remove the query protein if in list
+    e_list.remove(prot)
 
     # loop through p_dict
     for ele in e_list:

@@ -18,6 +18,11 @@
     <script src='cytoscape/cytoscape-panzoom.js'></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
+    
+
+    <script src="https://unpkg.com/webcola/WebCola/cola.min.js"></script>
+    <script src="../cytoscape.js-cola-2.5.1/cytoscape-cola.js"></script>
+
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
     <meta http-equiv="Pragma" content="no-cache" />
     <meta http-equiv="Expires" content="0" />
@@ -121,7 +126,10 @@
           <input hidden id='hidden-data'>
 
           <!-- Load application code at the end to ensure DOM is loaded -->
-          <script src="../js-views/ortho_view.js"></script>
+          <script src="https://unpkg.com/layout-base/layout-base.js"></script>
+          <script src="https://unpkg.com/cose-base/cose-base.js"></script>
+          <script src="../cytoscape.js-cose-bilkent-4.1.0/cytoscape-cose-bilkent.js"></script>
+          <script src="app.js"></script>
 
       </body>
   </div>

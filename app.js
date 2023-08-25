@@ -1,3 +1,5 @@
+
+
 /**
   * @file
   * Uses cystoscape.js to draw a graph based on data provided in a given json file
@@ -38,90 +40,183 @@ function runCytoscape(data) {
     // styling for cytoscape.js graph
     style: cytoscape.stylesheet()
       .selector('node')
-        .css({
-          'label': 'data(name)',
-          'text-valign': 'center',
-          'text-halign': 'center',
-          'border-color': 'black',
-          'border-width': 2,
-          'height': 80,
-          'width': 80,
-          'z-index': 7
-        })
+      .css({
+        'label': 'data(name)',
+        'text-valign': 'center',
+        'text-halign': 'center',
+        'border-color': 'black',
+        'border-width': 8,
+        'height': 80,
+        'width': 80
+      })
       .selector('edge')
-        .css({
-          'curve-style': 'haystack',
-          'width': 6
-        })
+      .css({
+        'curve-style': 'haystack',
+        'width': 6
+      })
       .selector(":parent")
-        .css({
-          'text-valign': 'top',
-          'text-halign': 'center',
-          'font-size': '100px'
-        })
+      .css({
+        'text-valign': 'top',
+        'text-halign': 'center',
+        'font-size': '100px'
+      })
+      .selector('node.compound')
+      .css({
+        'background-opacity': 0,
+        'border-width': 0
+      })
       .selector("node.container")
-        .css({
-          'label': 'data(name)',
-          'border-width': 2,
-          'border-color': 'black',
-          'z-index': 1
-        })
+      .css({
+        'label': 'data(name)',
+        'border-width': 10,
+        'border-color': 'black',
+        'z-index': 1
+      })
+      .selector("node.s1")
+      .css({
+        'border-color': '#037324' 
+      })
+      .selector("node.s2")
+      .css({
+        'border-color': '#95136a'
+      })
+      // have the node and edge borders match the above colors
+      .selector("node.species1")
+      .css({
+        'border-color': '#037324',
+        'z-index': 7
+      })
+      .selector("node.species2")
+      .css({
+        'border-color': '#95136a',
+        'z-index': 6
+      })
+      .selector("edge.species1")
+      .css({
+        'line-color': '#037324',
+        'line-width': 10,
+        'z-index': 7
+      })
+      .selector("edge.species2")
+      .css({
+        'line-color': '#95136a',
+        'line-width': 10,
+        'z-index': 6
+      })
       .selector("node.query")
-        .css({
-          'shape': 'triangle'
-        })
-      .selector('node.ortho_nonexist')
-        .css({
-          'background-color': 'orange'
-        })
-      .selector('node.ortho_exists_in')
-        .css({
-          'background-color': '#85caff' // blue
-        })
-      .selector('node.ortho_exists_out')
-        .css({
-          'background-color': '#90e88b' // green
-        })
-      .selector('node.nonortho')
-        .css({
-          'background-color': 'yellow'
-        })
-      .selector('node.nonhighlight')
-        .css({
-          'visibility': 'hidden'
-        })
-      .selector('edge.nonhighlight')
-        .css({
-          'visibility': 'hidden'
-        }),
+      .css({
+        'shape': 'triangle'
+      })
+      .selector('node.ortho_nonexist') //
+      .css({
+        'background-color': '#9889e2'
+      })
+      .selector('node.ortho_exists_in') //
+      .css({
+        'background-color': '#b885d3'
+      })
+      .selector('node.ortho_exists_out') //
+      .css({
+        'background-color': '#db8ebb' 
+      })
+      .selector('node.nonortho') //
+      .css({
+        'background-color': '#ea979f'
+      })
+      .selector("node.query")
+      .css({
+        'shape': 'round-triangle'
+      })
+      .selector('node.align_nonortho')
+      .css({
+        'background-color': '#89a1e5'
+      })
+      .selector('node.nonalign_ortho')
+      .css({
+        'background-color': '#978ae2' 
+      })
+      .selector('node.align_ortho')
+      .css({
+        'background-color': '#b885d3' 
+      })
+      .selector('edge.align_nonortho')
+      .css({
+        'line-color': '#89a1e5'
+      })
+      .selector('edge.nonalign_ortho')
+      .css({
+        'line-color': '#978ae2' 
+      })
+      .selector('edge.align_ortho')
+      .css({
+        'line-color': '#b885d3'
+      })
+      .selector('edge.align_edge')
+      .css({
+        'line-color': '#acd5b2'
+      })
+      .selector('edge.ortho_edge')
+      .css({
+        'line-color': '#f4c0c5'
+      })
+      .selector('edge.alignortho_edge')
+      .css({
+        'line-color': '#f2d79e'
+      }),
 
     elements: JSON.parse(data),
 
-    layout: {
-      name: 'preset',
-      fit: 'true'
-    },
-
     ready: function () {
-
+      
       cy = this;
+
+      // take nodes in alignment json
+      var align_eles = cy.$(function (element) {
+        return element.hasClass('align_ortho') || element.hasClass('align_nonortho') || element.hasClass('nonalign_ortho') 
+        || element.hasClass('plain_interaction') || element.hasClass('compound');
+      });
+
+      var align_layout = align_eles.layout({
+        name: 'cose-bilkent',
+        fit: true,
+        randomize: false,
+        quality: 'proof',
+        idealEdgeLength: 150,
+        gravityCompound: 15,
+        nestingFactor: .1,
+        gravityRangeCompound: 0.25,
+        nodeRepulsion: 3000
+      });
+      align_layout.run();
+
+      // take ortho/alignment edges
+      var type_edges = cy.$(function (element) {
+        return element.hasClass('align_edge') || element.hasClass('ortho_edge') || element.hasClass('alignortho_edge');
+      });
+
+      var type_layout = type_edges.layout({
+        name: 'cose-bilkent',
+        randomize: false,
+        idealEdgeLength: 5,
+        edgeElasticity: .5
+      });
+      type_layout.run();
+
+      // layout for orthology view
 
       // used for toggling zoom
       var current_layout = 'main';
 
-      // TODO: Fix default zoom so that the networks are centered on loading
-      //cy.fit(cy.$('node'), 25); // hello????
-
       // only the nodes within the container nodes are in grid format
       // unaligned species 1
-      var nodes_s1 = cy.$(function(element, i) {
-        return element.hasClass('species1') && element.hasClass('unaligned');
-      })
+      var nodes_s1 = cy.$(function (element, i) {
+        return element.hasClass('species1') && (element.hasClass('nonortho') || element.hasClass('ortho_nonexist') || element.hasClass('ortho_exists_in') || element.hasClass('ortho_exists_out'));
+      });
 
       // unaligned species 2
-      var nodes_s2 = cy.$(function(element, i) {
-        return element.hasClass('species2') && element.hasClass('unaligned');
-      })
+      var nodes_s2 = cy.$(function (element, i) {
+        return element.hasClass('species2') && (element.hasClass('nonortho') || element.hasClass('ortho_nonexist') || element.hasClass('ortho_exists_in') || element.hasClass('ortho_exists_out'));
+      });
 
       // make hSize and vSize relative to whichever network is larger
       var hSize = Math.ceil(Math.sqrt(Math.max(nodes_s1.size(), nodes_s2.size())));
@@ -129,8 +224,8 @@ function runCytoscape(data) {
 
       // hDist and vDist use the size of the nodes and the number of
       // rows and columns to calculate distance from the query
-      var hDist = -400 - (80*hSize);    // horizontal distance
-      var vDist = -(80*vSize) * 0.5;    // vertical distance
+      var hDist = -500 - (80 * hSize);    // horizontal distance
+      var vDist = -(80 * vSize) * 0.5;    // vertical distance
 
       // format layout for species 1 nodes
       const layout1 = nodes_s1.layout({
@@ -138,8 +233,9 @@ function runCytoscape(data) {
         nodeDimensionsIncludeLabels: true,
         fit: false,
         padding: 2,
+        //animate: true,
         avoidOverlapPadding: 3,
-        boundingBox: {x1: hDist, y1: vDist, w: 2, h: 2},
+        boundingBox: { x1: hDist, y1: vDist, w: 2, h: 2 },
         sort: function (a, b) {
           return a.classes().toString().localeCompare(b.classes().toString());
         }
@@ -147,44 +243,50 @@ function runCytoscape(data) {
 
       layout1.run();
       nodes_s1.forEach(function (element, i) {
-        element.move({parent: 'species1'});
+        element.move({ parent: 'species1' });
       });
 
       // make the horizontal distance between the two networks relative to the first species
-      var hDist = 400 + hSize*80;
-      
+      var hDist = 500 + hSize * 80;
+
       // format layout for species 2 nodes
       const layout2 = nodes_s2.layout({
         name: 'concentric',
         nodeDimensionsIncludeLabels: true,
-        fit: false,
         padding: 2,
+        //animate: true,
         avoidOverlapPadding: 3,
-        boundingBox: {x1: hDist, y1: vDist, w: 30, h: 30},
+        boundingBox: { x1: hDist, y1: vDist, w: 30, h: 30 },
         sort: function (a, b) {
           return a.classes().toString().localeCompare(b.classes().toString());
         }
       });
       layout2.run();
       nodes_s2.forEach(function (element, i) {
-        element.move({parent: 'species2'});
+        element.move({ parent: 'species2' });
       });
 
       cy.fit();
 
       // orthologous nodes
-      var nodes3 = cy.$(function(element, i) {
+      var nodes3 = cy.$(function (element, i) {
         return (element.hasClass('ortho_nonexist') || element.hasClass('ortho_exists_in') || element.hasClass('ortho_exists_out'));
       });
 
       cy.on('click', 'node', function (evt) {
         if (current_layout === 'main') {
           var select = evt.target;
-          var network = select.outgoers().union(select.incomers()).union(select);
+
+          // holds the parent node for selected node in either view
+          window.group = select.data().parent
+          console.log(select.outgoers());
+          window.selected_network = select.outgoers().union(select.incomers()).union(select);
+
+          // global value so that elements can be restored later
           window.value = cy.remove(cy.elements()
             .difference(select.outgoers()
               .union(select.incomers())));
-          cy.add(network);
+          cy.add(window.selected_network);
           cy.elements().layout({
             name: 'grid',
             animate: 'true',
@@ -403,7 +505,7 @@ function runCytoscape(data) {
       };
 
       // implement jscolor to change the legend color for the aligned proteins
-      updateAlignedColor = function(jscolor) {
+      updateAlignedColor = function (jscolor) {
         cy.startBatch();
 
         // change color of aligned nodes
@@ -424,33 +526,33 @@ function runCytoscape(data) {
         cy.endBatch();
       };
 
-//      // id for container species1
-//      var cont_node1 = cy.$(function(element, i){
-//        return element.hasClass("container") && element.hasClass("s1");
-//      })
+      //      // id for container species1
+      //      var cont_node1 = cy.$(function(element, i){
+      //        return element.hasClass("container") && element.hasClass("s1");
+      //      })
 
       var json = JSON.parse(data);
 
       species1_id = json[0]["data"]["name"];    // holds species1 name
       species2_id = json[1]["data"]["name"];    // holds species2 name
 
-//      id for container species2
-//      var cont_node2 = cy.$(function(element, i) {
-//        return element.hasClass("container") && element.hasClass("s2");
-//      })
+      //      id for container species2
+      //      var cont_node2 = cy.$(function(element, i) {
+      //        return element.hasClass("container") && element.hasClass("s2");
+      //      })
 
       // aligned edge composition
-      var align_e = cy.$(function(element, i) {
+      var align_e = cy.$(function (element, i) {
         return element.hasClass("aligned") && element.hasClass("edge");
       })
 
       // grab all of the edges
-      var all_edges = cy.$(function(element, i) {
+      var all_edges = cy.$(function (element, i) {
         return element.hasClass("edge");
       })
 
       // total orthologous nodes
-      ortho_n = cy.$(function(element, i) {
+      ortho_n = cy.$(function (element, i) {
         return element.hasClass('ortho') && element.hasClass('protein');
       })
 
@@ -462,7 +564,7 @@ function runCytoscape(data) {
       var stats = [nodes3.size(), ortho_n.size(), nodes_s1.size(), nodes_s2.size(), align_e.size(), ortho_e.size(), all_edges.size()];
 
       // collect all of the proteins in the network
-      var all_nodes = cy.$(function(element, i) {
+      var all_nodes = cy.$(function (element, i) {
         return element.hasClass("protein");
       });
 
@@ -474,7 +576,7 @@ function runCytoscape(data) {
       openMainItem("#b3", "#button3", 'fit-content', 500, stats, species1_id, species2_id);
       openMainItem("#b2_colors", "#color_pick", 'fit-content', 500, stats, species1_id, species2_id);
       openMainItem("#b2_data", "#data_ctrl", 'fit-content', 500, stats, species1_id, species2_id);
-      
+
       // create a reset button that will appear below it
       var resetView = document.createElement("BUTTON");
       resetView.setAttribute('id', 'resetView');
@@ -483,18 +585,39 @@ function runCytoscape(data) {
       document.getElementById('cy').appendChild(resetView);
 
       // function for reset button click
-      resetView.onclick = function(){
+      resetView.onclick = function () {
+
+        // global var with removed elements
         window.value.restore();
+        window.selected_network.restore();
         layout1.run();
+        nodes_s1.forEach(function (element, i) {
+          element.move({ parent: 'species1' });
+        });
         layout2.run();
+        nodes_s2.forEach(function (element, i) {
+          element.move({ parent: 'species2' });
+        });
+        align_layout.run();
+        //alert(window.group);
+        type_layout.run();
+        cy.elements().forEach(function (element, i) {
+          var node_parent = element.data().parent;
+          
+          if (node_parent !== undefined) {
+            element.move({ parent: node_parent });
+          } else {
+            console.log(element.data().parent);
+          };
+        });
         cy.animate({
-          fit:{
+          fit: {
             eles: cy.elements()
           }
         },
-        {
-          duration: 500
-        });
+          {
+            duration: 500
+          });
         current_layout = 'main';
       }
     } // ready
@@ -503,7 +626,7 @@ function runCytoscape(data) {
 
   // panzoom slider with defaults
   cy.panzoom({
-    animateOnFit: function() {
+    animateOnFit: function () {
       return true;
     }
   });
@@ -662,7 +785,7 @@ function dragItem(win) {
   $(win)
     .draggable({
       scroll: false
-  });
+    });
 }
 
 // makes elements in div window to be resizable
@@ -672,7 +795,7 @@ function resizeItem(win) {
     *
     * @param win indicates the html div id for a given window
     */
-  $(win).resizable().css({'overflow': 'hidden'});
+  $(win).resizable().css({ 'overflow': 'hidden' });
 }
 
 // opens an item that doesnt include any data that would be included in the main items
@@ -685,7 +808,7 @@ function openColorPick(button, win, s1_name, s2_name) {
     * @param s1_name is the scientific name of species 1
     * @param s2_name is the scientific name of species 2
     */
-  $(button).click(function(){
+  $(button).click(function () {
     $(win).toggle();
     //resizeItem(win);
   });
@@ -723,10 +846,10 @@ function openMainItem(button, win, top, left, stat_list, s1_name, s2_name) {
   // check if the current button is the stats button
   if (win === "#button1") {
     // calculate percentage of orthologous aligned nodes to non-ortho aligned nodes
-    var per_ortho = Math.round((stat_list[0]/(stat_list[1] + stat_list[0])) * 1000) / 10;
+    var per_ortho = Math.round((stat_list[0] / (stat_list[1] + stat_list[0])) * 1000) / 10;
     //console.log(stat_list[0]/(stat_list[1] + stat_list[0])); //// making sure that the output value is correct
 
-    var output = per_ortho + "% (" + stat_list[0] + "/" + (stat_list[1]+stat_list[0]) + ") of aligned proteins are orthologous";
+    var output = per_ortho + "% (" + stat_list[0] + "/" + (stat_list[1] + stat_list[0]) + ") of aligned proteins are orthologous";
 
     document.getElementById("b1text1").innerHTML = output;
 
@@ -751,12 +874,12 @@ function openMainItem(button, win, top, left, stat_list, s1_name, s2_name) {
     // number of aligned edges that are orthologous
     var intero_al = (stat_list[5] / stat_list[4]);
 
-    document.getElementById("b1text4").innerHTML = Math.round(intero_al*1000)/10 + "% (" + stat_list[5] + "/" + stat_list[4] + ") aligned edges are interologs";
+    document.getElementById("b1text4").innerHTML = Math.round(intero_al * 1000) / 10 + "% (" + stat_list[5] + "/" + stat_list[4] + ") aligned edges are interologs";
 
     // number of orthologous edges out of all edges
     var intero_total = (stat_list[5] / stat_list[6]);
 
-    document.getElementById("b1text5").innerHTML = Math.round(intero_total*1000)/10 + "% (" + stat_list[5] + "/" + stat_list[6] + ") of all edges are interologs";
+    document.getElementById("b1text5").innerHTML = Math.round(intero_total * 1000) / 10 + "% (" + stat_list[5] + "/" + stat_list[6] + ") of all edges are interologs";
   };
 
   // check if the current button is the legend button
@@ -766,40 +889,40 @@ function openMainItem(button, win, top, left, stat_list, s1_name, s2_name) {
     document.getElementById("s2").innerHTML = s2_name;
   }
 
-  $(button).click(function(){
+  $(button).click(function () {
     $(win).toggle();
 
     // controls when to open and close the sidebar
     if ($("#button1").css("display") === 'block' || $('#button3').css("display") === 'block' || $("#color_pick").css("display") === 'block') {
-        if ($('#color-pick').css("display") === 'block') {
-            // opens the color picker option in controls
-            openColorPick("#b2_colors", "#color_pick", species1_id, species2_id);
-        }
-        else if (button === '#b2_data') {
-            $("#data_ctrl").toggle();
-        }
-        document.getElementById('cy').style = "left:25%;";
+      if ($('#color-pick').css("display") === 'block') {
+        // opens the color picker option in controls
+        openColorPick("#b2_colors", "#color_pick", species1_id, species2_id);
+      }
+      else if (button === '#b2_data') {
+        $("#data_ctrl").toggle();
+      }
+      document.getElementById('cy').style = "left:25%;";
     }
     else if ($("#button1").css("display") === "none" && $('#button3').css("display") === 'none' && $("#color_pick").css("display") === 'none') {
-        document.getElementById('cy').style = "left:5%;";
+      document.getElementById('cy').style = "left:5%;";
     }
   });
 
-  $(win).css({'top': top, 'left': left, 'height': 'fit-content', 'overflow': 'hidden'});
+  $(win).css({ 'top': top, 'left': left, 'height': 'fit-content', 'overflow': 'hidden' });
 
 }
 
 // stellarnav import js
-jQuery(document).ready(function($) {
-    jQuery('.stellarnav').stellarNav({
-        theme: 'dark',
-        position: 'static',
-        showArrows: true,
-        sticky: false,
-        closeLabel: 'Close',
-        scrollbarFix: false,
-        menuLabel: 'Menu'
-    });
+jQuery(document).ready(function ($) {
+  jQuery('.stellarnav').stellarNav({
+    theme: 'dark',
+    position: 'static',
+    showArrows: true,
+    sticky: false,
+    closeLabel: 'Close',
+    scrollbarFix: false,
+    menuLabel: 'Menu'
+  });
 });
 
 
