@@ -65,7 +65,10 @@ def alignment_to_json(alignment_data, ortho_network, ensembl_data_s1, ensembl_da
     :param network_dict: dict of network elements with each protein as the key and json network ele as def
     :param node_dict: dictionary of each node ensembl id as key with the species (species1/species2) as def
     :return: list of JSON elements"""
-    align_network = []
+    # change the classes of the first two nodes to not be a container
+    ortho_network[0]['classes'] = 'alignment s1'
+    ortho_network[1]['classes'] = 'alignment s2'
+    align_network = [ortho_network[0], ortho_network[1]]
 
     # combine species1 and species2 ensembl dicts into one
     ensembl_data = ensembl_data_s1
@@ -201,7 +204,7 @@ def alignment_to_json(alignment_data, ortho_network, ensembl_data_s1, ensembl_da
                 align_network.append(data)
 
     # sort network elements based on classes                
-    align_network = sorted(align_network, key=lambda node: node['classes'])
+    #align_network = sorted(align_network, key=lambda node: node['classes'])
 
     # for ele in align_network:
     #     print(ele)

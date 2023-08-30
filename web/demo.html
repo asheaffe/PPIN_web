@@ -18,8 +18,6 @@
     <script src='cytoscape/cytoscape-panzoom.js'></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    
-
     <script src="https://unpkg.com/webcola/WebCola/cola.min.js"></script>
     <script src="../cytoscape.js-cola-2.5.1/cytoscape-cola.js"></script>
 
@@ -101,7 +99,13 @@
                   <h2>Legend</h2>
                   <h3 id="s1" class="innerText">Species1</h3>
                   <h3 id="s2" class="innerText">Species2</h3>
-                  <h3 id="aligned" class="innerText">Aligned</h3>
+                  <h3 id="ortho_nonexist" class="innerText">Non-Existent Orthology</h3>
+                  <h3 id="ortho_exists_in" class="innerText">Orthology Exists In Query</h3>
+                  <h3 id="ortho_exists_out" class="innerText">Orthology Exists Outside of Query</h3>
+                  <h3 id="nonortho" class="innerText">Non-Orthology</h3>
+                  <h3 id="align_nonortho" class="innerText">Aligned Non-Orthology</h3>
+                  <h3 id="nonalign_ortho" class="innerText">Unaligned Orthology</h3>
+                  <h3 id="align_ortho" class="innerText">Aligned Orthology</h3>
                 </div>
 
                 <!--div for the color picker for each type of node-->
@@ -129,7 +133,7 @@
           <script src="https://unpkg.com/layout-base/layout-base.js"></script>
           <script src="https://unpkg.com/cose-base/cose-base.js"></script>
           <script src="../cytoscape.js-cose-bilkent-4.1.0/cytoscape-cose-bilkent.js"></script>
-          <script src="app.js"></script>
+          <script src="../app.js"></script>
 
       </body>
   </div>

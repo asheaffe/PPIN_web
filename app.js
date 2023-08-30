@@ -162,6 +162,11 @@ function runCytoscape(data) {
       .selector('edge.alignortho_edge')
       .css({
         'line-color': '#f2d79e'
+      })
+      // do not show alignment species nodes
+      .selector('node.alignment')
+      .css({
+        'display': 'none'
       }),
 
     elements: JSON.parse(data),
@@ -532,7 +537,6 @@ function runCytoscape(data) {
       //      })
 
       var json = JSON.parse(data);
-
       species1_id = json[0]["data"]["name"];    // holds species1 name
       species2_id = json[1]["data"]["name"];    // holds species2 name
 
@@ -571,11 +575,11 @@ function runCytoscape(data) {
       buildTable(all_nodes);
 
       // buttons open corresponding windows
-      openMainItem("#b1", "#button1", 'fit-content', 0, stats, species1_id, species2_id);
+      openMainItem("#b1", "#button1", 'fit-content', 0, stats, species1_id, species2_id, cy);
       //openMainItem("#b2", "#button2", 300, 20, stats, species1_id, species2_id);
-      openMainItem("#b3", "#button3", 'fit-content', 500, stats, species1_id, species2_id);
-      openMainItem("#b2_colors", "#color_pick", 'fit-content', 500, stats, species1_id, species2_id);
-      openMainItem("#b2_data", "#data_ctrl", 'fit-content', 500, stats, species1_id, species2_id);
+      openMainItem("#b3", "#button3", 'fit-content', 500, stats, species1_id, species2_id, cy);
+      openMainItem("#b2_colors", "#color_pick", 'fit-content', 500, stats, species1_id, species2_id, cy);
+      openMainItem("#b2_data", "#data_ctrl", 'fit-content', 500, stats, species1_id, species2_id, cy);
 
       // create a reset button that will appear below it
       var resetView = document.createElement("BUTTON");
@@ -823,7 +827,7 @@ function openColorPick(button, win, s1_name, s2_name) {
 
 // opens the div and gives it the ability to drag and resize
 // param: given button, window to be opened, y-location, x-location, list of stats, names for each species
-function openMainItem(button, win, top, left, stat_list, s1_name, s2_name) {
+function openMainItem(button, win, top, left, stat_list, s1_name, s2_name, cy) {
   /**
     * opens the div and gives it the ability to drag and resize
     *
@@ -834,6 +838,7 @@ function openMainItem(button, win, top, left, stat_list, s1_name, s2_name) {
     * @param stat_list list of stats to be included in the stats window (more info below)
     * @param s1_name name of species 1
     * @param s2_name name of species 2
+    * @param cy cytoscape object
     */
   // stat list index definitions:
   // 0: number of orthologous proteins
@@ -884,9 +889,76 @@ function openMainItem(button, win, top, left, stat_list, s1_name, s2_name) {
 
   // check if the current button is the legend button
   if (win === "#button3") {
-    // change the text within the legend window
+    // change the text within the legend window for species1 and species2
     document.getElementById("s1").innerHTML = s1_name;
     document.getElementById("s2").innerHTML = s2_name;
+
+    // get the color property for the species 1 nodes
+    var species1_eles = cy.$(function (element) {
+      return element.hasClass('species1');
+    });
+
+    // get the color property for the species 2 nodes
+    var species2_eles = cy.$(function (element) {
+      return element.hasClass('species2');
+    });
+
+    var ortho_nonexist_eles = cy.$(function (element) {
+      return element.hasClass('ortho_nonexist');
+    });
+
+    var ortho_exists_in_eles = cy.$(function (element) {
+      return element.hasClass('ortho_exists_in');
+    });
+
+    var ortho_exists_out_eles = cy.$(function (element) {
+      return element.hasClass('ortho_exists_out');
+    });
+
+    var nonortho_eles = cy.$(function (element) {
+      return element.hasClass('nonortho');
+    });
+
+    var ortho_nonexist_eles = cy.$(function (element) {
+      return element.hasClass('ortho_nonexist');
+    });
+
+    var align_nonortho_eles = cy.$(function (element) {
+      return element.hasClass('align_nonortho');
+    });
+
+    var nonalign_ortho_eles = cy.$(function (element) {
+      return element.hasClass('nonalign_ortho');
+    });
+
+    var align_ortho_eles = cy.$(function (element) {
+      return element.hasClass('align_ortho');
+    });
+
+    // take the species colors
+    var species1_color = species1_eles.style('border-color');
+    var species2_color = species2_eles.style('border-color');
+
+    var ortho_nonexist_color = ortho_nonexist_eles.style('background-color');
+    var ortho_exists_in_color = ortho_exists_in_eles.style('background-color');
+    var ortho_exists_out_color = ortho_exists_out_eles.style('background-color');
+    var nonortho_color = nonortho_eles.style('background-color');
+    var align_nonortho_color = align_nonortho_eles.style('background-color');
+    var nonalign_ortho_color = nonalign_ortho_eles.style('background-color');
+    var align_ortho_color = align_ortho_eles.style('background-color');
+
+    // change the color of the species 1 and 2 legend text
+    document.getElementById("s1").style.color = species1_color;
+    document.getElementById("s2").style.color = species2_color;   
+    
+    document.getElementById("ortho_nonexist").style.color = ortho_nonexist_color;
+    document.getElementById("ortho_exists_in").style.color = ortho_exists_in_color;
+    document.getElementById("ortho_exists_out").style.color = ortho_exists_out_color;
+    document.getElementById("nonortho").style.color = nonortho_color;
+    document.getElementById("align_nonortho").style.color = align_nonortho_color;
+    document.getElementById("nonalign_ortho").style.color = nonalign_ortho_color;
+    document.getElementById("align_ortho").style.color = align_ortho_color;
+
   }
 
   $(button).click(function () {
