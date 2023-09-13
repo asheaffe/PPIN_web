@@ -17,11 +17,9 @@ A web tool for visualizing Protein-Protein Interaction Networks using cytoscape.
 
 # Current Functionalities
 ```
-- Dropdown menu available on right click for each node. Dropdown menu includes separate links to the given protein's entries in the Ensembl, NCBI, or Uniprot databases.
-- Opening the Stats tab along the bottom of the webpage will open a moveable window that lists some stats that might be important to the user.
-- A legend indicates which colors correspond to a given type of node (species 1, species 2, aligned and orthologous).
-- Use the Controls window to open a sidebar that lists all of the protein data.
-- Use the Controls window to open a color picker window to change the color scheme of the graph.
+- Toggle between orthology view and alignment view using 'Select JSON'
+- A legend indicates which colors correspond to a given type of node (Orthology status and Alignment status)
+- Orthology/Alignment views reflect data populated from the backend
 ```
 
 # Future Functionalities
@@ -32,6 +30,10 @@ A web tool for visualizing Protein-Protein Interaction Networks using cytoscape.
 
 # Current Bugs
 ```
-- Control/Information windows overlap when more than one is opened at a time.
-- 'Copy data' button exists but it doesn't copy the data.
+- Control/Information windows overlap when more than one is opened at a time
+- 'Copy/Paste' tab from the dropdown is not functional
+- 'Change Color Scheme' tab will open but does not have any effect on the color scheme
+- The items in 'Legend' only change color to correspond with node colors after an instance of that kind of node is loaded
+- Node colors are difficult to differentiate between one another--colors need to be more contrasting
+- Node dropdown menus are not functional
 ```
